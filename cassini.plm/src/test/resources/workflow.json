@@ -1,0 +1,260 @@
+{
+  "id": null,
+  "name": "Test Workflow",
+  "diagram": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<bpmn2:definitions xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:bpmn2=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:dc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:di=\"http://www.omg.org/spec/DD/20100524/DI\" id=\"sample-diagram\" targetNamespace=\"http://bpmn.io/schema/bpmn\" xsi:schemaLocation=\"http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd\">\n  <bpmn2:process id=\"Process_1\" isExecutable=\"false\">\n    <bpmn2:startEvent id=\"StartEvent_1\" name=\"Start\">\n      <bpmn2:outgoing>SequenceFlow_0bhy79x</bpmn2:outgoing>\n    </bpmn2:startEvent>\n    <bpmn2:task id=\"Task_0u3alz0\" name=\"Activity 1\">\n      <bpmn2:incoming>SequenceFlow_0bhy79x</bpmn2:incoming>\n      <bpmn2:outgoing>SequenceFlow_0bv7pfr</bpmn2:outgoing>\n      <bpmn2:outgoing>SequenceFlow_1vup57x</bpmn2:outgoing>\n      <bpmn2:outgoing>SequenceFlow_01fydrm</bpmn2:outgoing>\n    </bpmn2:task>\n    <bpmn2:sequenceFlow id=\"SequenceFlow_0bhy79x\" name=\"Begin\" sourceRef=\"StartEvent_1\" targetRef=\"Task_0u3alz0\" />\n    <bpmn2:task id=\"Task_1l8i34p\" name=\"Activity 2\">\n      <bpmn2:incoming>SequenceFlow_0bv7pfr</bpmn2:incoming>\n      <bpmn2:outgoing>SequenceFlow_1rlfzlq</bpmn2:outgoing>\n      <bpmn2:outgoing>SequenceFlow_0ultemc</bpmn2:outgoing>\n    </bpmn2:task>\n    <bpmn2:sequenceFlow id=\"SequenceFlow_0bv7pfr\" name=\"Approve\" sourceRef=\"Task_0u3alz0\" targetRef=\"Task_1l8i34p\" />\n    <bpmn2:task id=\"Task_0iw0ugq\" name=\"Activity 4\">\n      <bpmn2:incoming>SequenceFlow_1vup57x</bpmn2:incoming>\n      <bpmn2:outgoing>SequenceFlow_0j3e1zv</bpmn2:outgoing>\n    </bpmn2:task>\n    <bpmn2:sequenceFlow id=\"SequenceFlow_1vup57x\" name=\"Reject\" sourceRef=\"Task_0u3alz0\" targetRef=\"Task_0iw0ugq\" />\n    <bpmn2:task id=\"Task_01jw9ki\" name=\"Activity 5\">\n      <bpmn2:incoming>SequenceFlow_1rlfzlq</bpmn2:incoming>\n      <bpmn2:outgoing>SequenceFlow_1s8yms2</bpmn2:outgoing>\n      <bpmn2:outgoing>SequenceFlow_01ejrqu</bpmn2:outgoing>\n    </bpmn2:task>\n    <bpmn2:sequenceFlow id=\"SequenceFlow_1rlfzlq\" name=\"Approve\" sourceRef=\"Task_1l8i34p\" targetRef=\"Task_01jw9ki\" />\n    <bpmn2:task id=\"Task_0vcy565\" name=\"Activity 7\">\n      <bpmn2:incoming>SequenceFlow_1s8yms2</bpmn2:incoming>\n      <bpmn2:outgoing>SequenceFlow_0cgqnvl</bpmn2:outgoing>\n    </bpmn2:task>\n    <bpmn2:sequenceFlow id=\"SequenceFlow_1s8yms2\" name=\"Approve\" sourceRef=\"Task_01jw9ki\" targetRef=\"Task_0vcy565\" />\n    <bpmn2:task id=\"Task_17zmc30\" name=\"Activity 6\">\n      <bpmn2:incoming>SequenceFlow_0j3e1zv</bpmn2:incoming>\n      <bpmn2:incoming>SequenceFlow_0lir6qo</bpmn2:incoming>\n      <bpmn2:incoming>SequenceFlow_0ultemc</bpmn2:incoming>\n      <bpmn2:outgoing>SequenceFlow_1k6w6kc</bpmn2:outgoing>\n    </bpmn2:task>\n    <bpmn2:sequenceFlow id=\"SequenceFlow_0j3e1zv\" name=\"Approve\" sourceRef=\"Task_0iw0ugq\" targetRef=\"Task_17zmc30\" />\n    <bpmn2:task id=\"Task_0t7zkg0\" name=\"Activity 3\">\n      <bpmn2:incoming>SequenceFlow_01fydrm</bpmn2:incoming>\n      <bpmn2:outgoing>SequenceFlow_0lir6qo</bpmn2:outgoing>\n    </bpmn2:task>\n    <bpmn2:sequenceFlow id=\"SequenceFlow_01fydrm\" name=\"Defer\" sourceRef=\"Task_0u3alz0\" targetRef=\"Task_0t7zkg0\" />\n    <bpmn2:sequenceFlow id=\"SequenceFlow_0lir6qo\" name=\"Approve\" sourceRef=\"Task_0t7zkg0\" targetRef=\"Task_17zmc30\" />\n    <bpmn2:task id=\"Task_16mjsr4\" name=\"Activity 8\">\n      <bpmn2:incoming>SequenceFlow_1k6w6kc</bpmn2:incoming>\n      <bpmn2:incoming>SequenceFlow_0cgqnvl</bpmn2:incoming>\n      <bpmn2:incoming>SequenceFlow_01ejrqu</bpmn2:incoming>\n      <bpmn2:outgoing>SequenceFlow_19rqxyq</bpmn2:outgoing>\n    </bpmn2:task>\n    <bpmn2:sequenceFlow id=\"SequenceFlow_1k6w6kc\" name=\"Approve\" sourceRef=\"Task_17zmc30\" targetRef=\"Task_16mjsr4\" />\n    <bpmn2:sequenceFlow id=\"SequenceFlow_0cgqnvl\" name=\"Approve\" sourceRef=\"Task_0vcy565\" targetRef=\"Task_16mjsr4\" />\n    <bpmn2:endEvent id=\"EndEvent_1tnax2y\" name=\"End\">\n      <bpmn2:incoming>SequenceFlow_19rqxyq</bpmn2:incoming>\n    </bpmn2:endEvent>\n    <bpmn2:sequenceFlow id=\"SequenceFlow_19rqxyq\" name=\"Finish\" sourceRef=\"Task_16mjsr4\" targetRef=\"EndEvent_1tnax2y\" />\n    <bpmn2:sequenceFlow id=\"SequenceFlow_0ultemc\" name=\"Reject\" sourceRef=\"Task_1l8i34p\" targetRef=\"Task_17zmc30\" />\n    <bpmn2:sequenceFlow id=\"SequenceFlow_01ejrqu\" name=\"Reject\" sourceRef=\"Task_01jw9ki\" targetRef=\"Task_16mjsr4\" />\n  </bpmn2:process>\n  <bpmndi:BPMNDiagram id=\"BPMNDiagram_1\">\n    <bpmndi:BPMNPlane id=\"BPMNPlane_1\" bpmnElement=\"Process_1\">\n      <bpmndi:BPMNShape id=\"_BPMNShape_StartEvent_2\" bpmnElement=\"StartEvent_1\">\n        <dc:Bounds x=\"200\" y=\"200\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Task_0u3alz0_di\" bpmnElement=\"Task_0u3alz0\">\n        <dc:Bounds x=\"309\" y=\"178\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_0bhy79x_di\" bpmnElement=\"SequenceFlow_0bhy79x\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"236\" y=\"218\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"309\" y=\"218\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"227\" y=\"198\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"Task_1l8i34p_di\" bpmnElement=\"Task_1l8i34p\">\n        <dc:Bounds x=\"591\" y=\"-11\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_0bv7pfr_di\" bpmnElement=\"SequenceFlow_0bv7pfr\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"409\" y=\"191\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"480\" y=\"191\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"480\" y=\"29\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"591\" y=\"29\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"412\" y=\"102\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"Task_0iw0ugq_di\" bpmnElement=\"Task_0iw0ugq\">\n        <dc:Bounds x=\"591\" y=\"349\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_1vup57x_di\" bpmnElement=\"SequenceFlow_1vup57x\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"410\" y=\"245\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"480\" y=\"245\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"480\" y=\"389\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"591\" y=\"389\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"456\" y=\"311\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"Task_01jw9ki_di\" bpmnElement=\"Task_01jw9ki\">\n        <dc:Bounds x=\"776\" y=\"-11\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_1rlfzlq_di\" bpmnElement=\"SequenceFlow_1rlfzlq\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"691\" y=\"29\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"776\" y=\"29\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"685\" y=\"8\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"Task_0vcy565_di\" bpmnElement=\"Task_0vcy565\">\n        <dc:Bounds x=\"962\" y=\"-11\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_1s8yms2_di\" bpmnElement=\"SequenceFlow_1s8yms2\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"876\" y=\"29\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"962\" y=\"29\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"875\" y=\"8\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"Task_17zmc30_di\" bpmnElement=\"Task_17zmc30\">\n        <dc:Bounds x=\"776\" y=\"178\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_0j3e1zv_di\" bpmnElement=\"SequenceFlow_0j3e1zv\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"691\" y=\"389\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"826\" y=\"389\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"826\" y=\"258\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"738\" y=\"367\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"Task_0t7zkg0_di\" bpmnElement=\"Task_0t7zkg0\">\n        <dc:Bounds x=\"591\" y=\"179\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_01fydrm_di\" bpmnElement=\"SequenceFlow_01fydrm\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"409\" y=\"218\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"591\" y=\"219\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"467\" y=\"200\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_0lir6qo_di\" bpmnElement=\"SequenceFlow_0lir6qo\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"691\" y=\"219\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"776\" y=\"218\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"687\" y=\"220\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"Task_16mjsr4_di\" bpmnElement=\"Task_16mjsr4\">\n        <dc:Bounds x=\"962\" y=\"178\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_1k6w6kc_di\" bpmnElement=\"SequenceFlow_1k6w6kc\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"876\" y=\"218\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"962\" y=\"218\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"872\" y=\"220\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_0cgqnvl_di\" bpmnElement=\"SequenceFlow_0cgqnvl\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"1012\" y=\"69\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"1012\" y=\"178\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"992\" y=\"115\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"EndEvent_1tnax2y_di\" bpmnElement=\"EndEvent_1tnax2y\">\n        <dc:Bounds x=\"1129\" y=\"200\" width=\"36\" height=\"36\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"1102\" y=\"236\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_19rqxyq_di\" bpmnElement=\"SequenceFlow_19rqxyq\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"1062\" y=\"218\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"1129\" y=\"218\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"1051\" y=\"198\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_0ultemc_di\" bpmnElement=\"SequenceFlow_0ultemc\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"686\" y=\"67\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"729\" y=\"199\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"776\" y=\"199\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"684\" y=\"119\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_01ejrqu_di\" bpmnElement=\"SequenceFlow_01ejrqu\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"874\" y=\"66\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"927\" y=\"192\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"962\" y=\"192\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"874\" y=\"113\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n    </bpmndi:BPMNPlane>\n  </bpmndi:BPMNDiagram>\n</bpmn2:definitions>\n",
+  "activities": [
+    {
+      "actions": [
+        {
+          "diagramId": "SequenceFlow_0bhy79x",
+          "name": "Begin",
+          "sourceRef": {
+            "id": null,
+            "diagramId": "StartEvent_1",
+            "name": "Start"
+          },
+          "targetRef": {
+            "id": null,
+            "diagramId": "Task_0u3alz0",
+            "name": "Activity 1"
+          }
+        }
+      ],
+      "type": "START",
+      "diagramId": "StartEvent_1",
+      "name": "Start"
+    },
+    {
+      "actions": [
+        {
+          "diagramId": "SequenceFlow_0bv7pfr",
+          "name": "Approve",
+          "sourceRef": {
+            "id": null,
+            "diagramId": "Task_0u3alz0",
+            "name": "Activity 1"
+          },
+          "targetRef": {
+            "id": null,
+            "diagramId": "Task_1l8i34p",
+            "name": "Activity 2"
+          }
+        },
+        {
+          "diagramId": "SequenceFlow_1vup57x",
+          "name": "Reject",
+          "sourceRef": {
+            "id": null,
+            "diagramId": "Task_0u3alz0",
+            "name": "Activity 1"
+          },
+          "targetRef": {
+            "id": null,
+            "diagramId": "Task_0iw0ugq",
+            "name": "Activity 4"
+          }
+        },
+        {
+          "diagramId": "SequenceFlow_01fydrm",
+          "name": "Defer",
+          "sourceRef": {
+            "id": null,
+            "diagramId": "Task_0u3alz0",
+            "name": "Activity 1"
+          },
+          "targetRef": {
+            "id": null,
+            "diagramId": "Task_0t7zkg0",
+            "name": "Activity 3"
+          }
+        }
+      ],
+      "type": "NORMAL",
+      "diagramId": "Task_0u3alz0",
+      "name": "Activity 1"
+    },
+    {
+      "actions": [
+        {
+          "diagramId": "SequenceFlow_1rlfzlq",
+          "name": "Approve",
+          "sourceRef": {
+            "id": null,
+            "diagramId": "Task_1l8i34p",
+            "name": "Activity 2"
+          },
+          "targetRef": {
+            "id": null,
+            "diagramId": "Task_01jw9ki",
+            "name": "Activity 5"
+          }
+        },
+        {
+          "diagramId": "SequenceFlow_0ultemc",
+          "name": "Reject",
+          "sourceRef": {
+            "id": null,
+            "diagramId": "Task_1l8i34p",
+            "name": "Activity 2"
+          },
+          "targetRef": {
+            "id": null,
+            "diagramId": "Task_17zmc30",
+            "name": "Activity 6"
+          }
+        }
+      ],
+      "type": "NORMAL",
+      "diagramId": "Task_1l8i34p",
+      "name": "Activity 2"
+    },
+    {
+      "actions": [
+        {
+          "diagramId": "SequenceFlow_0j3e1zv",
+          "name": "Approve",
+          "sourceRef": {
+            "id": null,
+            "diagramId": "Task_0iw0ugq",
+            "name": "Activity 4"
+          },
+          "targetRef": {
+            "id": null,
+            "diagramId": "Task_17zmc30",
+            "name": "Activity 6"
+          }
+        }
+      ],
+      "type": "NORMAL",
+      "diagramId": "Task_0iw0ugq",
+      "name": "Activity 4"
+    },
+    {
+      "actions": [
+        {
+          "diagramId": "SequenceFlow_1s8yms2",
+          "name": "Approve",
+          "sourceRef": {
+            "id": null,
+            "diagramId": "Task_01jw9ki",
+            "name": "Activity 5"
+          },
+          "targetRef": {
+            "id": null,
+            "diagramId": "Task_0vcy565",
+            "name": "Activity 7"
+          }
+        },
+        {
+          "diagramId": "SequenceFlow_01ejrqu",
+          "name": "Reject",
+          "sourceRef": {
+            "id": null,
+            "diagramId": "Task_01jw9ki",
+            "name": "Activity 5"
+          },
+          "targetRef": {
+            "id": null,
+            "diagramId": "Task_16mjsr4",
+            "name": "Activity 8"
+          }
+        }
+      ],
+      "type": "NORMAL",
+      "diagramId": "Task_01jw9ki",
+      "name": "Activity 5"
+    },
+    {
+      "actions": [
+        {
+          "diagramId": "SequenceFlow_0cgqnvl",
+          "name": "Approve",
+          "sourceRef": {
+            "id": null,
+            "diagramId": "Task_0vcy565",
+            "name": "Activity 7"
+          },
+          "targetRef": {
+            "id": null,
+            "diagramId": "Task_16mjsr4",
+            "name": "Activity 8"
+          }
+        }
+      ],
+      "type": "NORMAL",
+      "diagramId": "Task_0vcy565",
+      "name": "Activity 7"
+    },
+    {
+      "actions": [
+        {
+          "diagramId": "SequenceFlow_1k6w6kc",
+          "name": "Approve",
+          "sourceRef": {
+            "id": null,
+            "diagramId": "Task_17zmc30",
+            "name": "Activity 6"
+          },
+          "targetRef": {
+            "id": null,
+            "diagramId": "Task_16mjsr4",
+            "name": "Activity 8"
+          }
+        }
+      ],
+      "type": "NORMAL",
+      "diagramId": "Task_17zmc30",
+      "name": "Activity 6"
+    },
+    {
+      "actions": [
+        {
+          "diagramId": "SequenceFlow_0lir6qo",
+          "name": "Approve",
+          "sourceRef": {
+            "id": null,
+            "diagramId": "Task_0t7zkg0",
+            "name": "Activity 3"
+          },
+          "targetRef": {
+            "id": null,
+            "diagramId": "Task_17zmc30",
+            "name": "Activity 6"
+          }
+        }
+      ],
+      "type": "NORMAL",
+      "diagramId": "Task_0t7zkg0",
+      "name": "Activity 3"
+    },
+    {
+      "actions": [
+        {
+          "diagramId": "SequenceFlow_19rqxyq",
+          "name": "Finish",
+          "sourceRef": {
+            "id": null,
+            "diagramId": "Task_16mjsr4",
+            "name": "Activity 8"
+          },
+          "targetRef": {
+            "id": null,
+            "diagramId": "EndEvent_1tnax2y",
+            "name": "End"
+          }
+        }
+      ],
+      "type": "NORMAL",
+      "diagramId": "Task_16mjsr4",
+      "name": "Activity 8"
+    },
+    {
+      "actions": [
+
+      ],
+      "type": "END",
+      "diagramId": "EndEvent_1tnax2y",
+      "name": "End"
+    }
+  ]
+}

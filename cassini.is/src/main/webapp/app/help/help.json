@@ -1,0 +1,713 @@
+{
+  "title": "Cassini.IS User Manual",
+  "toc": [
+    {
+      "label": "OVERVIEW",
+      "id": null,
+      "children": [
+        {
+          "label": "OVERVIEW",
+          "id": "1",
+          "file": "OVERVIEW/OVERVIEW.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "LOGIN",
+      "id": null,
+      "children": [
+        {
+          "label": "LOGIN",
+          "id": "2",
+          "file": "LOGIN/LOGIN.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "DASHBOARD",
+      "id": null,
+      "children": [
+        {
+          "label": "CREATE NEW PORTFOLIO",
+          "id": "4",
+          "file": "DASHBOARD/NEWPORTFOLIO.htm",
+          "children": []
+        },
+        {
+          "label": "EDIT PORTFOLIO",
+          "id": "4",
+          "file": "DASHBOARD/EDIT_PORTFOLIO.htm",
+          "children": []
+        },
+        {
+          "label": "CREATE NEW PROJECT",
+          "id": "4",
+          "file": "DASHBOARD/NEW_PROJECT.htm",
+          "children": []
+        },
+        {
+          "label": "EDIT PROJECT",
+          "id": "4",
+          "file": "DASHBOARD/EDIT_PROJECT.htm",
+          "children": []
+        },
+        {
+          "label": "SHOW ATTRIBUTES",
+          "id": "4",
+          "file": "DASHBOARD/Show_Attributes.htm",
+          "children": []
+        },
+        {
+          "label": "LOCK/UNLOCK PROJECT",
+          "id": "4",
+          "file": "DASHBOARD/LOCK_PROJECT.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "MASTERDATA",
+      "id": null,
+      "children": [
+        {
+          "label": "CLASSIFICATION",
+          "id": null,
+          "children": [
+            {
+              "label": "MATERIAL_TYPE",
+              "id": null,
+              "children": [
+                {
+                  "label": "CREATE MATERIAL TYPE",
+                  "id": "5",
+                  "file": "MASTERDATA/CLASSIFICATION/MATERIAL_TYPE/MASTERDATA.htm",
+                  "children": []
+                },
+                {
+                  "label": "UPDATE MATERIAL TYPE",
+                  "id": "5",
+                  "file": "MASTERDATA/CLASSIFICATION/MATERIAL_TYPE/UPDATE_MATERIAL_TYPE.htm",
+                  "children": []
+                },
+                {
+                  "label": "CREATE SUB TYPE",
+                  "id": "6",
+                  "file": "MASTERDATA/CLASSIFICATION/MATERIAL_TYPE/CREATE_SUB_TYPE.htm",
+                  "children": []
+                },
+                {
+                  "label": "CREATE ATTRIBUTES",
+                  "id": "7",
+                  "file": "MASTERDATA/CLASSIFICATION/MATERIAL_TYPE/CREATE_ATTRIBUTES.htm",
+                  "children": []
+                },
+                {
+                  "label": "DELETE MATERIAL TYPE",
+                  "id": "7",
+                  "file": "MASTERDATA/CLASSIFICATION/MATERIAL_TYPE/DELETE_TYPE.htm",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "label": "MACHINE_TYPE",
+              "id": null,
+              "children": [
+                {
+                  "label": "CREATE MACHINE TYPE",
+                  "id": "5",
+                  "file": "MASTERDATA/CLASSIFICATION/MACHINE_TYPE/Machine_Type.htm",
+                  "children": []
+                },
+                {
+                  "label": "UPDATE MACHINE TYPE",
+                  "id": "5",
+                  "file": "MASTERDATA/CLASSIFICATION/MACHINE_TYPE/UPDATE_MACHINE_TYPE.htm",
+                  "children": []
+                },
+                {
+                  "label": "CREATE SUB TYPE",
+                  "id": "6",
+                  "file": "MASTERDATA/CLASSIFICATION/MACHINE_TYPE/CREATE_SUB_TYPE.htm",
+                  "children": []
+                },
+                {
+                  "label": "CREATE ATTRIBUTES",
+                  "id": "7",
+                  "file": "MASTERDATA/CLASSIFICATION/MACHINE_TYPE/CREATE_ATTRIBUTES.htm",
+                  "children": []
+                },
+                {
+                  "label": "DELETE MACHINE TYPE",
+                  "id": "7",
+                  "file": "MASTERDATA/CLASSIFICATION/MACHINE_TYPE/DELETE_TYPE.htm",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "label": "MANPOWER_TYPE",
+              "id": null,
+              "children": [
+                {
+                  "label": "CREATE MANPOWER TYPE",
+                  "id": "5",
+                  "file": "MASTERDATA/CLASSIFICATION/MANPOER_TYPE/Create_Manpower.htm",
+                  "children": []
+                },
+                {
+                  "label": "UPDATE MANPOWER TYPE",
+                  "id": "5",
+                  "file": "MASTERDATA/CLASSIFICATION/MANPOER_TYPE/UPDATE_MANPOWER_TYPE.htm",
+                  "children": []
+                },
+                {
+                  "label": "CREATE SUB TYPE",
+                  "id": "6",
+                  "file": "MASTERDATA/CLASSIFICATION/MANPOER_TYPE/CREATE_SUBTYPE.htm",
+                  "children": []
+                },
+                {
+                  "label": "CREATE ATTRIBUTES",
+                  "id": "7",
+                  "file": "MASTERDATA/CLASSIFICATION/MANPOER_TYPE/CREATE_ATTRIBUTES.htm",
+                  "children": []
+                },
+                {
+                  "label": "DELETE MANPOWER TYPE",
+                  "id": "7",
+                  "file": "MASTERDATA/CLASSIFICATION/MANPOER_TYPE/DELETE_TYPE.htm",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "MATERIAL",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE MATERIAL",
+              "id": "8",
+              "file": "MASTERDATA/MATERIAL/Create_New_Material.htm",
+              "children": []
+            },
+            {
+              "label": "MATERIAL ATTRIBUTES",
+              "id": "9",
+              "file": "MASTERDATA/MATERIAL/MATERIAL_ATTRIBUTES.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "MACHINE",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE MACHINE",
+              "id": "8",
+              "file": "MASTERDATA/MACHINE/Create_Machine.htm",
+              "children": []
+            },
+            {
+              "label": "MACHINE ATTRIBUTES",
+              "id": "9",
+              "file": "MASTERDATA/MACHINE/MACHINE_ATTRIBUTES.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "MANPOWER",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE MANPOWER",
+              "id": "8",
+              "file": "MASTERDATA/MANPOWER/Create_Manpower.htm",
+              "children": []
+            },
+            {
+              "label": "MANPOWER ATTRIBUTES",
+              "id": "9",
+              "file": "MASTERDATA/MANPOWER/MANPOWER_ATTRIBUTES.htm",
+              "children": []
+            },
+            {
+              "label": "IMPORT SYSTEM USERS",
+              "id": "9",
+              "file": "MASTERDATA/MANPOWER/Import_System_Users.htm",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "DOCUMENTS",
+      "id": null,
+      "children": [
+        {
+          "label": "DOCUMENTS",
+          "id": "12",
+          "file": "DOCUMENTS/DOCUMENTS.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "TEAM",
+      "id": null,
+      "children": [
+        {
+          "label": "ADD PERSON INTO TEAM",
+          "id": "24",
+          "file": "TEAM/ADD_PERSON_INTO_THE_TEAM.htm",
+          "children": []
+        },
+        {
+          "label": "NEW ROLE",
+          "id": "26",
+          "file": "TEAM/NEWROLE.htm",
+          "children": []
+        },
+        {
+          "label": "ADD ROLE",
+          "id": "25",
+          "file": "TEAM/ADD_ROLE.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "WBS",
+      "id": null,
+      "children": [
+        {
+          "label": "WBS",
+          "id": "28",
+          "file": "WBS/WBS1.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "BOQ",
+      "id": null,
+      "children": [
+        {
+          "label": "CREATE BOQ",
+          "id": "29",
+          "file": "BOQ/BOM.htm",
+          "children": []
+        },
+        {
+          "label": "EDIT/DELETE BOQ ITEM",
+          "id": "30",
+          "file": "BOQ/EDIT_DELETE_BOM.htm",
+          "children": []
+        },
+        {
+          "label": "EXPORT/IMPORT ITEMS INTO BOQ",
+          "id": "31",
+          "file": "BOQ/EXPORT_IMPORT_ITEMS.htm",
+          "children": []
+        },
+        {
+          "label": "SEARCH BOQ",
+          "id": "31",
+          "file": "BOQ/SEARCH_BOM.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "SITES",
+      "id": null,
+      "children": [
+        {
+          "label": "CREATE SITE ",
+          "id": "32",
+          "file": "SITES/SITES.htm",
+          "children": []
+        },
+        {
+          "label": "EDIT/DELETE/SEARCH SITE ",
+          "id": "33",
+          "file": "SITES/EDIT_DELETE_SEARCH_SITE.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "TASKS",
+      "id": null,
+      "children": [
+        {
+          "label": "CREATE TASK ",
+          "id": "32",
+          "file": "TASKS/TASKS.htm",
+          "children": []
+        },
+        {
+          "label": "ADD MATERIAL TO THE TASK ",
+          "id": "33",
+          "file": "TASKS/ADD_MATERIAL_TO_THE_TASK.htm",
+          "children": []
+        },
+        {
+          "label": "UPDATE TASK STATUS ",
+          "id": "34",
+          "file": "TASKS/UPDATE_STATUS_OF_THE_TASK.htm",
+          "children": []
+        },
+        {
+          "label": "OVERVIEW OF TASK STATUS ",
+          "id": "35",
+          "file": "TASKS/OVERVIE_OF_TASK_STATUS.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "FILES",
+      "id": null,
+      "children": [
+        {
+          "label": "FILES",
+          "id": "36",
+          "file": "FILES/FILES.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "MEDIA",
+      "id": null,
+      "children": [
+        {
+          "label": "MEDIA",
+          "id": "36",
+          "file": "MEDIA/MEDIA.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "PROBLEMS",
+      "id": null,
+      "children": [
+        {
+          "label": "CREATE PROBLEM",
+          "id": "38",
+          "file": "PROBLEMS/CREATE_NEW_PROBLEM.htm",
+          "children": []
+        },
+        {
+          "label": "DELETE PROBLEM",
+          "id": "39",
+          "file": "PROBLEMS/DELETE_PROBLEM.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "COMMUNICATION",
+      "id": null,
+      "children": [
+        {
+          "label": "COMMUNICATION",
+          "id": "38",
+          "file": "COMMUNICATION/COMMUNICATION.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "MEETINGS",
+      "id": null,
+      "children": [
+        {
+          "label": "CREATE MEETING",
+          "id": "38",
+          "file": "MEETINGS/MEETINGS.htm",
+          "children": []
+        },
+        {
+          "label": "EDIT MEETING",
+          "id": "38",
+          "file": "MEETINGS/EDIT_MEETING.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "PROCUREMENT",
+      "id": null,
+      "children": [
+        {
+          "label": "SUPPLIERS",
+          "id": "13",
+          "children": [
+            {
+              "label": "SUPPLIERS",
+              "id": "15",
+              "file": "PROCUREMENT/SUPPLIERS/SUPPLIERS.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "STORES",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE STORE",
+              "id": "13",
+              "file": "PROCUREMENT/STORES/CREATE_STORE.htm",
+              "children": []
+            },
+            {
+              "label": "RECEIVES",
+              "id": "13",
+              "file": "PROCUREMENT/STORES/RECEIVES.htm",
+              "children": []
+            },
+            {
+              "label": "LOAN RECEIVED",
+              "id": "13",
+              "file": "PROCUREMENT/STORES/LOAN_RECEIVED.htm",
+              "children": []
+            },
+            {
+              "label": "LOAN ISSUED",
+              "id": "13",
+              "file": "PROCUREMENT/STORES/LOAN_ISSUED.htm",
+              "children": []
+            },
+            {
+              "label": "ISSUES",
+              "id": "13",
+              "file": "PROCUREMENT/STORES/ISSUES.htm",
+              "children": []
+            },
+            {
+              "label": "REQUISITION",
+              "id": "13",
+              "file": "PROCUREMENT/STORES/REQUISITION.htm",
+              "children": []
+            },
+            {
+              "label": "INDENTS",
+              "id": "13",
+              "file": "PROCUREMENT/STORES/INDENTS.htm",
+              "children": []
+            },
+            {
+              "label": "PURCHASEORDER",
+              "id": "13",
+              "file": "PROCUREMENT/STORES/PURCHASEORDER.htm",
+              "children": []
+            },
+            {
+              "label": "ROAD CHALLAN",
+              "id": "13",
+              "file": "PROCUREMENT/STORES/ROAD_CHALLAN.htm",
+              "children": []
+            },
+            {
+              "label": "STOCKMOVEMENT",
+              "id": "13",
+              "file": "PROCUREMENT/STORES/STOCK_MOVEMENT.htm",
+              "children": []
+            },
+            {
+              "label": "INVENTORY",
+              "id": "13",
+              "file": "PROCUREMENT/STORES/INVENTORY.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "INVENTORY",
+          "id": "13",
+          "children": [
+            {
+              "label": "INVENTORY",
+              "id": "15",
+              "file": "PROCUREMENT/INVENTORY/INVENTORY.htm",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "REPORTS",
+      "id": "13",
+      "children": [
+        {
+          "label": "MONTHLY_STOCK_REPORT",
+          "id": "14",
+          "file": "REPORTS/MONTHLY_STOCK_REPORT.htm",
+          "children": []
+        },
+        {
+          "label": "PROJECT_MATERIAL_STATEMENT",
+          "id": "15",
+          "file": "REPORTS/PROJECT_MATERIAL_STATEMENT.htm",
+          "children": []
+        },
+        {
+          "label": "STORE_POSITION_REPORT",
+          "id": "16",
+          "file": "REPORTS/STORE_POSITION_REPORT.htm",
+          "children": []
+        },
+        {
+          "label": "WORK_STATUS_REPORT",
+          "id": "16",
+          "file": "REPORTS/WORK_STATUS_REPORT.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "ADMIN",
+      "id": null,
+      "children": [
+        {
+          "label": "USERS",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE USER",
+              "id": "14",
+              "file": "ADMIN/USERS/CREATE_USER.htm",
+              "children": []
+            },
+            {
+              "label": "ADD GROUP",
+              "id": "15",
+              "file": "ADMIN/USERS/ADD_GROUP.htm",
+              "children": []
+            },
+            {
+              "label": "DELETE USER",
+              "id": "15",
+              "file": "ADMIN/USERS/DELETE_USER.htm",
+              "children": []
+            },
+            {
+              "label": "EDIT USER",
+              "id": "15",
+              "file": "ADMIN/USERS/EDIT_USER.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "GROUPS",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE GROUP",
+              "id": "14",
+              "file": "ADMIN/GROUPS/Create_Group.htm",
+              "children": []
+            },
+            {
+              "label": "SUB GROUP",
+              "id": "15",
+              "file": "ADMIN/GROUPS/SUB_GROUP.htm",
+              "children": []
+            },
+            {
+              "label": "ADD USER",
+              "id": "15",
+              "file": "ADMIN/GROUPS/ADD_USER.htm",
+              "children": []
+            },
+            {
+              "label": "EDIT GROUP",
+              "id": "15",
+              "file": "ADMIN/GROUPS/EDIT_GROUP.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "PERMISSIONS",
+          "id": "16",
+          "children": [
+            {
+              "label": "PERMISSIONS",
+              "id": "17",
+              "file": "ADMIN/PERMISSIONS/PERMISSIONS.htm",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "SETTINGS",
+      "id": null,
+      "children": [
+        {
+          "label": "AUTO NUMBER",
+          "id": null,
+          "children": [
+            {
+              "label": "AUTO NUMBERS",
+              "id": "17",
+              "file": "SETTINGS/AUTONUMBERS/SETTINGS.htm",
+              "children": []
+            },
+            {
+              "label": "DELETE AUTO NUMBER",
+              "id": "18",
+              "file": "SETTINGS/AUTONUMBERS/DELETE_AUTO_NUMBER.htm",
+              "children": []
+            },
+            {
+              "label": "EDIT AUTONUMBER",
+              "id": "19",
+              "file": "SETTINGS/AUTONUMBERS/EDIT_AUTO_NUMBER.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "LIST OF VALUES",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE LIST OF VALUES",
+              "id": "21",
+              "file": "SETTINGS/LIST_OF_VALUES/CEATE_LIST_OF_VALUES.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "CUSTOM PROPERTIES",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE NEW PROPERTY",
+              "id": "22",
+              "file": "SETTINGS/CUSTOMPROPERTIES/CUSTOM_PROPERTIES.htm",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

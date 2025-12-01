@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="/app/assets/css/app/desktop/print.css">
+</head>
+
+<body>
+
+<div class="print-template">
+
+    <#if maintenanceData.objectType == 'MROASSET'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+                <#if maintenanceData.asset.resourceObject.imageValue??>
+                    <div class="item-details">
+                        <div class="row" style="float: right !important;margin: 18px 89px 0 0px !important;">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <span class="longText"><img alt="My image"
+                                                            style="width: 350px !important;height: 300px !important;"
+                                                            src="${maintenanceData.asset.resourceObject.imageValue}"/></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </#if>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${maintenanceData.asset.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_resource_type_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${maintenanceData.asset.resourceObject.type.name}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_resource_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${maintenanceData.asset.resourceObject.name}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_Assert_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.asset.typeName??>
+                                        <span class="longText">${maintenanceData.asset.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.asset.name??>
+                                        <span class="longText">${maintenanceData.asset.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.asset.description??>
+                                        <span class="longText">${maintenanceData.asset.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.asset.createPerson??>
+                                        <span class="longText">${maintenanceData.asset.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.asset.createdDate??>
+                                        <span class="longText">${maintenanceData.asset.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.asset.modifiedPerson??>
+                                        <span class="longText">${maintenanceData.asset.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.asset.modifiedDate??>
+                                        <span class="longText">${maintenanceData.asset.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+
+
+                            <#if maintenanceData.itemMasterAttributes?has_content>
+
+
+                                <#list maintenanceData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list maintenanceData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list maintenanceData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Spare Parts'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_spare_parts_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="quality">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th  class="col-width-150" style="width: 100px;text-align: left" >${msg("print_number_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_type_title")}</th>
+                                        <th class="col-width-250" >${msg("print_name_title")}</th>
+                                        <th class="col-width-150" >${msg("print_description_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if maintenanceData.spareParts?has_content>
+                                        <#list  maintenanceData.spareParts as part>
+                                            <tr>
+                                                <td class="col-width-150" style="width: 100px;text-align: left">
+                                                    <#if part.sparePart.number??>
+                                                        <span>${part.sparePart.number}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-250" style="width: 150px;text-align: left">
+                                                    <#if part.sparePart.type.name??>
+                                                        <span>${part.sparePart.type.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if part.sparePart.name??>
+                                                        <span>${part.sparePart.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if part.sparePart.description??>
+                                                        <span>${part.sparePart.description}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+
+
+                                    </tbody>
+                                </table>
+                                <#if !maintenanceData.spareParts?has_content>
+                                    <p class="no-content"> ${msg("print_no_spare_parts_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+            <#if option == 'Maintenance'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_maintenance_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="maintenance">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="width: 100px;text-align: left" >${msg("print_number_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" class="" >${msg("print_type_title")}</th>
+                                        <th class="col-width-150" >${msg("print_work_order_name_title")}</th>
+                                        <th class="col-width-150" >${msg("print_request_or_plan_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" class="" >${msg("print_date_performed_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if maintenanceData.maintenancePlans?has_content>
+                                        <#list  maintenanceData.maintenancePlans as plan>
+                                            <tr>
+                                                <td  class="col-width-150" style="width: 100px;text-align: left">
+                                                    <#if plan.number??>
+                                                        <span>${plan.number}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if plan.typeName??>
+                                                        <span>${plan.typeName}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if plan.name??>
+                                                        <span>${plan.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if plan.typeName =='Maintenance'>
+                                                        <span>${plan.planNumber}</span>
+                                                    </#if>
+                                                    <#if plan.typeName =='Repair'>
+                                                        <span>${plan.requestNumber}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if plan.modifiedDate??>
+                                                        <span>${plan.modifiedDate}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+
+
+                                    </tbody>
+                                </table>
+                                <#if !maintenanceData.maintenancePlans?has_content>
+                                    <p class="no-content">${msg("print_no_maintenance_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+    <#if maintenanceData.objectType == 'MROMETER'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${maintenanceData.meter.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${maintenanceData.meter.typeName}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.meter.name??>
+                                        <span class="longText">${maintenanceData.meter.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.meter.description??>
+                                        <span class="longText">${maintenanceData.meter.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_meter_reading_type_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.meter.meterReadingTypeName??>
+                                        <span class="longText">${maintenanceData.meter.meterReadingTypeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_meter_type_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.meter.meterTypeName??>
+                                        <span class="longText">${maintenanceData.meter.meterTypeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_measurement_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.meter.measurementName??>
+                                        <span class="longText">${maintenanceData.meter.measurementName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_measurement_unit_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.meter.unitName??>
+                                        <span class="longText">${maintenanceData.meter.unitName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.meter.createPerson??>
+                                        <span class="longText">${maintenanceData.meter.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.meter.createdDate??>
+                                        <span class="longText">${maintenanceData.meter.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.meter.modifiedPerson??>
+                                        <span class="longText">${maintenanceData.meter.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.meter.modifiedDate??>
+                                        <span class="longText">${maintenanceData.meter.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if maintenanceData.itemMasterAttributes?has_content>
+
+
+                                <#list maintenanceData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list maintenanceData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list maintenanceData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+
+        </#list>
+    </#if>
+    <#if maintenanceData.objectType == 'MROSPAREPART'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${maintenanceData.sparePart.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${maintenanceData.sparePart.typeName}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.sparePart.name??>
+                                        <span class="longText">${maintenanceData.sparePart.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.sparePart.description??>
+                                        <span class="longText">${maintenanceData.sparePart.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.sparePart.createPerson??>
+                                        <span class="longText">${maintenanceData.sparePart.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.sparePart.createdDate??>
+                                        <span class="longText">${maintenanceData.sparePart.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.sparePart.modifiedPerson??>
+                                        <span class="longText">${maintenanceData.sparePart.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.sparePart.modifiedDate??>
+                                        <span class="longText">${maintenanceData.sparePart.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if maintenanceData.itemMasterAttributes?has_content>
+
+
+                                <#list maintenanceData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list maintenanceData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list maintenanceData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+
+        </#list>
+    </#if>
+    <#if maintenanceData.objectType == 'MROMAINTENANCEPLAN'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${maintenanceData.maintenancePlan.number}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.maintenancePlan.name??>
+                                        <span class="longText">${maintenanceData.maintenancePlan.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.maintenancePlan.description??>
+                                        <span class="longText">${maintenanceData.maintenancePlan.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_asset_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.maintenancePlan.assetName??>
+                                        <span class="longText">${maintenanceData.maintenancePlan.assetName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.maintenancePlan.createPerson??>
+                                        <span class="longText">${maintenanceData.maintenancePlan.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.maintenancePlan.createdDate??>
+                                        <span class="longText">${maintenanceData.maintenancePlan.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.maintenancePlan.modifiedPerson??>
+                                        <span class="longText">${maintenanceData.maintenancePlan.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.maintenancePlan.modifiedDate??>
+                                        <span class="longText">${maintenanceData.maintenancePlan.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Operations'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_operations_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="ops">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" >${msg("print_name_title")}</th>
+                                        <th class="col-width-250" >${msg("print_param_name_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_param_type_title")}</th>
+                                        <th class="col-width-150" >${msg("print_description_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if maintenanceData.maintenanceOperations?has_content>
+                                        <#list  maintenanceData.maintenanceOperations as operation>
+                                            <tr>
+                                                <td class="col-width-150">
+                                                    <#if operation.name??>
+                                                        <span>${operation.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-250">
+                                                    <#if operation.paramName??>
+                                                        <span>${operation.paramName}</span>
+                                                    </#if>
+                                                </td>
+                                                <td  class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if operation.paramType??>
+                                                        <span>${operation.paramType}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if operation.description??>
+                                                        <span>${operation.description}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+
+
+                                    </tbody>
+                                </table>
+                                <#if !maintenanceData.maintenanceOperations?has_content>
+                                    <p class="no-content">${msg("print_no_operations_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+    <#if maintenanceData.objectType == 'MROWORKREQUEST'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${maintenanceData.workRequest.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${maintenanceData.workRequest.typeName}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_asset_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workRequest.assetName??>
+                                        <span class="longText">${maintenanceData.workRequest.assetName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workRequest.name??>
+                                        <span class="longText">${maintenanceData.workRequest.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workRequest.description??>
+                                        <span class="longText">${maintenanceData.workRequest.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_requestor_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workRequest.requestorPerson??>
+                                        <span class="longText">${maintenanceData.workRequest.requestorPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_notes_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workRequest.notes??>
+                                        <span class="longText">${maintenanceData.workRequest.notes}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_meter_type_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workRequest.priorityName??>
+                                        <span class="longText">${maintenanceData.workRequest.priorityName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_status_title")}    </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workRequest.statusName??>
+                                        <span class="longText">${maintenanceData.workRequest.statusName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workRequest.createPerson??>
+                                        <span class="longText">${maintenanceData.workRequest.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workRequest.createdDate??>
+                                        <span class="longText">${maintenanceData.workRequest.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workRequest.modifiedPerson??>
+                                        <span class="longText">${maintenanceData.workRequest.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workRequest.modifiedDate??>
+                                        <span class="longText">${maintenanceData.workRequest.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if maintenanceData.itemMasterAttributes?has_content>
+
+
+                                <#list maintenanceData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list maintenanceData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list maintenanceData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+
+        </#list>
+    </#if>
+    <#if maintenanceData.objectType == 'MROWORKORDER'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${maintenanceData.workOrder.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${maintenanceData.workOrder.typeName}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workOrder.name??>
+                                        <span class="longText">${maintenanceData.workOrder.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workOrder.description??>
+                                        <span class="longText">${maintenanceData.workOrder.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_asset_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workOrder.assetName??>
+                                        <span class="longText">${maintenanceData.workOrder.assetName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <#if maintenanceData.workOrder.typeName=='Maintenance'>
+                                <div class="row">
+                                    <div class="label col-xs-4 col-sm-3 text-right">
+                                        <span  class="longText">${msg("print_maintenance_plan_title")}</span> :
+                                    </div>
+                                    <div class="value col-xs-8 col-sm-9">
+                                        <#if maintenanceData.workOrder.maintenancePlan??>
+                                            <span class="longText">${maintenanceData.workOrder.maintenancePlan}</span>
+                                        </#if>
+                                    </div>
+                                </div>
+                            </#if>
+
+
+                            <#if maintenanceData.workOrder.typeName=='Repair'>
+                                <div class="row">
+                                    <div class="label col-xs-4 col-sm-3 text-right">
+                                        <span  class="longText">${msg("print_work_request_title")}</span> :
+                                    </div>
+                                    <div class="value col-xs-8 col-sm-9">
+                                        <#if maintenanceData.workOrder.requestNumber??>
+                                            <span class="longText">${maintenanceData.workOrder.requestNumber}</span>
+                                        </#if>
+                                    </div>
+                                </div>
+                            </#if>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_assigned_to_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workOrder.assignedPerson??>
+                                        <span class="longText">${maintenanceData.workOrder.assignedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_priority_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workOrder.priorityName??>
+                                        <span class="longText">${maintenanceData.workOrder.priorityName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_status_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workOrder.statusName??>
+                                        <span class="longText">${maintenanceData.workOrder.statusName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_notes_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workOrder.notes??>
+                                        <span class="longText">${maintenanceData.workOrder.notes}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workOrder.createPerson??>
+                                        <span class="longText">${maintenanceData.workOrder.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workOrder.createdDate??>
+                                        <span class="longText">${maintenanceData.workOrder.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workOrder.modifiedPerson??>
+                                        <span class="longText">${maintenanceData.workOrder.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if maintenanceData.workOrder.modifiedDate??>
+                                        <span class="longText">${maintenanceData.workOrder.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Operations'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_operations_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="woops">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" >${msg("print_name_title")}</th>
+                                        <th class="col-width-150" >${msg("print_param_name_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_param_type_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_value_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left">${msg("print_result_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if maintenanceData.workOrderOperations?has_content>
+                                        <#list  maintenanceData.workOrderOperations as operation>
+                                            <tr>
+                                                <td class="col-width-150">
+                                                    <#if operation.name??>
+                                                        <span>${operation.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if operation.paramName??>
+                                                        <span>${operation.paramName}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if operation.paramType??>
+                                                        <span>${operation.paramType}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if operation.paramType == 'TEXT'>
+                                                        <#if operation.textValue??>
+                                                            <span>${operation.textValue}</span>
+                                                        </#if>
+                                                    </#if>
+                                                    <#if operation.paramType == 'INTEGER'>
+                                                        <#if operation.integerValue??>
+                                                            <span>${operation.integerValue}</span>
+                                                        </#if>
+                                                    </#if>
+                                                    <#if operation.paramType == 'DECIMAL'>
+                                                        <#if operation.decimalValue??>
+                                                            <span>${operation.decimalValue}</span>
+                                                        </#if>
+                                                    </#if>
+                                                    <#if operation.paramType == 'LIST'>
+                                                        <#if operation.listValue??>
+                                                            <span>${operation.listValue}</span>
+                                                        </#if>
+                                                    </#if>
+                                                    <#if operation.paramType == 'BOOLEAN'>
+                                                        <#if operation.booleanValue??>
+                                                            <span>${operation.booleanValue}</span>
+                                                        </#if>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if operation.result??>
+                                                        <span>${operation.result}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+
+
+                                    </tbody>
+                                </table>
+                                <#if !maintenanceData.workOrderOperations?has_content>
+                                    <p class="no-content">${msg("print_no_operations_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Resources'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_resources_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="wores">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_resource_type_title")}</th>
+                                        <th class="col-width-150" >${msg("print_name_title")}</th>
+                                        <th class="col-width-150" >${msg("print_mfr_name_title")}</th>
+                                        <th class="col-width-150" >${msg("print_mfr_part_number_title")}</th>
+                                        <th class="col-width-200" >${msg("print_mfr_serial_number_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_mfr_date_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if maintenanceData.workOrderResources?has_content>
+                                        <#list  maintenanceData.workOrderResources as resource>
+                                            <tr>>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if resource.resourceName??>
+                                                        <span>${resource.resourceName}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if resource.resourceObject.name??>
+                                                        <span>${resource.resourceObject.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if resource.resourceObject.manufacturerData.mfrName??>
+                                                        <span>${resource.resourceObject.manufacturerData.mfrName}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if resource.resourceObject.manufacturerData.mfrPartNumber??>
+                                                        <span>${resource.resourceObject.manufacturerData.mfrPartNumber}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-200">
+                                                    <#if resource.resourceObject.manufacturerData.mfrSerialNumber??>
+                                                        <span>${resource.resourceObject.manufacturerData.mfrSerialNumber}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if resource.resourceObject.manufacturerData.mfrDate??>
+                                                        <span>${resource.resourceObject.manufacturerData.mfrDate}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+
+
+                                    </tbody>
+                                </table>
+                                <#if !maintenanceData.workOrderResources?has_content>
+                                    <p class="no-content">${msg("print_no_resources_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Spare Parts'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_spare_parts_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="woSp">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="width: 100px;text-align: left" >${msg("print_number_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_type_title")}</th>
+                                        <th class="col-width-150" >${msg("print_name_title")}</th>
+                                        <th class="col-width-150" style="width: 100px;text-align: center" >${msg("print_quantity_title")}</th>
+                                        <th class="col-width-150" style="width: 100px;text-align: left" >${msg("print_disposition_type_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if maintenanceData.workOrderParts?has_content>
+                                        <#list  maintenanceData.workOrderParts as sparePart>
+                                            <tr>
+                                                <td class="col-width-150" style="width: 100px;text-align: left">
+                                                    <#if sparePart.sparePart.number??>
+                                                        <span>${sparePart.sparePart.number}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if sparePart.sparePart.type.name??>
+                                                        <span>${sparePart.sparePart.type.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if sparePart.sparePart.name??>
+                                                        <span>${sparePart.sparePart.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 100px;text-align: center">
+                                                    <#if sparePart.sparePart.quantity??>
+                                                        <span>${sparePart.sparePart.quantity}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-150" style="width: 100px;text-align: left">
+                                                    <#if sparePart.disposition??>
+                                                        <span>${sparePart.disposition}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+
+
+                                    </tbody>
+                                </table>
+                                <#if !maintenanceData.workOrderParts?has_content>
+                                    <p class="no-content">${msg("print_no_spare_parts_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+
+</div>
+</body>
+</html>

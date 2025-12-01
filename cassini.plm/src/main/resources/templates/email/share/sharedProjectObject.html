@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CassiniPLM Shared Object</title>
+
+    <!--<link rel="stylesheet" type="text/css" href="http://localhost:8080/app/assets/css/desktop.imports.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+
+</head>
+
+<style>
+    ${cssIncludes}
+</style>
+
+<style>
+    body {
+        background-color: #ebf8fc;
+    }
+
+    .email-title {
+        color: #39b9ff;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-size: 20px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        line-height: 30px;
+    }
+
+    th, td {
+        padding-right: 20px;
+        padding-left: 5px;
+    }
+</style>
+
+<body>
+
+<div class="email-title">CassiniPLM Object(s) shared with you</div>
+
+<#if companyLogo??>
+    <img naturalheight="0" naturalwidth="0" src="${companyLogo}" width="120" height="50"
+         style="margin: 15px 0px 0px 10px;" data-downloadimage="" data-thumbnailimage=""
+         crossorigin="use-credentials"/>
+</#if>
+
+<table border="2">
+    <thead>
+    <tr>
+        <th>Project Name</th>
+        <th>Description</th>
+        <th>Permission</th>
+    </tr>
+    </thead>
+    <tbody>
+    <#list projects as project>
+        <tr>
+            <td>${project.name}</td>
+            <td>${project.description}</td>
+            <td>${permission}</td>
+        </tr>
+    </#list>
+    </tbody>
+</table>
+
+
+<p>Thank You</p>
+
+<p class="text-center">CassiniPLM 2022</p>
+
+</body>
+</html>

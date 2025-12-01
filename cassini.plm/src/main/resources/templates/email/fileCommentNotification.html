@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" type="text/css" href="http://localhost:8080/app/assets/css/desktop.imports.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+</head>
+<body>
+
+<style>
+    body {
+        background-color: #D0DDE1;
+        font-size: 17px;
+        font-family: 'Open Sans' !important;
+        font-weight: 300 !important;
+    }
+
+    .email-content {
+        background-color: #FFF;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.22);
+        border: 1px solid #D0DDE1;
+        padding: 50px;
+        height: 420px;
+        width: 50%;
+        min-width: 30%;
+        margin-top: 100px;
+        margin-bottom: 20px;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+    .email-title {
+        color: #0390fd;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-size: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+</style>
+
+<div class="email-content">
+    <#if notificationType == 'QACommentToExternal'>
+        <p>Dear ${personName},</p>
+
+        <p>${commentByName} from ${tenantId}
+            added comments on ${fileType} <span style="color: blue">${fileName}</span> in ${typeName} <span
+                    style="color: blue">${objectName}</span>
+        </p>
+
+        <p>Kindly go through and respond on the same</p>
+    </#if>
+    <#if notificationType == 'ExternalCommentToQA'>
+        <p>Dear ${personName},</p>
+
+        <p> ${commentByName} added comments on ${fileType} <span style="color: blue">${fileName}</span> in ${typeName}
+            <span style="color: blue">${objectName}</span>
+        </p>
+
+        <p>Please review</p>
+    </#if>
+    <#if notificationType == 'ApprovedComments'>
+        <p>Dear ${personName},</p>
+
+        <p>${approverName} has been ${approvalType} your ${fileType} <span style="color: blue">${fileName}</span> in
+            ${typeName}
+            <span style="color: blue">${objectName}</span>.</p>
+
+        <p>${comment}</p>
+    </#if>
+    <#if notificationType == 'ExternalUploadFiles'>
+        <p>Dear ${personName},</p>
+        <#if fileType == 'checklist'>
+            <p>${externalName} uploaded <span style="color: blue">${fileName}</span> in checklist
+                <#if (checklist)??><span style="color: blue">${checklist}</span></#if>
+                ${typeName} <span style="color: blue">${objectName}</span>
+            </p>
+        </#if>
+        <#if fileType == 'inspection report'>
+            <p>${externalName} uploaded inspection report <span style="color: blue">${fileName}</span> in
+                ${typeName} <span style="color: blue">${objectName}</span>
+            </p>
+        </#if>
+
+        <p>Kindly go through once</p>
+
+        <p>Thank you</p>
+    </#if>
+    <#if notificationType == 'ExternalUpdatedFiles'>
+        <p>Dear ${personName},</p>
+
+        </p>
+        <#if fileType == 'checklist'>
+            <p>${externalName} updated <span style="color: blue">${fileName}</span> in checklist
+                <#if (checklist)??>${checklist}</#if>
+                ${typeName} <span style="color: blue">${objectName}</span>
+            </p>
+        </#if>
+        <#if fileType == 'inspection report'>
+            <p>${externalName} updated inspection report <span style="color: blue">${fileName}</span> in
+                ${typeName}
+                <span style="color: blue">${objectName}</span>
+            </p>
+        </#if>
+
+        <p>Kindly go through once</p>
+
+        <p>Thank you</p>
+    </#if>
+    <#if notificationType == 'ExternalReplacedFile'>
+        <p>Dear ${personName},</p>
+
+        <p>${externalName} replaced ${fileType} <span style="color: blue">${fileName}</span>
+            with <span style="color: blue">${newFileName}</span> in ${typeName}
+            <span style="color: blue">${objectName}</span>
+        </p>
+
+        <p>Kindly go through once</p>
+    </#if>
+    <#if notificationType == 'ExternalRenamedFile'>
+        <p>Dear ${personName},</p>
+
+        <p>${externalName} renamed ${fileType} <span style="color: blue">${fileName}</span>
+            with <span style="color: blue">${newFileName}</span> in ${typeName}
+            <span style="color: blue">${objectName}</span>
+        </p>
+
+        <p>Please go through once</p>
+    </#if>
+</div>
+</body>
+</html>

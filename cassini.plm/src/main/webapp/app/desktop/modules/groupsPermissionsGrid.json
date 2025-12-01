@@ -1,0 +1,1037 @@
+[
+  {
+    "group": "ADMIN",
+    "permissions": [
+      {
+        "id": "permission.admin.all",
+        "name": "All Admin",
+        "show": true
+      },
+      {
+        "id": "permission.admin.view",
+        "name": "View Admin",
+        "show": true
+      },
+      {
+        "id": "permission.admin.user.all",
+        "name": "All User",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.user.add",
+        "name": "Add User",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.user.view",
+        "name": "View User",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.user.edit",
+        "name": "Edit User",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.user.delete",
+        "name": "Delete User",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.group.all",
+        "name": "All Group",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.group.add",
+        "name": "Add Group",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.group.view",
+        "name": "View Group",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.group.edit",
+        "name": "Edit Group",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.group.delete",
+        "name": "Delete Group",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "SESSIONS",
+    "permissions": [
+      {
+        "id": "permission.sessions.all",
+        "name": "All SESSIONS",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "PROJECTS",
+    "permissions": [
+      {
+        "id": "permission.project.all",
+        "name": "All Projects",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.project.view",
+        "name": "Project View",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.project.new",
+        "name": "New Project",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.project.edit",
+        "name": "Edit Project",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.project.delete",
+        "name": "Delete Project",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "PROJECT TEMPLATES",
+    "permissions": [
+      {
+        "id": "permission.project.template.all",
+        "name": "All Project Templates",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.project.template.view",
+        "name": "Project Template View",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.project.template.new",
+        "name": "New Project Template",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.project.template.edit",
+        "name": "Edit Project Template",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.project.template.delete",
+        "name": "Delete Project Template",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "CLASSIFICATION",
+    "permissions": [
+      {
+        "id": "permission.classification.all",
+        "name": "All Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.view",
+        "name": "View Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.new",
+        "name": "Create Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.edit",
+        "name": "Edit Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.delete",
+        "name": "Delete Classification",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "ITEMS CLASSIFICATION",
+    "permissions": [
+      {
+        "id": "permission.classification.items.all",
+        "name": "All Items Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.items.view",
+        "name": "View Items Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.items.new",
+        "name": "Create Items Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.items.edit",
+        "name": "Edit Items Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.items.delete",
+        "name": "Delete Items Classification",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "CHANGE CLASSIFICATION",
+    "permissions": [
+      {
+        "id": "permission.classification.changes.all",
+        "name": "All Changes Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.changes.view",
+        "name": "View Changes Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.changes.new",
+        "name": "Create Changes Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.changes.edit",
+        "name": "Edit Changes Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.changes.delete",
+        "name": "Delete Changes Classification",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "QUALITY CLASSIFICATION",
+    "permissions": [
+      {
+        "id": "permission.classification.quality.all",
+        "name": "All Quality Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.quality.view",
+        "name": "View Quality Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.quality.new",
+        "name": "Create Quality Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.quality.edit",
+        "name": "Edit Quality Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.quality.delete",
+        "name": "Delete Quality Classification",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "MANUFACTURER CLASSIFICATION",
+    "permissions": [
+      {
+        "id": "permission.classification.manufacturer.all",
+        "name": "All Manufacturer Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.manufacturer.view",
+        "name": "View Manufacturer Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.manufacturer.new",
+        "name": "Create Manufacturer Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.manufacturer.edit",
+        "name": "Edit Manufacturer Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.manufacturer.delete",
+        "name": "Delete Manufacturer Classification",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "MANUFACTURERS PARTS CLASSIFICATION",
+    "permissions": [
+      {
+        "id": "permission.classification.manufacturerparts.all",
+        "name": "All Manufacturer Parts Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.manufacturerparts.view",
+        "name": "View Manufacturer Parts Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.manufacturerparts.new",
+        "name": "Create Manufacturer Parts Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.manufacturerparts.edit",
+        "name": "Edit Manufacturer Parts Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.manufacturerparts.delete",
+        "name": "Delete Manufacturer Parts Classification",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "WORKFLOW CLASSIFICATION",
+    "permissions": [
+      {
+        "id": "permission.classification.workflow.all",
+        "name": "All Workflow Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.workflow.view",
+        "name": "View Workflow Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.workflow.new",
+        "name": "Create Workflow Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.workflow.edit",
+        "name": "Edit Workflow Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.workflow.delete",
+        "name": "Delete Workflow Classification",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "ITEMS",
+    "permissions": [
+      {
+        "id": "permission.items.all",
+        "name": "All Items",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.items.view",
+        "name": "View",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.items.new",
+        "name": "New Item",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.items.edit",
+        "name": "Edit Item",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.items.delete",
+        "name": "Delete Item",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "CHANGES",
+    "permissions": [
+      {
+        "id": "permission.ecr.all",
+        "name": "All ECRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.ecr.view",
+        "name": "View ECRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.ecr.new",
+        "name": "New ECRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.ecr.edit",
+        "name": "Edit ECRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.ecr.delete",
+        "name": "Delete ECRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.eco.all",
+        "name": "All ECOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.eco.view",
+        "name": "View ECOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.eco.new",
+        "name": "New ECOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.eco.edit",
+        "name": "Edit ECOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.eco.delete",
+        "name": "Delete ECOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dcr.all",
+        "name": "All DCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dcr.view",
+        "name": "View DCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dcr.new",
+        "name": "New DCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dcr.edit",
+        "name": "Edit DCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dcr.delete",
+        "name": "Delete DCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dco.all",
+        "name": "All DCOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dco.view",
+        "name": "View DCOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dco.new",
+        "name": "New DCOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dco.edit",
+        "name": "Edit DCOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dco.delete",
+        "name": "Delete DCOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.mco.all",
+        "name": "All MCOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.mco.view",
+        "name": "View MCOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.mco.new",
+        "name": "New MCOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.mco.edit",
+        "name": "Edit MCOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.mco.delete",
+        "name": "Delete MCOs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.variance.all",
+        "name": "All Variances",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.variance.view",
+        "name": "View Variance",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.variance.new",
+        "name": "New Variance",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.variance.edit",
+        "name": "Edit Variance",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.variance.delete",
+        "name": "Delete Variance",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "QUALITY",
+    "permissions": [
+      {
+        "id": "permission.inspectionplan.all",
+        "name": "All Inspection Plans",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.inspectionplan.view",
+        "name": "View Inspection Plans",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.inspectionplan.new",
+        "name": "New Inspection Plans",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.inspectionplan.edit",
+        "name": "Edit Inspection Plans",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.inspectionplan.delete",
+        "name": "Delete Inspection Plans",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.inspection.all",
+        "name": "All Inspections",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.inspection.view",
+        "name": "View Inspections",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.inspection.new",
+        "name": "New Inspections",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.inspection.edit",
+        "name": "Edit Inspections",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.inspection.delete",
+        "name": "Delete Inspections",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.problemreport.all",
+        "name": "All Problem Reports",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.problemreport.view",
+        "name": "View Problem Reports",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.problemreport.new",
+        "name": "New Problem Reports",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.problemreport.edit",
+        "name": "Edit Problem Reports",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.problemreport.delete",
+        "name": "Delete Problems Reports",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.ncr.all",
+        "name": "All NCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.ncr.view",
+        "name": "View NCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.ncr.new",
+        "name": "New NCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.ncr.edit",
+        "name": "Edit NCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.ncr.delete",
+        "name": "Delete NCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.qcr.all",
+        "name": "All QCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.qcr.view",
+        "name": "View QCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.qcr.new",
+        "name": "New QCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.qcr.edit",
+        "name": "Edit QCRs",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.qcr.delete",
+        "name": "Delete NCRs",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "WORKFLOW TEMPLATES",
+    "permissions": [
+      {
+        "id": "permission.workflow.template.all",
+        "name": "All Workflow Templates",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.workflow.template.view",
+        "name": "View Workflow Templates",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.workflow.template.new",
+        "name": "New workflow Templates",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.workflow.template.edit",
+        "name": "Edit workflow Templates",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.workflow.template.delete",
+        "name": "Delete workflow Templates",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "MANUFACTURERS",
+    "permissions": [
+      {
+        "id": "permission.manufacturer.all",
+        "name": "All Manufacturers",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.manufacturer.view",
+        "name": "View Manufacturer",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.manufacturer.new",
+        "name": "Create Manufacturer",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.manufacturer.edit",
+        "name": "Edit Manufacturer",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.manufacturer.delete",
+        "name": "Delete Manufacturer",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "MANUFACTURERS PARTS",
+    "permissions": [
+      {
+        "id": "permission.manufacturerparts.all",
+        "name": "All Manufacturer Parts",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.manufacturerparts.view",
+        "name": "View Manufacturer Parts",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.manufacturerparts.new",
+        "name": "Create Manufacturer Parts",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.manufacturerparts.edit",
+        "name": "Edit Manufacturer Parts",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.manufacturerparts.delete",
+        "name": "Delete Manufacturer Parts",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "TERMINOLOGY",
+    "permissions": [
+      {
+        "id": "permission.terminology.all",
+        "name": "All Terminology",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.terminology.view",
+        "name": "View Terminology",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.terminology.new",
+        "name": "Create Terminology",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.terminology.edit",
+        "name": "Edit Terminology",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.terminology.delete",
+        "name": "Delete Terminology",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "SHARING",
+    "permissions": [
+      {
+        "id": "permission.sharing.all",
+        "name": "All Sharing",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "SPECIFICATION",
+    "permissions": [
+      {
+        "id": "permission.specification.all",
+        "name": "All Specifications",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.specification.view",
+        "name": "View Specification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.specification.new",
+        "name": "Create Specification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.specification.edit",
+        "name": "Edit Specification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.specification.delete",
+        "name": "Delete Specification",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "REQUIREMENTS",
+    "permissions": [
+      {
+        "id": "permission.requirements.all",
+        "name": "Requirements",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "SETTINGS",
+    "permissions": [
+      {
+        "id": "permission.settings.all",
+        "name": "All Settings",
+        "show": true
+      },
+      {
+        "id": "permission.settings.view",
+        "name": "Settings View",
+        "show": true
+      },
+      {
+        "id": "permission.settings.new",
+        "name": "New Settings",
+        "show": true
+      },
+      {
+        "id": "permission.settings.edit",
+        "name": "Edit Settings",
+        "show": true
+      },
+      {
+        "id": "permission.settings.delete",
+        "name": "Delete Settings",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "ACTIVITY",
+    "permissions": [
+      {
+        "id": "permission.activity.all",
+        "name": "All Activities",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "AUDIT",
+    "permissions": [
+      {
+        "id": "permission.qcr.audit",
+        "name": "All Audits",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "ABOUT",
+    "permissions": [
+      {
+        "id": "permission.about.view",
+        "name": "View About",
+        "show": true
+      },
+      {
+        "id": "permission.about.edit",
+        "name": "Edit About",
+        "show": true
+      }
+    ]
+  }
+]

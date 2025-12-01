@@ -1,0 +1,383 @@
+/* Begin production tables */
+CREATE TABLE ERP_PRODUCTTYPE (
+    TYPE_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    NAME                        TEXT                NOT NULL UNIQUE,
+    DESCRIPTION                 TEXT
+);
+
+CREATE TABLE ERP_PRODUCTCATEGORY (
+    CATEGORY_ID                 INTEGER             NOT NULL PRIMARY KEY,
+    BUSINESS_UNIT               INTEGER             REFERENCES ERP_BUSINESSUNIT(BUSINESSUNIT_ID) ON DELETE CASCADE,
+    CATEGORY_CODE               VARCHAR(10)         NOT NULL,
+    PRODUCT_TYPE                INTEGER             NOT NULL REFERENCES ERP_PRODUCTTYPE (TYPE_ID) ON DELETE CASCADE,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                ,
+    PARENTCATEGORY              INTEGER             REFERENCES ERP_PRODUCTCATEGORY (CATEGORY_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_PRODUCT (
+    PRODUCT_ID                  INTEGER             NOT NULL PRIMARY KEY,
+    BUSINESS_UNIT               INTEGER             REFERENCES ERP_BUSINESSUNIT(BUSINESSUNIT_ID) ON DELETE CASCADE,
+    SKU                         TEXT                NOT NULL UNIQUE,
+    CATEGORY                    INTEGER             NOT NULL REFERENCES ERP_PRODUCTCATEGORY (CATEGORY_ID) ON DELETE CASCADE,
+    TYPE                        INTEGER             NOT NULL REFERENCES ERP_PRODUCTTYPE (TYPE_ID) ON DELETE CASCADE,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                ,
+    PICTURE                     BYTEA               ,
+    STATUS                      PRODUCT_STATUS      NOT NULL,
+    UNITS                       VARCHAR(50)         ,
+    UNITPRICE                   DOUBLE PRECISION       ,
+    FOREIGN KEY (PRODUCT_ID)    REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_PRODUCTPRICECHANGEHISTORY (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    PRODUCT_ID                  INTEGER             NOT NULL REFERENCES ERP_PRODUCT (PRODUCT_ID) ON DELETE CASCADE,
+    OLD_PRICE                   DOUBLE PRECISION    NOT NULL,
+    NEW_PRICE                   DOUBLE PRECISION    NOT NULL,
+    CHANGED_DATE                TIMESTAMP           NOT NULL,
+    CHANGED_BY                  INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_PRODUCTDISCOUNT (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    PRODUCT_ID                  INTEGER             NOT NULL REFERENCES ERP_PRODUCT (PRODUCT_ID) ON DELETE CASCADE,
+    DISCOUNT_PERCENT            DOUBLE PRECISION    NOT NULL,
+    START_DATE                  TIMESTAMP           NOT NULL,
+    END_DATE                    TIMESTAMP           NOT NULL,
+    ENTERED_DATE                TIMESTAMP           NOT NULL,
+    ENTERED_BY                  INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_PRODUCTINVENTORY (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    PRODUCT_ID                  INTEGER             NOT NULL REFERENCES ERP_PRODUCT (PRODUCT_ID) ON DELETE CASCADE,
+    INVENTORY                   INTEGER             NOT NULL,
+    THRESHOLD                   INTEGER
+);
+
+CREATE TABLE ERP_PRODUCTINVENTORYHISTORY (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    PRODUCT_ID                  INTEGER             NOT NULL REFERENCES ERP_PRODUCT (PRODUCT_ID) ON DELETE CASCADE,
+    IN_OR_OUT                   INVENTORYRECORD_TYPE          NOT NULL,
+    QUANTITY                    INTEGER             NOT NULL,
+    TIMESTAMP                   TIMESTAMP           NOT NULL,
+    EMPLOYEE                    INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    REFERENCE                   INTEGER
+);
+
+CREATE TABLE ERP_MATERIALTYPE (
+    TYPE_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    NAME                        TEXT                NOT NULL UNIQUE,
+    DESCRIPTION                 TEXT
+);
+
+CREATE TABLE ERP_MATERIALCATEGORY (
+    CATEGORY_ID                 INTEGER             NOT NULL PRIMARY KEY,
+    MATERIAL_TYPE               INTEGER             NOT NULL REFERENCES ERP_MATERIALTYPE (TYPE_ID) ON DELETE CASCADE,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                ,
+    PARENTCATEGORY              INTEGER             REFERENCES ERP_MATERIALCATEGORY (CATEGORY_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_MATERIAL (
+    MATERIAL_ID                 INTEGER             NOT NULL PRIMARY KEY,
+    SKU                         TEXT                NOT NULL,
+    TYPE                        INTEGER             NOT NULL REFERENCES ERP_MATERIALTYPE (TYPE_ID) ON DELETE CASCADE,
+    CATEGORY                    INTEGER             NOT NULL REFERENCES ERP_MATERIALCATEGORY (CATEGORY_ID) ON DELETE CASCADE,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                ,
+    PICTURE                     BYTEA               ,
+    UNITS                       VARCHAR(50)         NOT NULL,
+    FOREIGN KEY (MATERIAL_ID)   REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_MATERIALPROPERTY (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    MATERIAL                    INTEGER             NOT NULL REFERENCES ERP_MATERIAL (MATERIAL_ID) ON DELETE CASCADE,
+    PROPERTY                    TEXT                NOT NULL,
+    LOV                         INTEGER             NOT NULL REFERENCES ERP_LOV (LOV_ID) ON DELETE CASCADE,
+    DEFAULT_VALUE               TEXT
+);
+
+CREATE TABLE ERP_MATERIALPRICECHANGEHISTORY (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    MATERIAL_ID                 INTEGER             NOT NULL REFERENCES ERP_MATERIAL (MATERIAL_ID) ON DELETE CASCADE,
+    OLD_PRICE                   DOUBLE PRECISION       NOT NULL,
+    NEW_PRICE                   DOUBLE PRECISION       NOT NULL,
+    CHANGED_DATE                TIMESTAMP           NOT NULL,
+    CHANGED_BY                  INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE
+);
+
+
+CREATE TABLE ERP_SUPPLIER (
+    SUPPLIER_ID                 INTEGER             NOT NULL PRIMARY KEY,
+    NAME                        TEXT                NOT NULL,
+    CONTACT_PERSON              INTEGER             NOT NULL REFERENCES ERP_PERSON (PERSON_ID) ON DELETE CASCADE,
+    ADDRESS                     INTEGER             REFERENCES ERP_ADDRESS (ADDRESS_ID) ON DELETE CASCADE,
+    OFFICE_PHONE                TEXT                ,
+    OFFICE_FAX                  TEXT                ,
+    OFFICE_EMAIL                TEXT                ,
+    FOREIGN KEY (SUPPLIER_ID)   REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_MATERIALSUPPLIER (
+    SUPPLIER_ID                 INTEGER             NOT NULL REFERENCES ERP_SUPPLIER (SUPPLIER_ID) ON DELETE CASCADE,
+    MATERIAL_ID                  INTEGER             NOT NULL REFERENCES ERP_MATERIAL (MATERIAL_ID) ON DELETE CASCADE,
+    COST                         INTEGER,
+    UNIQUE (SUPPLIER_ID, MATERIAL_ID)
+);
+
+
+CREATE TABLE ERP_MATERIALPURCHASEORDER (
+    ORDER_ID                    INTEGER             NOT NULL PRIMARY KEY,
+    ORDER_TYPE                  ORDER_TYPE          NOT NULL,
+    ORDER_NUMBER                VARCHAR(50)         NOT NULL UNIQUE,
+    SUPPLIER_ID                 INTEGER             NOT NULL REFERENCES ERP_SUPPLIER (SUPPLIER_ID) ON DELETE CASCADE,
+    STATUS                      MATERIALPURCHASEORDER_STATUS NOT NULL,
+    ORDERED_BY                  INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    ORDERED_DATE                TIMESTAMP           NOT NULL,
+    APPROVED_BY                 INTEGER             REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    APPROVED_DATE               TIMESTAMP           ,
+    RECIEVED_BY                 INTEGER             REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    RECIEVED_DATE               TIMESTAMP           ,
+    ORDER_TOTAL                 DOUBLE PRECISION    NOT NULL,
+    NOTES                       TEXT                ,
+    FOREIGN KEY (ORDER_ID)      REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_MATERIALPURCHASEORDERDETAILS (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    ORDER_ID                    INTEGER             NOT NULL REFERENCES ERP_MATERIALPURCHASEORDER (ORDER_ID) ON DELETE CASCADE,
+    MATERIAL_ID                 INTEGER             NOT NULL REFERENCES ERP_MATERIAL (MATERIAL_ID) ON DELETE CASCADE,
+    QUANTITY                    INTEGER             NOT NULL,
+    ISSQUANTITY                 INTEGER             ,
+    UNIT_PRICE                  DOUBLE PRECISION    NOT NULL,
+    ISSUED                      BOOLEAN             DEFAULT FALSE,
+    ITEM_TOTAL                  DOUBLE PRECISION    ,
+    NOTES                       TEXT
+);
+
+
+CREATE TABLE ERP_MATERIALPURCHASEORDERHISTORY (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    ORDER_ID                    INTEGER             NOT NULL REFERENCES ERP_MATERIALPURCHASEORDER (ORDER_ID) ON DELETE CASCADE,
+    OLD_STATUS                  MATERIALPURCHASEORDER_STATUS ,
+    NEW_STATUS                  MATERIALPURCHASEORDER_STATUS NOT NULL,
+    TIMESTAMP                   TIMESTAMP           NOT NULL,
+    NOTES                       TEXT
+);
+
+CREATE TABLE ERP_MATERIALINVENTORY (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    MATERIAL_ID                 INTEGER             NOT NULL REFERENCES ERP_MATERIAL (MATERIAL_ID) ON DELETE CASCADE,
+    INVENTORY                   INTEGER             NOT NULL,
+    THRESHOLD                   INTEGER
+);
+
+CREATE TABLE ERP_MATERIALINVENTORYHISTORY (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    MATERIAL_ID                 INTEGER             NOT NULL REFERENCES ERP_MATERIAL (MATERIAL_ID) ON DELETE CASCADE,
+    IN_OR_OUT                   INVENTORYRECORD_TYPE          NOT NULL,
+    QUANTITY                    INTEGER             NOT NULL,
+    TIMESTAMP                   TIMESTAMP           NOT NULL,
+    MATERIALPO                  INTEGER             REFERENCES ERP_MATERIALPURCHASEORDER(ORDER_ID),
+    EMPLOYEE                    INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_MATERIALDAILYISSUEREPORT (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    MATERIAL_ID                 INTEGER             NOT NULL REFERENCES ERP_MATERIAL (MATERIAL_ID) ON DELETE CASCADE,
+    TIMESTAMP                   DATE                NOT NULL,
+    QUANTITY                    INTEGER             NOT NULL,
+    CONSUMEQTY                  INTEGER,
+    REMAININGQTY                INTEGER
+);
+
+CREATE TABLE ERP_BOM (
+    BOMID                       INTEGER             NOT NULL PRIMARY KEY,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                        ,
+    TYPE                        BOM_TYPE             NOT NULL,
+    OBJ_ID                      INTEGER             NOT NULL
+
+);
+
+CREATE TABLE ERP_BOMITEM (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    BOM                         INTEGER             NOT NULL REFERENCES ERP_BOM (BOMID) ON DELETE CASCADE,
+    ITEM_TYPE                   BOMITEM_TYPE             NOT NULL,
+    ITEM_ID                     INTEGER             NOT NULL,
+    QUANTITY                    INTEGER             NOT NULL
+);
+
+CREATE TABLE ERP_PRODUCTBOM (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    PRODUCT_ID                  INTEGER             NOT NULL REFERENCES ERP_PRODUCT (PRODUCT_ID) ON DELETE CASCADE,
+    MATERIAL_ID                 INTEGER             NOT NULL REFERENCES ERP_MATERIAL (MATERIAL_ID) ON DELETE CASCADE,
+    QUANTITY                    INTEGER             NOT NULL
+
+);
+
+CREATE TABLE ERP_PRODUCTIONORDER (
+    ORDER_ID                    INTEGER             NOT NULL PRIMARY KEY,
+    ORDER_TYPE                  ORDER_TYPE          NOT NULL,
+    ORDER_NUMBER                VARCHAR(50)         NOT NULL UNIQUE,
+    STATUS                      PRODUCTIONORDER_STATUS         NOT NULL,
+    ORDERED_DATE                TIMESTAMP           NOT NULL,
+    ORDERED_BY                  INTEGER             REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    START_DATE                  TIMESTAMP           ,
+    STARTED_BY                  INTEGER             REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    APPROVED_DATE               TIMESTAMP           ,
+    APPROVED_BY                 INTEGER             REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    COMPLETED_DATE              TIMESTAMP           ,
+    COMPLETED_BY                INTEGER              REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    FOREIGN KEY (ORDER_ID)      REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_PROCESS (
+    PROCESS_ID                  INTEGER             NOT NULL PRIMARY KEY,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                ,
+    FOREIGN KEY (PROCESS_ID)    REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_PRODUCTIONORDERITEM (
+    ITEM_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    ORDER_ID                    INTEGER             NOT NULL REFERENCES ERP_PRODUCTIONORDER (ORDER_ID) ON DELETE CASCADE,
+    PRODUCT_ID                  INTEGER             NOT NULL REFERENCES ERP_PRODUCT (PRODUCT_ID) ON DELETE CASCADE,
+    PROCESS                     INTEGER             NOT NULL REFERENCES ERP_PROCESS (PROCESS_ID) ON DELETE CASCADE,
+    QUANTITY                    INTEGER             NOT NULL,
+    BOM                         INTEGER             NOT NULL REFERENCES ERP_BOM (BOMID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_PRODUCTIONITEMBOM (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    PO_ITEM                     INTEGER             NOT NULL REFERENCES ERP_PRODUCTIONORDERITEM (ITEM_ID) ON DELETE CASCADE,
+    MATERIAL                    INTEGER             NOT NULL REFERENCES ERP_MATERIAL (MATERIAL_ID) ON DELETE CASCADE,
+    BOM_ITEM_ID                INTEGER             NOT NULL REFERENCES ERP_BOMITEM (ROWID) ,
+    QUANTITY                    INTEGER             NOT NULL,
+    UNITPRICE                   DOUBLE PRECISION    NOT NULL,
+    ITEM_TOTAL                  DOUBLE PRECISION    NOT NULL
+);
+
+CREATE TABLE ERP_PRODUCTIONORDERITEMMATERIALPROPERTY (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    ITEM                        INTEGER             NOT NULL REFERENCES ERP_PRODUCTIONORDERITEM (ITEM_ID) ON DELETE CASCADE,
+    BOMITEM                     INTEGER             NOT NULL REFERENCES ERP_PRODUCTIONITEMBOM (ROWID) ON DELETE CASCADE,
+    PROPERTY                    INTEGER             NOT NULL REFERENCES ERP_MATERIALPROPERTY (ROWID) ON DELETE CASCADE,
+    VALUE                       TEXT                NOT NULL
+);
+
+CREATE TABLE ERP_PRODUCTIONORDERHISTORY (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    ORDER_ID                    INTEGER             NOT NULL REFERENCES ERP_PRODUCTIONORDER (ORDER_ID) ON DELETE CASCADE,
+    OLD_STATUS                  PRODUCTIONORDER_STATUS ,
+    NEW_STATUS                  PRODUCTIONORDER_STATUS NOT NULL,
+    TIMESTAMP                   TIMESTAMP           NOT NULL,
+    NOTES                       TEXT
+);
+
+CREATE TABLE ERP_WORKSHIFT (
+    SHIFT_ID                    INTEGER             NOT NULL PRIMARY KEY,
+    NAME                        TEXT                NOT NULL,
+    START_TIME                  TIME                NOT NULL,
+    END_TIME                    TIME                NOT NULL
+);
+
+CREATE TABLE ERP_WORKCENTER (
+    WORKCENTER_ID               INTEGER             NOT NULL PRIMARY KEY,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                ,
+    FOREIGN KEY (WORKCENTER_ID) REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_WORKSHIFTEMPLOYEE (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    WORKCENTER                  INTEGER             REFERENCES ERP_WORKCENTER (WORKCENTER_ID) ON DELETE CASCADE,
+    SHIFT                       INTEGER             NOT NULL REFERENCES ERP_WORKSHIFT (SHIFT_ID) ON DELETE CASCADE,
+    EMPLOYEE                    INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_MACHINE (
+    MACHINE_ID                  INTEGER             NOT NULL PRIMARY KEY,
+    WORKCENTER                  INTEGER             NOT NULL REFERENCES ERP_WORKCENTER (WORKCENTER_ID) ON DELETE CASCADE,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                ,
+    FOREIGN KEY (MACHINE_ID)    REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_MACHINESPAREPART (
+    PART_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    MACHINE                     INTEGER             NOT NULL REFERENCES ERP_MACHINE (MACHINE_ID) ON DELETE CASCADE,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                ,
+    FOREIGN KEY (PART_ID)       REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_SPAREPARTSINVENTORY (
+    PART_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    INVENTORY                   INTEGER             NOT NULL
+);
+
+CREATE TABLE ERP_SPAREPARTSINVENTORYHISTORY (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    PART_ID                     INTEGER             NOT NULL REFERENCES ERP_MACHINESPAREPART (PART_ID) ON DELETE CASCADE,
+    IN_OR_OUT                   INVENTORYRECORD_TYPE          NOT NULL,
+    QUANTITY                    INTEGER             NOT NULL,
+    TIMESTAMP                   TIMESTAMP           NOT NULL,
+    EMPLOYEE                    INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE
+);
+
+
+CREATE TABLE ERP_PROCESSSTEP (
+    STEP_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    SEQUENCE_NUMBER             INTEGER             NOT NULL,
+    PROCESS                     INTEGER             NOT NULL REFERENCES ERP_PROCESS (PROCESS_ID) ON DELETE CASCADE,
+    WORKCENTER                  INTEGER             NOT NULL REFERENCES ERP_WORKCENTER (WORKCENTER_ID) ON DELETE CASCADE,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                ,
+    FOREIGN KEY (STEP_ID)       REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_PROCESSINSTANCE (
+    INSTANCE_ID                 INTEGER             NOT NULL PRIMARY KEY,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                ,
+    PRODUCTION_ORDER            INTEGER             NOT NULL REFERENCES ERP_PRODUCTIONORDER (ORDER_ID) ON DELETE CASCADE,
+    ITEM                        INTEGER             NOT NULL REFERENCES ERP_PRODUCTIONORDERITEM (ITEM_ID) ON DELETE CASCADE,
+    FOREIGN KEY (INSTANCE_ID)   REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_PROCESSSTEPINSTANCE (
+    INSTANCE_ID                 INTEGER             NOT NULL PRIMARY KEY,
+    SEQUENCE_NUMBER             INTEGER             NOT NULL,
+    PROCESS                     INTEGER             NOT NULL REFERENCES ERP_PROCESSINSTANCE (INSTANCE_ID) ON DELETE CASCADE,
+    WORKCENTER                  INTEGER             NOT NULL REFERENCES ERP_WORKCENTER (WORKCENTER_ID) ON DELETE CASCADE,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                ,
+    FOREIGN KEY (INSTANCE_ID)   REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_WORKCENTERJOB (
+    JOB_ID                      INTEGER             NOT NULL PRIMARY KEY,
+    PROCESS_STEP                INTEGER             NOT NULL REFERENCES ERP_PROCESSSTEP (STEP_ID) ON DELETE CASCADE,
+    SCHEDULED_DATE              TIMESTAMP           ,
+    START_DATE                  TIMESTAMP           ,
+    FINISH_DATE                 TIMESTAMP           ,
+    STATUS                      JOB_STATUS          NOT NULL,
+    FOREIGN KEY (JOB_ID)        REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+
+CREATE TABLE ERP_WORKCENTERJOBSTATUSHISTORY (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    JOB                         INTEGER             NOT NULL REFERENCES ERP_WORKCENTERJOB (JOB_ID) ON DELETE CASCADE,
+    MODIFIED_DATE               TIMESTAMP           NOT NULL,
+    MODIFIED_BY                 INTEGER             NOT NULL REFERENCES ERP_PERSON (PERSON_ID) ON DELETE CASCADE,
+    OLD_STATUS                  JOB_STATUS          ,
+    NEW_STATUS                  JOB_STATUS          NOT NULL
+);
+
+
+/* End production tables */

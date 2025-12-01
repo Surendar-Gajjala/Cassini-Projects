@@ -1,0 +1,174 @@
+{
+	"systems": [{
+		"system": "Doors",
+		"attributeMapping": [
+			{
+				"systemName": "Cassini.Name",
+				"cassiniName": "Cassini.Name"
+			},
+			{
+				"systemName": "Cassini.Description",
+				"cassiniName": "Cassini.Description"
+			},
+			{
+				"systemName": "Cassini.Number",
+				"cassiniName": "Cassini.Number"
+			},
+			{
+				"systemName": "Cassini.Status",
+				"cassiniName": "Cassini.Status"
+			},
+			{
+				"systemName": "Anforderungstyp",
+				"cassiniName": "Anforderungstyp"
+			},
+			{
+				"systemName": "Anforderungstyp",
+				"cassiniName": "Anforderungstyp"
+			},
+			{
+				"systemName": "Auslegungskriterien",
+				"cassiniName": "Auslegungskriterien"
+			},
+			{
+				"systemName": "Bewegungskorridore",
+				"cassiniName": "Bewegungskorridore"
+			},
+			{
+				"systemName": "Fahrtrichtung",
+				"cassiniName": "Fahrtrichtung"
+			},
+			{
+				"systemName": "IAV-ID",
+				"cassiniName": "IAV-ID"
+			},	
+			{
+				"systemName": "I-Stufe",
+				"cassiniName": "I-Stufe"
+			},
+			{
+				"systemName": "Integrationsstufe",
+				"cassiniName": "Integrationsstufe"
+			},		
+			{
+				"systemName": "Kommentar Autor",
+				"cassiniName": "Kommentar Autor"
+			},
+			{
+				"systemName": "Kommentar Emm!",
+				"cassiniName": "Kommentar Emm!"
+			},
+			{
+				"systemName": "Kommentar Hochbahn",
+				"cassiniName": "Kommentar Hochbahn"
+			},
+			{
+				"systemName": "Kommentar IAV",
+				"cassiniName": "Kommentar IAV"
+			},
+			{
+				"systemName": "Kommentar Siemens",
+				"cassiniName": "Kommentar Siemens"
+			},
+			{
+				"systemName": "Kundgetan",
+				"cassiniName": "Kundgetan"
+			},
+			{
+				"systemName": "Langbeschreibung",
+				"cassiniName": "Langbeschreibung"
+			},
+			{
+				"systemName": "Makroszenario",
+				"cassiniName": "Makroszenario"
+			},
+			{
+				"systemName": "Mikroszanerio-ID",
+				"cassiniName": "Mikroszanerio-ID"
+			},
+			{
+				"systemName": "Mitarbeiter",
+				"cassiniName": "Mitarbeiter"
+			},
+			{
+				"systemName": "nächster Schritt erforderlich von",
+				"cassiniName": "nächster Schritt erforderlich von"
+			},
+			{
+				"systemName": "nächster Schritt erforderlich von",
+				"cassiniName": "nächster Schritt erforderlich von"
+			},
+			{
+				"systemName": "Parameter",
+				"cassiniName": "Parameter"
+			},
+			{
+				"systemName": "Route",
+				"cassiniName": "Route"
+			},
+			{
+				"systemName": "Siemens ID",
+				"cassiniName": "Siemens ID"
+			},
+			{
+				"systemName": "Skizze",
+				"cassiniName": "Skizze"
+			},
+			{
+				"systemName": "Status Autor",
+				"cassiniName": "Status Autor"
+			},
+			{
+				"systemName": "Status Hochbahn",
+				"cassiniName": "Status Hochbahn"
+			},
+			{
+				"systemName": "Status IAV",
+				"cassiniName": "Status IAV"
+			},
+			{
+				"systemName": "Status Siemens",
+				"cassiniName": "Status Siemens"
+			},
+			{
+				"systemName": "Status Objekt HIS",
+				"cassiniName": "Status Objekt HIS"
+			},
+			{
+				"systemName": "Quelle",
+				"cassiniName": "Quelle"
+			},
+			{
+				"systemName": "zuständige AG",
+				"cassiniName": "zuständige AG"
+			},
+			{
+				"systemName": "Anforderungstyp",
+				"cassiniName": "Anforderungstyp"
+			},
+			{
+				"systemName": "Text Attribute",
+				"cassiniName": "Text Attribute"
+			},
+			{
+				"systemName": "List Attribute",
+				"cassiniName": "List Attribute"
+			},
+			{
+				"systemName": "Long Text Attribute",
+				"cassiniName": "Long Text Attribute"
+			},
+			{
+				"systemName": "Rich Text Attribute",
+				"cassiniName": "Rich Text Attribute"
+			},
+			{
+				"systemName": "Szenario-ID",
+				"cassiniName": "Szenario-ID"
+			}
+		],
+		"systemName": "",
+		"defaultSpecType": "Specification",
+		"defaultReqType": "Requirement"
+	}]
+}

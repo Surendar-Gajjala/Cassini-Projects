@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="/app/assets/css/app/desktop/print.css">
+
+</head>
+<body>
+
+<div class="print-template">
+
+    <#list selectedOptions as option>
+        <!--
+        Basic Details
+        -->
+        <#if option == 'Basic'>
+            <div class="row">
+                <div class="col-md-12 opt-head">
+                    <p class="opt">
+                        ${msg("print_basic_title")}</p>
+                </div>
+            </div>
+
+
+            <div class="row row-eq-height">
+                <div class="col-sm-12">
+                    <div class="item-details">
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_name_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if projectData.project.name??>
+                                    <span class="longText">${projectData.project.name}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_description_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if projectData.project.description??>
+                                    <span class="longText">${projectData.project.description}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_created_by_title")} </span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if projectData.project.printPerson??>
+                                    <span class="longText">${projectData.project.printPerson}</span>
+                                </#if>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_project_manager_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if projectData.project.projectManagerPrint??>
+                                    <span class="longText">${projectData.project.projectManagerPrint}</span>
+                                </#if>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_planned_start_date_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if projectData.project.plannedStartDatePrint??>
+                                    <span class="longText">${projectData.project.plannedStartDatePrint}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_planned_finished_date_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if projectData.project.plannedFinishDatePrint??>
+                                    <span class="longText">${projectData.project.plannedFinishDatePrint}</span>
+                                </#if>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_actual_start_date_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if projectData.project.actualStartDatePrint??>
+                                    <span class="longText">${projectData.project.actualStartDatePrint}</span>
+                                </#if>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_actual_finished_date_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if projectData.project.actualFinishDatePrint??>
+                                    <span class="longText">${projectData.project.actualFinishDatePrint}</span>
+                                </#if>
+
+                            </div>
+                        </div>
+
+
+                        <#if projectData.itemCustomAttributes?has_content>
+
+
+                            <#list projectData.itemCustomAttributes as custom>
+                                <div class="row">
+                                    <div class="label col-xs-4 col-sm-3 text-right">
+                                        <#if custom.name??>
+                                            <span class="longText">${custom.name}</span> :
+                                        </#if>
+                                    </div>
+                                    <div class="value col-xs-8 col-sm-9">
+                                        <#if custom.value??>
+                                            <span class="longText">${custom.value}</span>
+                                        </#if>
+                                    </div>
+                                </div>
+                            </#list>
+                        </#if>
+
+
+                    </div>
+                </div>
+            </div>
+        </#if>
+
+
+        <#if option == 'Team'>
+            <div class="row">
+                <div class="col-md-12 opt-head">
+                    <p class="opt">
+                        ${msg("print_team_title")}</p>
+                </div>
+            </div>
+
+            <div class="row row-eq-height printingDiv">
+                <div class="col-sm-12 visible-print">
+                    <div class="row">
+                        <div class="responsive-table">
+
+                            <table class="table table-striped" style="width: 100% !important;"
+                                   id="changes">
+
+                                <thead>
+                                <tr class="noBorder">
+                                    <th class="col-width-150">
+                                        ${msg("print_name_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;">
+                                        ${msg("print_phone_number_title")}
+                                    </th>
+                                    <th class="col-width-150" style="text-align: left !important;">
+                                        ${msg("print_email_title")}
+                                    </th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <#if projectData.persons?has_content>
+                                    <#list  projectData.persons as person>
+                                        <tr>
+                                            <td class="col-width-150">
+                                                <#if person.fullName??>
+                                                    <span>${person.fullName}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if person.phoneMobile??>
+                                                    <span>${person.phoneMobile}</span>
+                                                </#if>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if person.email??>
+                                                    <span>${person.email}</span>
+                                                </#if>
+                                            </td>
+                                        </tr>
+                                    </#list>
+
+                                </#if>
+                                </tbody>
+
+                            </table>
+
+                            <#if !projectData.persons?has_content>
+                                <p class="no-content">${msg("print_no_persons_title")}</p>
+                            </#if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </#if>
+
+        <!--
+       Project Plan
+       -->
+        <#if option == 'Plan'>
+            <div class="row">
+                <div class="col-md-12 opt-head">
+                    <p class="opt">
+                        ${msg("print_plan_title")}</p>
+                </div>
+            </div>
+
+            <div class="row row-eq-height printingDiv">
+                <div class="col-sm-12 visible-print">
+                    <div class="row">
+                        <div class="responsive-table">
+                            <table class="table table-striped" style="width: 100% !important;"
+                                   id="specifications1">
+
+                                <thead>
+                                <tr class="noBorder">
+                                    <th class="col-width-150">
+                                        ${msg("print_name_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_type_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_assigned_to_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_start_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_finish_title")}
+                                    </th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <#if projectData.projectPlan?has_content>
+                                    <#list  projectData.projectPlan as plan>
+                                        <tr>
+                                            <td class="col-width-150">
+                                        <span class="level${plan.level}">
+                                             <#if plan.name??>
+                                                 ${plan.name}
+                                             </#if>
+                                        </span>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if plan.objectType??>
+                                                    <span>${plan.objectType}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if plan.person??>
+                                                    <span>${plan.person.firstName}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if plan.plannedStartDatePrint??>
+                                                    <span>${plan.plannedStartDatePrint}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if plan.plannedFinishDatePrint??>
+                                                    <span>${plan.plannedFinishDatePrint}</span>
+                                                </#if>
+
+                                            </td>
+
+                                        </tr>
+                                    </#list>
+                                </#if>
+                                </tbody>
+                            </table>
+                            <#if !projectData.projectPlan?has_content>
+                                <p class="no-content">${msg("print_no_project_plan_title")}</p>
+                            </#if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </#if>
+
+
+        <!--
+       Project Deliverables
+       -->
+        <#if option == 'Deliverables'>
+            <div class="row">
+                <div class="col-md-12 opt-head">
+                    <p class="opt">
+                        ${msg("print_deliverables_title")}</p>
+                </div>
+            </div>
+
+            <div class="row row-eq-height printingDiv">
+                <div class="col-sm-12 visible-print">
+                    <div class="row">
+                        <div class="responsive-table">
+                            <#if projectData.itemDeliverables?has_content>
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_context_title")}
+                                        </th>
+                                        <th class="col-width-150">
+                                            ${msg("print_context_name_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">Item
+                                            Number
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">Item
+                                            ${msg("print_type_title")}
+                                        </th>
+                                        <th class="col-width-150">
+                                            ${msg("itemname")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_revision_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_lifecycle_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_delivery_status_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if projectData.itemDeliverables?has_content>
+                                        <#list  projectData.itemDeliverables as deliverable>
+                                            <tr>
+                                                <td class="col-width-150" style="text-align: center; !important;">
+                                        <span>
+                                             <#if deliverable.objectType??>
+
+                                                 <#if deliverable.objectType=='PROJECT'>
+                                                     <span>
+                                                      PROJECT
+                                                     </span>
+
+                                                 </#if>
+
+                                                 <#if deliverable.objectType=='PROJECTACTIVITY'>
+                                                     <span>
+                                                      ACTIVITY
+                                                     </span>
+
+                                                 </#if>
+                                                 <#if deliverable.objectType=='PROJECTTASK'>
+                                                     <span>
+                                                      TASK
+                                                     </span>
+
+                                                 </#if>
+                                             </#if>
+                                        </span>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if deliverable.contextName??>
+                                                        <span>${deliverable.contextName}</span>
+                                                    </#if>
+
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if deliverable.item??>
+                                                        <span>${deliverable.item.itemNumber}</span>
+                                                    </#if>
+
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if deliverable.item??>
+                                                        <span>${deliverable.item.itemType.name}</span>
+                                                    </#if>
+
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if deliverable.item??>
+                                                        <span>${deliverable.item.itemName}</span>
+                                                    </#if>
+
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if deliverable.revision??>
+                                                        <span>${deliverable.revision.revision}</span>
+                                                    </#if>
+
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if deliverable.revision??>
+                                                        <span>${deliverable.revision.lifeCyclePhase.phase}</span>
+                                                    </#if>
+
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if deliverable.status??>
+                                                        <span>${deliverable.status}</span>
+                                                    </#if>
+
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                            </#if>
+
+                            <#if projectData.glossaryDeliverables?has_content>
+                                <table class="table table-striped" style="width: 100% !important;"
+                                        >
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_context_title")}
+                                        </th>
+
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            Number
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_type_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_name_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_revision_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_lifecycle_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if projectData.glossaryDeliverables?has_content>
+                                        <#list  projectData.glossaryDeliverables as deliverable>
+                                            <tr>
+                                                <td class="col-width-150" style="text-align: center; !important;">
+                                        <span>
+                                             <#if deliverable.objectType??>
+
+                                                 <#if deliverable.objectType=='PROJECT'>
+                                                     <span>
+                                                      --
+                                                     </span>
+
+                                                 </#if>
+
+                                                 <#if deliverable.objectType=='PROJECTACTIVITY'>
+                                                     <span>
+                                                      ACTIVITY
+                                                     </span>
+
+                                                 </#if>
+                                                 <#if deliverable.objectType=='PROJECTTASK'>
+                                                     <span>
+                                                      TASK
+                                                     </span>
+
+                                                 </#if>
+                                             </#if>
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if deliverable.glossary??>
+                                                        <span>${deliverable.glossary.number}</span>
+                                                    </#if>
+
+                                                </td>
+                                                <td>
+                                                    <span>${msg("print_terminology_title")}</span>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if deliverable.glossary??>
+                                                        <span>${deliverable.glossary.defaultDetail.name}</span>
+                                                    </#if>
+
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if deliverable.glossary??>
+                                                        <span>${deliverable.glossary.revision}</span>
+                                                    </#if>
+
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if deliverable.glossary??>
+                                                        <span>${deliverable.glossary.lifeCyclePhase.phase}</span>
+                                                    </#if>
+
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                            </#if>
+
+                            <#if projectData.specificationDeliverables?has_content>
+                                <table class="table table-striped" style="width: 100% !important;"
+                                        >
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_context_title")}
+                                        </th>
+
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            Number
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_type_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_name_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_revision_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_lifecycle_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if projectData.specificationDeliverables?has_content>
+                                        <#list  projectData.specificationDeliverables as deliverable>
+                                            <tr>
+                                                <td class="col-width-150" style="text-align: center; !important;">
+                                        <span>
+                                             <#if deliverable.objectType??>
+
+                                                 <#if deliverable.objectType=='PROJECT'>
+                                                     <span>
+                                                      --
+                                                     </span>
+
+                                                 </#if>
+
+                                                 <#if deliverable.objectType=='PROJECTACTIVITY'>
+                                                     <span>
+                                                      ACTIVITY
+                                                     </span>
+
+                                                 </#if>
+                                                 <#if deliverable.objectType=='PROJECTTASK'>
+                                                     <span>
+                                                      TASK
+                                                     </span>
+
+                                                 </#if>
+                                             </#if>
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if deliverable.specification??>
+                                                        <span>${deliverable.specification.objectNumber}</span>
+                                                    </#if>
+
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if deliverable.specification??>
+                                                        <span>${deliverable.specification.type.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if deliverable.specification??>
+                                                        <span>${deliverable.specification.name}</span>
+                                                    </#if>
+
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if deliverable.specification??>
+                                                        <span>${deliverable.specification.revision}</span>
+                                                    </#if>
+
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if deliverable.specification??>
+                                                        <span>${deliverable.specification.lifecyclePhase.phase}</span>
+                                                    </#if>
+
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                            </#if>
+                            <#if projectData.requirementDeliverables?has_content>
+                                <table class="table table-striped" style="width: 100% !important;"
+                                        >
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_context_title")}
+                                        </th>
+
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            Number
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_type_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_name_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_version_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_status_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if projectData.requirementDeliverables?has_content>
+                                        <#list  projectData.requirementDeliverables as deliverable>
+                                            <tr>
+                                                <td class="col-width-150" style="text-align: center; !important;">
+                                        <span>
+                                             <#if deliverable.objectType??>
+
+                                                 <#if deliverable.objectType=='PROJECT'>
+                                                     <span>
+                                                      --
+                                                     </span>
+
+                                                 </#if>
+
+                                                 <#if deliverable.objectType=='PROJECTACTIVITY'>
+                                                     <span>
+                                                      ACTIVITY
+                                                     </span>
+
+                                                 </#if>
+                                                 <#if deliverable.objectType=='PROJECTTASK'>
+                                                     <span>
+                                                      TASK
+                                                     </span>
+
+                                                 </#if>
+                                             </#if>
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if deliverable.requirement??>
+                                                        <span>${deliverable.requirement.objectNumber}</span>
+                                                    </#if>
+
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if deliverable.requirement??>
+                                                        <span>${deliverable.requirement.type.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if deliverable.requirement??>
+                                                        <span>${deliverable.requirement.name}</span>
+                                                    </#if>
+
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if deliverable.requirement??>
+                                                        <span>${deliverable.requirement.version}</span>
+                                                    </#if>
+
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if deliverable.requirement??>
+                                                        <span>${deliverable.requirement.status}</span>
+                                                    </#if>
+
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                            </#if>
+                            <br/>
+                            <#if !projectData.itemDeliverables?has_content && !projectData.glossaryDeliverables?has_content && !projectData.specificationDeliverables?has_content && !projectData.requirementDeliverables?has_content>
+                                <p class="no-content"> ${msg("print_no_deliverables_title")}</p>
+                            </#if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </#if>
+
+        <#if option == 'Reference Items'>
+            <div class="row">
+                <div class="col-md-12 opt-head">
+                    <p class="opt">
+                        ${msg("print_reference_items_title")}</p>
+                </div>
+            </div>
+
+            <div class="row row-eq-height printingDiv">
+                <div class="col-sm-12 visible-print">
+                    <div class="row">
+                        <div class="responsive-table">
+
+                            <table class="table table-striped" style="width: 100% !important;"
+                                    >
+
+                                <thead>
+                                <tr class="noBorder">
+                                    <th class="col-width-150" style="text-align: left;width: 150px !important;">
+                                        ${msg("print_item_number_title")}
+                                    </th>
+                                    <th class="col-width-150" style="width:1px !important;text-align: left">
+                                        ${msg("print_item_type_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;">
+                                        ${msg("itemname")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;">
+                                        ${msg("print_revision_title")}
+                                    </th>
+                                    <th class="col-width-150" style="width:1px !important;text-align: left">
+                                        ${msg("print_lifecycle_title")}
+                                    </th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <#if projectData.projectRefItems?has_content>
+                                    <#list  projectData.projectRefItems as item>
+                                        <tr>
+                                            <td class="col-width-150" style="width: 150px !important;">
+                                                <#if item.plmItem??>
+                                                    <span>${item.plmItem.itemNumber}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if item.plmItem??>
+                                                    <span>${item.plmItem.itemType.name}</span>
+                                                </#if>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if item.plmItem??>
+                                                    <span>${item.plmItem.itemName}</span>
+                                                </#if>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if item.item??>
+                                                    <span>${item.item.revision}</span>
+                                                </#if>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if item.item??>
+                                                    <span>${item.item.lifeCyclePhase.phase}</span>
+                                                </#if>
+                                            </td>
+                                        </tr>
+                                    </#list>
+
+                                </#if>
+                                </tbody>
+
+                            </table>
+
+                            <#if !projectData.projectRefItems?has_content>
+                                <p class="no-content">${msg("print_no_items_title")}</p>
+                            </#if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </#if>
+
+        <#if option == 'Requirements'>
+            <div class="row">
+                <div class="col-md-12 opt-head">
+                    <p class="opt">
+                        ${msg("print_requirements_title")}</p>
+                </div>
+            </div>
+
+            <div class="row row-eq-height printingDiv">
+                <div class="col-sm-12 visible-print">
+                    <div class="row">
+                        <div class="responsive-table">
+
+                            <table class="table table-striped" style="width: 100% !important;"
+                                    >
+
+                                <thead>
+                                <tr class="noBorder">
+                                    <th class="col-width-150" style="text-align: left;width: 150px !important;">
+                                        ${msg("print_requirement_number_title")}
+                                    </th>
+                                    <th class="col-width-150" style="width:1px !important;text-align: left">
+                                        ${msg("print_type_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;">
+                                        ${msg("print_name_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;">
+                                        ${msg("print_revision_title")}
+                                    </th>
+                                    <th class="col-width-150" style="width:1px !important;text-align: left">
+                                        ${msg("print_lifecycle_title")}
+                                    </th>
+                                    <th class="col-width-150" style="width:1px !important;text-align: left">
+                                        ${msg("print_requirement_owner_title")}
+                                    </th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <#if projectData.projectRequirements?has_content>
+                                    <#list  projectData.projectRequirements as requirement>
+                                        <tr>
+                                            <td class="col-width-150" style="width: 150px !important;">
+                                                <#if requirement.reqDocument.master.number??>
+                                                    <span>${requirement.reqDocument.master.number}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if requirement.reqDocument.master.type.name??>
+                                                    <span>${requirement.reqDocument.master.type.name}</span>
+                                                </#if>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if requirement.reqDocument.master.name??>
+                                                    <span>${requirement.reqDocument.master.name}</span>
+                                                </#if>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if requirement.reqDocument.revision??>
+                                                    <span>${requirement.reqDocument.revision}</span>
+                                                </#if>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if requirement.reqDocument.lifeCyclePhase.phase??>
+                                                    <span>${requirement.reqDocument.lifeCyclePhase.phase}</span>
+                                                </#if>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if requirement.reqDocument.owner.fullName??>
+                                                    <span>${requirement.reqDocument.owner.fullName}</span>
+                                                </#if>
+                                            </td>
+                                        </tr>
+                                    </#list>
+
+                                </#if>
+                                </tbody>
+
+                            </table>
+
+                            <#if !projectData.projectRequirements?has_content>
+                                <p class="no-content">${msg("print_no_requirements_title")}</p>
+                            </#if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </#if>
+    </#list>
+</div>
+</body>
+</html>

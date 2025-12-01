@@ -1,0 +1,418 @@
+[
+  {
+    "id": 1,
+    "name": "ECRs ",
+    "description": "To view ECR from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "ecr",
+    "privilege": "view"
+  },
+  {
+    "id": 2,
+    "name": "New ECR",
+    "description": "To create New ECR from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "ecr",
+    "privilege": "create"
+  },
+  {
+    "id": 3,
+    "name": "DCRs",
+    "description": "To view DCR from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "dcr",
+    "privilege": "view"
+  },
+  {
+    "id": 4,
+    "name": "New DCR",
+    "description": "To create New DCR from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "dcr",
+    "privilege": "create"
+  },
+  {
+    "id": 5,
+    "name": "ECOs",
+    "description": "To view ECO from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "eco",
+    "privilege": "view"
+  },
+  {
+    "id": 6,
+    "name": "New ECO",
+    "description": "To create New ECO from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "eco",
+    "privilege": "create"
+  },
+  {
+    "id": 7,
+    "name": "DCOs",
+    "description": "To view DCO from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "dco",
+    "privilege": "view"
+  },
+  {
+    "id": 8,
+    "name": "New DCO ",
+    "description": "To create New DCO from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "dco",
+    "privilege": "create"
+  },
+  {
+    "id": 9,
+    "name": "MCOs",
+    "description": "To view MCO from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "mco",
+    "privilege": "view"
+  },
+  {
+    "id": 10,
+    "name": "New MCO",
+    "description": "To create New MCO from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "mco",
+    "privilege": "create"
+  },
+  {
+    "id": 11,
+    "name": "Items",
+    "description": "To view Items from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "item",
+    "privilege": "view"
+  },
+  {
+    "id": 12,
+    "name": "New Item",
+    "description": "To create New Item from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "item",
+    "privilege": "create"
+  },
+  {
+    "id": 13,
+    "name": "Manufacturer Parts",
+    "description": "To view Manufacturer Parts from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "manufacturerpart",
+    "privilege": "view"
+  },
+  {
+    "id": 14,
+    "name": "New Manufacturer Part ",
+    "description": "To create New Manufacturer Part from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "manufacturerpart",
+    "privilege": "create"
+  },
+  {
+    "id": 15,
+    "name": "Specifications",
+    "description": "To view Specifications from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "pgcspecification",
+    "privilege": "view"
+  },
+  {
+    "id": 16,
+    "name": "New Specification",
+    "description": "To create New Specification from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "pgcspecification",
+    "privilege": "create"
+  },
+  {
+    "id": 17,
+    "name": "Declarations",
+    "description": "To view Declarations from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "pgcdeclaration",
+    "privilege": "view"
+  },
+  {
+    "id": 18,
+    "name": "New Declaration",
+    "description": "To create New Declaration from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "pgcdeclaration",
+    "privilege": "create"
+  },
+  {
+    "id": 19,
+    "name": "Assets ",
+    "description": "To view Assets from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "mroasset",
+    "privilege": "view"
+  },
+  {
+    "id": 20,
+    "name": "New Asset",
+    "description": "To create New Asset from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "mroasset",
+    "privilege": "create"
+  },
+  {
+    "id": 21,
+    "name": "Work Requests",
+    "description": "To view Work Requests from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "mroworkrequest",
+    "privilege": "view"
+  },
+  {
+    "id": 22,
+    "name": "New Work Request ",
+    "description": "To create New Work Request from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "mroworkrequest",
+    "privilege": "create"
+  },
+  {
+    "id": 23,
+    "name": "Work Orders",
+    "description": "To view Work Orders from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "mroworkorder",
+    "privilege": "view"
+  },
+  {
+    "id": 24,
+    "name": "New Work Order",
+    "description": "To create New Work Order from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "mroworkorder",
+    "privilege": "create"
+  },
+  {
+    "id": 25,
+    "name": "MBOM",
+    "description": "To view MBOM from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "mbom",
+    "privilege": "view"
+  },
+  {
+    "id": 26,
+    "name": "Operations",
+    "description": "To view Operations from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "operation",
+    "privilege": "view"
+  },
+  {
+    "id": 27,
+    "name": "New Operation",
+    "description": "To create New Operation from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "operation",
+    "privilege": "create"
+  },
+  {
+    "id": 28,
+    "name": "Production Orders",
+    "description": "To view Production Orders from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "productionorder",
+    "privilege": "view"
+  },
+  {
+    "id": 29,
+    "name": "New Production Order",
+    "description": "To create New Production Order from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "productionorder",
+    "privilege": "create"
+  },
+  {
+    "id": 30,
+    "name": "Maintenance Plans",
+    "description": "To view Maintenance Plan from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "mromaintenanceplan",
+    "privilege": "view"
+  },
+  {
+    "id": 31,
+    "name": "PRs",
+    "description": "To view PR from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "problemreport",
+    "privilege": "view"
+  },
+  {
+    "id": 32,
+    "name": "New PR",
+    "description": "To create New PR from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "problemreport",
+    "privilege": "create"
+  },
+  {
+    "id": 33,
+    "name": "QCRs",
+    "description": "To view QCR from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "qcr",
+    "privilege": "view"
+  },
+  {
+    "id": 34,
+    "name": "New QCR",
+    "description": "To create New QCR from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "qcr",
+    "privilege": "create"
+  },
+  {
+    "id": 35,
+    "name": "Projects",
+    "description": "To view Projects from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "project",
+    "privilege": "view"
+  },
+  {
+    "id": 36,
+    "name": "New Project",
+    "description": "To create New Project from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "project",
+    "privilege": "create"
+  },
+  {
+    "id": 37,
+    "name": "Requirement Documents",
+    "description": "To view Requirement Documents from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "requirementdocument",
+    "privilege": "view"
+  },
+  {
+    "id": 38,
+    "name": "New Requirement Document",
+    "description": "To create New Requirement Document from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "requirementdocument",
+    "privilege": "create"
+  },
+  {
+    "id": 39,
+    "name": "Inspection Plans",
+    "description": "To view Inspection Plans from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "inspectionplan",
+    "privilege": "view"
+  },
+  {
+    "id": 40,
+    "name": "New Inspection Plan",
+    "description": "To create New Inspection Plan from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "inspectionplan",
+    "privilege": "create"
+  },
+  {
+    "id": 41,
+    "name": "Inspections",
+    "description": "To view Inspections  from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "inspection",
+    "privilege": "view"
+  },
+  {
+    "id": 42,
+    "name": "New Inspection",
+    "description": "To create New Inspection from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "inspection",
+    "privilege": "create"
+  },
+  {
+    "id": 43,
+    "name": "NCRs",
+    "description": "To view NCR from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "ncr",
+    "privilege": "view"
+  },
+  {
+    "id": 44,
+    "name": "New NCR",
+    "description": "To create New NCR from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "ncr",
+    "privilege": "create"
+  },
+  {
+    "id": 45,
+    "name": "Manufacturers",
+    "description": "To view Manufacturers from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "manufacturer",
+    "privilege": "view"
+  },
+  {
+    "id": 46,
+    "name": "New Manufacturer",
+    "description": "To create New Manufacturer from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "manufacturer",
+    "privilege": "create"
+  },
+  {
+    "id": 47,
+    "name": "Suppliers",
+    "description": "To view Suppliers from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "mfrsupplier",
+    "privilege": "view"
+  },
+  {
+    "id": 48,
+    "name": "New Supplier",
+    "description": "To create New Supplier from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "mfrsupplier",
+    "privilege": "create"
+  },
+  {
+    "id": 49,
+    "name": "Workflows",
+    "description": "To view workflows from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "plmworkflow",
+    "privilege": "view"
+  },
+  {
+    "id": 50,
+    "name": "New Workflow",
+    "description": "To create new workflow from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "plmworkflow",
+    "privilege": "create"
+  },
+  {
+    "id": 51,
+    "name": "Vaults",
+    "description": "To view vaults from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "pdmvault",
+    "privilege": "view"
+  },
+  {
+    "id": 52,
+    "name": "New Vault",
+    "description": "To create New Vault from Home Widgets",
+    "objectType": "homewidget",
+    "subType": "pdmvault",
+    "privilege": "create"
+  }
+]

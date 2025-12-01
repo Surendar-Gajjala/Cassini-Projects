@@ -1,0 +1,74 @@
+permission.all,All Permissions,All Permissions
+permission.crm.all,All CRM,All CRM
+permission.crm.customer.all,All Customer,All Customer
+permission.crm.customer.create,Create Customer,Create Customer
+permission.crm.customer.view,View Customer,View Customer
+permission.crm.customer.delete,Delete Customer,Delete Customer
+permission.crm.customer.update,Update Customer,Update Customer
+permission.crm.order.all,All Order,All Order
+permission.crm.order.create,Create Order,Create Order
+permission.crm.order.view,View Order,View Order
+permission.crm.order.process,Process Order,Process Order
+permission.crm.order.delete,Delete Order,Delete Order
+permission.crm.order.update,Update Order,Update Order
+permission.crm.order.approve,Approve Order,Approve Order
+permission.crm.order.dispatch,Dispatch Order,Dispatch Order
+permission.crm.order.cancel,Cancel Order,Cancel Order
+permission.crm.salesrep.all,All Sales Rep,All Sales Rep
+permission.crm.salesrep.create,Create Sales Rep,Create Sales Rep
+permission.crm.salesrep.view,View Sales Rep,View Sales Rep
+permission.crm.salesrep.delete,Delete Sales Rep,Delete Sales Rep
+permission.crm.salesrep.update,Update Sales Rep,Update Sales Rep
+permission.crm.salesregion.all,All Sales Region,All Sales Region
+permission.crm.salesregion.create,Create Sales Region,Create Sales Region
+permission.crm.salesregion.view,View Sales Region,View Sales Region
+permission.crm.salesregion.delete,Delete Sales Region,Delete Sales Region
+permission.crm.salesregion.update,Update Sales Region,Update Sales Region
+permission.crm.return.all,All Return,All Return
+permission.crm.return.create,Create Return,Create Return
+permission.crm.return.view,View Return,View Return
+permission.crm.return.delete,Delete Return,Delete Return
+permission.crm.return.update,Update Return,Update Return
+permission.hrm.all,All HRM,All HRM
+permission.hrm.employee.all,All Employee,All Employee
+permission.hrm.employee.create,Create Employee,Create Employee
+permission.hrm.employee.view,View Employee,View Employee
+permission.hrm.employee.delete,Delete Employee,Delete Employee
+permission.hrm.employee.update,Update Employee,Update Employee
+permission.hrm.payroll.all,All Payroll,All Payroll
+permission.hrm.payroll.create,Create Payroll,Create Payroll
+permission.hrm.payroll.view,View Payroll,View Payroll
+permission.hrm.payroll.delete,Delete Payroll,Delete Payroll
+permission.hrm.payroll.update,Update Payroll,Update Payroll
+permission.production.all,All Production,All Production
+permission.production.product.all,All Product,All Product
+permission.production.product.create,Create Product,Create Product
+permission.production.product.view,View Product,View Product
+permission.production.product.delete,Delete Product,Delete Product
+permission.production.product.update,Update Product,Update Product
+permission.production.material.all,All Material,All Material
+permission.production.material.create,Create Material,Create Material
+permission.production.material.view,View Material,View Material
+permission.production.material.delete,Delete Material,Delete Material
+permission.production.material.update,Update Material,Update Material
+permission.production.inventory.all,All Inventory,All Inventory
+permission.production.inventory.create,Create Inventory,Create Inventory
+permission.production.inventory.view,View Inventory,View Inventory
+permission.production.inventory.delete,Delete Inventory,Delete Inventory
+permission.production.inventory.update,Update Inventory,Update Inventory
+permission.production.productionorder.all,All Production Order,All Production Order
+permission.production.productionorder.create,Create Production Order,Create Production Order
+permission.production.productionorder.view,View Production Order,View Production Order
+permission.production.productionorder.delete,Delete Production Order,Delete Production Order
+permission.production.productionorder.update,Update Production Order,Update Production Order
+permission.security.all,All Admin,All Admin
+permission.security.login.all,All Login,All Login
+permission.security.login.create,Create Login, Create Login
+permission.security.login.view,View Login,View Login
+permission.security.login.delete,Delete Login,Delete Login
+permission.security.login.update,Update Login, Update Login
+permission.security.role.all,All Role,All Role
+permission.security.role.create,Create Role,Create Role
+permission.security.role.view,View Role,View Role
+permission.security.role.delete,Delete Role,Delete Role
+permission.security.role.update,Update Role,Update Role

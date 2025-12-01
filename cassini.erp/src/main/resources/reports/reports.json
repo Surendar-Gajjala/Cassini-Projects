@@ -1,0 +1,134 @@
+[
+  {
+      "id": "reports.crm",
+      "name": "CRM",
+      "description": "CRM related reports",
+      "reports": [
+          {
+              "id": "reports.crm.customers-per-region",
+              "name": "Customers per region (top 10)",
+              "description": "Shows top ten regions with most customers",
+              "reportFile": "classpath:reports/crm/customersPerRegion.groovy",
+              "viewType": "chart.bar.vertical",
+              "properties": {
+                  "barColors": ["#5BC0DE"],
+                  "labels": ["Customers"]
+              }
+          },
+          {
+              "id": "reports.crm.customers-per-salesrep",
+              "name": "Sales reps with most customers (top 10)",
+              "description": "Shows top ten sales reps with most customers",
+              "reportFile": "classpath:reports/crm/customersPerSalesRep.groovy",
+              "viewType": "chart.bar.vertical",
+              "properties": {
+                  "barColors": ["#028AF3"],
+                  "labels": ["Customers"]
+              }
+          },
+          {
+              "id": "reports.crm.orders-per-region",
+              "name": "Top ten regions (by sales)",
+              "description": "Shows top ten regions with most sales",
+              "reportFile": "classpath:reports/crm/ordersPerRegion.groovy",
+              "viewType": "chart.bar.vertical",
+              "properties": {
+                  "barColors": ["#1CAF9A"],
+                  "labels": ["Sales"]
+              }
+          },
+          {
+              "id": "reports.crm.customers-per-salesrep",
+              "name": "Top ten sales reps (by sales)",
+              "description": "Shows top ten sales reps with most sales",
+              "reportFile": "classpath:reports/crm/ordersPerSalesRep.groovy",
+              "viewType": "chart.bar.vertical",
+              "properties": {
+                  "barColors": ["#D9534F"],
+                  "labels": ["Sales"]
+              }
+          },
+          {
+              "id": "reports.crm.sales-by-status",
+              "name": "Sales by status",
+              "description": "Shows sales by status",
+              "reportFile": "classpath:reports/crm/salesByStatus.groovy",
+              "viewType": "chart.bar.vertical",
+              "properties": {
+                  "barColors": ["#778899"],
+                  "labels": ["Sales"]
+              }
+          },
+          {
+              "id": "reports.crm.order-count-by-status",
+              "name": "Order count by status",
+              "description": "Shows counts of orders by status",
+              "reportFile": "classpath:reports/crm/ordersByStatus.groovy",
+              "viewType": "chart.bar.vertical",
+              "properties": {
+                  "barColors": ["#F0AD4E"],
+                  "labels": ["Orders"]
+              }
+          },
+          {
+              "id": "reports.crm.order-count-by-status-and-type",
+              "name": "Order count by status and type",
+              "description": "Shows counts of orders by status and type",
+              "reportFile": "classpath:reports/crm/ordersByStatusAndType.groovy",
+              "viewType": "none",
+              "properties": {
+                  "barColors": ["#F0AD4E"],
+                  "labels": ["Sales"]
+              }
+          },
+          {
+              "id": "reports.crm.product-vs-sample-sales-by-customer",
+              "name": "Product vs sample sales by customer",
+              "description": "Product vs sample sales by customer",
+              "reportFile": "classpath:reports/crm/productVsSampleSalesByCustomer.groovy",
+              "viewType": "none",
+              "properties": {
+
+              }
+          },
+          {
+              "id": "reports.crm.daily-sales-report",
+              "name": "Daily Sales Report",
+              "description": "Daily sales report",
+              "reportFile": "classpath:reports/crm/dailySalesReport.groovy",
+              "viewType": "none",
+              "properties": {
+
+              }
+          },
+          {
+              "id": "reports.crm.book-sales-report",
+              "name": "Book Sales Report",
+              "description": "Book sales report",
+              "reportFile": "classpath:reports/crm/bookSalesReport.groovy",
+              "viewType": "none",
+              "properties": {
+
+              }
+          }
+      ]
+  },
+  {
+      "id": "reports.hrm",
+      "name": "HRM",
+      "description": "HRM related reports",
+      "reports": [
+          {
+              "id": "reports.hrm.employees-per-department",
+              "name": "Employees by department",
+              "description": "Show employees per department",
+              "reportFile": "classpath:reports/hrm/employeesPerDepartment.groovy",
+              "viewType": "chart.pie",
+              "properties": {
+                  "barColors": ["#5BC0DE"],
+                  "labels": ["Customers"]
+              }
+          }
+      ]
+  }
+]

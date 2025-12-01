@@ -1,0 +1,3 @@
+<object-workflow object-type="PROJECT" can-start-workflow="true"
+                 can-finish-workflow="true" object="projectInfo"
+                 permission="(hasPermission('project','edit')  || projectTeamAccess ==true || loginPersonDetails.isAdmin || loginPersonDetails.person.id == projectInfo.projectManager)&& (!loginPersonDetails.external || sharedProjectPermission == 'WRITE')"></object-workflow>

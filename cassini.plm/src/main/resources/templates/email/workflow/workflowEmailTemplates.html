@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Workflow Approval</title>
+    <link rel="stylesheet" type="text/css" href="${host}/app/assets/css/desktop.imports.css">
+    <link rel="stylesheet" type="text/css" href="${host}/app/assets/css/app/desktop/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <style>
+        .row {
+            margin: 0;
+        }
+
+        td.field-value {
+            font-size: 17px;
+            font-family: "Open Sans" !important;
+            font-weight: 300;
+        }
+
+        table td {
+            padding: 10px;
+            vertical-align: top !important;
+        }
+
+        td.text-right {
+            width: 150px;
+        }
+
+        body {
+            font-family: "Open Sans" !important;
+        }
+
+        .items-table {
+            width: 100%;
+        }
+
+        .items-table th {
+            font-weight: 400;
+        }
+
+        .items-table thead tr th:nth-child(2), th:nth-child(4) {
+            text-align: center;
+        }
+
+        .items-table tbody tr td:nth-child(2), td:nth-child(4) {
+            text-align: center;
+        }
+
+        .items-table tbody tr {
+            border-bottom: 1px dotted #ddd;
+        }
+
+        .timeline {
+            width: 250px;
+        }
+
+        .timeline::before {
+            left: -80px;
+        }
+
+        .timeline .flag {
+            cursor: pointer;
+        }
+
+        .timeline .time-wrapper {
+            margin-top: 1px;
+        }
+
+        .timeline .time {
+            font-size: 12px;
+            padding: 6px;
+        }
+
+        .notification-msg {
+            padding: 20px;
+            color: #fff;
+            background-color: #1CAF9A;
+            font-weight: 300;
+            font-size: 22px;
+            font-family: "Open Sans" !important;
+        }
+    </style>
+</head>
+<body style="padding: 50px;">
+<div class="row">
+    <#if attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'ECO'>
+        <#include "../workflow/changes/ecoWorkflowApprover.html">
+            <#elseif attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'DCO'>
+                <#include "../workflow/changes/dcoWorkflowApprover.html">
+                    <#elseif attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'DCR'>
+                        <#include "../workflow/changes/dcrWorkflowApprover.html">
+                            <#elseif attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'ECR'>
+                                <#include "../workflow/changes/ecrWorkflowApprover.html">
+                                    <#elseif attachedObject.objectType.name() == 'OEMPARTMCO' && attachedObject.changeType == 'MCO'>
+                                        <#include "../workflow/changes/mcoWorkflowApprover.html">
+                                            <#elseif attachedObject.objectType.name() == 'ITEMMCO' && attachedObject.changeType == 'MCO'>
+                                                <#include "../workflow/changes/mcoWorkflowApprover.html">
+                                                    <#elseif attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'DEVIATION'>
+                                                        <#include "../workflow/changes/varianceWorkflowApprover.html">
+                                                            <#elseif attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'WAIVER'>
+                                                                <#include "../workflow/changes/varianceWorkflowApprover.html">
+                                                                    <#elseif attachedObject.objectType.name() == 'PROBLEMREPORT'>
+                                                                        <#include "../workflow/quality/prWorkflowApprover.html">
+                                                                            <#elseif attachedObject.objectType.name() == 'NCR'>
+                                                                                <#include "../workflow/quality/ncrWorkflowApprover.html">
+                                                                                    <#elseif attachedObject.objectType.name() == 'INSPECTIONPLANREVISION'>
+                                                                                        <#include "../workflow/quality/inspectionPlanWorkflowApprover.html">
+                                                                                            <#elseif attachedObject.objectType.name() == 'QCR'>
+                                                                                                <#include "../workflow/quality/qcrWorkflowApprover.html">
+                                                                                                    <#elseif attachedObject.objectType.name() == 'ITEMINSPECTION'
+                                                                                                            || attachedObject.objectType.name() == 'MATERIALINSPECTION'>
+                                                                                                        <#include "../workflow/quality/inspectionWorkflowApprover.html">
+                                                                                                            <#elseif attachedObject.objectType.name() == 'ITEM'>
+                                                                                                                <#include "../workflow/item/itemWorkflowApprover.html">
+                                                                                                                    <#elseif attachedObject.objectType.name() == 'PROJECT' || attachedObject.objectType.name() == 'PROJECTACTIVITY' || attachedObject.objectType.name() == 'PROJECTTASK'>
+                                                                                                                        <#include "../workflow/item/projectWorkflowApprover.html">
+                                                                                                                            <#elseif attachedObject.objectType.name() == 'MANUFACTURER'>
+                                                                                                                                <#include "../workflow/item/mfrWorkflowApprover.html">
+                                                                                                                                    <#elseif attachedObject.objectType.name() == 'MANUFACTURERPART'>
+                                                                                                                                        <#include "../workflow/item/mfrPartWorkflowApprover.html">
+                                                                                                                                            <#elseif attachedObject.objectType.name() == 'SPECIFICATION' || attachedObject.objectType.name() == 'REQUIREMENT' >
+                                                                                                                                                <#include "../workflow/item/requirementWorkflowApprover.html">
+                                                                                                                                                    <#elseif attachedObject.objectType.name() == 'MROWORKORDER' >
+                                                                                                                                                        <#include "../workflow/item/workOrderWorkflowApprover.html">
+                                                                                                                                                            <#elseif attachedObject.objectType.name() == 'PLMNPR' >
+                                                                                                                                                                <#include "../workflow/item/nprWorkflowApprover.html">
+                                                                                                                                                                    <#elseif attachedObject.objectType.name() == 'CUSTOMOBJECT' >
+                                                                                                                                                                        <#include "../workflow/item/customObjectWorkflowApprover.html">
+                                                                                                                                                                            <#elseif attachedObject.objectType.name() == 'PROGRAM' >
+                                                                                                                                                                                <#include "../workflow/item/programWorkflowApprover.html">
+                                                                                                                                                                                    <#elseif attachedObject.objectType.name() == 'SUPPLIERAUDIT' >
+                                                                                                                                                                                        <#include "../workflow/quality/supplierAuditWorkflowApprover.html">
+
+
+    </#if>
+</div>
+</body>
+</html>

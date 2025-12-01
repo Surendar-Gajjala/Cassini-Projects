@@ -1,0 +1,77 @@
+define(
+    [
+        'app/assets/bower_components/cassini-platform/app/desktop/modules/login/login.routes',
+        'app/desktop/modules/main/main.routes',
+        'app/desktop/modules/home/home.routes',
+        'app/desktop/modules/pm/pm.routes',
+        'app/desktop/modules/dm/dm.routes',
+        'app/desktop/modules/media/projectMedia.routes',
+        'app/desktop/modules/tm/tm.routes',
+        'app/desktop/modules/im/im.routes',
+        'app/desktop/modules/issues/issues.routes',
+        'app/desktop/modules/site/sites.routes',
+        'app/desktop/modules/proc/proc.routes',
+        'app/desktop/modules/col/col.routes',
+        'app/desktop/modules/reporting/reporting.routes',
+        'app/desktop/modules/settings/settings.routes',
+        'app/desktop/modules/documents/document.routes',
+        'app/desktop/modules/stores/store.routes',
+        'app/desktop/modules/reports/reports.routes',
+        'app/desktop/modules/workflow/workflow.routes',
+        'app/desktop/modules/subContracts/contracts.routes',
+        'app/assets/bower_components/cassini-platform/app/desktop/modules/admin/admin.routes',
+        'app/assets/bower_components/cassini-platform/app/desktop/modules/help/help.routes'
+    ],
+    function (loginRouteConfig,
+              mainRouteConfig,
+              homeRouteConfig,
+              pmRouteConfig,
+              dmRouteConfig,
+              mediaRouteConfig,
+              tmRouteConfig,
+              imRouteConfig,
+              issuesRouteConfig,
+              sitesRouteConfig,
+              procRouteConfig,
+              colRouteConfig,
+              reportingRouteConfig,
+              settingsRouteConfig,
+              documentRouteConfig,
+              storeRouteConfig,
+              reportsRouteConfig,
+              workflowRouteConfig,
+              contractsRouteConfig,
+              adminRouteConfig,
+              helpRouteConfig) {
+
+        var defaultRouteConfig = {
+            otherwise: '/app/home',
+            routes: {}
+        };
+
+        return [
+            defaultRouteConfig,
+            loginRouteConfig,
+            mainRouteConfig,
+            homeRouteConfig,
+            pmRouteConfig,
+            dmRouteConfig,
+            mediaRouteConfig,
+            tmRouteConfig,
+            imRouteConfig,
+            issuesRouteConfig,
+            sitesRouteConfig,
+            procRouteConfig,
+            colRouteConfig,
+            reportingRouteConfig,
+            settingsRouteConfig,
+            documentRouteConfig,
+            storeRouteConfig,
+            reportsRouteConfig,
+            workflowRouteConfig,
+            contractsRouteConfig,
+            adminRouteConfig,
+            helpRouteConfig
+        ];
+    }
+);

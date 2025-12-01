@@ -1,0 +1,23 @@
+activity
+    id
+    key
+    converter
+    actor
+    object
+        id
+        type
+        name
+    timestamp
+    context
+    source
+        id
+        type
+        name
+    target
+        id
+        type
+        name
+    result
+    data
+    session
+

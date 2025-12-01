@@ -1,0 +1,1 @@
+<div ng-include="currentTemplate"></div>

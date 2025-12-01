@@ -1,0 +1,21 @@
+
+CREATE TABLE PLM_WORKINSTRUCTIONS (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY,
+    TITLE                       TEXT                    NOT NULL,
+    DESCRIPTION                 TEXT                    NOT NULL,
+    REVISION                    TEXT                    NOT NULL,
+    STATUS                      INTEGER                 NOT NULL REFERENCES PLM_LIFECYCLEPHASE (ID) ON DELETE SET NULL,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PLM_MRO_OPERATION_WORKINSTRUCTIONS (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY,
+    OPERATION                   INTEGER                 NOT NULL REFERENCES MRO_MAINTENANCE_OPERATION (ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              PLM_WORKINSTRUCTIONS (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PLM_MES_OPERATION_WORKINSTRUCTIONS (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY,
+    OPERATION                   INTEGER                 NOT NULL REFERENCES MES_OPERATION (ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              PLM_WORKINSTRUCTIONS (ID) ON DELETE CASCADE
+);

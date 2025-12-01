@@ -1,0 +1,62 @@
+[
+
+  {
+    "group": "ADMIN",
+    "permissions": [
+      {
+        "id": "permission.admin.all",
+        "name": "All Admin",
+        "show": true
+      },
+      {
+        "id": "permission.admin.user",
+        "name": "Add/Edit User",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.group",
+        "name": "Add/Edit Group",
+        "show": true,
+        "collapsed": true
+      }
+
+    ]
+  },
+  {
+    "group": "DASHBOARD",
+    "permissions": [
+      {
+        "id": "permission.documents.all",
+        "name": "All Documents",
+        "show": true
+      },
+      {
+        "id": "permission.documents.view",
+        "name": "View Documents",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.documents.addFolder",
+        "name": "Add Folder",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.documents.deleteFolder",
+        "name": "Delete Folder",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.documents.addPermissions",
+        "name": "Add Permissions",
+        "show": true,
+        "collapsed": true
+      }
+
+    ]
+  }
+
+]

@@ -1,0 +1,517 @@
+[
+  {
+    "group": "ADMIN",
+    "permissions": [
+      {
+        "id": "permission.admin.all",
+        "name": "All Admin",
+        "show": true
+      },
+      {
+        "id": "permission.admin.user",
+        "name": "Add/Edit User",
+        "show": true
+      },
+      {
+        "id": "permission.admin.group",
+        "name": "Add/Edit Group",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "CLASSIFICATION",
+    "permissions": [
+      {
+        "id": "permission.classification.all",
+        "name": "All Classification",
+        "show": true
+      },
+      {
+        "id": "permission.classification.view",
+        "name": "View Classification",
+        "show": true
+      },
+      {
+        "id": "permission.classification.new",
+        "name": "Create Classification",
+        "show": true
+      },
+      {
+        "id": "permission.classification.edit",
+        "name": "Edit Classification",
+        "show": true
+      },
+      {
+        "id": "permission.classification.delete",
+        "name": "Delete Classification",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "BOM",
+    "permissions": [
+      {
+        "id": "permission.bom.all",
+        "name": "All Bom",
+        "show": true
+      },
+      {
+        "id": "permission.bom.view",
+        "name": "Bom View",
+        "show": true
+      },
+      {
+        "id": "permission.bom.add",
+        "name": "Add item",
+        "show": true
+      },
+      {
+        "id": "permission.bom.edit",
+        "name": "Edit Bom",
+        "show": true
+      },
+      {
+        "id": "permission.bom.delete",
+        "name": "Delete Bom",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "ITEMS",
+    "permissions": [
+      {
+        "id": "permission.items.all",
+        "name": "All Items",
+        "show": true
+      },
+      {
+        "id": "permission.items.view",
+        "name": "View",
+        "show": true
+      },
+      {
+        "id": "permission.items.new",
+        "name": "New Item",
+        "show": true
+      },
+      {
+        "id": "permission.items.edit",
+        "name": "Edit Item",
+        "show": true
+      },
+      {
+        "id": "permission.items.delete",
+        "name": "Delete Item",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "STORAGE",
+    "permissions": [
+      {
+        "id": "permission.storage.all",
+        "name": "All Storage",
+        "show": true
+      },
+      {
+        "id": "permission.storage.view",
+        "name": "View Storage",
+        "show": true
+      },
+      {
+        "id": "permission.storage.new",
+        "name": "Create Storage",
+        "show": true
+      },
+      {
+        "id": "permission.storage.edit",
+        "name": "Edit Storage",
+        "show": true
+      },
+      {
+        "id": "permission.storage.delete",
+        "name": "Delete Storage",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "INVENTORY",
+    "permissions": [
+      {
+        "id": "permission.inventory.all",
+        "name": "All Inventory",
+        "show": true
+      },
+      {
+        "id": "permission.inventory.view",
+        "name": "Inventory View",
+        "show": true
+      },
+      {
+        "id": "permission.planning.do",
+        "name": "View Inventory Reports",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "PLANNING",
+    "permissions": [
+      {
+        "id": "permission.planning.all",
+        "name": "All Planning",
+        "show": true
+      },
+      {
+        "id": "permission.planning.view",
+        "name": "Planning View",
+        "show": true
+      },
+      {
+        "id": "permission.planning.do",
+        "name": "Auto Planning",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "SUPPLIERS",
+    "permissions": [
+      {
+        "id": "permission.suppliers.all",
+        "name": "All Suppliers",
+        "show": true
+      },
+      {
+        "id": "permission.suppliers.view",
+        "name": "View Suppliers",
+        "show": true
+      },
+      {
+        "id": "permission.suppliers.new",
+        "name": "New Supplier",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "MANUFACTURERS",
+    "permissions": [
+      {
+        "id": "permission.manufacturers.all",
+        "name": "All Manufacturers",
+        "show": true
+      },
+      {
+        "id": "permission.manufacturers.view",
+        "name": "View Manufacturers",
+        "show": true
+      },
+      {
+        "id": "permission.manufacturers.new",
+        "name": "New Manufacturer",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "VERSITY",
+    "permissions": [
+      {
+        "id": "permission.versity.group",
+        "name": "Versity Group",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "INWARD",
+    "permissions": [
+      {
+        "id": "permission.inward.all",
+        "name": "All Inward",
+        "show": true
+      },
+      {
+        "id": "permission.inward.view",
+        "name": "View Inwards",
+        "show": true
+      },
+      {
+        "id": "permission.inward.edit",
+        "name": "Edit Inward",
+        "show": true
+      },
+      {
+        "id": "permission.inward.new",
+        "name": "New Inward",
+        "show": true
+      },
+      {
+        "id": "permission.inward.storeApprove",
+        "name": "Store Approve",
+        "show": true
+      },
+      {
+        "id": "permission.inward.SSQAGApprove",
+        "name": "SSQAG Approve",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "GATE PASS",
+    "permissions": [
+      {
+        "id": "permission.gatePass.all",
+        "name": "All Gate Pass",
+        "show": true
+      },
+      {
+        "id": "permission.gatePass.view",
+        "name": "View Gate Pass",
+        "show": true
+      },
+      {
+        "id": "permission.gatePass.new",
+        "name": "New Gate Pass",
+        "show": true
+      },
+      {
+        "id": "permission.gatePass.delete",
+        "name": "Delete Gate Pass",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "REQUESTS",
+    "permissions": [
+      {
+        "id": "permission.requests.all",
+        "name": "All Requests",
+        "show": true
+      },
+      {
+        "id": "permission.requests.view",
+        "name": "View Requests",
+        "show": true
+      },
+      {
+        "id": "permission.requests.new",
+        "name": "New Requests",
+        "show": true
+      },
+      {
+        "id": "permission.requests.delete",
+        "name": "Delete Request",
+        "show": true
+      },
+      {
+        "id": "permission.requests.newIssue",
+        "name": "Issue from Request",
+        "show": true
+      },
+      {
+        "id": "permission.requests.bdlApprove",
+        "name": "BDL Approve",
+        "show": true
+      },
+      {
+        "id": "permission.requests.versityApprove",
+        "name": "Versity Approve",
+        "show": true
+      },
+      {
+        "id": "permission.requests.casManager",
+        "name": "CAS Approve",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "ISSUED",
+    "permissions": [
+      {
+        "id": "permission.issued.all",
+        "name": "All Issued",
+        "show": true
+      },
+      {
+        "id": "permission.issued.view",
+        "name": "View Issue",
+        "show": true
+      },
+      {
+        "id": "permission.issued.new",
+        "name": "New Issue",
+        "show": true
+      },
+      {
+        "id": "permission.issued.print",
+        "name": "Issue Print",
+        "show": true
+      },
+      {
+        "id": "permission.issued.BDLQCApprove",
+        "name": "BDL-QC Approve",
+        "show": true
+      },
+      {
+        "id": "permission.bdlPpc.receive",
+        "name": "BDL Receive Items",
+        "show": true
+      },
+      {
+        "id": "permission.issued.versityQCApprove",
+        "name": "Versity-QC Approve",
+        "show": true
+      },
+      {
+        "id": "permission.versityPpc.receive",
+        "name": "Versity Receive Items",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "FAILURE",
+    "permissions": [
+      {
+        "id": "permission.bdl.failure",
+        "name": "BDL Failure",
+        "show": true
+      },
+      {
+        "id": "permission.ssqag.failure",
+        "name": "SSQAG Failure",
+        "show": true
+      },
+      {
+        "id": "permission.cas.failure",
+        "name": "CAS Failure",
+        "show": true
+      },
+      {
+        "id": "permission.store.failure",
+        "name": "STORE Failure",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "DISPATCH",
+    "permissions": [
+      {
+        "id": "permission.dispatch.all",
+        "name": "All Dispatch",
+        "show": true
+      },
+      {
+        "id": "permission.dispatch.view",
+        "name": "View Dispatch",
+        "show": true
+      },
+      {
+        "id": "permission.dispatch.new",
+        "name": "New Dispatch",
+        "show": true
+      },
+      {
+        "id": "permission.dispatch.edit",
+        "name": "Edit/ Approve Dispatch",
+        "show": true
+      },
+      {
+        "id": "permission.dispatch.delete",
+        "name": "Delete Dispatch",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "EXECUTIVE_SUMMARY",
+    "permissions": [
+      {
+        "id": "permission.summary.view",
+        "name": "View Executive summary",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "REPORTS",
+    "permissions": [
+      {
+        "id": "permission.reports.view",
+        "name": "View Reports",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "RETURNS",
+    "permissions": [
+      {
+        "id": "permission.return.view",
+        "name": "View Returns",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "FAILURE ITEMS",
+    "permissions": [
+      {
+        "id": "permission.failure.view",
+        "name": "View Failures",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "TOP SEARCH",
+    "permissions": [
+      {
+        "id": "permission.top.search",
+        "name": "View Search",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "SETTINGS",
+    "permissions": [
+      {
+        "id": "permission.settings.all",
+        "name": "All Settings",
+        "show": true
+      },
+      {
+        "id": "permission.settings.view",
+        "name": "Settings View",
+        "show": true
+      },
+      {
+        "id": "permission.settings.new",
+        "name": "New Settings",
+        "show": true
+      },
+      {
+        "id": "permission.settings.edit",
+        "name": "Edit Settings",
+        "show": true
+      },
+      {
+        "id": "permission.settings.delete",
+        "name": "Delete Settings",
+        "show": true
+      }
+    ]
+  }
+]

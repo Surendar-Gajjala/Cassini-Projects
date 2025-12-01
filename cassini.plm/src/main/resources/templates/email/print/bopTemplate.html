@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="/app/assets/css/app/desktop/print.css">
+
+</head>
+<body>
+
+<div class="print-template">
+
+    <#list selectedOptions as option>
+        <!--
+        Basic Details
+        -->
+        <#if option == 'Basic'>
+            <div class="row">
+                <div class="col-md-12 opt-head">
+                    <p class="opt">
+                        ${msg("print_basic_title")}</p>
+                </div>
+            </div>
+
+
+            <div class="row row-eq-height">
+                <div class="col-sm-12">
+                    <div class="item-details">
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_number_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if bopData.bopDto.number??>
+                                    <span class="longText">${bopData.bopDto.number}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_type_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if bopData.bopDto.typeName??>
+                                    <span class="longText">${bopData.bopDto.typeName}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_name_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if bopData.bopDto.name??>
+                                    <span class="longText">${bopData.bopDto.name}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_description_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if bopData.bopDto.description??>
+                                    <span class="longText">${bopData.bopDto.description}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_mbom_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if bopData.bopDto.name??>
+                                    <span class="longText">${bopData.bopDto.mbomNumber}-${bopData.bopDto.mbomName}-${bopData.bopDto.mbomRevision}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("revision")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if bopData.bopDto.revision??>
+                                    <span class="longText">${bopData.bopDto.revision}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_lifecycle_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if bopData.bopDto.lifeCyclePhase.phase??>
+                                    <span class="longText">${bopData.bopDto.lifeCyclePhase.phase}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_status_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if bopData.bopDto.status??>
+                                    <span class="longText">${bopData.bopDto.status}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_change_release_date_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if bopData.bopDto.releasedDate??>
+                                    <span class="longText">${bopData.bopDto.releasedDate}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_created_by_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if bopData.bopDto.createdByName??>
+                                    <span class="longText">${bopData.bopDto.createdByName}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_created_date_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if bopData.bopDto.createdDateString??>
+                                    <span class="longText">${bopData.bopDto.createdDateString}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_modified_by_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if bopData.bopDto.modifiedByName??>
+                                    <span class="longText">${bopData.bopDto.modifiedByName}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_modified_date_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if bopData.bopDto.modifiedDateString??>
+                                    <span class="longText">${bopData.bopDto.modifiedDateString}</span>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </#if>
+
+        <!--
+       Project Plan
+       -->
+        <#if option == 'Route'>
+            <div class="row">
+                <div class="col-md-12 opt-head">
+                    <p class="opt">
+                        ${msg("print_Route_title")}</p>
+                </div>
+            </div>
+
+            <div class="row row-eq-height printingDiv">
+                <div class="col-sm-12 visible-print">
+                    <div class="row">
+                        <div class="responsive-table">
+                            <table class="table table-striped" style="width: 100% !important;"
+                                   id="specifications1">
+
+                                <thead>
+                                <tr class="noBorder">
+                                    <th class="col-width-150">
+                                        ${msg("print_Sequence_Number_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_number_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_type_title")}
+                                    </th>
+                                    <th class="col-width-100" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_name_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_description_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_Setup_Time_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_Cycle_Time_title")}
+                                    </th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <#if bopData.bopRoutes?has_content>
+                                    <#list  bopData.bopRoutes as bopRoute>
+                                        <tr>
+                                            <td class="col-width-150">
+                                                <span class="level${bopRoute.level}">
+                                                    <#if bopRoute.sequenceNumber??>
+                                                        ${bopRoute.sequenceNumber}</span>
+                                                    </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if bopRoute.number??>
+                                                    <span>${bopRoute.number}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if bopRoute.typeName??>
+                                                    <span>${bopRoute.typeName}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <span>
+                                                    <#if bopRoute.name??>
+                                                        ${bopRoute.name}
+                                                    </#if>
+                                                </span>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if bopRoute.description??>
+                                                    <span>${bopRoute.description}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if bopRoute.setupTime??>
+                                                    <span>${bopRoute.setupTime}</span>
+                                                </#if>
+
+                                            </td>
+                    
+                                            <td class="col-width-150">
+                                                <#if bopRoute.cycleTime??>
+                                                    <span>${bopRoute.cycleTime}</span>
+                                                </#if>
+
+                                            </td>
+                                        </tr>
+                                    </#list>
+                                </#if>
+                                </tbody>
+                            </table>
+                            <#if !bopData.bopRoutes?has_content>
+                                <p class="no-content">${msg("print_no_plan_title")}</p>
+                            </#if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </#if>
+
+       
+    </#list>
+</div>
+</body>
+</html>

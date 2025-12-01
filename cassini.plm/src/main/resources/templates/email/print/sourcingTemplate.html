@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="/app/assets/css/app/desktop/print.css">
+
+</head>
+
+<body>
+
+<div class="print-template">
+    <#if sourcingData.objectType == 'MANUFACTURER'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_manufacturer_name_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturer.name??>
+                                        <span class="longText">${sourcingData.manufacturer.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturer.typeName??>
+                                        <span class="longText">${sourcingData.manufacturer.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturer.description??>
+                                        <span class="longText">${sourcingData.manufacturer.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_phone_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturer.phoneNumber??>
+                                        <span class="longText">${sourcingData.manufacturer.phoneNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_contact_person_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturer.contactPerson??>
+                                        <span class="longText">${sourcingData.manufacturer.contactPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_lifecycle_phase_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturer.phaseName??>
+                                        <span class="longText">${sourcingData.manufacturer.phaseName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturer.createPerson??>
+                                        <span class="longText">${sourcingData.manufacturer.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturer.createdDate??>
+                                        <span class="longText">${sourcingData.manufacturer.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturer.modifiedPerson??>
+                                        <span class="longText">${sourcingData.manufacturer.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturer.modifiedDate??>
+                                        <span class="longText">${sourcingData.manufacturer.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if sourcingData.itemMasterAttributes?has_content>
+
+
+                                <#list sourcingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+
+                            <#list sourcingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list sourcingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Parts'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_parts_title")}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="woSp">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150"style="width: 100px;text-align: left" >${msg("print_part_number_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_manufacturer_part_type_title")}</th>
+                                        <th class="col-width-150" >${msg("print_part_name_title")}</th>
+                                        <th class="col-width-150"style="width: 100px;text-align: center" >${msg("print_lifecycle_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if sourcingData.mfrParts?has_content>
+                                        <#list  sourcingData.mfrParts as mfrpart>
+                                            <tr>
+                                                <td class="col-width-150" style="width: 100px;text-align: left">
+                                                    <#if mfrpart.partNumber ??>
+                                                        <span>${mfrpart.partNumber}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if mfrpart.mfrPartType.name??>
+                                                        <span>${mfrpart.mfrPartType.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if mfrpart.partName??>
+                                                        <span>${mfrpart.partName}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 100px;text-align: center">
+                                                    <#if mfrpart.lifeCyclePhase.phase??>
+                                                        <span>${mfrpart.lifeCyclePhase.phase}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+
+
+                                    </tbody>
+                                </table>
+                                <#if !sourcingData.mfrParts?has_content>
+                                    <p class="no-content">${msg("print_no_manufacturer_parts_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+        </#list>
+    </#if>
+    <#if sourcingData.objectType == 'MANUFACTURERPART'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_part_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturerPart.partNumber??>
+                                        <span class="longText">${sourcingData.manufacturerPart.partNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_manufacturer_part_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturerPart.typeName??>
+                                        <span class="longText">${sourcingData.manufacturerPart.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_part_name_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturerPart.partName??>
+                                        <span class="longText">${sourcingData.manufacturerPart.partName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturerPart.description??>
+                                        <span class="longText">${sourcingData.manufacturerPart.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_lifecycle_phase_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturerPart.phaseName??>
+                                        <span class="longText">${sourcingData.manufacturerPart.phaseName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturerPart.createPerson??>
+                                        <span class="longText">${sourcingData.manufacturerPart.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturerPart.createdDate??>
+                                        <span class="longText">${sourcingData.manufacturerPart.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturerPart.modifiedPerson??>
+                                        <span class="longText">${sourcingData.manufacturerPart.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.manufacturerPart.modifiedDate??>
+                                        <span class="longText">${sourcingData.manufacturerPart.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if sourcingData.itemMasterAttributes?has_content>
+
+
+                                <#list sourcingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+
+                            <#list sourcingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list sourcingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Where Used'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_where_used_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="sourcing-where-used">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="width: 100px;text-align: left" >${msg("print_item_number_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_item_type_title")}</th>
+                                        <th class="col-width-150" >${msg("print_item_name_title")}</th>
+                                        <th class="col-width-150" style="width: 100px;text-align: center" >${msg("print_revision_title")}</th>
+                                        <th class="col-width-150" style="width: 100px;text-align: center" >${msg("print_lifecycle_title")}</th>
+                                        <th class="col-width-150" style="width: 100px;text-align: center" >${msg("print_units_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if sourcingData.whereUsedItems?has_content>
+                                        <#list  sourcingData.whereUsedItems as item>
+                                            <tr>
+                                                <td class="col-width-150" style="width: 100px;text-align: left">
+                                                    <#if item.itemMasterObject.itemNumber ??>
+                                                        <span>${item.itemMasterObject.itemNumber}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if item.itemMasterObject.itemType.name??>
+                                                        <span>${item.itemMasterObject.itemType.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if item.itemMasterObject.itemName??>
+                                                        <span>${item.itemMasterObject.itemName}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 100px;text-align: center">
+                                                    <#if item.itemMasterObject.rev.revision??>
+                                                        <span>${item.itemMasterObject.rev.revision}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 100px;text-align: center">
+                                                    <#if item.itemMasterObject.rev.lifeCyclePhase.phase??>
+                                                        <span>${item.itemMasterObject.rev.lifeCyclePhase.phase}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-150" style="width: 100px;text-align: center">
+                                                    <#if item.itemMasterObject.units??>
+                                                        <span>${item.itemMasterObject.units}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+
+
+                                    </tbody>
+                                </table>
+                                <#if !sourcingData.whereUsedItems?has_content>
+                                    <p class="no-content">${msg("print_no_items_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Changes'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_changes_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="sourcing-changes">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="width: 100px;text-align: left" >${msg("print_change_number_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_change_type_title")}</th>
+                                        <th class="col-width-150" >${msg("print_title")}</th>
+                                        <th class="col-width-150" style="width: 100px;text-align: center" >${msg("print_status_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_released_or_rejected_date_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if sourcingData.mfrChanges?has_content>
+                                        <#list  sourcingData.mfrChanges as change>
+                                            <tr>
+                                                <td class="col-width-150" style="width: 100px;text-align: left">
+                                                    <#if change.mcoNumber ??>
+                                                        <span>${change.mcoNumber}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if change.changeType??>
+                                                        <span>${change.changeType}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if change.title??>
+                                                        <span>${change.title}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 100px;text-align: center">
+                                                    <#if change.status??>
+                                                        <span>${change.status}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: center">
+                                                    <#if change.releasedDate??>
+                                                        <span>${change.releasedDate}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    <#if sourcingData.mfrVarience?has_content>
+                                        <#list  sourcingData.mfrVarience as change>
+                                            <tr>
+                                                <td class="col-width-150" style="width: 100px;text-align: left">
+                                                    <#if change.varianceNumber ??>
+                                                        <span>${change.varianceNumber}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if change.varianceType??>
+                                                        <span>${change.varianceType}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if change.title??>
+                                                        <span>${change.title}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 100px;text-align: center">
+                                                    <#if change.status??>
+                                                        <span>${change.status}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: center">
+                                                    <#if change.modifiedDate??>
+                                                        <span>${change.modifiedDate}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+
+
+                                    </tbody>
+                                </table>
+                                <#if !sourcingData.mfrChanges?has_content && !sourcingData.mfrVarience?has_content>
+                                    <p class="no-content">${msg("print_no_changes")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Quality'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_quality_title")}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="quality">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="text-align: left !important;width: 150px !important;" >
+                                            ${msg("print_quality_number_title")}
+                                        </th>
+                                        <th class="col-width-150" style="text-align: left !important;width: 150px !important;" >
+                                            ${msg("print_quality_type_title")}
+                                        </th>
+                                        <th class="col-width-150" >${msg("print_title")}</th>
+                                        <th style="text-align: left !important;width: 150px !important;" >
+                                            ${msg("print_status_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if sourcingData.qcrs?has_content>
+                                        <#list  sourcingData.qcrs as quality>
+                                            <tr>
+                                                <td class="col-width-150">
+                                                    <#if quality.qcrNumber??>
+                                                        <span>${quality.qcrNumber}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if quality.qcrType.name??>
+                                                        <span>${quality.qcrType.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if quality.title??>
+                                                        <span>${quality.title}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if quality.status??>
+                                                        <span>${quality.status}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+
+                                    <#if sourcingData.ncrs?has_content>
+                                        <#list  sourcingData.ncrs as quality>
+                                            <tr>
+                                                <td class="col-width-150">
+                                                    <#if quality.ncrNumber??>
+                                                        <span>${quality.ncrNumber}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if quality.ncrType.name??>
+                                                        <span>${quality.ncrType.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if quality.title??>
+                                                        <span>${quality.title}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if quality.status??>
+                                                        <span>${quality.status}</span>
+                                                    </#if>
+                                                </td>
+                                            </tr>
+                                        </#list>
+                                    </#if>
+
+
+                                    </tbody>
+                                </table>
+                                <#if !sourcingData.qcrs?has_content && !sourcingData.ncrs?has_content>
+                                    <p class="no-content">${msg("print_no_quality_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+        </#list>
+    </#if>
+    <#if sourcingData.objectType == 'MFRSUPPLIER'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_supplier_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.typeName??>
+                                        <span class="longText">${sourcingData.supplier.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.name??>
+                                        <span class="longText">${sourcingData.supplier.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.description??>
+                                        <span class="longText">${sourcingData.supplier.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_address_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.address??>
+                                        <span class="longText">${sourcingData.supplier.address}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_city_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.city??>
+                                        <span class="longText">${sourcingData.supplier.city}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_country_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.country??>
+                                        <span class="longText">${sourcingData.supplier.country}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_postal_code_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.postalCode??>
+                                        <span class="longText">${sourcingData.supplier.postalCode}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_phone_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.phoneNumber??>
+                                        <span class="longText">${sourcingData.supplier.phoneNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mobile_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.mobileNumber??>
+                                        <span class="longText">${sourcingData.supplier.mobileNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_fax_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.faxNumber??>
+                                        <span class="longText">${sourcingData.supplier.faxNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_email_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.email??>
+                                        <span class="longText">${sourcingData.supplier.email}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_website_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.webSite??>
+                                        <span class="longText">${sourcingData.supplier.webSite}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.createPerson??>
+                                        <span class="longText">${sourcingData.supplier.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.createdDate??>
+                                        <span class="longText">${sourcingData.supplier.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.modifiedPerson??>
+                                        <span class="longText">${sourcingData.supplier.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if sourcingData.supplier.modifiedDate??>
+                                        <span class="longText">${sourcingData.supplier.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if sourcingData.itemMasterAttributes?has_content>
+
+
+                                <#list sourcingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+
+                            <#list sourcingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list sourcingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Contacts'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_contacts_title")}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="supplier-contact">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_person_title")}</th>
+                                        <th class="col-width-150" >${msg("print_supplier_title")}</th>
+                                        <th class="col-width-150" style="width: 100px;text-align: center" >${msg("print_status_title")}</th>
+                                        <th class="col-width-150" >${msg("print_role_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if sourcingData.contacts?has_content>
+                                        <#list  sourcingData.contacts as suppliersContact>
+                                            <tr>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if suppliersContact.person.fullName ??>
+                                                        <span>${suppliersContact.person.fullName}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if suppliersContact.supplierObject.name??>
+                                                        <span>${suppliersContact.supplierObject.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 100px;text-align: center">
+                                                    <#if suppliersContact.active== true>
+                                                        <span>Active</span>
+                                                    </#if>
+                                                    <#if suppliersContact.active== false>
+                                                        <span>InActive</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if suppliersContact.role??>
+                                                        <span>${suppliersContact.role}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+
+
+                                    </tbody>
+                                </table>
+                                <#if !sourcingData.contacts?has_content>
+                                    <p class="no-content">${msg("print_no_contacts_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Parts'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_parts_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="sup-parts">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_supplier_part_number_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_manufacturer_part_number_title")}
+                                        </th>
+                                        <th class="col-width-150" >${msg("print_part_name_title")}</th>
+                                        <th class="col-width-150" style="width: 150px;text-align: left" >${msg("print_manufacturer_part_type_title")}</th>
+                                        <th class="col-width-150" style="width: 100px;text-align: center" >${msg("print_lifecycle_title")}</th>
+                                        <th class="col-width-150" >${msg("print_manufacturer_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if sourcingData.supParts?has_content>
+                                        <#list  sourcingData.supParts as mfrpart>
+                                            <tr>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if mfrpart.partNumber??>
+                                                        <span>${mfrpart.partNumber}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if mfrpart.manufacturerPart.partNumber??>
+                                                        <span>${mfrpart.manufacturerPart.partNumber}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if mfrpart.manufacturerPart.partName??>
+                                                        <span>${mfrpart.manufacturerPart.partName}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 150px;text-align: left">
+                                                    <#if mfrpart.manufacturerPart.mfrPartType.name??>
+                                                        <span>${mfrpart.manufacturerPart.mfrPartType.name}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-150" style="width: 100px;text-align: center">
+                                                    <#if mfrpart.manufacturerPart.status??>
+                                                        <span>${mfrpart.manufacturerPart.status}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if mfrpart.manufacturerPart.mfrName??>
+                                                        <span>${mfrpart.manufacturerPart.mfrName}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+
+
+                                    </tbody>
+                                </table>
+                                <#if !sourcingData.supParts?has_content>
+                                    <p class="no-content">${msg("print_no_manufacturer_parts_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+        </#list>
+    </#if>
+</div>
+</body>
+</html>

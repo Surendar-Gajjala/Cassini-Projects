@@ -1,0 +1,9 @@
+<div class="has-feedback">
+    <input placeholder="{{placeholder}}" class="form-control" type="text" ng-disabled="disabled == true"
+           ng-style="{'text-align': (align != null && align != undefined) ? align : 'left'}"
+           ng-class="{ hasFilter: (filters[property] != null && filters[property] != '') }"
+           ng-model="filters[property]" ng-enter="applyFilters()">
+    <span class="input-clear glyphicon glyphicon-remove-circle form-control-feedback"
+          ng-if="(filters[property] != null && filters[property] != '')"
+          ng-click="clearFilter()" ng-hide="disabled == true"></span>
+</div>

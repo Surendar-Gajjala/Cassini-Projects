@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Workflow Approval</title>
+    <link rel="stylesheet" type="text/css" href="${host}/app/assets/css/desktop.imports.css">
+    <link rel="stylesheet" type="text/css" href="${host}/app/assets/css/app/desktop/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <style>
+        .row {
+            margin: 0;
+        }
+
+        td.field-value {
+            font-size: 17px;
+            font-family: "Open Sans" !important;
+            font-weight: 300;
+        }
+
+        table td {
+            padding: 10px;
+            vertical-align: top !important;
+        }
+
+        td.text-right {
+            width: 150px;
+        }
+
+        body {
+            font-family: "Open Sans" !important;
+        }
+
+        .items-table {
+            width: 100%;
+        }
+
+        .items-table th {
+            font-weight: 400;
+        }
+
+        .items-table thead tr th:nth-child(2), th:nth-child(4) {
+            text-align: center;
+        }
+
+        .items-table tbody tr td:nth-child(2), td:nth-child(4) {
+            text-align: center;
+        }
+
+        .items-table tbody tr {
+            border-bottom: 1px dotted #ddd;
+        }
+
+        .timeline {
+            width: 250px;
+        }
+
+        .timeline::before {
+            left: -80px;
+        }
+
+        .timeline .flag {
+            cursor: pointer;
+        }
+
+        .timeline .time-wrapper {
+            margin-top: 1px;
+        }
+
+        .timeline .time {
+            font-size: 12px;
+            padding: 6px;
+        }
+
+        .notification-msg {
+            padding: 20px;
+            color: #fff;
+            background-color: #1CAF9A;
+            font-weight: 300;
+            font-size: 22px;
+            font-family: "Open Sans" !important;
+        }
+    </style>
+</head>
+<body style="padding: 50px;">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <#if attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'ECO'>
+                    <#if pending>
+                        <h3 class="panel-title text-center">CassiniPLM ECO Workflow Notification - Pending Approval</h3>
+                        <#elseif approved>
+                            <h3 class="panel-title text-center">CassiniPLM ECO Workflow Notification - Approved
+                                Confirmation</h3>
+                            <#elseif rejected>
+                                <h3 class="panel-title text-center">CassiniPLM ECO Workflow Notification - Reject
+                                    Confirmation
+                                </h3>
+                    </#if>
+                    <#elseif attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'DCO'>
+                        <#if pending>
+                            <h3 class="panel-title text-center">CassiniPLM DCO Workflow Notification - Pending
+                                Approval</h3>
+                            <#elseif approved>
+                                <h3 class="panel-title text-center">CassiniPLM DCO Workflow Notification - Approved
+                                    Confirmation</h3>
+                                <#elseif rejected>
+                                    <h3 class="panel-title text-center">CassiniPLM DCO Workflow Notification - Reject
+                                        Confirmation
+                                    </h3>
+                        </#if>
+                        <#elseif attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'DCR'>
+                            <#if pending>
+                                <h3 class="panel-title text-center">CassiniPLM DCR Workflow Notification - Pending
+                                    Approval</h3>
+                                <#elseif approved>
+                                    <h3 class="panel-title text-center">CassiniPLM DCR Workflow Notification - Approved
+                                        Confirmation</h3>
+                                    <#elseif rejected>
+                                        <h3 class="panel-title text-center">CassiniPLM DCR Workflow Notification -
+                                            Reject Confirmation
+                                        </h3>
+                            </#if>
+                            <#elseif attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'ECR'>
+                                <#if pending>
+                                    <h3 class="panel-title text-center">CassiniPLM ECR Workflow Notification - Pending
+                                        Approval</h3>
+                                    <#elseif approved>
+                                        <h3 class="panel-title text-center">CassiniPLM ECR Workflow Notification -
+                                            Approved Confirmation</h3>
+                                        <#elseif rejected>
+                                            <h3 class="panel-title text-center">CassiniPLM ECR Workflow Notification -
+                                                Reject Confirmation
+                                            </h3>
+                                </#if>
+                                <#elseif attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'MCO'>
+                                    <#if pending>
+                                        <h3 class="panel-title text-center">CassiniPLM MCO Workflow
+                                            Notification - Pending Approval</h3>
+                                        <#elseif approved>
+                                            <h3 class="panel-title text-center">CassiniPLM MCO Workflow Notification -
+                                                Approved Confirmation</h3>
+                                            <#elseif rejected>
+                                                <h3 class="panel-title text-center">CassiniPLM MCO Workflow
+                                                    Notification - Reject Confirmation
+                                                </h3>
+                                    </#if>
+                                    <#elseif attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'DEVIATION'>
+                                        <#if pending>
+                                            <h3 class="panel-title text-center">CassiniPLM Deviation Workflow
+                                                Notification - Pending Approval</h3>
+                                            <#elseif approved>
+                                                <h3 class="panel-title text-center">CassiniPLM Deviation Workflow
+                                                    Notification - Approved Confirmation</h3>
+                                                <#elseif rejected>
+                                                    <h3 class="panel-title text-center">CassiniPLM Deviation Workflow
+                                                        Notification - Reject Confirmation
+                                                    </h3>
+                                        </#if>
+                                        <#elseif attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'WAIVER'>
+                                            <#if pending>
+                                                <h3 class="panel-title text-center">CassiniPLM Waiver Workflow
+                                                    Notification - Pending Approval</h3>
+                                                <#elseif approved>
+                                                    <h3 class="panel-title text-center">CassiniPLM Waiver Workflow
+                                                        Notification - Approved Confirmation</h3>
+                                                    <#elseif rejected>
+                                                        <h3 class="panel-title text-center">CassiniPLM Waiver Workflow
+                                                            Notification - Reject Confirmation
+                                                        </h3>
+                                            </#if>
+                                            <#elseif attachedObject.objectType.name() == 'PROBLEMREPORT'>
+                                                <#if pending>
+                                                    <h3 class="panel-title text-center">CassiniPLM ProblemReport
+                                                        Workflow Notification - Pending
+                                                        Approval</h3>
+                                                    <#elseif approved>
+                                                        <h3 class="panel-title text-center">CassiniPLM ProblemReport
+                                                            Workflow Notification -
+                                                            Approved
+                                                            Confirmation</h3>
+                                                        <#elseif rejected>
+                                                            <h3 class="panel-title text-center">CassiniPLM
+                                                                ProblemReport Workflow Notification -
+                                                                Reject
+                                                                Confirmation
+                                                            </h3>
+                                                </#if>
+                                                <#elseif attachedObject.objectType.name() == 'NCR'>
+                                                    <#if pending>
+                                                        <h3 class="panel-title text-center">CassiniPLM NCR Workflow
+                                                            Notification - Pending
+                                                            Approval</h3>
+                                                        <#elseif approved>
+                                                            <h3 class="panel-title text-center">CassiniPLM NCR Workflow
+                                                                Notification - Approved
+                                                                Confirmation</h3>
+                                                            <#elseif rejected>
+                                                                <h3 class="panel-title text-center">CassiniPLM NCR
+                                                                    Workflow Notification - Reject
+                                                                    Confirmation
+                                                                </h3>
+                                                    </#if>
+                                                    <#elseif attachedObject.objectType.name() == 'INSPECTIONPLANREVISION'>
+                                                        <#if pending>
+                                                            <h3 class="panel-title text-center">CassiniPLM
+                                                                Inspection Plan Workflow
+                                                                Notificationv - Pending
+                                                                Approval</h3>
+                                                            <#elseif approved>
+                                                                <h3 class="panel-title text-center">CassiniPLM
+                                                                    Inspection Plan Workflow
+                                                                    Notification - Approved
+                                                                    Confirmation</h3>
+                                                                <#elseif rejected>
+                                                                    <h3 class="panel-title text-center">CassiniPLM
+                                                                        Inspection Plan Workflow
+                                                                        Notification -
+                                                                        Reject Confirmation
+                                                                    </h3>
+                                                        </#if>
+                                                        <#elseif attachedObject.objectType.name() == 'QCR'>
+                                                            <#if pending>
+                                                                <h3 class="panel-title text-center">CassiniPLM QCR
+                                                                    Workflow Notification - Pending
+                                                                    Approval</h3>
+                                                                <#elseif approved>
+                                                                    <h3 class="panel-title text-center">CassiniPLM QCR
+                                                                        Workflow Notification -
+                                                                        Approved Confirmation</h3>
+                                                                    <#elseif rejected>
+                                                                        <h3 class="panel-title text-center">CassiniPLM
+                                                                            QCR Workflow Notification -
+                                                                            Reject Confirmation
+                                                                        </h3>
+                                                            </#if>
+                                                            <#elseif attachedObject.objectType.name() == 'ITEMINSPECTION'
+                                                                    || attachedObject.objectType.name() == 'MATERIALINSPECTION'>
+                                                                <#if pending>
+                                                                    <h3 class="panel-title text-center">CassiniPLM
+                                                                        Inspection Workflow
+                                                                        Notification - Pending Approval</h3>
+                                                                    <#elseif approved>
+                                                                        <h3 class="panel-title text-center">CassiniPLM
+                                                                            Inspection Workflow
+                                                                            Notification -
+                                                                            Approved Confirmation</h3>
+                                                                        <#elseif rejected>
+                                                                            <h3 class="panel-title text-center">
+                                                                                CassiniPLM Inspection Workflow
+                                                                                Notification - Reject Confirmation
+                                                                            </h3>
+                                                                </#if>
+                                                                <#elseif attachedObject.objectType.name() == 'ITEM'>
+                                                                    <#if pending>
+                                                                        <h3 class="panel-title text-center">CassiniPLM
+                                                                            Item Workflow Notification - Pending
+                                                                            Approval</h3>
+                                                                        <#elseif approved>
+                                                                            <h3 class="panel-title text-center">
+                                                                                CassiniPLM Item Workflow Notification -
+                                                                                Approved
+                                                                                Confirmation</h3>
+                                                                            <#elseif rejected>
+                                                                                <h3 class="panel-title text-center">
+                                                                                    CassiniPLM Item Workflow
+                                                                                    Notification - Reject
+                                                                                    Confirmation
+                                                                                </h3>
+                                                                    </#if>
+                                                                    <#elseif attachedObject.objectType.name() == 'PROJECT'>
+                                                                        <#if pending>
+                                                                            <h3 class="panel-title text-center">
+                                                                                CassiniPLM Project Workflow
+                                                                                Notification - Pending
+                                                                                Approval</h3>
+                                                                            <#elseif approved>
+                                                                                <h3 class="panel-title text-center">
+                                                                                    CassiniPLM Project Workflow
+                                                                                    Notification - Approved
+                                                                                    Confirmation</h3>
+                                                                                <#elseif rejected>
+                                                                                    <h3 class="panel-title text-center">
+                                                                                        CassiniPLM Project Workflow
+                                                                                        Notification -
+                                                                                        Reject
+                                                                                        Confirmation
+                                                                                    </h3>
+                                                                        </#if>
+                                                                        <#elseif attachedObject.objectType.name() == 'PROJECTACTIVITY'>
+                                                                            <#if pending>
+                                                                                <h3 class="panel-title text-center">
+                                                                                    CassiniPLM Project Activity
+                                                                                    Workflow
+                                                                                    Notification - Pending
+                                                                                    Approval</h3>
+                                                                                <#elseif approved>
+                                                                                    <h3 class="panel-title text-center">
+                                                                                        CassiniPLM Project Activity
+                                                                                        Workflow
+                                                                                        Notification - Approved
+                                                                                        Confirmation</h3>
+                                                                                    <#elseif rejected>
+                                                                                        <h3 class="panel-title text-center">
+                                                                                            CassiniPLM Project Activity
+                                                                                            Workflow
+                                                                                            Notification -
+                                                                                            Reject Confirmation
+                                                                                        </h3>
+                                                                            </#if>
+                                                                            <#elseif attachedObject.objectType.name() == 'PROJECTTASK'>
+                                                                            <#if pending>
+                                                                                <h3 class="panel-title text-center">
+                                                                                    CassiniPLM Project Task
+                                                                                    Workflow
+                                                                                    Notification - Pending
+                                                                                    Approval</h3>
+                                                                                <#elseif approved>
+                                                                                    <h3 class="panel-title text-center">
+                                                                                        CassiniPLM Project Task
+                                                                                        Workflow
+                                                                                        Notification - Approved
+                                                                                        Confirmation</h3>
+                                                                                    <#elseif rejected>
+                                                                                        <h3 class="panel-title text-center">
+                                                                                            CassiniPLM Project Task
+                                                                                            Workflow
+                                                                                            Notification -
+                                                                                            Reject Confirmation
+                                                                                        </h3>
+                                                                            </#if>
+                                                                            <#elseif attachedObject.objectType.name() == 'MANUFACTURER'>
+                                                                                <#if pending>
+                                                                                    <h3 class="panel-title text-center">
+                                                                                        CassiniPLM Manufacturer
+                                                                                        Workflow
+                                                                                        Notification - Pending
+                                                                                        Approval</h3>
+                                                                                    <#elseif approved>
+                                                                                        <h3 class="panel-title text-center">
+                                                                                            CassiniPLM Manufacturer
+                                                                                            Workflow
+                                                                                            Notification -
+                                                                                            Approved Confirmation</h3>
+                                                                                        <#elseif rejected>
+                                                                                            <h3 class="panel-title text-center">
+                                                                                                CassiniPLM Manufacturer
+                                                                                                Workflow
+                                                                                                Notification -
+                                                                                                Reject Confirmation
+                                                                                            </h3>
+                                                                                </#if>
+                                                                                <#elseif attachedObject.objectType.name() == 'MANUFACTURERPART'>
+                                                                                    <#if pending>
+                                                                                        <h3 class="panel-title text-center">
+                                                                                            CassiniPLM Manufacturer Part
+                                                                                            Workflow
+                                                                                            Notification - Pending
+                                                                                            Approval</h3>
+                                                                                        <#elseif approved>
+                                                                                            <h3 class="panel-title text-center">
+                                                                                                CassiniPLM Manufacturer
+                                                                                                Part Workflow
+                                                                                                Notification -
+                                                                                                Approved
+                                                                                                Confirmation</h3>
+                                                                                            <#elseif rejected>
+                                                                                                <h3 class="panel-title text-center">
+                                                                                                    CassiniPLM
+                                                                                                    Manufacturer Part
+                                                                                                    Workflow
+                                                                                                    Notification -
+                                                                                                    Reject Confirmation
+                                                                                                </h3>
+                                                                                    </#if>
+                                                                                    <#elseif attachedObject.objectType.name() == 'SPECIFICATION'>
+                                                                                        <#if pending>
+                                                                                            <h3 class="panel-title text-center">
+                                                                                                CassiniPLM
+                                                                                                Specification Workflow
+                                                                                                Notification - Pending
+                                                                                                Approval</h3>
+                                                                                            <#elseif approved>
+                                                                                                <h3 class="panel-title text-center">
+                                                                                                    CassiniPLM
+                                                                                                    Specification
+                                                                                                    Workflow
+                                                                                                    Notification -
+                                                                                                    Approved
+                                                                                                    Confirmation</h3>
+                                                                                                <#elseif rejected>
+                                                                                                    <h3 class="panel-title text-center">
+                                                                                                        CassiniPLM
+                                                                                                        Specification
+                                                                                                        Workflow
+                                                                                                        Notification -
+                                                                                                        Reject
+                                                                                                        Confirmation
+                                                                                                    </h3>
+                                                                                        </#if>
+                                                                                        <#elseif attachedObject.objectType.name() == 'REQUIREMENT'>
+                                                                                            <#if pending>
+                                                                                                <h3 class="panel-title text-center">
+                                                                                                    CassiniPLM
+                                                                                                    Requirement Workflow
+                                                                                                    Notification - Pending
+                                                                                                    Approval</h3>
+                                                                                                <#elseif approved>
+                                                                                                    <h3 class="panel-title text-center">
+                                                                                                        CassiniPLM
+                                                                                                        Requirement
+                                                                                                        Workflow
+                                                                                                        Notification -
+                                                                                                        Approved
+                                                                                                        Confirmation</h3>
+                                                                                                    <#elseif rejected>
+                                                                                                        <h3 class="panel-title text-center">
+                                                                                                            CassiniPLM
+                                                                                                            Requirement
+                                                                                                            Workflow
+                                                                                                            Notification
+                                                                                                            - Reject
+                                                                                                            Confirmation
+                                                                                                        </h3>
+                                                                                            </#if>
+
+                </#if>
+            </div>
+
+            <#if companyLogo??>
+                <img naturalheight="0" naturalwidth="0" src="${companyLogo}" width="120" height="50"
+                     style="margin: 15px 0px 0px 10px;" data-downloadimage="" data-thumbnailimage=""
+                     crossorigin="use-credentials"/>
+            </#if>
+
+            <div class="notification-msg">
+                <#if demoted>
+                    <span>Workflow has been re-assigned to you as it has been demoted. Please review and take action.</span>
+                    <#elseif pending>
+                        <span>This Workflow status requires your approval. Please review and take action.</span>
+                        <#elseif approved>
+                            <span>This is to notify that the below workflow status has been approved.</span>
+                            <#elseif rejected>
+                                <span>This is to notify that the below workflow status has been rejected.</span>
+                </#if>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <table>
+
+                            <#if attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'ECO'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.ecoNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Title :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.title)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description:</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.description)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+
+                            <#if attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'ECR'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.crNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Title :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.title)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description of Change :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.descriptionOfChange)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+
+                            <#if attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'DCO'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.dcoNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Title :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.title)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.description)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+
+                            <#if attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'DCR'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.crNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Title :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.title)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description of Change :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.descriptionOfChange)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+
+                            <#if attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'MCO'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.mcoNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Title :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.title)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.description)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+
+                            <#if attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'DEVIATION'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.varianceNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Title :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.title)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Deviation For :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.varianceFor)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+
+                            <#if attachedObject.objectType.name() == 'CHANGE' && attachedObject.changeType == 'WAIVER'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.varianceNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Title :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.title)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Waiver For :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.varianceFor)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+                            <#if attachedObject.objectType.name() == 'INSPECTIONPLANREVISION'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.plan.number}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Name :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${(attachedObject.plan.name)!}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Product/Material :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${(product)!}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+
+                            <#if attachedObject.objectType.name() == 'PROBLEMREPORT'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.prNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Problem :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${(attachedObject.problem)!}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Product:</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${(product)!}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+
+                            <#if attachedObject.objectType.name() == 'QCR'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.qcrNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Title :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${(attachedObject.title)!}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">QCR For:</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${(attachedObject.qcrFor)!}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+
+                            <#if attachedObject.objectType.name() == 'NCR'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.ncrNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Title :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${(attachedObject.title)!}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description:</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${(attachedObject.description)!}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+
+                            <#if attachedObject.objectType.name() == 'ITEMINSPECTION'
+                                    || attachedObject.objectType.name() == 'MATERIALINSPECTION'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.inspectionNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Inspection Plan :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${(planName)!}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Product/Material :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${(product)!}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+                            <#if attachedObject.objectType.name() == 'ITEM'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.itemNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Name :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.itemName)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.description)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+                            <#if attachedObject.objectType.name() == 'PROJECT'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Name :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.name}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.description)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+                            <#if attachedObject.objectType.name() == 'PROJECTACTIVITY'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Name :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.name}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.description)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+                            <#if attachedObject.objectType.name() == 'PROJECTTASK'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Name :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.name}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.description)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+                            <#if attachedObject.objectType.name() == 'MANUFACTURER'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Name :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.name}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.description)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+                            <#if attachedObject.objectType.name() == 'MANUFACTURERPART'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.partNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Name :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.partName)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.description)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+                            <#if attachedObject.objectType.name() == 'SPECIFICATION'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.objectNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Name :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.name)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.description)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+                            <#if attachedObject.objectType.name() == 'REQUIREMENT'>
+                                <tbody>
+                                <tr>
+                                    <td class="text-right">Number :</td>
+                                    <td class="field-value">
+                                    <span>
+                                        ${attachedObject.objectNumber}
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Name :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.name)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Description :</td>
+                                    <td class="field-value">
+                                        <span>${(attachedObject.description)!}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Current Status :</td>
+                                    <td class="field-value">
+                                        <span>${(workflowStatus.name)!}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </#if>
+                        </table>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div>
+                            <h5 style="margin: 0">Workflow History</h5>
+
+                            <div>
+                                <ul class="timeline ng-scope" style="margin-left: 100px;">
+                                    <#list histories as history>
+                                        <li class="ng-scope">
+                                            <div class="direction-r">
+                                                <div class="flag-wrapper">
+                                                    <#if history.demoted>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name} - DEMOTED</span>
+                                                        <#elseif history.hold>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name} - HOLD</span>
+                                                            <#elseif history.unhold>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name} - REMOVED HOLD</span>
+                                                                <#else>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name}</span>
+                                                    </#if>
+                                                    <span class="time-wrapper">
+                                                    <span class="time ng-binding">${history.timestamp?string["dd/MM/yyyy, HH:mm:ss"]}</span>
+                                                </span>
+                                                </div>
+                                                <div class="desc"></div>
+                                            </div>
+                                        </li>
+                                    </#list>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer text-right">
+                <a href="${host}" class='btn btn-sm btn-primary'>Go to CassiniPLM</a>
+            </div>
+        </div>
+        <div style="margin-bottom: 100px;padding: 10px; text-align: center">
+            &copy; 2022 CassiniPLM
+        </div>
+    </div>
+</div>
+</body>
+</html>

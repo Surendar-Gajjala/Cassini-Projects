@@ -1,0 +1,5 @@
+{
+    "printTemplates": {
+        "printPersonTask": "print/printPersonTasks.jsp"
+    }
+}

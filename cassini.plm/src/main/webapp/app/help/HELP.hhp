@@ -1,0 +1,24 @@
+[OPTIONS]
+Binary TOC=Yes
+Compatibility=1.1 or later
+Compiled file=HELP.chm
+Contents file=HELP.hhc
+Default Font=Segoe UI,12
+Default Window=main
+Display compile progress=Yes
+Error log file=logcompile.txt
+Full text search stop list file=stoplist.stp
+Full-text search=Yes
+Index file=HELP.hhk
+Language=0x4009 English (India)
+Title=HELP
+[WINDOWS]
+main=,"HELP.hhc","HELP.hhk",,,,,,,0x63561,,0x70383e,,,,,,,,0
+[FILES]
+#include HELP_files.txt
+#include HELP_files_extra.txt
+icons\*
+[ALIAS]
+#include HELP_alias.txt
+[MAP]
+#include HELP_map.txt

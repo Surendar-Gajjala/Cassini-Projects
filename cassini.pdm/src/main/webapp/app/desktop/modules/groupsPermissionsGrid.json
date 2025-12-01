@@ -1,0 +1,123 @@
+[
+  {
+    "group": "ADMIN",
+    "permissions": [
+      {
+        "id": "permission.admin.all",
+        "name": "All Admin",
+        "show": true
+      },
+      {
+        "id": "permission.admin.user",
+        "name": "Add/Edit User",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.group",
+        "name": "Add/Edit Group",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "CLASSIFICATION",
+    "permissions": [
+      {
+        "id": "permission.classification.all",
+        "name": "All Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.new",
+        "name": "Create Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.edit",
+        "name": "Edit Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.classification.delete",
+        "name": "Delete Classification",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "ITEMS",
+    "permissions": [
+      {
+        "id": "permission.items.all",
+        "name": "All Items",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.items.view",
+        "name": "View",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.items.new",
+        "name": "New Item",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.items.edit",
+        "name": "Edit Item",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.items.delete",
+        "name": "Delete Item",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "VAULTS",
+    "permissions": [
+      {
+        "id": "permission.vaults.all",
+        "name": "All Vaults",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.vaults.view",
+        "name": "View Vaults",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.vaults.new",
+        "name": "New Vault",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.vaults.edit",
+        "name": "Edit Vaults",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.vaults.delete",
+        "name": "Delete Vaults",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  }
+]

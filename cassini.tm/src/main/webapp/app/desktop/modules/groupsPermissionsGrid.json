@@ -1,0 +1,199 @@
+[
+
+  {
+    "group": "ADMIN",
+    "permissions": [
+      {
+        "id": "permission.admin.all",
+        "name": "All Admin",
+        "show": true
+      },
+      {
+        "id": "permission.admin.user",
+        "name": "Add/Edit User",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.group",
+        "name": "Add/Edit Group",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+
+  {
+    "group": "HOME",
+    "permissions": [
+      {
+        "id": "permission.home.all",
+        "name": "All HOME",
+        "show": true
+      },
+      {
+        "id": "permission.home.view",
+        "name": "View",
+        "show": true
+      }
+
+    ]
+  },
+
+
+  {
+    "group": "PROJECTS",
+    "permissions": [
+      {
+        "id": "permission.projects.all",
+        "name": "All Projects",
+        "show": true
+      },
+      {
+        "id": "permission.projects.view",
+        "name": "View Projects",
+        "show": true
+      },
+      {
+        "id": "permission.projects.add",
+        "name": "Add Projects",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+
+
+  {
+    "group": "TASKS",
+    "permissions": [
+      {
+        "id": "permission.tasks.all",
+        "name": "All Tasks",
+        "show": true
+      },
+      {
+        "id": "permission.tasks.view",
+        "name": "View Tasks",
+        "show": true
+      },
+      {
+        "id": "permission.tasks.add",
+        "name": "Add Tasks",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+
+  {
+    "group": "PERSONS",
+    "permissions": [
+      {
+        "id": "permission.persons.all",
+        "name": "All Tasks",
+        "show": true
+      },
+      {
+        "id": "permission.persons.view",
+        "name": "View Tasks",
+        "show": true
+      },
+      {
+        "id": "permission.persons.add",
+        "name": "Add Tasks",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+
+
+  {
+    "group": "ACCOMMODATION",
+    "permissions": [
+      {
+        "id": "permission.accommodation.all",
+        "name": "All Accommodation",
+        "show": true
+      },
+      {
+        "id": "permission.accommodation.view",
+        "name": "View Accommodation",
+        "show": true
+      },
+      {
+        "id": "permission.accommodation.add",
+        "name": "Add Accommodation",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+
+  {
+    "group": "DEPARTMENTS",
+    "permissions": [
+      {
+        "id": "permission.departments.all",
+        "name": "All Departments",
+        "show": true
+      },
+      {
+        "id": "permission.departments.view",
+        "name": "View Departments",
+        "show": true
+      },
+      {
+        "id": "permission.departments.add",
+        "name": "Add Departments",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+
+  {
+    "group": "LAYOUT",
+    "permissions": [
+      {
+        "id": "permission.layout.all",
+        "name": "All Layouts",
+        "show": true
+      },
+      {
+        "id": "permission.layout.view",
+        "name": "View Layout",
+        "show": true
+      },
+      {
+        "id": "permission.layout.add",
+        "name": "Add Layout",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "MEDIA",
+    "permissions": [
+      {
+        "id": "permission.media.all",
+        "name": "All Media",
+        "show": true
+      },
+      {
+        "id": "permission.media.view",
+        "name": "View Media",
+        "show": true
+      },
+      {
+        "id": "permission.media.add",
+        "name": "Add Media",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  }
+
+]

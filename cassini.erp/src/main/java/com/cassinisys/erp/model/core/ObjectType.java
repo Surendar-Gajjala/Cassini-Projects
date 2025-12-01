@@ -1,0 +1,65 @@
+package com.cassinisys.erp.model.core;
+
+import java.io.Serializable;
+
+/**
+ * Created by reddy on 6/26/15.
+ */
+
+public enum ObjectType implements Serializable {
+	CUSTOMER("CUSTOMER"),
+    COUNTRY("COUNTRY"),
+    STATE("STATE"),
+    DISTRICT("DISTRICT"),
+    ADDRESS("ADDRESS"),
+    PERSON("PERSON"),
+    LOGIN("LOGIN"),
+
+    BUSINESSUNIT("BUSINESSUNIT"),
+    DEPARTMENT("DEPARTMENT"),
+    EMPLOYEE("EMPLOYEE"),
+    PAYROLL("PAYROLL"),
+    LOAN("LOAN"),
+
+    PRODUCT("PRODUCT"),
+    PRODUCTBOM("PRODUCTBOM"),
+    MATERIAL("MATERIAL"),
+    MATERIALPURCHASEORDER("MATERIALPURCHASEORDER"),
+    SUPPLIER("SUPPLIER"),
+    PRODUCTIONORDER("PRODUCTIONORDER"),
+    WORKCENTER("WORKCENTER"),
+    MACHINE("MACHINE"),
+    MACHINESPAREPART("MACHINESPAREPART"),
+    PROCESS("PROCESS"),
+    PROCESSSTEP("PROCESSSTEP"),
+    WORKCENTERJOB("WORKCENTERJOB"),
+
+    SALESREGION("SALESREGION"),
+    SALESREP("SALESREP"),
+    SHIPPER("SHIPPER"),
+    CUSTOMERORDER("CUSTOMERORDER"),
+    CUSTOMERRETURN("CUSTOMERRETURN"),
+	SALESREPFIELDREPORT("SALESREPFIELDREPORT"),
+    SHIPMENT("SHIPMENT"),
+    CONSIGNMENT("CONSIGNMENT"),
+    VEHICLE("VEHICLE"),
+
+
+    NOTE("NOTE"),
+    RECEIVE("RECEIVE"),
+    ISSUE("ISSUE"),
+    STORE("STORE"),
+	TODOLIST("TODOLIST");
+
+    private String type;
+
+    private ObjectType(String s) {
+        type = s;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+
+}

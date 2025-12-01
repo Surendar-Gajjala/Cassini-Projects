@@ -1,0 +1,2356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Protractor Test Execution Report</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/css/lightbox.min.css" >
+    <style type="text/css">
+      .panel-heading {
+    padding: 0;
+}
+
+.panel-heading a {
+    padding: 10px 5px;
+    display: block;
+    position: relative;
+    text-decoration: none;
+}
+
+.panel-heading i.glyphicon-chevron-down {
+    display: none;
+}
+
+.panel-heading i.glyphicon-chevron-right {
+    display: inline-block;
+}
+
+.panel-heading.open i.glyphicon-chevron-down {
+    display: inline-block;
+}
+
+.panel-heading.open i.glyphicon-chevron-right {
+    display: none;
+}
+
+.info {
+    text-align: right;
+    padding-bottom: 10px;
+}
+
+.panel-title b {
+    padding-right: 10px;
+}
+
+.panel-heading .label-container {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.panel-heading .label-container label {
+    margin-left: 5px;
+    padding: 5px;
+}
+
+.navbar .label-container {
+    position: absolute;
+    right: 5%;
+    top: 14px;
+}
+
+.navbar {
+    margin-bottom: 10px;
+}
+
+.navbar .label {
+    font-size: 20px;
+}
+
+.navbar .project-name {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -45%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.chart {
+    padding-bottom: 15px;
+}
+
+div.chart div div svg rect {
+    fill: #f5f5f5;
+}
+
+table.arguments {
+    margin-left: 30px;
+}
+
+.screenshot {
+    padding: 2% 0 2% 0;
+}
+
+.scenarioTitle {
+    width: 80%
+}
+
+.description {
+    background-color: white;
+    border-color: white;
+    line-height: 1.6;
+    color: #6f6f6f;
+    font-weight: 400;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding:  0.1em 0.5em 1.2em 1.5em
+}
+
+#scenario-description {
+    padding-bottom:  1em;
+    padding-left: 0.2em;
+}
+
+.scrollBar {
+    overflow-x: scroll;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f5f5f5;
+    color: black;
+}
+
+.info {
+    background-color: #fbfbfb;
+}
+
+.step-duration {
+    float: right;
+}
+
+.footer-div {
+    text-align: right;
+    vertical-align: middle;
+    height:3.5%;
+    width:100%;
+}
+
+.footer-container {
+    margin-right: 10px;
+    margin-top: 5px;
+    width:18%;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.footer-link {
+    font-size: 13px;
+    float: right;
+}
+
+.footer-link:hover {
+    color: darkgray;
+}
+
+.col-lg-11 {
+    width: 100%;
+}
+
+.generated-on {
+    text-align: right;
+    padding-bottom: 10px;
+}
+
+    </style>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="project-name visible-md visible-lg">Protractor Test Execution Report</div>
+          <div class="label-container">
+            <span class="label label-success" title=TestCases>Passed: 14</span>
+            <span class="label label-danger" title=TestCases>Failed: 26</span> 
+			<span class="label label-warning" title=TestCases>Skipped: 1</span> 
+            <span class="label label-info">Time Elapsed: 0h 16min 1s</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+	
+    <div class="generated-on">6/15/2021, 9:00:10 PM</div>
+	
+    <!--<div class="generated-on"><b>Platform:</b> Windows</div>
+    <div class="info"><b>Browser:</b> chrome 91.0.4472.106</div>
+    <div class="info"><b>Generated on:</b> 6/15/2021, 9:00:10 PM</div>-->
+
+
+      <div class="row">
+        <div class="chart col-lg-6 col-md-6" id="piechart_testsuites"></div>
+        <div class="chart col-lg-6 col-md-6" id="piechart_testcases"></div>
+      </div>
+	  
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#logOutput">
+              <i class="glyphicon glyphicon-chevron-right"></i>
+              <i class="glyphicon glyphicon-chevron-down"></i>
+              <b>Environment</b>
+            </a>
+          </h4>
+        </div>
+        <div id="logOutput" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="row">
+              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class="pull-left">
+                    <strong> Browser: </strong>chrome 91.0.4472.106
+                  </div>
+                  <div class="pull-right">
+                    <strong> Platform: </strong>Windows
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite0">
+          
+            <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+          
+          <font color="green"><b>TestSuite:</b>Url Testing</font>
+          <span class="label-container">
+            
+            
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite0" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite1">
+          
+            <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+          
+          <font color="green"><b>TestSuite:</b>Login Testing</font>
+          <span class="label-container">
+            <span class="label label-success">1</span>
+            
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite1" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_0">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Valid login credentials</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 32 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite2">
+          
+            <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+          
+          <font color="green"><b>TestSuite:</b>focused specs</font>
+          <span class="label-container">
+            <span class="label label-success">1</span>
+            
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite2" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase2_0">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Click Dco Number hyperlink -> goto Basic details tab Successfully</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase2_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 22 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite3">
+          
+            <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+          
+          <font color="green"><b>TestSuite:</b>focused specs.DCO  Details -> Basic -> Check data update with Cancel option</font>
+          <span class="label-container">
+            <span class="label label-success">4</span>
+            
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite3" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase3_0">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Title Field</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase3_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 7 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase3_1">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Title Field empty -> Click ok button -> error message successful</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase3_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 11 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase3_2">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Description Field</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase3_2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 5 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase3_3">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Reason for Change Field</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase3_3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 5 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite4">
+          
+            <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+          
+          <font color="green"><b>TestSuite:</b>focused specs.DCO Details -> Basic -> Check data update with OK option</font>
+          <span class="label-container">
+            <span class="label label-success">4</span>
+            
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite4" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase4_0">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Title Field</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase4_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 13 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase4_1">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Description Field</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase4_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 13 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase4_2">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Reason for Change Field</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase4_2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 13 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase4_3">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Change Analyst Field</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase4_3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 16 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite5">
+          
+            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+          
+          <font color="red"><b>TestSuite:</b>focused specs.DCO Details -> Change Requests tab:</font>
+          
+          <span class="label-container">
+            <span class="label label-success">4</span>
+            <span class="label label-danger">3</span>
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite5" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_0">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Click on Change Requests tab -> open the  Change Requests tab View successfully</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 6 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_1">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Plus (+) button Tool tip Test case</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 7 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_2">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Click Plus(+) button -> open Select Change Requests Side panel Successfully</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 6 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_3">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Click Close(X) button -> close Select Change Requests Side panel Successfully</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 9 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_4">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Click Add button -> Without select at least one Change Requests Test case</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 15 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_5">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click Add button -> with select at least one Change Requests Test case</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_5" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 19 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Failed: Wait timed out after 15008ms</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Change Requests tab: Click Add button -> with select at least one Change Requests Test case.png" data-lightbox="chrome-focused specs.DCO Details -> Change Requests tab: Click Add button -> with select at least one Change Requests Test case.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Change Requests tab: Click Add button -> with select at least one Change Requests Test case.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Change Requests tab: Click Add button -> with select at least one Change Requests Test case.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_6">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click Remove Item button -> remove that Item from the table Successful</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_6" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 16 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Add button -> with select at least one Change Requests Test case.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png" data-lightbox="chrome-focused specs.DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite6">
+          
+            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+          
+          <font color="red"><b>TestSuite:</b>focused specs.DCO Details -> Affected Items tab:</font>
+          
+          <span class="label-container">
+            
+            <span class="label label-danger">8</span>
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite6" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_0">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click on Affected Items tab -> open the  Affected Items tab View successfully</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 13 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click on Affected Items tab -> open the  Affected Items tab View successfully.png" data-lightbox="chrome-focused specs.DCO Details -> Affected Items tab: Click on Affected Items tab -> open the  Affected Items tab View successfully.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click on Affected Items tab -> open the  Affected Items tab View successfully.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click on Affected Items tab -> open the  Affected Items tab View successfully.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_1">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click Plus(+) button -> open Select items Side panel Successfully</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 6 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Plus(+) button -> open Select items Side panel Successfully.png" data-lightbox="chrome-focused specs.DCO Details -> Affected Items tab: Click Plus(+) button -> open Select items Side panel Successfully.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Plus(+) button -> open Select items Side panel Successfully.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Plus(+) button -> open Select items Side panel Successfully.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_2">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click Close(X) button -> close Select items Side panel Successfully</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 9 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Close(X) button -> close Select items Side panel Successfully.png" data-lightbox="chrome-focused specs.DCO Details -> Affected Items tab: Click Close(X) button -> close Select items Side panel Successfully.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Close(X) button -> close Select items Side panel Successfully.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Close(X) button -> close Select items Side panel Successfully.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_3">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click Add button -> Without select at least one Item Test case</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 15 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Add button -> Without select at least one Item Test case.png" data-lightbox="chrome-focused specs.DCO Details -> Affected Items tab: Click Add button -> Without select at least one Item Test case.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Add button -> Without select at least one Item Test case.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Add button -> Without select at least one Item Test case.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_4">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click Add button -> with select at least one Item Test case</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 19 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Add button -> with select at least one Item Test case.png" data-lightbox="chrome-focused specs.DCO Details -> Affected Items tab: Click Add button -> with select at least one Item Test case.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Add button -> with select at least one Item Test case.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Add button -> with select at least one Item Test case.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_5">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click Edit Item button -> Edit option enable successful</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_5" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 16 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Edit Item button -> Edit option enable successful.png" data-lightbox="chrome-focused specs.DCO Details -> Affected Items tab: Click Edit Item button -> Edit option enable successful.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Edit Item button -> Edit option enable successful.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Edit Item button -> Edit option enable successful.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_6">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click save button -> Update the Item successfully</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_6" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 16 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click save button -> Update the Item successfully.png" data-lightbox="chrome-focused specs.DCO Details -> Affected Items tab: Click save button -> Update the Item successfully.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click save button -> Update the Item successfully.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click save button -> Update the Item successfully.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_7">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click Remove Item button -> remove that Item from the table Successful</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_7" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 16 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png" data-lightbox="chrome-focused specs.DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite7">
+          
+            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+          
+          <font color="red"><b>TestSuite:</b>focused specs.DCO Details -> Related Items tab:</font>
+          
+          <span class="label-container">
+            
+            <span class="label label-danger">7</span>
+            <span class="label label-warning">1</span>
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite7" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase7_0">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click on Related Items tab -> open the  Related Items tab View successfully</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase7_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 12 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click on Related Items tab -> open the  Related Items tab View successfully.png" data-lightbox="chrome-focused specs.DCO Details -> Related Items tab: Click on Related Items tab -> open the  Related Items tab View successfully.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click on Related Items tab -> open the  Related Items tab View successfully.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click on Related Items tab -> open the  Related Items tab View successfully.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase7_1">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click Plus(+) button -> open Select items Side panel Successfully</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase7_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 6 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Plus(+) button -> open Select items Side panel Successfully.png" data-lightbox="chrome-focused specs.DCO Details -> Related Items tab: Click Plus(+) button -> open Select items Side panel Successfully.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Plus(+) button -> open Select items Side panel Successfully.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Plus(+) button -> open Select items Side panel Successfully.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase7_2">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click Close(X) button -> close Select items Side panel Successfully</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase7_2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 9 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Close(X) button -> close Select items Side panel Successfully.png" data-lightbox="chrome-focused specs.DCO Details -> Related Items tab: Click Close(X) button -> close Select items Side panel Successfully.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Close(X) button -> close Select items Side panel Successfully.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Close(X) button -> close Select items Side panel Successfully.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase7_3">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click Add button -> Without select at least one Item Test case</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase7_3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 15 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Add button -> Without select at least one Item Test case.png" data-lightbox="chrome-focused specs.DCO Details -> Related Items tab: Click Add button -> Without select at least one Item Test case.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Add button -> Without select at least one Item Test case.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Add button -> Without select at least one Item Test case.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase7_4">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click Add button -> with select at least one Item Test case</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase7_4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 20 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Add button -> with select at least one Item Test case.png" data-lightbox="chrome-focused specs.DCO Details -> Related Items tab: Click Add button -> with select at least one Item Test case.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Add button -> with select at least one Item Test case.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Add button -> with select at least one Item Test case.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase7_5">
+                        
+                          <span class="label label-warning"><i class="glyphicon glyphicon-minus"></i></span>
+                        
+
+                        
+                        <font color="orange"><b>TestCase:</b>Click Add button -> with select more then one Item Test case</font>
+                        
+                        <span class="label-container">
+                          
+                          <span class="label label-warning" title="Skipped">Skipped</span>
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase7_5" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase7_6">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click Remove Item button -> remove that Item from the table Successful</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase7_6" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 25 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Remove Item button -> remove that Item from the table Successful.png" data-lightbox="chrome-focused specs.DCO Details -> Related Items tab: Click Remove Item button -> remove that Item from the table Successful.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Remove Item button -> remove that Item from the table Successful.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Related Items tab: Click Remove Item button -> remove that Item from the table Successful.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite8">
+          
+            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+          
+          <font color="red"><b>TestSuite:</b>focused specs.DCO Details -> Workflow tab:</font>
+          
+          <span class="label-container">
+            
+            <span class="label label-danger">1</span>
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite8" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase8_0">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click on Workflow tab -> open the  Workflow tab View successfully</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase8_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 12 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Related Items tab: Click Remove Item button -> remove that Item from the table Successful.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details -> Workflow tab: Click on Workflow tab -> open the  Workflow tab View successfully.png" data-lightbox="chrome-focused specs.DCO Details -> Workflow tab: Click on Workflow tab -> open the  Workflow tab View successfully.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details -> Workflow tab: Click on Workflow tab -> open the  Workflow tab View successfully.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details -> Workflow tab: Click on Workflow tab -> open the  Workflow tab View successfully.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite9">
+          
+            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+          
+          <font color="red"><b>TestSuite:</b>focused specs.DCO Details ->  Files Tab:</font>
+          
+          <span class="label-container">
+            
+            <span class="label label-danger">6</span>
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite9" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase9_0">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click on Files tab -> open the files tab View successfully</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase9_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 6 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Workflow tab: Click on Workflow tab -> open the  Workflow tab View successfully.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: Click on Files tab -> open the files tab View successfully.png" data-lightbox="chrome-focused specs.DCO Details ->  Files Tab: Click on Files tab -> open the files tab View successfully.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: Click on Files tab -> open the files tab View successfully.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: Click on Files tab -> open the files tab View successfully.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase9_1">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b> click here to add files button upload files TestCase</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase9_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 3 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details ->  Files Tab: Click on Files tab -> open the files tab View successfully.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details ->  Files Tab:  click here to add files button upload files TestCase.png" data-lightbox="chrome-focused specs.DCO Details ->  Files Tab:  click here to add files button upload files TestCase.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details ->  Files Tab:  click here to add files button upload files TestCase.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details ->  Files Tab:  click here to add files button upload files TestCase.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase9_2">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>New Folder Button click -> open New folder sidepanel and Click close(X) button -> close  New folder sidepanel Test cases</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase9_2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 5 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details ->  Files Tab:  click here to add files button upload files TestCase.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: New Folder Button click -> open New folder sidepanel and Click close(X) button -> close  New folder sidepanel Test cases.png" data-lightbox="chrome-focused specs.DCO Details ->  Files Tab: New Folder Button click -> open New folder sidepanel and Click close(X) button -> close  New folder sidepanel Test cases.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: New Folder Button click -> open New folder sidepanel and Click close(X) button -> close  New folder sidepanel Test cases.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: New Folder Button click -> open New folder sidepanel and Click close(X) button -> close  New folder sidepanel Test cases.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase9_3">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Check New Folder creation->without entering mandatory fields data</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase9_3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 11 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details ->  Files Tab: New Folder Button click -> open New folder sidepanel and Click close(X) button -> close  New folder sidepanel Test cases.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: Check New Folder creation->without entering mandatory fields data.png" data-lightbox="chrome-focused specs.DCO Details ->  Files Tab: Check New Folder creation->without entering mandatory fields data.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: Check New Folder creation->without entering mandatory fields data.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: Check New Folder creation->without entering mandatory fields data.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase9_4">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Check New Folder creation->with entering mandatory fields data</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase9_4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 21 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details ->  Files Tab: Check New Folder creation->without entering mandatory fields data.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: Check New Folder creation->with entering mandatory fields data.png" data-lightbox="chrome-focused specs.DCO Details ->  Files Tab: Check New Folder creation->with entering mandatory fields data.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: Check New Folder creation->with entering mandatory fields data.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: Check New Folder creation->with entering mandatory fields data.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase9_5">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Check on Delete button -> Delete the folder successfully</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase9_5" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 21 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details ->  Files Tab: Check New Folder creation->with entering mandatory fields data.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: Check on Delete button -> Delete the folder successfully.png" data-lightbox="chrome-focused specs.DCO Details ->  Files Tab: Check on Delete button -> Delete the folder successfully.png">
+                              <img src="./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: Check on Delete button -> Delete the folder successfully.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs.DCO Details ->  Files Tab: Check on Delete button -> Delete the folder successfully.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite10">
+          
+            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+          
+          <font color="red"><b>TestSuite:</b>focused specs. DCO Details -> Timeline:</font>
+          
+          <span class="label-container">
+            
+            <span class="label label-danger">1</span>
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite10" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase10_0">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>Click on Timeline tab -> open the Timeline tab View successfully</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase10_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 15 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details ->  Files Tab: Check on Delete button -> Delete the folder successfully.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="./screenshotss/chrome-focused specs. DCO Details -> Timeline: Click on Timeline tab -> open the Timeline tab View successfully.png" data-lightbox="chrome-focused specs. DCO Details -> Timeline: Click on Timeline tab -> open the Timeline tab View successfully.png">
+                              <img src="./screenshotss/chrome-focused specs. DCO Details -> Timeline: Click on Timeline tab -> open the Timeline tab View successfully.png" style="width:100%;height:100%" alt="Screenshot not found: ./screenshotss/chrome-focused specs. DCO Details -> Timeline: Click on Timeline tab -> open the Timeline tab View successfully.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+
+
+    </div>
+
+
+    <div class="navbar-fixed-bottom row-fluid footer-div ">
+      <div class="navbar-inner">
+        <div class="footer-container">
+          <a  target="_blank" href="https://www.npmjs.com/package/protractor-html-reporter-2">
+            <div class="text-muted footer-link">
+              generated by @protractor-html-reporter-2
+            </div>
+             </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(function() {drawChart({
+                                                              "title": "TestSuites",
+                                                              "passed": 5,
+                                                              "failed": 6,
+        })
+      });
+      google.charts.setOnLoadCallback(function() {drawChart({
+                                                              "title": "TestCases",
+                                                              "passed": 14,
+                                                              "skipped": 1,
+                                                              "errors": 0,
+                                                              "failed": 26
+        })
+      });
+
+    </script>
+    <script>
+      function drawChart(chartData) {
+  var data = google.visualization.arrayToDataTable([
+    ['Task', 'Project Results'],
+    ['Passed', chartData.passed],
+    ['Skipped', chartData.skipped],
+    ['Errors', chartData.errors],
+    ['Failed', chartData.failed]
+  ]);
+
+  var testsNumber = chartData.passed + chartData.failed + (chartData.skipped || 0) + (chartData.errors || 0);
+  var title;
+
+  if (testsNumber === 1) {
+    title = testsNumber + ' ' + chartData.title.slice(0, -1);
+  } else {
+    title = testsNumber + ' ' + chartData.title;
+  }
+
+  var options = {
+    width: '100%',
+    height: 270,
+    title: title,
+    is3D: true,
+    fontSize: '12',
+    colors: ['#5cb85c', '#f0ad4e', '#5bc0de', '#d9534f'],
+    pieStartAngle: 100,
+    backgroundColor: 'white',
+    titleTextStyle: {
+      fontSize: '13',
+      color: '#5e5e5e'
+    }
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart_' + chartData.title.toLowerCase()));
+  chart.draw(data, options);
+}
+
+    </script>
+
+  </body>
+</html>

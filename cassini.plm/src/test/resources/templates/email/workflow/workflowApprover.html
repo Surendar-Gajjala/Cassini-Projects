@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ECO Approval</title>
+    <link rel="stylesheet" type="text/css" href="${host}/app/assets/css/desktop.imports.css">
+    <link rel="stylesheet" type="text/css" href="${host}/app/assets/css/app/desktop/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <style>
+        .row {
+            margin: 0;
+        }
+
+        td.field-value {
+            font-size: 17px;
+            font-family: "Open Sans" !important;
+            font-weight: 300;
+        }
+
+        table td {
+            padding: 10px;
+            vertical-align: top !important;
+        }
+
+        td.text-right {
+            width: 150px;
+        }
+        body {
+            font-family: "Open Sans" !important;
+        }
+        .items-table {
+            width: 100%;
+        }
+        .items-table th {
+            font-weight: 400;
+        }
+        .items-table thead tr th:nth-child(2), th:nth-child(4) {
+            text-align: center;
+        }
+        .items-table tbody tr td:nth-child(2), td:nth-child(4) {
+            text-align: center;
+        }
+        .items-table tbody tr {
+            border-bottom: 1px dotted #ddd;
+        }
+        .timeline {
+            width: 250px;
+        }
+
+        .timeline::before {
+            left: -80px;
+        }
+
+        .timeline .flag {
+            cursor: pointer;
+        }
+
+        .timeline .time-wrapper {
+            margin-top: 1px;
+        }
+
+        .timeline .time {
+            font-size: 12px;
+            padding: 6px;
+        }
+
+        .notification-msg {
+            padding: 20px;
+            color: #fff;
+            background-color: #1CAF9A;
+            font-weight: 300;
+            font-size: 22px;
+            font-family: "Open Sans" !important;
+        }
+    </style>
+</head>
+<body style="padding: 50px;">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">Cassini.PLM Workflow Notification</h3>
+            </div>
+            <div class="notification-msg">
+                <span>This ECO workflow status requires your approval. Please review and take action.</span>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td class="text-right">ECO Number :</td>
+                                <td class="field-value"><span>${change.ecoNumber}</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">Title :</td>
+                                <td class="field-value">
+                                    <span>${change.title}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">Description :</td>
+                                <td class="field-value">
+                                    <span>${change.description}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">Current Status :</td>
+                                <td class="field-value"><span>${change.status}</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">Affected Items :</td>
+                                <td class="field-value">
+                                    <#if affectedItems?size=0>
+                                            <span style="font-style: italic">There are no items</span>
+                                    </#if>
+                                </td>
+                                <#if affectedItems?? && affectedItems?size gt 0>
+                                    <td class="field-value">
+                                        <div class="responsive-table">
+                                            <table class="items-table">
+                                                <thead>
+                                                <tr>
+                                                    <th>Item Number</th>
+                                                    <th>From Revision</th>
+                                                    <th>From Status</th>
+                                                    <th>To Revision</th>
+                                                    <th>To Status</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <#list affectedItems as item>
+                                                    <tr>
+                                                        <td>${item.itemObject.itemNumber}</td>
+                                                        <td>${item.fromRevision}</td>
+                                                        <td>${item.fromLifeCycle.phase}</td>
+                                                        <td>${item.toRevision}</td>
+                                                        <td>${item.toLifeCycle.phase}</td>
+                                                    </tr>
+                                                </#list>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </#if>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div>
+                            <h5 style="margin: 0">Workflow History</h5>
+
+                            <div>
+                                <ul class="timeline ng-scope" style="margin-left: 100px;">
+                                    <#list histories as history>
+                                        <li class="ng-scope">
+                                            <div class="direction-r">
+                                                <div class="flag-wrapper">
+                                                    <span class="flag ng-binding" style="">${history.statusObject.name}</span>
+                                                    <span class="time-wrapper">
+                                                    <span class="time ng-binding">${history.timestamp?string["dd/MM/yyyy, HH:mm:ss"]}</span>
+                                                </span>
+                                                </div>
+                                                <div class="desc"></div>
+                                            </div>
+                                        </li>
+                                    </#list>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer text-right">
+                <a href="${host}" class='btn btn-sm btn-primary'>Go to Cassini.PLM</a>
+            </div>
+        </div>
+        <div style="margin-bottom: 100px;padding: 10px; text-align: center">
+            Cassini.PLM &copy; Cassini Systems
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites disabled="0" errors="0" failures="42" tests="40" time="955.775">
+ <testsuite name="Url Testing" timestamp="2021-06-09T11:50:10" hostname="localhost" time="0.001" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ </testsuite>
+ <testsuite name="Login Testing" timestamp="2021-06-09T11:50:10" hostname="localhost" time="31.532" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Login Testing" name="Valid login credentials" time="31.53" />
+ </testsuite>
+ <testsuite name="focused specs" timestamp="2021-06-09T11:50:41" hostname="localhost" time="473.223" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="focused specs" name="Click Dco Number hyperlink -&gt; goto Basic details tab Successfully" time="21.438" />
+ </testsuite>
+ <testsuite name="focused specs.DCO  Details -&gt; Basic -&gt; Check data update with Cancel option" timestamp="2021-06-09T11:51:03" hostname="localhost" time="31.991" errors="0" tests="4" skipped="0" disabled="0" failures="0">
+  <testcase classname="focused specs.DCO  Details -&gt; Basic -&gt; Check data update with Cancel option" name="Title Field" time="6.104" />
+  <testcase classname="focused specs.DCO  Details -&gt; Basic -&gt; Check data update with Cancel option" name="Title Field empty -&gt; Click ok button -&gt; error message successful" time="10.587" />
+  <testcase classname="focused specs.DCO  Details -&gt; Basic -&gt; Check data update with Cancel option" name="Description Field" time="4.786" />
+  <testcase classname="focused specs.DCO  Details -&gt; Basic -&gt; Check data update with Cancel option" name="Reason for Change Field" time="4.862" />
+ </testsuite>
+ <testsuite name="focused specs.DCO Details -&gt; Basic -&gt; Check data update with OK option" timestamp="2021-06-09T11:51:35" hostname="localhost" time="57.328" errors="0" tests="4" skipped="0" disabled="0" failures="0">
+  <testcase classname="focused specs.DCO Details -&gt; Basic -&gt; Check data update with OK option" name="Title Field" time="12.357" />
+  <testcase classname="focused specs.DCO Details -&gt; Basic -&gt; Check data update with OK option" name="Description Field" time="12.217" />
+  <testcase classname="focused specs.DCO Details -&gt; Basic -&gt; Check data update with OK option" name="Reason for Change Field" time="12.244" />
+  <testcase classname="focused specs.DCO Details -&gt; Basic -&gt; Check data update with OK option" name="Change Analyst Field" time="15.204" />
+ </testsuite>
+ <testsuite name="focused specs.DCO Details -&gt; Change Requests tab:" timestamp="2021-06-09T11:52:32" hostname="localhost" time="81.17" errors="0" tests="7" skipped="0" disabled="0" failures="3">
+  <testcase classname="focused specs.DCO Details -&gt; Change Requests tab:" name="Click on Change Requests tab -&gt; open the  Change Requests tab View successfully" time="5.213" />
+  <testcase classname="focused specs.DCO Details -&gt; Change Requests tab:" name="Plus (+) button Tool tip Test case" time="6.25" />
+  <testcase classname="focused specs.DCO Details -&gt; Change Requests tab:" name="Click Plus(+) button -&gt; open Select Change Requests Side panel Successfully" time="5.333" />
+  <testcase classname="focused specs.DCO Details -&gt; Change Requests tab:" name="Click Close(X) button -&gt; close Select Change Requests Side panel Successfully" time="8.312" />
+  <testcase classname="focused specs.DCO Details -&gt; Change Requests tab:" name="Click Add button -&gt; Without select at least one Change Requests Test case" time="14.059" />
+  <testcase classname="focused specs.DCO Details -&gt; Change Requests tab:" name="Click Add button -&gt; with select at least one Change Requests Test case" time="18.287">
+   <failure type="exception" message="Failed: Wait timed out after 15008ms"><![CDATA[TimeoutError: Wait timed out after 15008ms
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2201:17
+    at ManagedPromise.invokeCallback_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+From: Task: <anonymous wait>
+    at scheduleWait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2188:20)
+    at ControlFlow.wait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2517:12)
+    at Driver.wait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\webdriver.js:934:29)
+    at run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\browser.js:58:33)
+    at ProtractorBrowser.to.<computed> [as wait] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\browser.js:66:16)
+    at UserContext.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\Directives\changeRequests\changeRequestViewDirectiveTestCases.js:73:21)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
+From: Task: Run it("Click Add button -> with select at least one Change Requests Test case") in control flow
+    at UserContext.<anonymous> (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
+    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+From asynchronous test: 
+Error
+    at changeRequestsDirectiveTestCases.changeRequests (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\Directives\changeRequests\changeRequestViewDirectiveTestCases.js:64:9)
+    at Suite.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\changeRequests\changeRequestsTabTestCases.js:20:38)
+    at addSpecsToSuite (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\changeRequests\changeRequestsTabTestCases.js:4:1)
+    at Module._compile (internal/modules/cjs/loader.js:1137:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)
+    at Module.load (internal/modules/cjs/loader.js:985:32)]]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Change Requests tab:" name="Click Remove Item button -&gt; remove that Item from the table Successful" time="15.313">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Change Requests tab: Click Add button -&gt; with select at least one Change Requests Test case.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Add button -> with select at least one Change Requests Test case.png']]>
+   </failure>
+   <failure type="exception" message="Failed: Wait timed out after 15000ms"><![CDATA[TimeoutError: Wait timed out after 15000ms
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2201:17
+    at ManagedPromise.invokeCallback_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+From: Task: <anonymous wait>
+    at scheduleWait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2188:20)
+    at ControlFlow.wait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2517:12)
+    at Driver.wait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\webdriver.js:934:29)
+    at run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\browser.js:58:33)
+    at ProtractorBrowser.to.<computed> [as wait] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\browser.js:66:16)
+    at UserContext.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\Directives\changeRequests\changeRequestViewDirectiveTestCases.js:93:21)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
+From: Task: Run it("Click Remove Item button -> remove that Item from the table Successful") in control flow
+    at UserContext.<anonymous> (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
+    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+From asynchronous test: 
+Error
+    at changeRequestsDirectiveTestCases.changeRequests (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\Directives\changeRequests\changeRequestViewDirectiveTestCases.js:90:9)
+    at Suite.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\changeRequests\changeRequestsTabTestCases.js:20:38)
+    at addSpecsToSuite (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\changeRequests\changeRequestsTabTestCases.js:4:1)
+    at Module._compile (internal/modules/cjs/loader.js:1137:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)
+    at Module.load (internal/modules/cjs/loader.js:985:32)]]>
+   </failure>
+  </testcase>
+ </testsuite>
+ <testsuite name="focused specs.DCO Details -&gt; Affected Items tab:" timestamp="2021-06-09T11:53:53" hostname="localhost" time="104.687" errors="0" tests="8" skipped="0" disabled="0" failures="19">
+  <testcase classname="focused specs.DCO Details -&gt; Affected Items tab:" name="Click on Affected Items tab -&gt; open the  Affected Items tab View successfully" time="12.171">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Change Requests tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Affected Items tab:" name="Click Plus(+) button -&gt; open Select items Side panel Successfully" time="5.482">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Change Requests tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Affected Items tab: Click on Affected Items tab -&gt; open the  Affected Items tab View successfully.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click on Affected Items tab -> open the  Affected Items tab View successfully.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Affected Items tab:" name="Click Close(X) button -&gt; close Select items Side panel Successfully" time="8.42">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Change Requests tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Affected Items tab: Click Plus(+) button -&gt; open Select items Side panel Successfully.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Plus(+) button -> open Select items Side panel Successfully.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Affected Items tab:" name="Click Add button -&gt; Without select at least one Item Test case" time="14.126">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Change Requests tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Affected Items tab: Click Close(X) button -&gt; close Select items Side panel Successfully.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Close(X) button -> close Select items Side panel Successfully.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Affected Items tab:" name="Click Add button -&gt; with select at least one Item Test case" time="18.454">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Change Requests tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Affected Items tab: Click Add button -&gt; Without select at least one Item Test case.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Add button -> Without select at least one Item Test case.png']]>
+   </failure>
+   <failure type="exception" message="Failed: Wait timed out after 15005ms"><![CDATA[TimeoutError: Wait timed out after 15005ms
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2201:17
+    at ManagedPromise.invokeCallback_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+From: Task: <anonymous wait>
+    at scheduleWait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2188:20)
+    at ControlFlow.wait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2517:12)
+    at Driver.wait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\webdriver.js:934:29)
+    at run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\browser.js:58:33)
+    at ProtractorBrowser.to.<computed> [as wait] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\browser.js:66:16)
+    at UserContext.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\affectedItems\affectedItemsTabTestCases.js:77:17)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
+From: Task: Run it("Click Add button -> with select at least one Item Test case") in control flow
+    at UserContext.<anonymous> (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
+    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\affectedItems\affectedItemsTabTestCases.js:68:5)
+    at addSpecsToSuite (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\affectedItems\affectedItemsTabTestCases.js:3:1)
+    at Module._compile (internal/modules/cjs/loader.js:1137:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)
+    at Module.load (internal/modules/cjs/loader.js:985:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:878:14)]]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Affected Items tab:" name="Click Edit Item button -&gt; Edit option enable successful" time="15.279">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Change Requests tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Affected Items tab: Click Add button -&gt; with select at least one Item Test case.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Add button -> with select at least one Item Test case.png']]>
+   </failure>
+   <failure type="exception" message="Failed: Wait timed out after 15008ms"><![CDATA[TimeoutError: Wait timed out after 15008ms
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2201:17
+    at ManagedPromise.invokeCallback_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+From: Task: <anonymous wait>
+    at scheduleWait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2188:20)
+    at ControlFlow.wait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2517:12)
+    at Driver.wait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\webdriver.js:934:29)
+    at run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\browser.js:58:33)
+    at ProtractorBrowser.to.<computed> [as wait] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\browser.js:66:16)
+    at UserContext.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\affectedItems\affectedItemsTabTestCases.js:105:17)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
+From: Task: Run it("Click Edit Item button -> Edit option enable successful") in control flow
+    at UserContext.<anonymous> (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
+    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\affectedItems\affectedItemsTabTestCases.js:102:5)
+    at addSpecsToSuite (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\affectedItems\affectedItemsTabTestCases.js:3:1)
+    at Module._compile (internal/modules/cjs/loader.js:1137:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)
+    at Module.load (internal/modules/cjs/loader.js:985:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:878:14)]]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Affected Items tab:" name="Click save button -&gt; Update the Item successfully" time="15.31">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Change Requests tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Affected Items tab: Click Edit Item button -&gt; Edit option enable successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Edit Item button -> Edit option enable successful.png']]>
+   </failure>
+   <failure type="exception" message="Failed: Wait timed out after 15000ms"><![CDATA[TimeoutError: Wait timed out after 15000ms
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2201:17
+    at ManagedPromise.invokeCallback_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+From: Task: <anonymous wait>
+    at scheduleWait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2188:20)
+    at ControlFlow.wait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2517:12)
+    at Driver.wait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\webdriver.js:934:29)
+    at run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\browser.js:58:33)
+    at ProtractorBrowser.to.<computed> [as wait] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\browser.js:66:16)
+    at UserContext.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\affectedItems\affectedItemsTabTestCases.js:129:17)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
+From: Task: Run it("Click save button -> Update the Item successfully") in control flow
+    at UserContext.<anonymous> (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
+    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\affectedItems\affectedItemsTabTestCases.js:126:5)
+    at addSpecsToSuite (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\affectedItems\affectedItemsTabTestCases.js:3:1)
+    at Module._compile (internal/modules/cjs/loader.js:1137:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)
+    at Module.load (internal/modules/cjs/loader.js:985:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:878:14)]]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Affected Items tab:" name="Click Remove Item button -&gt; remove that Item from the table Successful" time="15.297">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Change Requests tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Change Requests tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Affected Items tab: Click save button -&gt; Update the Item successfully.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click save button -> Update the Item successfully.png']]>
+   </failure>
+   <failure type="exception" message="Failed: Wait timed out after 15010ms"><![CDATA[TimeoutError: Wait timed out after 15010ms
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2201:17
+    at ManagedPromise.invokeCallback_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+From: Task: <anonymous wait>
+    at scheduleWait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2188:20)
+    at ControlFlow.wait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2517:12)
+    at Driver.wait (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\webdriver.js:934:29)
+    at run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\browser.js:58:33)
+    at ProtractorBrowser.to.<computed> [as wait] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\browser.js:66:16)
+    at UserContext.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\affectedItems\affectedItemsTabTestCases.js:162:17)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
+From: Task: Run it("Click Remove Item button -> remove that Item from the table Successful") in control flow
+    at UserContext.<anonymous> (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
+    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\affectedItems\affectedItemsTabTestCases.js:159:5)
+    at addSpecsToSuite (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\change\dco\details\affectedItems\affectedItemsTabTestCases.js:3:1)
+    at Module._compile (internal/modules/cjs/loader.js:1137:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)
+    at Module.load (internal/modules/cjs/loader.js:985:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:878:14)]]>
+   </failure>
+  </testcase>
+ </testsuite>
+ <testsuite name="focused specs.DCO Details -&gt; Related Items tab:" timestamp="2021-06-09T11:55:38" hostname="localhost" time="83.98" errors="0" tests="7" skipped="1" disabled="0" failures="11">
+  <testcase classname="focused specs.DCO Details -&gt; Related Items tab:" name="Click on Related Items tab -&gt; open the  Related Items tab View successfully" time="11.432">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Affected Items tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Related Items tab:" name="Click Plus(+) button -&gt; open Select items Side panel Successfully" time="5.467">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Affected Items tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Related Items tab: Click on Related Items tab -&gt; open the  Related Items tab View successfully.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Related Items tab: Click on Related Items tab -> open the  Related Items tab View successfully.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Related Items tab:" name="Click Close(X) button -&gt; close Select items Side panel Successfully" time="8.473">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Affected Items tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Related Items tab: Click Plus(+) button -&gt; open Select items Side panel Successfully.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Related Items tab: Click Plus(+) button -> open Select items Side panel Successfully.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Related Items tab:" name="Click Add button -&gt; Without select at least one Item Test case" time="14.131">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Affected Items tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Related Items tab: Click Close(X) button -&gt; close Select items Side panel Successfully.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Related Items tab: Click Close(X) button -> close Select items Side panel Successfully.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Related Items tab:" name="Click Add button -&gt; with select at least one Item Test case" time="19.186">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Affected Items tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Related Items tab: Click Add button -&gt; Without select at least one Item Test case.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Related Items tab: Click Add button -> Without select at least one Item Test case.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Related Items tab:" name="Click Add button -&gt; with select more then one Item Test case" time="0.001">
+   <skipped message="Temporarily disabled with xit" />
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt; Related Items tab:" name="Click Remove Item button -&gt; remove that Item from the table Successful" time="24.868">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Affected Items tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Affected Items tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Related Items tab: Click Add button -&gt; with select at least one Item Test case.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Related Items tab: Click Add button -> with select at least one Item Test case.png']]>
+   </failure>
+  </testcase>
+ </testsuite>
+ <testsuite name="focused specs.DCO Details -&gt; Workflow tab:" timestamp="2021-06-09T11:57:02" hostname="localhost" time="11.839" errors="0" tests="1" skipped="0" disabled="0" failures="1">
+  <testcase classname="focused specs.DCO Details -&gt; Workflow tab:" name="Click on Workflow tab -&gt; open the  Workflow tab View successfully" time="11.348">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Related Items tab: Click Remove Item button -&gt; remove that Item from the table Successful.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Related Items tab: Click Remove Item button -> remove that Item from the table Successful.png']]>
+   </failure>
+  </testcase>
+ </testsuite>
+ <testsuite name="focused specs.DCO Details -&gt;  Files Tab:" timestamp="2021-06-09T11:57:14" hostname="localhost" time="64.854" errors="0" tests="6" skipped="0" disabled="0" failures="7">
+  <testcase classname="focused specs.DCO Details -&gt;  Files Tab:" name="Click on Files tab -&gt; open the files tab View successfully" time="5.555">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt; Workflow tab: Click on Workflow tab -&gt; open the  Workflow tab View successfully.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -> Workflow tab: Click on Workflow tab -> open the  Workflow tab View successfully.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt;  Files Tab:" name=" click here to add files button upload files TestCase" time="2.591">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt;  Files Tab: Click on Files tab -&gt; open the files tab View successfully.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details ->  Files Tab: Click on Files tab -> open the files tab View successfully.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt;  Files Tab:" name="New Folder Button click -&gt; open New folder sidepanel and Click close(X) button -&gt; close  New folder sidepanel Test cases" time="4.828">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt;  Files Tab:  click here to add files button upload files TestCase.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details ->  Files Tab:  click here to add files button upload files TestCase.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt;  Files Tab:" name="Check New Folder creation-&gt;without entering mandatory fields data" time="10.492">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt;  Files Tab: New Folder Button click -&gt; open New folder sidepanel and Click close(X) button -&gt; close  New folder sidepanel Test cases.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details ->  Files Tab: New Folder Button click -> open New folder sidepanel and Click close(X) button -> close  New folder sidepanel Test cases.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt;  Files Tab:" name="Check New Folder creation-&gt;with entering mandatory fields data" time="20.693">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt;  Files Tab: Check New Folder creation-&gt;without entering mandatory fields data.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details ->  Files Tab: Check New Folder creation->without entering mandatory fields data.png']]>
+   </failure>
+  </testcase>
+  <testcase classname="focused specs.DCO Details -&gt;  Files Tab:" name="Check on Delete button -&gt; Delete the folder successfully" time="20.692">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt;  Files Tab: Check New Folder creation-&gt;with entering mandatory fields data.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details ->  Files Tab: Check New Folder creation->with entering mandatory fields data.png']]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;&apos; to equal &apos;Folder deleted successfully&apos;."><![CDATA[Error: Failed expectation
+    at UserContext.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\Directives\files\changeFilesDirectiveTestCases.js:129:34)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7]]>
+   </failure>
+  </testcase>
+ </testsuite>
+ <testsuite name="focused specs. DCO Details -&gt; Timeline:" timestamp="2021-06-09T11:58:19" hostname="localhost" time="15.17" errors="0" tests="1" skipped="0" disabled="0" failures="1">
+  <testcase classname="focused specs. DCO Details -&gt; Timeline:" name="Click on Timeline tab -&gt; open the Timeline tab View successfully" time="14.626">
+   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details -&gt;  Files Tab: Check on Delete button -&gt; Delete the folder successfully.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\config\screenshots\chrome-DCO Details ->  Files Tab: Check on Delete button -> Delete the folder successfully.png']]>
+   </failure>
+  </testcase>
+ </testsuite>
+</testsuites>

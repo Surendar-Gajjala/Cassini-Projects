@@ -1,0 +1,107 @@
+/* Begin enums */
+CREATE TYPE OBJECT_TYPE AS ENUM (
+    'COUNTRY',
+    'STATE',
+    'ADDRESS',
+    'PERSON',
+    'LOGIN',
+    'OTP',
+    'MESSAGEGROUP',
+    'MESSAGEGROUPMEMBER',
+	  'GROUPMESSAGE',
+	  'ATTACHMENT',
+    'APPLICATION',
+    'WORKFLOWDEFINITION',
+    'WORKFLOW',
+    'ACTIVITYDEFINITION',
+    'ACTIVITY',
+    'ACTION',
+    'ACTIONDEFINITION',
+    'TASKDEFINITION',
+    'TASK',
+    'NOTE',
+    'RESOURCE',
+    'DISCUSSIONGROUP',
+    'DISCUSSIONGROUPMESSAGE',
+    'STORAGE',
+    'STORAGETYPE',
+    'TABLEROW',
+    'PEOPLE',
+    'VAULT',
+    'MEDIA',
+    'CUSTOMOBJECTTYPE',
+    'CUSTOMOBJECT',
+    'CUSTOMFILE',
+    'PROFILE',
+    'CUSTOMOBJECTBOM',
+    'SAVEDSEARCH'
+);
+
+
+CREATE TYPE DATATYPE  AS ENUM (
+    'STRING',
+    'INTEGER',
+    'DOUBLE',
+    'DATE',
+    'TIME',
+    'TIMESTAMP',
+    'BOOLEAN',
+    'CURRENCY',
+    'LIST',
+    'OBJECT',
+    'IMAGE',
+    'ATTACHMENT',
+    'TABLE',
+    'TEXT',
+    'LONGTEXT',
+    'RICHTEXT',
+    'HYPERLINK',
+    'FORMULA',
+    'MULTILISTCHECKBOX'
+);
+
+CREATE TYPE ACTION_TYPE AS ENUM (
+    'CREATED',
+    'UPDATED',
+    'DELETED'
+);
+
+CREATE TYPE FREQUENCY_TYPE AS ENUM (
+    'HOURLY',
+    'DAILY',
+    'WEEKLY',
+    'MONTHLY'
+);
+
+CREATE TYPE GRP_MEMBER_STATUS AS ENUM (
+    'ACTIVE',
+    'DISABLED',
+    'DELETED'
+);
+
+CREATE TYPE MEDIA_TYPE AS ENUM (
+    'IMAGE',
+    'VIDEO'
+);
+
+CREATE TYPE NOTIFIED_TYPE AS ENUM(
+    'PERSON',
+    'GROUP'
+);
+
+CREATE TYPE PRIVILEGE_TYPE AS ENUM(
+    'GRANTED',
+    'DENIED'
+);
+
+CREATE TYPE MODULE_TYPE AS ENUM(
+    'ALL',
+    'PLATFORM',
+    'PE',
+    'PQ',
+    'PM',
+    'PS'
+);
+
+/* End enums */
+

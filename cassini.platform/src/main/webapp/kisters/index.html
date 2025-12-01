@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>3DViewStation WebViewer</title>
+    <meta charset="UTF-8" http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8" name="viewport"
+          content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="fontawesome/css/fontawesome-all.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <link href="css/app.2020.2.48-213166ea.css" rel="stylesheet">
+    <link href="css/ribbon.2020.2.48-213166ea.css" rel="stylesheet">
+    <link href="css/pane.2020.2.48-213166ea.css" rel="stylesheet">
+    <link href="css/fileexplorer.2020.2.48-213166ea.css" rel="stylesheet">
+    <link href="css/print-modal.2020.2.48-213166ea.css" rel="stylesheet">
+    <link href="external/spectrum.css" rel="stylesheet">
+    <link href="fonts/fonts.css?family=BenchNine:300,400,700|Open+Sans+Condensed:300,300i,700|Pragati+Narrow:400,700"
+          rel="stylesheet">
+</head>
+<style>
+    html {
+        height: 100%;
+        width: 100%;
+    }
+
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        touch-action: none;
+    }
+
+    .wv-canvas {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+<div id="wv-canvas" class="wv-canvas"></div>
+<div id="wv-app">
+    <div id="wv-ribbon"></div>
+    <div id="wv-dock"></div>
+</div>
+<script src="external/jquery.js"></script>
+<script src="external/kendo.custom.min.js"></script>
+
+<script src="external/modernizr-custom.js"></script>
+
+<!-- Define server websocket address, WS or WSS using a proxy (fully qualified host name)	-->
+<script>
+    g_sWebSocketAdress = "ws://localhost:8085/ws"
+    //  g_sWebSocketAdress = "wss://vsweb.kisters.de/ws"
+</script>
+
+<script src="lang.loc.2020.2.48-213166ea.js"></script>
+<script src="custom/defaults/lang.loc.2020.2.48-213166ea.js"></script>
+<script src="custom/defaults/settings.2020.2.48-213166ea.js"></script>
+<script src="custom/defaults/pane-presets.2020.2.48-213166ea.js"></script>
+<script src="custom/defaults/ribbon/userdefined.js"></script>
+<script src="custom/defaults/ribbon/mobile-userdefined.js"></script>
+<script src="external/spectrum.js"></script>
+<script src="custom/overrides.js"></script>
+<script src="dist/vsweb-client-bundle.2020.2.48-213166ea.js"></script>
+<script>
+    var _WVVersion = "2020.2.48-213166ea";
+</script>
+<!-- Load mobile UI if touch is detected, otherwise load full UI. Toggle between the UIs is ENABLED -->
+<script src="loader/loader.2020.2.48-213166ea.js"></script>
+<!-- Load always full UI. Toggle is DISABLED. -->
+<!--<script src="loader_full_client.2020.2.48-213166ea.js"></script>-->
+<!-- Load always mobile UI. Toggle is DISABLED. -->
+<!--<script src="loader_mobile_client.2020.2.48-213166ea.js"></script>-->
+<script src="custom/customScripts.js"></script>
+
+</body>
+
+</html>

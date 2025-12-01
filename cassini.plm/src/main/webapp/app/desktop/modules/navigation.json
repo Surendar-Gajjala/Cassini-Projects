@@ -1,0 +1,543 @@
+{
+  "navigation": [
+    {
+      "id": "dashboard.menu",
+      "name": "DASHBOARD",
+      "children": [
+        {
+          "id": "dashboard.items",
+          "name": "ITEMS",
+          "children": []
+        },
+        {
+          "id": "dashboard.changes",
+          "name": "CHANGES_TITLE",
+          "children": []
+        },
+        {
+          "id": "dashboard.quality",
+          "name": "QUALITY",
+          "children": []
+        },
+        {
+          "id": "dashboard.project",
+          "name": "PROJECT",
+          "children": []
+        },
+        {
+          "id": "dashboard.workflow",
+          "name": "WORKFLOW",
+          "children": []
+        },
+        {
+          "id": "dashboard.sourcing",
+          "name": "OEM",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "designData.menu",
+      "name": "DESIGN_DATA",
+      "children": [
+        {
+          "id": "designData.vault",
+          "name": "VAULTS",
+          "children": []
+        },
+        {
+          "id": "designData.assemblies",
+          "name": "ASSEMBLIES",
+          "children": []
+        },
+        {
+          "id": "designData.parts",
+          "name": "PARTS",
+          "children": []
+        },
+        {
+          "id": "designData.drawings",
+          "name": "DRAWINGS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "item.menu",
+      "name": "ITEMS",
+      "children": [
+        {
+          "id": "item.items",
+          "name": "ITEMS",
+          "children": []
+        },
+        {
+          "id": "item.products",
+          "name": "PRODUCTS",
+          "children": []
+        },
+        {
+          "id": "item.assemblies",
+          "name": "ASSEMBLIES",
+          "children": []
+        },
+        {
+          "id": "item.parts",
+          "name": "PARTS",
+          "children": []
+        },
+        {
+          "id": "item.documents",
+          "name": "DOCUMENTS",
+          "children": []
+        },
+        {
+          "id": "item.newPartRequests",
+          "name": "NEW_PART_REQUESTS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "change.menu",
+      "name": "CHANGES_TITLE",
+      "children": [
+        {
+          "id": "change.ecrs",
+          "name": "ECRs",
+          "children": []
+        },
+        {
+          "id": "change.ecos",
+          "name": "ECOs",
+          "children": []
+        },
+        {
+          "id": "change.dcrs",
+          "name": "DCRs",
+          "children": []
+        },
+        {
+          "id": "change.dcos",
+          "name": "DCOs",
+          "children": []
+        },
+        {
+          "id": "change.mcos",
+          "name": "MCOs",
+          "children": []
+        },
+        {
+          "id": "change.variances-deviations",
+          "name": "VARIALNCE_DEVIATIONS",
+          "children": []
+        },
+        {
+          "id": "change.variances-waivers",
+          "name": "VARIALNCE_WAIVERS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "quality.menu",
+      "name": "QUALITY",
+      "children": [
+        {
+          "id": "quality.inspectionPlan",
+          "name": "INSPECTION_PLAN",
+          "children": []
+        },
+        {
+          "id": "quality.inspections",
+          "name": "INSPECTIONS",
+          "children": []
+        },
+        {
+          "id": "quality.prs",
+          "name": "PRS",
+          "children": []
+        },
+        {
+          "id": "quality.ncrs",
+          "name": "NCRS",
+          "children": []
+        },
+        {
+          "id": "quality.qcrs",
+          "name": "QCRS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "project-management.menu",
+      "name": "PROJ_MANAGEMENT",
+      "children": [
+        {
+          "id": "project-management.programs",
+          "name": "PROGRAMS",
+          "children": []
+        },
+        {
+          "id": "project-management.programs-temp",
+          "name": "PROGRAM_TEMPLATES",
+          "children": []
+        },
+        {
+          "id": "project-management.projects",
+          "name": "PROJECTS",
+          "children": []
+        },
+        {
+          "id": "project-management.projects-temp",
+          "name": "PROJECTS_TEMPLATES",
+          "children": []
+        },
+        {
+          "id": "project-management.requirements",
+          "name": "REQUIREMENTS",
+          "children": []
+        },
+        {
+          "id": "project-management.requirements-temp",
+          "name": "REQUIREMENTS_TEMPLATES",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "manufacturing.menu",
+      "name": "MANUFACTURING",
+      "children": [
+        {
+          "id": "manufacturing.plants",
+          "name": "PLANTS",
+          "children": []
+        },
+        {
+          "id": "manufacturing.assemblyLines",
+          "name": "ASSEMBLY_LINES",
+          "children": []
+        },
+        {
+          "id": "manufacturing.work-centers",
+          "name": "WORK_CENTER",
+          "children": []
+        },
+        {
+          "id": "manufacturing.machines",
+          "name": "MACHINES",
+          "children": []
+        },
+        {
+          "id": "manufacturing.equipments",
+          "name": "EQUIPMENTS",
+          "children": []
+        },
+        {
+          "id": "manufacturing.instruments",
+          "name": "INSTRUMENTS",
+          "children": []
+        },
+        {
+          "id": "manufacturing.tools",
+          "name": "TOOLS",
+          "children": []
+        },
+        {
+          "id": "manufacturing.jigs-fixtures",
+          "name": "JIGS_FIXTURES",
+          "children": []
+        },
+        {
+          "id": "manufacturing.materials",
+          "name": "MATERIALS",
+          "children": []
+        },
+        {
+          "id": "mmanufacturing.manpower",
+          "name": "MANPOWER",
+          "children": []
+        },
+        {
+          "id": "manufacturing.shifts",
+          "name": "SHIFTS",
+          "children": []
+        },
+        {
+          "id": "manufacturing.operations",
+          "name": "OPERATIONS",
+          "children": []
+        },
+        {
+          "id": "manufacturing.mboms",
+          "name": "MBOM",
+          "children": []
+        },
+        {
+          "id": "manufacturing.bop",
+          "name": "BOP",
+          "children": []
+        },
+        {
+          "id": "manufacturing.production-orders",
+          "name": "PRODUCTION_ORDER_TITLE",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "maintenance-repairs.menu",
+      "name": "MAINTENANCEANDREPAIRS",
+      "children": [
+        {
+          "id": "maintenance-repairs.assets",
+          "name": "ASSETS",
+          "children": []
+        },
+        {
+          "id": "maintenance-repairs.meters",
+          "name": "METERS",
+          "children": []
+        },
+        {
+          "id": "maintenance-repairs.spare-parts",
+          "name": "SPARE_PARTS",
+          "children": []
+        },
+        {
+          "id": "maintenance-repairs.maintenance-plans",
+          "name": "MAINTENANCE_PLANS",
+          "children": []
+        },
+        {
+          "id": "maintenance-repairs.work-requests",
+          "name": "WORK_REQUESTS",
+          "children": []
+        },
+        {
+          "id": "maintenance-repairs.work-orders",
+          "name": "WORK_ORDERS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "sourcing.menu",
+      "name": "OEM",
+      "children": [
+        {
+          "id": "sourcing.manufacturers",
+          "name": "MANUFACTURERS_TITLE",
+          "children": []
+        },
+        {
+          "id": "sourcing.manufacturers-parts",
+          "name": "MANUFACTURER_PARTS",
+          "children": []
+        },
+        {
+          "id": "sourcing.suppliers",
+          "name": "SUPPLIERS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "compliance.menu",
+      "name": "COMPLIANCE",
+      "children": [
+        {
+          "id": "compliance.substances",
+          "name": "SUBSTANCES",
+          "children": []
+        },
+        {
+          "id": "compliance.specifications",
+          "name": "SPECIFICATIONS",
+          "children": []
+        },
+        {
+          "id": "compliance.declarations",
+          "name": "DECLARATIONS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "workflows.menu",
+      "name": "WORKFLOW_ALL_TITLE",
+      "children": [
+        {
+          "id": "workflows.templates",
+          "name": "WORKFLOW_TEMPLATES",
+          "children": []
+        },
+        {
+          "id": "workflows.instances",
+          "name": "WORKFLOW_INSTANCES",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "customers.menu",
+      "name": "CUSTOMERS_TITLE",
+      "children": []
+    },
+    {
+      "id": "import-export.Menu",
+      "name": "IMPORT_EXPORT",
+      "children": [
+        {
+          "id": "import-export.import",
+          "name": "IMPORT",
+          "children": []
+        },
+        {
+          "id": "import-export.import-bom",
+          "name": "BOM_IMPORT",
+          "children": []
+        },
+        {
+          "id": "import-export.export",
+          "name": "EXPORT",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "classification.menu",
+      "name": "CLASSIFICATION_TITLE",
+      "children": [
+        {
+          "id": "classification.itemType",
+          "name": "ITEM_TYPE",
+          "children": []
+        },
+        {
+          "id": "classification.customType",
+          "name": "CUSTOM_TYPE",
+          "children": []
+        },
+        {
+          "id": "classification.changeType",
+          "name": "CHANGE_TYPE",
+          "children": []
+        },
+        {
+          "id": "classification.qualityType",
+          "name": "QUALITY_TYPE",
+          "children": []
+        },
+        {
+          "id": "classification.project-managementType",
+          "name": "PROJECT_MANAGEMENT",
+          "children": []
+        },
+        {
+          "id": "classification.manufacturingType",
+          "name": "MANUFACTURER",
+          "children": []
+        },
+        {
+          "id": "classification.maintenance-repair",
+          "name": "MAINTENANCEANDREPAIRS",
+          "children": []
+        },
+        {
+          "id": "classification.sourcing",
+          "name": "OEM",
+          "children": []
+        },
+        {
+          "id": "classification.compliance",
+          "name": "COMPLIANCE",
+          "children": []
+        },
+        {
+          "id": "classification.workflow",
+          "name": "WORKFLOW",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "admin.menu",
+      "name": "ADMIN",
+      "children": []
+    },
+    {
+      "id": "settings.menu",
+      "name": "SETTINGS_TITLE",
+      "children": [
+        {
+          "id": "settings.number-sources",
+          "name": "AUTO_NUMBER_SOURCE",
+          "children": []
+        },
+        {
+          "id": "settings.lifecycles",
+          "name": "LIFE_CYCLES",
+          "children": []
+        },
+        {
+          "id": "settings.lovs",
+          "name": "LIST_OF_VALUES",
+          "children": []
+        },
+        {
+          "id": "settings.custom-attrs",
+          "name": "CUSTOM_PROPERTIES",
+          "children": []
+        },
+        {
+          "id": "settings.relationships",
+          "name": "RELATIONSHIPS",
+          "children": []
+        },
+        {
+          "id": "settings.preferences",
+          "name": "PREFERENCES",
+          "children": []
+        },
+        {
+          "id": "settings.email-temp",
+          "name": "EMAIL_TEMPLATES",
+          "children": []
+        },
+        {
+          "id": "settings.qties-measurement",
+          "name": "MEASUREMENTS",
+          "children": []
+        },
+        {
+          "id": "settings.git-hub",
+          "name": "GITHUB",
+          "children": []
+        },
+        {
+          "id": "settings.profiles",
+          "name": "PROFILES",
+          "children": []
+        },
+        {
+          "id": "settings.plugins",
+          "name": "PLUGINS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "sharing.menu",
+      "name": "SHARING",
+      "children": []
+    },
+    {
+      "id": "folders.menu",
+      "name": "FOLDERS_TITLE",
+      "children": []
+    }
+  ]
+}

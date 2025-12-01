@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+</head>
+<body>
+<style>
+    body {
+        background-color: #D0DDE1;
+        font-size: 17px;
+        font-family: 'Open Sans' !important;
+        font-weight: 300 !important;
+    }
+
+    .email-content {
+        background-color: #FFF;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.22);
+        border: 1px solid #D0DDE1;
+        padding: 50px;
+        height: 420px;
+        width: 50%;
+        min-width: 30%;
+        margin-bottom: 20px;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+    .email-title {
+        color: #0390fd;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-size: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+</style>
+
+<div class="email-content">
+
+    <p>Dear ${responder},</p>
+
+    <p>
+        Welcome to IRSTE!<br><br>
+
+        We are Pleased to Inform you that Your login credentials are generated for IRSTE application.<br><br>
+
+        Username : ${loginName}@cassini_irste<br>
+        Password : ${password}<br>
+        Role : ${role}<br><br>
+
+        You may login at <a href="http://192.168.1.197:8080">irste.localhost.com</a> to check the credentials.
+
+    </p>
+
+    <p>Thank You,<br>IRSTE, Secunderabad</p>
+
+    <br>
+</div>
+
+</body>
+</html>

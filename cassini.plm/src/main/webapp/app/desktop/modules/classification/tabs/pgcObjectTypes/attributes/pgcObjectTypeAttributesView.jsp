@@ -1,0 +1,1 @@
+<classification-attribute-view has-permission="checkPGCPermission('edit')"></classification-attribute-view>

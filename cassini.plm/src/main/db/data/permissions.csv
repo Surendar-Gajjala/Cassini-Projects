@@ -1,0 +1,178 @@
+permission.all,All Permissions,All Permissions
+permission.admin.all,All Admin,All Admin
+permission.admin.view,View Admin,View Admin
+permission.admin.user.all,All User,All User
+permission.admin.user.add,Add User,Add User
+permission.admin.user.view,View User,Add User
+permission.admin.user.edit,Edit User,Edit User
+permission.admin.user.delete,Delete User,Delete User
+permission.admin.group.all,All Group,Add Group
+permission.admin.group.add,Add Group,Add Group
+permission.admin.group.edit,Edit Group,Edit Group
+permission.admin.group.view,View Group,Edit Group
+permission.admin.group.delete,Delete Group,Delete Group
+permission.home.all,All Home,All Home
+permission.home.view,View Home,View Home
+permission.folder.all,All Folder,All Folder
+permission.classification.all,All Classification,All Classification
+permission.classification.view,View Classification,View Classification
+permission.classification.new,Create Classification,Create Classification
+permission.classification.edit,Edit Classification,Edit Classification
+permission.classification.delete,Delete Classification,Delete Classification
+permission.items.all,All Item,All Item
+permission.items.view,View Item,View Item
+permission.items.new,Create Item,Create Item
+permission.items.edit,Edit Item,Edit Item
+permission.items.delete,Delete Item,Delete Item
+permission.workflow.template.all,All Workflow,All Workflow
+permission.workflow.template.view,View Workflow,View Workflow
+permission.workflow.template.new,Create Workflow,Create Workflow
+permission.workflow.template.edit,Edit Workflow,Edit Workflow
+permission.workflow.template.delete,Delete Workflow,Delete Workflow
+permission.changes.all,All Changes,All Changes
+permission.changes.view,View Changes,View Changes
+permission.changes.edit,Edit Changes,Edit Changes
+permission.changes.new,Create Changes,Create Changes
+permission.changes.delete,Delete Changes,Delete Changes
+permission.manufacturer.all,All Manufacturers,All Manufacturers
+permission.manufacturer.view,View Manufacturers,View Manufacturers
+permission.manufacturer.new,Create Manufacturer,Create Manufacturer
+permission.manufacturer.edit,Edit Manufacturer,Edit Manufacturer
+permission.manufacturer.delete,Delete Manufacturers,Delete Manufacturer
+permission.sharing.all,All Sharing,All Sharing
+permission.project.all,All Projects,All Projects
+permission.project.view,Project View,Project View
+permission.project.new,Create Project,Create Project
+permission.project.edit,Edit Project,Edit Project
+permission.project.delete,Delete Project,Delete project
+permission.project.template.all,All Templates,All Templates
+permission.project.template.view,Template View,Template View
+permission.project.template.new,Create Template,Create Template
+permission.project.template.edit,Edit Template,Edit Template
+permission.project.template.delete,Delete Template,Delete Template
+permission.settings.all,All Settings,All Settings
+permission.settings.view,Settings View,Settings View
+permission.settings.new,Create Settings,Create Settings
+permission.settings.edit,Edit Settings,Edit Settings
+permission.settings.delete,Delete Settings,Delete Settings
+permission.terminology.all,All Terminology,All Terminology
+permission.terminology.view,View Terminology,View Terminology
+permission.terminology.new,New Terminology,New Terminology
+permission.terminology.edit,Edit Terminology,Edit Terminology
+permission.terminology.delete,Delete Terminology,Delete Terminology
+permission.terminologyEntry.all,All TerminologyEntries,All TerminologyEntries
+permission.terminologyEntry.view,View TerminologyEntry,View TerminologyEntry
+permission.terminologyEntry.new,New TerminologyEntry,New TerminologyEntry
+permission.terminologyEntry.edit,Edit TerminologyEntry,Edit TerminologyEntry
+permission.terminologyEntry.delete,Delete TerminologyEntry,Delete TerminologyEntry
+permission.requirements.all,Requirements,Requirements
+permission.specification.all,All Specifications,All Specifications
+permission.specification.view,View Specification,View Specification
+permission.specification.new,New Specification,New Specification
+permission.specification.edit,Edit Specification,Edit Specification
+permission.specification.delete,Delete Specification,Delete Specification
+permission.activity.all,All Activities,All Activities
+permission.about.view,View About,View About
+permission.about.edit,Edit About,Edit About
+permission.sessions.all,All Sessions,All Sessions
+permission.inspectionplan.all,All Inspection Plans,All Inspection Plans
+permission.inspectionplan.view,View Inspection Plans,View Inspection Plans
+permission.inspectionplan.new,New Inspection Plans,New Inspection Plans
+permission.inspectionplan.edit,Edit Inspection Plans,Edit Inspection Plans
+permission.inspectionplan.delete,Delete Inspection Plans,Delete Inspection Plans
+permission.inspection.all,All Inspections,All Inspections
+permission.inspection.view,View Inspections,View Inspections
+permission.inspection.new,New Inspections,New Inspections
+permission.inspection.edit,Edit Inspections,Edit Inspections
+permission.inspection.delete,Delete Inspections,Delete Inspections
+permission.problemreport.all,All Problem Reports,All Problem Reports
+permission.problemreport.view,View Problem Reports,View Problem Reports
+permission.problemreport.new,New Problem Reports,New Problem Reports
+permission.problemreport.edit,Edit Problem Reports,Edit Problem Reports
+permission.problemreport.delete,Delete Problem Reports,Delete Problem Reports
+permission.ncr.all,All NCRs,All NCRs
+permission.ncr.view,View NCRs,View NCRs
+permission.ncr.new,New NCRs,New NCRs
+permission.ncr.edit,Edit NCRs,Edit NCRs
+permission.ncr.delete,Delete NCRs,Delete NCRs
+permission.qcr.all,All QCRs,All QCRs
+permission.qcr.view,View QCRs,View QCRs
+permission.qcr.new,New QCRs,New QCRs
+permission.qcr.edit,Edit QCRs,Edit QCRs
+permission.qcr.delete,Delete QCRs,Delete QCRs
+permission.customer.all,All Customers,All Customers
+permission.customer.view,View Customers,View Customers
+permission.customer.new,New Customers,New Customers
+permission.customer.edit,Edit Customers,Edit Customers
+permission.customer.delete,Delete Customers,Delete Customers
+permission.supplier.all,All Suppliers,All Suppliers
+permission.supplier.view,View Suppliers,View Suppliers
+permission.supplier.new,New Suppliers,New Suppliers
+permission.supplier.edit,Edit Suppliers,Edit Suppliers
+permission.supplier.delete,Delete Suppliers,Delete Suppliers
+permission.ecr.all,All ECRs,All ECRs
+permission.ecr.view,View ECRs,View ECRs
+permission.ecr.new,New ECRs,New ECRs
+permission.ecr.edit,Edit ECRs,Edit ECRs
+permission.ecr.delete,Delete ECRs,Delete ECRs
+permission.eco.all,All ECOs,All ECOs
+permission.eco.view,View ECOs,View ECOs
+permission.eco.new,New ECOs,New ECOs
+permission.eco.edit,Edit ECOs,Edit ECOs
+permission.eco.delete,Delete ECOs,Delete ECOs
+permission.dcr.all,All DCRs,All DCRs
+permission.dcr.view,View DCRs,View DCRs
+permission.dcr.new,New DCRs,New DCRs
+permission.dcr.edit,Edit DCRs,Edit DCRs
+permission.dcr.delete,Delete DCRs,Delete DCRs
+permission.dco.all,All DCOs,All DCOs
+permission.dco.view,View DCOs,View DCOs
+permission.dco.new,New DCOs,New DCOs
+permission.dco.edit,Edit DCOs,Edit DCOs
+permission.dco.delete,Delete DCOs,Delete DCOs
+permission.mco.all,All MCOs,All MCOs
+permission.mco.view,View MCOs,View MCOs
+permission.mco.new,New MCOs,New MCOs
+permission.mco.edit,Edit MCOs,Edit MCOs
+permission.mco.delete,Delete MCOs,Delete MCOs
+permission.variance.all,All Variances,All Variances
+permission.variance.view,View Variances,View Variances
+permission.variance.new,New Variances,New Variances
+permission.variance.edit,Edit Variances,Edit Variances
+permission.variance.delete,Delete Variances,Delete Variances
+permission.qcr.audit,Audit QCRs,Audit QCRs
+permission.manufacturerparts.all,Delete Manufacturer Parts,All Manufacturer Parts
+permission.manufacturerparts.view,Delete Manufacturer Parts,View Manufacturer Parts
+permission.manufacturerparts.new,Delete Manufacturer Parts,Create Manufacturer Parts
+permission.manufacturerparts.edit,Delete Manufacturer Parts,Edit Manufacturer Parts
+permission.manufacturerparts.delete,Delete Manufacturer Parts,Delete Manufacturer Parts
+permission.classification.items.all,All Classification Items,All Classification Items
+permission.classification.items.view,View Classification Items,View Classification Items
+permission.classification.items.new,Create Classification Items,Create Classification Items
+permission.classification.items.edit,Edit Classification Items,Edit Classification Items
+permission.classification.items.delete,Delete Classification Items,Delete Classification Items
+permission.classification.changes.all,All Classification Changes,All Classification Changes
+permission.classification.changes.view,View Classification Changes,View Classification Changes
+permission.classification.changes.new,Create Classification Changes,Create Classification Changes
+permission.classification.changes.edit,Edit Classification Changes,Edit Classification Changes
+permission.classification.changes.delete,Delete Classification Changes,Delete Classification Changes
+permission.classification.quality.all,All Classification Quality,All Classification Quality
+permission.classification.quality.view,View Classification Quality,View Classification Quality
+permission.classification.quality.new,Create Classification Quality,Create Classification Quality
+permission.classification.quality.edit,Edit Classification Quality,Edit Classification Quality
+permission.classification.quality.delete,Delete Classification Quality,Delete Classification Quality
+permission.classification.manufacturer.all,All Classification Manufacturers,All Classification Manufacturers
+permission.classification.manufacturer.view,View Classification Manufacturers,View Classification Manufacturers
+permission.classification.manufacturer.new,Create Classification Manufacturers,Create Classification Manufacturers
+permission.classification.manufacturer.edit,Edit Classification Manufacturers,Edit Classification Manufacturers
+permission.classification.manufacturer.delete,Delete Classification Manufacturers,Delete Classification Manufacturers
+permission.classification.manufacturerparts.all,All Classification ManufacturerParts,All Classification ManufacturerParts
+permission.classification.manufacturerparts.view,View Classification ManufacturerParts,View Classification ManufacturerParts
+permission.classification.manufacturerparts.new,Create Classification ManufacturerParts,Create Classification ManufacturerParts
+permission.classification.manufacturerparts.edit,Edit Classification ManufacturerParts,Edit Classification ManufacturerParts
+permission.classification.manufacturerparts.delete,Delete Classification ManufacturerParts,Delete Classification ManufacturerParts
+permission.classification.workflow.all,All Classification Workflow,All Classification Workflow
+permission.classification.workflow.view,View Classification Workflow,View Classification Workflow
+permission.classification.workflow.new,Create Classification Workflow,Create Classification Workflow
+permission.classification.workflow.edit,Edit Classification Workflow,Edit Classification Workflow
+permission.classification.workflow.delete,Delete Classification Workflow,Delete Classification Workflow

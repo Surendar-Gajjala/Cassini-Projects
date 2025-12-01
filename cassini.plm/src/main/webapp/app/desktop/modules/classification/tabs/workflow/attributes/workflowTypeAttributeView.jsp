@@ -1,0 +1,1 @@
+<classification-attribute-view has-permission="hasPermission('workflowtype','all') || hasPermission('workflowtype','edit')"></classification-attribute-view>

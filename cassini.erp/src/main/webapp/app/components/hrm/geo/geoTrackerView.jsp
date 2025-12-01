@@ -1,0 +1,15 @@
+<div class="row geo-tracker">
+    <div class="col-xs-12">
+        <ui-gmap-google-map
+                center="map.center"
+                zoom="map.zoom"
+                dragging="map.dragging"
+                bounds="map.bounds"
+                events="map.events"
+                options="map.options"
+                pan="true"
+                control="map.control">
+
+        </ui-gmap-google-map>
+    </div>
+</div>

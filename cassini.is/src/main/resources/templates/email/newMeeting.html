@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" type="text/css" href="http://localhost:8080/app/assets/css/desktop.imports.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+</head>
+<body>
+
+
+<style>
+    body {
+        background-color: #D0DDE1;
+        font-size: 17px;
+        font-family: 'Open Sans' !important;
+        font-weight: 300 !important;
+    }
+
+    .email-content {
+        background-color: #FFF;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.22);
+        border: 1px solid #D0DDE1;
+        padding: 90px;
+        height: 420px;
+        width: 50%;
+        min-width: 30%;
+        margin-top: 100px;
+        margin-bottom: 20px;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+    .email-title {
+        color: #0390fd;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-size: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .titleContent {
+        display: inline-flex;
+        font-size: 15px;
+        width: 100%;
+        padding: 10px 0px;
+        margin-top: 10px;
+    }
+
+</style>
+
+<div class="email-content">
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="min-width: 90px;"><b>Title:</b></td>
+            <td>${title}</td>
+        </tr>
+        <tr>
+            <td style="min-width: 90px;"><b>From:</b></td>
+            <td>${title}</td>
+        </tr>
+        <tr>
+            <td style="min-width: 90px;vertical-align: top;"><b>Attendees:</b></td>
+            <td>
+                <ul style="padding-left: 14px !important;">
+                    <#list attendees as person>
+                        <li>${person.fullName}</li>
+                    </#list>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="min-width: 90px;vertical-align: top"><b>Message:</b></td>
+            <td>${description}</td>
+        </tr>
+        <tr>
+            <td style="min-width: 90px;"><b>From/To: </b></td>
+            <td>
+                ${meeting.startDate}:${meeting.startTime}<span>&nbsp; To &nbsp;</span>${meeting.endDate}:${meeting.endTime}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

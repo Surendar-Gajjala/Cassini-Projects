@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="/app/assets/css/app/desktop/print.css">
+</head>
+
+<body>
+
+<div class="print-template">
+    <#if complianceData.objectType == 'PGCSUBSTANCE'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${complianceData.substance.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.substance.type??>
+                                        <span class="longText">${complianceData.substance.type.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.substance.name??>
+                                        <span class="longText">${complianceData.substance.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_cas_number_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.substance.name??>
+                                        <span class="longText">${complianceData.substance.casNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.substance.description??>
+                                        <span class="longText">${complianceData.substance.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.substance.createPerson??>
+                                        <span class="longText">${complianceData.substance.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.substance.createdDate??>
+                                        <span class="longText">${complianceData.substance.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.substance.modifiedPerson??>
+                                        <span class="longText">${complianceData.substance.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.substance.modifiedDate??>
+                                        <span class="longText">${complianceData.substance.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if complianceData.itemMasterAttributes?has_content>
+
+
+                                <#list complianceData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+
+                            <#list complianceData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list complianceData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+
+        </#list>
+    </#if>
+    <#if complianceData.objectType == 'PGCSPECIFICATION'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${complianceData.specification.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.specification.type??>
+                                        <span class="longText">${complianceData.specification.type.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.specification.name??>
+                                        <span class="longText">${complianceData.specification.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.specification.description??>
+                                        <span class="longText">${complianceData.specification.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_status_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.specification.active==true>
+                                        <span class="longText">
+                                          Active
+                                        </span>
+                                    </#if>
+
+                                    <#if complianceData.specification.active==false>
+                                        <span class="longText">
+                                          InActive
+                                        </span>
+                                    </#if>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.specification.createPerson??>
+                                        <span class="longText">${complianceData.specification.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.specification.createdDate??>
+                                        <span class="longText">${complianceData.specification.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.specification.modifiedPerson??>
+                                        <span class="longText">${complianceData.specification.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.specification.modifiedDate??>
+                                        <span class="longText">${complianceData.specification.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if complianceData.itemMasterAttributes?has_content>
+
+
+                                <#list complianceData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list complianceData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list complianceData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Substances'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_substances_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="projects">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150"> ${msg("print_number_title")}</th>
+                                        <th class="col-width-250"> ${msg("print_name_title")}</th>
+                                        <th class="col-width-150"> ${msg("print_type_title")}</th>
+                                        <th class="col-width-150">${msg("print_cas_number_title")}</th>
+                                        <th class="col-width-150">${msg("print_threshold_ppm_title")}</th>
+                                        <th class="col-width-150">${msg("print_threshold_mass_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if complianceData.substanceList?has_content>
+                                        <#list  complianceData.substanceList as specSubstance>
+                                            <tr>
+                                                <td class="col-width-150">
+                                                    <#if specSubstance.substance??>
+                                                        <span>${specSubstance.substance.number}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-250">
+                                                    <#if specSubstance.substance??>
+                                                        <span>${specSubstance.substance.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if specSubstance.substance.type??>
+                                                        <span>${specSubstance.substance.type.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if specSubstance.substance.casNumber??>
+                                                        <span>${specSubstance.substance.casNumber}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if specSubstance.thresholdPpm??>
+                                                        <span>${specSubstance.thresholdPpm}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if specSubstance.thresholdMass??>
+                                                        <span>${specSubstance.thresholdMass}</span>
+                                                    </#if>
+                                                </td>
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !complianceData.substanceList?has_content>
+                                    <p class="no-content"> ${msg("print_no_spec_substances_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+    <#if complianceData.objectType == 'PGCDECLARATION'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${complianceData.declaration.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.declaration.type??>
+                                        <span class="longText">${complianceData.declaration.type.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.declaration.name??>
+                                        <span class="longText">${complianceData.declaration.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_supplier_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.declaration.supplierName??>
+                                        <span class="longText">${complianceData.declaration.supplierName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_supplier_contact_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.declaration.supplierContactName??>
+                                        <span class="longText">${complianceData.declaration.supplierContactName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.declaration.description??>
+                                        <span class="longText">${complianceData.declaration.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.declaration.createPerson??>
+                                        <span class="longText">${complianceData.declaration.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.declaration.createdDate??>
+                                        <span class="longText">${complianceData.declaration.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.declaration.modifiedPerson??>
+                                        <span class="longText">${complianceData.declaration.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if complianceData.declaration.modifiedDate??>
+                                        <span class="longText">${complianceData.declaration.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <#if complianceData.itemMasterAttributes?has_content>
+
+
+                                <#list complianceData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list complianceData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list complianceData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Parts'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_parts_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;">
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150">${msg("print_part_number_title")}</th>
+                                        <th class="col-width-250">${msg("print_part_name_title")}</th>
+                                        <th class="col-width-150">${msg("print_part_type_title")}</th>
+                                        <th class="col-width-150">${msg("print_manufacturer_title")}</th>
+                                        <th class="col-width-150">${msg("print_lifecycle_title")}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if complianceData.declarationParts?has_content>
+                                        <#list  complianceData.declarationParts as declarationPart>
+                                            <tr>
+                                                <td class="col-width-150">
+                                                    <#if declarationPart.part??>
+                                                        <span>${declarationPart.part.partNumber}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-250">
+                                                    <#if declarationPart.part??>
+                                                        <span>${declarationPart.part.partName}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if declarationPart.part.mfrPartType??>
+                                                        <span>${declarationPart.part.mfrPartType.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if declarationPart.part.mfrName??>
+                                                        <span>${declarationPart.part.mfrName}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if declarationPart.part.lifeCyclePhase??>
+                                                        <span>${declarationPart.part.lifeCyclePhase.phase}</span>
+                                                    </#if>
+                                                </td>
+                                            </tr>
+                                            <td colspan="8" style="background: white;padding-bottom: 5px;">
+                                                <div class="row">
+                                                    <div class="col-md-8 opt-head" style="margin-left: 26px">
+                                                        <p class="opt">Bill Of Substances</p>
+                                                    </div>
+                                                </div>
+                                                <table class='table table-striped highlight-row'
+                                                       style="width: 97%;margin-left: 32px;border: 1px solid lightgrey;">
+                                                    <thead>
+                                                    <tr>
+                                                        <th style="width: 200px;text-align: left;">${msg("print_cas_number_title")}</th>
+                                                        <th style="width: 200px;text-align: left;">${msg("print_name_title")}</th>
+                                                        <th style="width: 350px;text-align: left;">${msg("print_description_title")}</th>
+                                                        <th style="width: 200px;text-align: left;">Mass</th>
+                                                        <th style="width: 200px;text-align: left;">Units</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <#list declarationPart.substances as substance>
+                                                        <tr>
+                                                            <#if !declarationPart.substances?has_content>
+                                                                <p class="no-content"> No Bill Of
+                                                                    Substances</p>
+                                                            </#if>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 200px;text-align: left;">
+                                                                ${substance.casNumber}
+                                                            </td>
+                                                            <td style="width: 200px;text-align: left;">
+                                                                ${substance.substanceName}
+                                                            </td>
+                                                            <td style="width: 350px;text-align: left;">
+                                                                ${substance.description!}
+                                                            </td>
+                                                            <td style="width: 200px;text-align: left;">
+                                                                <span>${substance.mass}</span>
+                                                            </td>
+                                                            <td style="width: 200px;text-align: left;">
+                                                                <span>${substance.unitSymbol}</span>
+                                                            </td>
+                                                        </tr>
+                                                    </#list>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !complianceData.declarationParts?has_content>
+                                    <p class="no-content"> ${msg("print_no_declaration_parts_title")}</p>
+                                </#if>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Specifications'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_specifications_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <table class="table table-striped" style="width: 100% !important;">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150">${msg("print_number_title")}</th>
+                                        <th class="col-width-250">${msg("print_name_title")}</th>
+                                        <th class="col-width-150">${msg("print_type_title")}</th>
+                                        <th class="col-width-150">${msg("print_description_title")}</th>
+                                        <th class="col-width-150">${msg("print_status_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if complianceData.declarationSpecifications?has_content>
+                                        <#list  complianceData.declarationSpecifications as decSpecification>
+                                            <tr>
+                                                <td class="col-width-150">
+                                                    <#if decSpecification.specification??>
+                                                        <span>${decSpecification.specification.number}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-250">
+                                                    <#if decSpecification.specification??>
+                                                        <span>${decSpecification.specification.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if decSpecification.specification.type??>
+                                                        <span>${decSpecification.specification.type.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if decSpecification.specification.description??>
+                                                        <span>${decSpecification.specification.description}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if decSpecification.specification.active==true>
+                                                        <span class="longText">
+                                                              ${msg("print_active_title")}
+                                                        </span>
+                                                    </#if>
+
+                                                    <#if decSpecification.specification.active==false>
+                                                         <span class="longText">
+                                                               ${msg("print_in_active_title")}
+                                                         </span>
+                                                    </#if>
+
+                                                </td>
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !complianceData.declarationSpecifications?has_content>
+                                    <p class="no-content"> ${msg("print_no_declaration_specifications_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+</div>
+</body>
+</html>

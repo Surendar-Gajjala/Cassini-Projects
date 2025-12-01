@@ -1,0 +1,32 @@
+package com.cassinisys.plm.model.cm;
+
+import com.cassinisys.plm.model.plm.PLMObjectType;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+/**
+ * Created by subramanyam on 03-06-2020.
+ */
+@Entity
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Table(name = "PLM_DCR_AFFECTEDITEM")
+@PrimaryKeyJoinColumn(name = "ID")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class PLMDCRAffectedItem extends PLMChangeRequestAffectedItem {
+
+    @Column(name = "DCR")
+    private Integer dcr;
+
+    public PLMDCRAffectedItem() {
+        super.setObjectType(PLMObjectType.DCRAFFECTEDITEM);
+    }
+
+
+}

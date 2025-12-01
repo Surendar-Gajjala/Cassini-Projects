@@ -1,0 +1,1 @@
+gXMLBuffer="<?xml version=\"1.0\" encoding=\"UTF-8\"?><cki><ck fm=\"GROUPS\" to=\"VIEW THE LIST OF PARTS AVAILABLE IN STORAGE LOCATION\" num=\"63\"/><ck fm=\"CREATE DISPATCH\" to=\"SEARCH REQUEST\" num=\"14\"/></cki>";

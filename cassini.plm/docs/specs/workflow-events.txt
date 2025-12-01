@@ -1,0 +1,42 @@
+Workflow Events
+    - Flags
+        - Pre
+        - Post
+    - StartWorkflowEvent
+    - FinishWorkflowEvent
+    - CancelWorkflowEvent
+    - HoldWorkflowEvent
+    - UnholdWorkflowEvent
+    - StartWorkflowActivityEvent
+    - FinishWorkflowActivityEvent
+    - HoldWorkflowActivityEvent
+    - UnholdWorkflowActivityEvent
+    - DemotedFromActivityEvent
+    - DemotedToActivityEvent
+
+Workflow Event Actions
+    - UpdateWorkflowAttributesAction
+    - UpdateWorkflowActivityAction
+    - UpdateAttachedToItemAction
+        - Update Basic Info
+        - Update Attributes
+    - UpdateAffectedItemsAction
+        - Update Lifecycle Phase
+        - Update Basic Info
+        - Update Attributes
+    - SendCustomEmailAction
+    - ExecuteCustomScriptAction
+    - TransitionWorkflowAction
+
+Workflow Event Criteria
+    - StartWorkflowCriteria
+    - FinishWorkflowCriteria
+    - CancelWorkflowCriteria
+    - StartWorkflowActivityCriteria
+    - FinishWorkflowActivityCriteria
+    - PromoteWorkflowCriteria
+    - DemoteWorkflowCriteria
+
+Notes
+    - An event can have multiple actions
+    -

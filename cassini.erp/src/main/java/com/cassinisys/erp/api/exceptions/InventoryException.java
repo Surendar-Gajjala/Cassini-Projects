@@ -1,0 +1,25 @@
+package com.cassinisys.erp.api.exceptions;
+
+/**
+ * Created by reddy on 9/18/15.
+ */
+public class InventoryException extends RuntimeException {
+    public InventoryException() {
+    }
+
+    public InventoryException(String message) {
+        super(message);
+    }
+
+    public InventoryException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public InventoryException(Throwable cause) {
+        super(cause);
+    }
+
+    public InventoryException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
+}

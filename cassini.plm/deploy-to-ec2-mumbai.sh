@@ -1,0 +1,1 @@
+scp -i ~/MyHome/EC2/mumbai/cassiniplm.pem target/cassini.plm.war ubuntu@ec2-mumbai.cassiniplm.com:/home/ubuntu/cassini-home/build

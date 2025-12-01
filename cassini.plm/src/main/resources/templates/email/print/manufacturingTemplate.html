@@ -1,0 +1,2875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="/app/assets/css/app/desktop/print.css">
+</head>
+
+<body>
+
+<div class="print-template">
+    <#if manufacturingData.objectType == 'PLANT'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${manufacturingData.plant.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.typeName??>
+                                        <span class="longText">${manufacturingData.plant.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.name??>
+                                        <span class="longText">${manufacturingData.plant.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.description??>
+                                        <span class="longText">${manufacturingData.plant.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_address_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.address??>
+                                        <span class="longText">${manufacturingData.plant.address}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_city_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.city??>
+                                        <span class="longText">
+                                           ${manufacturingData.plant.city}
+                                        </span>
+                                    </#if>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_country_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.country??>
+                                        <span class="longText">${manufacturingData.plant.country}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_postal_code_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.postalCode??>
+                                        <span class="longText">${manufacturingData.plant.postalCode}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_phone_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.phoneNumber??>
+                                        <span class="longText">${manufacturingData.plant.phoneNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mobile_number_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.mobileNumber??>
+                                        <span class="longText">${manufacturingData.plant.mobileNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_fax_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.faxAddress??>
+                                        <span class="longText">${manufacturingData.plant.faxAddress}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_email_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.email??>
+                                        <span class="longText">${manufacturingData.plant.email}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_plant_person_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.person??>
+                                        <span class="longText">${manufacturingData.plant.person}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_notes_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.notes??>
+                                        <span class="longText">${manufacturingData.plant.notes}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.createPerson??>
+                                        <span class="longText">${manufacturingData.plant.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.createdDate??>
+                                        <span class="longText">${manufacturingData.plant.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.modifiedPerson??>
+                                        <span class="longText">${manufacturingData.plant.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.plant.modifiedDate??>
+                                        <span class="longText">${manufacturingData.plant.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if manufacturingData.itemMasterAttributes?has_content>
+
+
+                                <#list manufacturingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list manufacturingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list manufacturingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+
+        </#list>
+    </#if>
+    <#if manufacturingData.objectType == 'WORKCENTER'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${manufacturingData.workCenter.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.workCenter.typeName??>
+                                        <span class="longText">${manufacturingData.workCenter.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.workCenter.name??>
+                                        <span class="longText">${manufacturingData.workCenter.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_plant_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.workCenter.plantName??>
+                                        <span class="longText">${manufacturingData.workCenter.plantName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.workCenter.description??>
+                                        <span class="longText">${manufacturingData.workCenter.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_location_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.workCenter.location??>
+                                        <span class="longText">${manufacturingData.workCenter.location}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_status_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.workCenter.active==true>
+                                        <span class="longText">
+                                         ${msg("print_active_title")}
+                                        </span>
+                                    </#if>
+
+                                    <#if manufacturingData.workCenter.active==false>
+                                        <span class="longText">
+                                         ${msg("print_in_active_title")}
+                                        </span>
+                                    </#if>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.workCenter.createPerson??>
+                                        <span class="longText">${manufacturingData.workCenter.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.workCenter.createdDate??>
+                                        <span class="longText">${manufacturingData.workCenter.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.workCenter.modifiedPerson??>
+                                        <span class="longText">${manufacturingData.workCenter.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.workCenter.modifiedDate??>
+                                        <span class="longText">${manufacturingData.workCenter.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if manufacturingData.itemMasterAttributes?has_content>
+
+
+                                <#list manufacturingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list manufacturingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list manufacturingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Resources'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_resources_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <!-- Insert table Here -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+    <#if manufacturingData.objectType == 'ASSEMBLYLINE'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${manufacturingData.assemblyLine.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.assemblyLine.type??>
+                                        <span class="longText">${manufacturingData.assemblyLine.type.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.assemblyLine.name??>
+                                        <span class="longText">${manufacturingData.assemblyLine.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_plant_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.assemblyLine.plantName??>
+                                        <span class="longText">${manufacturingData.assemblyLine.plantName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.assemblyLine.description??>
+                                        <span class="longText">${manufacturingData.assemblyLine.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.assemblyLine.createPerson??>
+                                        <span class="longText">${manufacturingData.assemblyLine.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.assemblyLine.createdDate??>
+                                        <span class="longText">${manufacturingData.assemblyLine.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.assemblyLine.modifiedPerson??>
+                                        <span class="longText">${manufacturingData.assemblyLine.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.assemblyLine.modifiedDate??>
+                                        <span class="longText">${manufacturingData.assemblyLine.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if manufacturingData.itemMasterAttributes?has_content>
+
+
+                                <#list manufacturingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list manufacturingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list manufacturingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Work Centers'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_work_centers_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="projects">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" >${msg("print_number_title")}</th>
+                                        <th class="col-width-150" style="width: 200px;text-align: left;" >${msg("print_type_title")}</th>
+                                        <th class="col-width-150" style="width: 350px;text-align: left;" >${msg("print_name_title")}</th>
+                                        <th class="col-width-150" style="width: 350px;text-align: left;">${msg("print_description_title")}</th>
+                                        <th class="col-width-150" style="width: 300px;text-align: left;">${msg("print_plant_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if manufacturingData.workCenters?has_content>
+                                        <#list  manufacturingData.workCenters as workCenter>
+                                            <tr>
+                                                <td class="col-width-150">
+                                                    <#if workCenter.number??>
+                                                        <span>${workCenter.number}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 200px;text-align: left;">
+                                                    <#if workCenter.type??>
+                                                        <span>${workCenter.type.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 350px;text-align: left;">
+                                                    <#if workCenter.name??>
+                                                        <span>${workCenter.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 350px;text-align: left;">
+                                                    <#if workCenter.description??>
+                                                        <span>${workCenter.description}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150" style="width: 300px;text-align: left;">
+                                                    <#if workCenter.plantName??>
+                                                        <span>${workCenter.plantName}</span>
+                                                    </#if>
+                                                </td>
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !manufacturingData.workCenters?has_content>
+                                    <p class="no-content">${msg("print_no_work_centers_title")}</p>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+
+    <#if manufacturingData.objectType == 'MACHINE'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+                <#if manufacturingData.machine.imageValue??>
+                    <div class="item-details">
+                        <div class="row" style="float: right !important;margin: 18px 89px 0 0px !important;">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <span class="longText"><img alt="My image"
+                                                            style="width: 350px !important;height: 300px !important;"
+                                                            src="${manufacturingData.machine.imageValue}"/></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </#if>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${manufacturingData.machine.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.typeName??>
+                                        <span class="longText">${manufacturingData.machine.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.name??>
+                                        <span class="longText">${manufacturingData.machine.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">Work Center  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.workCenterName??>
+                                        <span class="longText">${manufacturingData.machine.workCenterName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.description??>
+                                        <span class="longText">${manufacturingData.machine.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_status_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.active==true>
+                                        <span class="longText">
+                                         ${msg("print_active_title")}
+                                        </span>
+                                    </#if>
+
+                                    <#if manufacturingData.machine.active==false>
+                                        <span class="longText">
+                                          ${msg(" print_in_active_title")}
+                                        </span>
+                                    </#if>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.createPerson??>
+                                        <span class="longText">${manufacturingData.machine.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.createdDate??>
+                                        <span class="longText">${manufacturingData.machine.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.modifiedPerson??>
+                                        <span class="longText">${manufacturingData.machine.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.modifiedDate??>
+                                        <span class="longText">${manufacturingData.machine.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <p class="att-head">
+                                ${msg("print_manufacturer_info_title")}
+                            </p>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_name_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.manufacturerData.mfrName??>
+                                        <span class="longText">${manufacturingData.machine.manufacturerData.mfrName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_description_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.manufacturerData.mfrDescription??>
+                                        <span class="longText">${manufacturingData.machine.manufacturerData.mfrDescription}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_model_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.manufacturerData.mfrModelNumber??>
+                                        <span class="longText">${manufacturingData.machine.manufacturerData.mfrModelNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_part_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.manufacturerData.mfrPartNumber??>
+                                        <span class="longText">${manufacturingData.machine.manufacturerData.mfrPartNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_serial_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.manufacturerData.mfrSerialNumber??>
+                                        <span class="longText">${manufacturingData.machine.manufacturerData.mfrSerialNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_lot_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.manufacturerData.mfrLotNumber??>
+                                        <span class="longText">${manufacturingData.machine.manufacturerData.mfrLotNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.machine.manufacturerData.mfrDate??>
+                                        <span class="longText">${manufacturingData.machine.manufacturerData.mfrDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if manufacturingData.itemMasterAttributes?has_content>
+
+
+                                <#list manufacturingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list manufacturingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list manufacturingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Related Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("related_items")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <!-- Insert table Here -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+    <#if manufacturingData.objectType == 'EQUIPMENT'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+                <#if manufacturingData.equipment.imageValue??>
+                    <div class="item-details">
+                        <div class="row" style="float: right !important;margin: 18px 89px 0 0px !important;">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <span class="longText"><img alt="My image"
+                                                            style="width: 350px !important;height: 300px !important;"
+                                                            src="${manufacturingData.equipment.imageValue}"/></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </#if>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${manufacturingData.equipment.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.typeName??>
+                                        <span class="longText">${manufacturingData.equipment.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.name??>
+                                        <span class="longText">${manufacturingData.equipment.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.description??>
+                                        <span class="longText">${manufacturingData.equipment.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_status_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.active==true>
+                                        <span class="longText">
+                                         ${msg("print_active_title")}
+                                        </span>
+                                    </#if>
+
+                                    <#if manufacturingData.equipment.active==false>
+                                        <span class="longText">
+                                          ${msg("print_in_active_title")}
+                                        </span>
+                                    </#if>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.createPerson??>
+                                        <span class="longText">${manufacturingData.equipment.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.createdDate??>
+                                        <span class="longText">${manufacturingData.equipment.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.modifiedPerson??>
+                                        <span class="longText">${manufacturingData.equipment.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.modifiedDate??>
+                                        <span class="longText">${manufacturingData.equipment.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <p class="att-head">
+                                ${msg("print_manufacturer_info_title")}
+                            </p>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_name_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.manufacturerData.mfrName??>
+                                        <span class="longText">${manufacturingData.equipment.manufacturerData.mfrName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_description_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.manufacturerData.mfrDescription??>
+                                        <span class="longText">${manufacturingData.equipment.manufacturerData.mfrDescription}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_model_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.manufacturerData.mfrModelNumber??>
+                                        <span class="longText">${manufacturingData.equipment.manufacturerData.mfrModelNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_part_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.manufacturerData.mfrPartNumber??>
+                                        <span class="longText">${manufacturingData.equipment.manufacturerData.mfrPartNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_serial_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.manufacturerData.mfrSerialNumber??>
+                                        <span class="longText">${manufacturingData.equipment.manufacturerData.mfrSerialNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_lot_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.manufacturerData.mfrLotNumber??>
+                                        <span class="longText">${manufacturingData.equipment.manufacturerData.mfrLotNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.equipment.manufacturerData.mfrDate??>
+                                        <span class="longText">${manufacturingData.equipment.manufacturerData.mfrDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if manufacturingData.itemMasterAttributes?has_content>
+
+
+                                <#list manufacturingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list manufacturingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list manufacturingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+
+        </#list>
+    </#if>
+    <#if manufacturingData.objectType == 'INSTRUMENT'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+                <#if manufacturingData.instrument.imageValue??>
+                    <div class="item-details">
+                        <div class="row" style="float: right !important;margin: 18px 89px 0 0px !important;">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <span class="longText"><img alt="My image"
+                                                            style="width: 350px !important;height: 300px !important;"
+                                                            src="${manufacturingData.instrument.imageValue}"/></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </#if>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${manufacturingData.instrument.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.typeName??>
+                                        <span class="longText">${manufacturingData.instrument.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.name??>
+                                        <span class="longText">${manufacturingData.instrument.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.description??>
+                                        <span class="longText">${manufacturingData.instrument.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_status_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.active==true>
+                                        <span class="longText">
+                                         ${msg("print_active_title")}
+                                        </span>
+                                    </#if>
+
+                                    <#if manufacturingData.instrument.active==false>
+                                        <span class="longText">
+                                          ${msg("print_in_active_title")}
+                                        </span>
+                                    </#if>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.createPerson??>
+                                        <span class="longText">${manufacturingData.instrument.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.createdDate??>
+                                        <span class="longText">${manufacturingData.instrument.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.modifiedPerson??>
+                                        <span class="longText">${manufacturingData.instrument.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.modifiedDate??>
+                                        <span class="longText">${manufacturingData.instrument.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <p class="att-head">
+                                ${msg("print_manufacturer_info_title")}
+                            </p>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_name_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.manufacturerData.mfrName??>
+                                        <span class="longText">${manufacturingData.instrument.manufacturerData.mfrName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_description_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.manufacturerData.mfrDescription??>
+                                        <span class="longText">${manufacturingData.instrument.manufacturerData.mfrDescription}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_model_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.manufacturerData.mfrModelNumber??>
+                                        <span class="longText">${manufacturingData.instrument.manufacturerData.mfrModelNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_part_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.manufacturerData.mfrPartNumber??>
+                                        <span class="longText">${manufacturingData.instrument.manufacturerData.mfrPartNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_serial_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.manufacturerData.mfrSerialNumber??>
+                                        <span class="longText">${manufacturingData.instrument.manufacturerData.mfrSerialNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_lot_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.manufacturerData.mfrLotNumber??>
+                                        <span class="longText">${manufacturingData.instrument.manufacturerData.mfrLotNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.instrument.manufacturerData.mfrDate??>
+                                        <span class="longText">${manufacturingData.instrument.manufacturerData.mfrDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if manufacturingData.itemMasterAttributes?has_content>
+
+
+                                <#list manufacturingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list manufacturingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list manufacturingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Maintenance'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_maintenance_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <!-- Insert table Here -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Related Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("related_items")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <!-- Insert table Here -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+    <#if manufacturingData.objectType == 'TOOL'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+                <#if manufacturingData.tool.imageValue??>
+                    <div class="item-details">
+                        <div class="row" style="float: right !important;margin: 18px 89px 0 0px !important;">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <span class="longText"><img alt="My image"
+                                                            style="width: 350px !important;height: 300px !important;"
+                                                            src="${manufacturingData.tool.imageValue}"/></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </#if>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${manufacturingData.tool.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.typeName??>
+                                        <span class="longText">${manufacturingData.tool.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.name??>
+                                        <span class="longText">${manufacturingData.tool.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.description??>
+                                        <span class="longText">${manufacturingData.tool.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_status_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.active==true>
+                                        <span class="longText">
+                                         ${msg("print_active_title")}
+                                        </span>
+                                    </#if>
+
+                                    <#if manufacturingData.tool.active==false>
+                                        <span class="longText">
+                                           ${msg("print_in_active_title")}
+                                        </span>
+                                    </#if>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.createPerson??>
+                                        <span class="longText">${manufacturingData.tool.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.createdDate??>
+                                        <span class="longText">${manufacturingData.tool.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.modifiedPerson??>
+                                        <span class="longText">${manufacturingData.tool.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.modifiedDate??>
+                                        <span class="longText">${manufacturingData.tool.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <p class="att-head">
+                                ${msg("print_manufacturer_info_title")}
+                            </p>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_name_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.manufacturerData.mfrName??>
+                                        <span class="longText">${manufacturingData.tool.manufacturerData.mfrName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_description_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.manufacturerData.mfrDescription??>
+                                        <span class="longText">${manufacturingData.tool.manufacturerData.mfrDescription}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_model_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.manufacturerData.mfrModelNumber??>
+                                        <span class="longText">${manufacturingData.tool.manufacturerData.mfrModelNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_part_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.manufacturerData.mfrPartNumber??>
+                                        <span class="longText">${manufacturingData.tool.manufacturerData.mfrPartNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_serial_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.manufacturerData.mfrSerialNumber??>
+                                        <span class="longText">${manufacturingData.tool.manufacturerData.mfrSerialNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_lot_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.manufacturerData.mfrLotNumber??>
+                                        <span class="longText">${manufacturingData.tool.manufacturerData.mfrLotNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.tool.manufacturerData.mfrDate??>
+                                        <span class="longText">${manufacturingData.tool.manufacturerData.mfrDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if manufacturingData.itemMasterAttributes?has_content>
+
+
+                                <#list manufacturingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list manufacturingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list manufacturingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+
+        </#list>
+    </#if>
+    <#if manufacturingData.objectType == 'JIGFIXTURE'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+                <#if manufacturingData.jigsFixture.imageValue??>
+                    <div class="item-details">
+                        <div class="row" style="float: right !important;margin: 18px 89px 0 0px !important;">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <span class="longText"><img alt="My image"
+                                                            style="width: 350px !important;height: 300px !important;"
+                                                            src="${manufacturingData.jigsFixture.imageValue}"/></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </#if>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${manufacturingData.jigsFixture.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.typeName??>
+                                        <span class="longText">${manufacturingData.jigsFixture.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.name??>
+                                        <span class="longText">${manufacturingData.jigsFixture.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.description??>
+                                        <span class="longText">${manufacturingData.jigsFixture.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_status_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.active==true>
+                                        <span class="longText">
+                                         ${msg("print_active_title")}
+                                        </span>
+                                    </#if>
+
+                                    <#if manufacturingData.jigsFixture.active==false>
+                                        <span class="longText">
+                                           ${msg("print_in_active_title")}
+                                        </span>
+                                    </#if>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.createdDate??>
+                                        <span class="longText">${manufacturingData.jigsFixture.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.createPerson??>
+                                        <span class="longText">${manufacturingData.jigsFixture.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.modifiedDate??>
+                                        <span class="longText">${manufacturingData.jigsFixture.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.modifiedPerson??>
+                                        <span class="longText">${manufacturingData.jigsFixture.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <p class="att-head">
+                                ${msg("print_manufacturer_info_title")}
+                            </p>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_name_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.manufacturerData.mfrName??>
+                                        <span class="longText">${manufacturingData.jigsFixture.manufacturerData.mfrName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_description_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.manufacturerData.mfrDescription??>
+                                        <span class="longText">${manufacturingData.jigsFixture.manufacturerData.mfrDescription}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_model_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.manufacturerData.mfrModelNumber??>
+                                        <span class="longText">${manufacturingData.jigsFixture.manufacturerData.mfrModelNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_part_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.manufacturerData.mfrPartNumber??>
+                                        <span class="longText">${manufacturingData.jigsFixture.manufacturerData.mfrPartNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_serial_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.manufacturerData.mfrSerialNumber??>
+                                        <span class="longText">${manufacturingData.jigsFixture.manufacturerData.mfrSerialNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_lot_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.manufacturerData.mfrLotNumber??>
+                                        <span class="longText">${manufacturingData.jigsFixture.manufacturerData.mfrLotNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_mfr_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.jigsFixture.manufacturerData.mfrDate??>
+                                        <span class="longText">${manufacturingData.jigsFixture.manufacturerData.mfrDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if manufacturingData.itemMasterAttributes?has_content>
+
+
+                                <#list manufacturingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list manufacturingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list manufacturingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+
+        </#list>
+    </#if>
+    <#if manufacturingData.objectType == 'MATERIAL'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+                <#if manufacturingData.material.imageValue??>
+                    <div class="item-details">
+                        <div class="row" style="float: right !important;margin: 18px 89px 0 0px !important;">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <span class="longText"><img alt="My image"
+                                                            style="width: 350px !important;height: 300px !important;"
+                                                            src="${manufacturingData.material.imageValue}"/></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </#if>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${manufacturingData.material.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.material.typeName??>
+                                        <span class="longText">${manufacturingData.material.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.material.name??>
+                                        <span class="longText">${manufacturingData.material.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.material.description??>
+                                        <span class="longText">${manufacturingData.material.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_measurement_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.material.qomName??>
+                                        <span class="longText">${manufacturingData.material.qomName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_measurement_unit_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.material.uomName??>
+                                        <span class="longText">${manufacturingData.material.uomName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.material.createPerson??>
+                                        <span class="longText">${manufacturingData.material.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.material.createdDate??>
+                                        <span class="longText">${manufacturingData.material.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.material.modifiedPerson??>
+                                        <span class="longText">${manufacturingData.material.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.material.modifiedDate??>
+                                        <span class="longText">${manufacturingData.material.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if manufacturingData.itemMasterAttributes?has_content>
+
+
+                                <#list manufacturingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list manufacturingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list manufacturingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+
+        </#list>
+    </#if>
+    <#if manufacturingData.objectType == 'MANPOWER'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${manufacturingData.manpower.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.manpower.typeName??>
+                                        <span class="longText">${manufacturingData.manpower.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.manpower.name??>
+                                        <span class="longText">${manufacturingData.manpower.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.manpower.description??>
+                                        <span class="longText">${manufacturingData.manpower.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_person_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.manpower.personName??>
+                                        <span class="longText">${manufacturingData.manpower.personName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_status_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.manpower.active==true>
+                                        <span class="longText">
+                                         ${msg("print_active_title")}
+                                        </span>
+                                    </#if>
+
+                                    <#if manufacturingData.manpower.active==false>
+                                        <span class="longText">
+                                         ${msg("print_in_active_title")}
+                                        </span>
+                                    </#if>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.manpower.createPerson??>
+                                        <span class="longText">${manufacturingData.manpower.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.manpower.createdDate??>
+                                        <span class="longText">${manufacturingData.manpower.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.manpower.modifiedPerson??>
+                                        <span class="longText">${manufacturingData.manpower.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.manpower.modifiedDate??>
+                                        <span class="longText">${manufacturingData.manpower.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if manufacturingData.itemMasterAttributes?has_content>
+
+
+                                <#list manufacturingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list manufacturingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list manufacturingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Maintenance'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_maintenance_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <!-- Insert table Here -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Related Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("related_items")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+
+                                <!-- Insert table Here -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+        </#list>
+    </#if>
+    <#if manufacturingData.objectType == 'SHIFT'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${manufacturingData.shift.number}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.shift.name??>
+                                        <span class="longText">${manufacturingData.shift.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.shift.description??>
+                                        <span class="longText">${manufacturingData.shift.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_start_time_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.shift.startTime??>
+                                        <span class="longText">${manufacturingData.shift.startTime}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_end_time_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.shift.endTime??>
+                                        <span class="longText">${manufacturingData.shift.endTime}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.shift.createPerson??>
+                                        <span class="longText">${manufacturingData.shift.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.shift.createdDate??>
+                                        <span class="longText">${manufacturingData.shift.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.shift.modifiedPerson??>
+                                        <span class="longText">${manufacturingData.shift.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.shift.modifiedDate??>
+                                        <span class="longText">${manufacturingData.shift.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+
+        </#list>
+    </#if>
+    <#if manufacturingData.objectType == 'OPERATION'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_number_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${manufacturingData.operation.number}</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.operation.typeName??>
+                                        <span class="longText">${manufacturingData.operation.typeName}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_name_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.operation.name??>
+                                        <span class="longText">${manufacturingData.operation.name}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.operation.description??>
+                                        <span class="longText">${manufacturingData.operation.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.operation.createPerson??>
+                                        <span class="longText">${manufacturingData.operation.createPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_created_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.operation.createdDate??>
+                                        <span class="longText">${manufacturingData.operation.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.operation.modifiedPerson??>
+                                        <span class="longText">${manufacturingData.operation.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span  class="longText">${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if manufacturingData.operation.modifiedDate??>
+                                        <span class="longText">${manufacturingData.operation.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <#if manufacturingData.itemMasterAttributes?has_content>
+
+
+                                <#list manufacturingData.itemMasterAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list manufacturingData.groupMasterAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+                                <#list manufacturingData.groupMasterAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+
+        </#list>
+    </#if>
+
+</div>
+</body>
+</html>

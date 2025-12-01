@@ -1,0 +1,11 @@
+{
+  "showLanguage": false,
+  "printTemplateTitle": "NF Railways",
+  "templateLogo": "app/assets/images/railwaysLogo.png",
+  "forgeViewableEnable": false,
+  "passwordStrength": "high",
+  "autoNumber": {
+    "prefix": "NFR",
+    "year": "2020"
+  }
+}

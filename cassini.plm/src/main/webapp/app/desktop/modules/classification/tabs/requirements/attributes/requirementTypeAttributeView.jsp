@@ -1,0 +1,1 @@
+<classification-attribute-view has-permission="hasPermission('requirmenettype','all') || hasPermission('requirmenettype','edit')"></classification-attribute-view>

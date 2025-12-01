@@ -1,0 +1,476 @@
+[
+  {
+    "group": "Administrator",
+    "permissions": [
+      {
+        "id": "permission.all",
+        "name": "All Permissions",
+        "show": true,
+        "disabled": true
+      }
+    ]
+  },
+  {
+    "group": "CRM",
+    "permissions": [
+      {
+        "id": "permission.crm.all",
+        "name": "All CRM",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "CRM.Customers",
+    "permissions": [
+      {
+        "id": "permission.crm.customer.all",
+        "name": "All Customer",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.crm.customer.create",
+        "name": "Create Customer",
+        "show": false
+      },
+      {
+        "id": "permission.crm.customer.view",
+        "name": "View Customer",
+        "show": false
+      },
+      {
+        "id": "permission.crm.customer.delete",
+        "name": "Delete Customer",
+        "show": false
+      },
+      {
+        "id": "permission.crm.customer.update",
+        "name": "Update Customer",
+        "show": false
+      }
+    ]
+  },
+  {
+    "group": "CRM.Orders",
+    "permissions": [
+      {
+        "id": "permission.crm.order.all",
+        "name": "All Order",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.crm.order.create",
+        "name": "Create Order",
+        "show": false
+      },
+      {
+        "id": "permission.crm.order.view",
+        "name": "View Order",
+        "show": false
+      },
+      {
+        "id": "permission.crm.order.delete",
+        "name": "Delete Order",
+        "show": false
+      },
+      {
+        "id": "permission.crm.order.update",
+        "name": "Update Order",
+        "show": false
+      },
+      {
+        "id": "permission.crm.order.process",
+        "name": "Process Order",
+        "show": false
+      },
+      {
+        "id": "permission.crm.order.approve",
+        "name": "Approve Order",
+        "show": false
+      },
+      {
+        "id": "permission.crm.order.dispatch",
+        "name": "Dispatch Order",
+        "show": false
+      },
+      {
+        "id": "permission.crm.order.cancel",
+        "name": "Cancel Order",
+        "show": false
+      }
+    ]
+  },
+  {
+    "group": "CRM.Sales Reps",
+    "permissions": [
+      {
+        "id": "permission.crm.salesrep.all",
+        "name": "All Sales Rep",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.crm.salesrep.create",
+        "name": "Create Sales Rep",
+        "show": false
+      },
+      {
+        "id": "permission.crm.salesrep.view",
+        "name": "View Sales Rep",
+        "show": false
+      },
+      {
+        "id": "permission.crm.salesrep.delete",
+        "name": "Delete Sales Rep",
+        "show": false
+      },
+      {
+        "id": "permission.crm.salesrep.update",
+        "name": "Update Sales Rep",
+        "show": false
+      }
+    ]
+  },
+  {
+    "group": "CRM.Sales Regions",
+    "permissions": [
+      {
+        "id": "permission.crm.salesregion.all",
+        "name": "All Sales Region",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.crm.salesregion.create",
+        "name": "Create Sales Region",
+        "show": false
+      },
+      {
+        "id": "permission.crm.salesregion.view",
+        "name": "View Sales Region",
+        "show": false
+      },
+      {
+        "id": "permission.crm.salesregion.delete",
+        "name": "Delete Sales Region",
+        "show": false
+      },
+      {
+        "id": "permission.crm.salesregion.update",
+        "name": "Update Sales Region",
+        "show": false
+      }
+    ]
+  },
+  {
+    "group": "CRM.Returns",
+    "permissions": [
+      {
+        "id": "permission.crm.return.all",
+        "name": "All Return",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.crm.return.create",
+        "name": "Create Return",
+        "show": false
+      },
+      {
+        "id": "permission.crm.return.view",
+        "name": "View Return",
+        "show": false
+      },
+      {
+        "id": "permission.crm.return.delete",
+        "name": "Delete Return",
+        "show": false
+      },
+      {
+        "id": "permission.crm.return.update",
+        "name": "Update Return",
+        "show": false
+      }
+    ]
+  },
+  {
+    "group": "HRM",
+    "permissions": [
+      {
+        "id": "permission.hrm.all",
+        "name": "All HRM",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "HRM.Employees",
+    "permissions": [
+      {
+        "id": "permission.hrm.employee.all",
+        "name": "All Employee",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.hrm.employee.create",
+        "name": "Create Employee",
+        "show": false
+      },
+      {
+        "id": "permission.hrm.employee.view",
+        "name": "View Employee",
+        "show": false
+      },
+      {
+        "id": "permission.hrm.employee.delete",
+        "name": "Delete Employee",
+        "show": false
+      },
+      {
+        "id": "permission.hrm.employee.update",
+        "name": "Update Employee",
+        "show": false
+      }
+    ]
+  },
+  {
+    "group": "HRM.Payroll",
+    "permissions": [
+      {
+        "id": "permission.hrm.payroll.all",
+        "name": "All Payroll",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.hrm.payroll.create",
+        "name": "Create Payroll",
+        "show": false
+      },
+      {
+        "id": "permission.hrm.payroll.view",
+        "name": "View Payroll",
+        "show": false
+      },
+      {
+        "id": "permission.hrm.payroll.delete",
+        "name": "Delete Payroll",
+        "show": false
+      },
+      {
+        "id": "permission.hrm.payroll.update",
+        "name": "Update Payroll",
+        "show": false
+      }
+    ]
+  },
+  {
+    "group": "Production",
+    "permissions": [
+      {
+        "id": "permission.production.all",
+        "name": "All Production",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "Production.Products",
+    "permissions": [
+      {
+        "id": "permission.production.product.all",
+        "name": "All Product",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.production.product.create",
+        "name": "Create Product",
+        "show": false
+      },
+      {
+        "id": "permission.production.product.view",
+        "name": "View Product",
+        "show": false
+      },
+      {
+        "id": "permission.production.product.delete",
+        "name": "Delete Product",
+        "show": false
+      },
+      {
+        "id": "permission.production.product.update",
+        "name": "Update Product",
+        "show": false
+      }
+    ]
+  },
+  {
+    "group": "Production.Material",
+    "permissions": [
+      {
+        "id": "permission.production.material.all",
+        "name": "All Material",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.production.material.create",
+        "name": "Create Material",
+        "show": false
+      },
+      {
+        "id": "permission.production.material.view",
+        "name": "View Material",
+        "show": false
+      },
+      {
+        "id": "permission.production.material.delete",
+        "name": "Delete Material",
+        "show": false
+      },
+      {
+        "id": "permission.production.material.update",
+        "name": "Update Material",
+        "show": false
+      }
+    ]
+  },
+  {
+    "group": "Production.Inventory",
+    "permissions": [
+      {
+        "id": "permission.production.inventory.all",
+        "name": "All Inventory",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.production.inventory.create",
+        "name": "Create Inventory",
+        "show": false
+      },
+      {
+        "id": "permission.production.inventory.view",
+        "name": "View Inventory",
+        "show": false
+      },
+      {
+        "id": "permission.production.inventory.delete",
+        "name": "Delete Inventory",
+        "show": false
+      },
+      {
+        "id": "permission.production.inventory.update",
+        "name": "Update Inventory",
+        "show": false
+      }
+    ]
+  },
+  {
+    "group": "Production.Production Orders",
+    "permissions": [
+      {
+        "id": "permission.production.productionorder.all",
+        "name": "All Production Order",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.production.productionorder.create",
+        "name": "Create Production Order",
+        "show": false
+      },
+      {
+        "id": "permission.production.productionorder.view",
+        "name": "View Production Order",
+        "show": false
+      },
+      {
+        "id": "permission.production.productionorder.delete",
+        "name": "Delete Production Order",
+        "show": false
+      },
+      {
+        "id": "permission.production.productionorder.update",
+        "name": "Update Production Order",
+        "show": false
+      }
+    ]
+  },
+  {
+    "group": "Security",
+    "permissions": [
+      {
+        "id": "permission.security.all",
+        "name": "All Security",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "Security.Logins",
+    "permissions": [
+      {
+        "id": "permission.security.login.all",
+        "name": "All Login",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.security.login.create",
+        "name": "Create Login",
+        "show": false
+      },
+      {
+        "id": "permission.security.login.view",
+        "name": "View Login",
+        "show": false
+      },
+      {
+        "id": "permission.security.login.delete",
+        "name": "Delete Login",
+        "show": false
+      },
+      {
+        "id": "permission.security.login.update",
+        "name": "Update Login",
+        "show": false
+      }
+    ]
+  },
+  {
+    "group": "Security.Roles",
+    "permissions": [
+      {
+        "id": "permission.security.role.all",
+        "name": "All Role",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.security.role.create",
+        "name": "Create Role",
+        "show": false
+      },
+      {
+        "id": "permission.security.role.view",
+        "name": "View Role",
+        "show": false
+      },
+      {
+        "id": "permission.security.role.delete",
+        "name": "Delete Role",
+        "show": false
+      },
+      {
+        "id": "permission.security.role.update",
+        "name": "Update Role",
+        "show": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+gXMLBuffer="<?xml version=\"1.0\" encoding=\"UTF-8\"?><cki><ck fm=\"ADD USER\" to=\"MACHINE ATTRIBUTES\" num=\"49\"/><ck fm=\"CREATE MANPOWER\" to=\"WBS\" num=\"47\"/></cki>";

@@ -1,0 +1,9 @@
+permission.all,All Permissions,All Permissions
+permission.admin.all,All Admin,All Admin
+permission.admin.user,Add/Edit User,Add/Edit User
+permission.admin.group,Add/Edit Group,Add/Edit Group
+permission.home.all,All Home,All Home
+permission.home.view,View Home,View Home
+permission.trips.all,All Trips,All Trips
+permission.trips.view,View Trips,View Trips
+permission.trips.add,Add Trips,Add Trips

@@ -1,0 +1,3379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="/app/assets/css/app/desktop/print.css">
+</head>
+
+<body>
+
+<div class="print-template">
+    <#if itemData.objectType == 'ECO'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_eco_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${itemData.eco.ecoNumber}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_status_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.eco.status??>
+                                        <span class="longText">${itemData.eco.status}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_eco_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.eco.type??>
+                                        <span class="longText">${itemData.eco.type}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.eco.title??>
+                                        <span class="longText">${itemData.eco.title}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_description_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.eco.description??>
+                                        <span class="longText">${itemData.eco.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_reason_for_change_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.eco.reasonForChange??>
+                                        <span class="longText">${itemData.eco.reasonForChange}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_revision_creation_rule_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.eco.rule =='WORKFLOW_START'>
+                                        <span class="longText">
+                                             ${msg("print_workflow_start_title")}
+                                        </span>
+                                    </#if>
+                                    <#if itemData.eco.rule =='ACTIVITY_COMPLETION'>
+                                        <span class="longText">
+                                            ${msg("print_workflow_activity_completiom_title")}
+                                        </span>
+                                    </#if>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_change_analyst_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.eco.printAnalyst??>
+                                        <span class="longText">${itemData.eco.printAnalyst}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_created_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.eco.createdDate??>
+                                        <span class="longText">${itemData.eco.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_created_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.eco.createdPerson??>
+                                        <span class="longText">${itemData.eco.createdPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_modified_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.eco.modifiedDate??>
+                                        <span class="longText">${itemData.eco.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_modified_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.eco.modifiedPerson??>
+                                        <span class="longText">${itemData.eco.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Attributes'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_attributes_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <#if itemData.changeTypeCustomAttributes?has_content>
+
+
+                                <#list itemData.changeTypeCustomAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+
+                            <#if itemData.changeTypeAttributes?has_content>
+
+
+                                <#list itemData.changeTypeAttributes as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list itemData.groupChangeAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+
+                                <#list itemData.groupChangeAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+                            <#if !itemData.changeTypeCustomAttributes?has_content && !itemData.changeTypeAttributes?has_content && !itemData.groupChangeAttributes?has_content>
+                                <p class="no-attribute-content"> ${msg("print_no_attributes_title")}</p>
+                            </#if>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </#if>
+
+            <#if option == 'Affected Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("affecteditems")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="specifications1">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th style="text-align: left !important;">
+                                            ${msg("print_item_number_title")}
+                                        </th>
+                                        <th class=""> ${msg("print_item_type_title")}</th>
+                                        <th class="name-column"> ${msg("print_item_name_title")}</th>
+
+                                        <th style="z-index: auto !important;">
+                                            ECR
+                                        </th>
+                                        <th class="text-center" style="z-index: auto !important;">
+                                            ${msg("print_change_from_revision_title")}
+                                        </th>
+
+                                        <th class="text-center" style="z-index: auto !important;">
+                                            ${msg("print_from_lifecycle_title")}
+                                        </th>
+                                        <th class="text-center" style="z-index: auto !important;">
+                                            ${msg("print_change_to_revision_title")}
+                                        </th>
+                                        <th class="text-center" style="z-index: auto !important;">
+                                            ${msg("print_to_lifecycle_title")}
+                                        </th>
+                                        <th class="text-center" style="z-index: auto !important;">
+                                            ${msg("print_effective_date_title")}
+                                        </th>
+
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.changesAffectedItems?has_content>
+                                        <#list  itemData.changesAffectedItems as item>
+                                            <tr>
+                                                <td>
+                                        <span>
+                                         ${item.itemObject.itemNumber}
+                                        </span>
+                                                </td>
+
+                                                <td class="">
+                                                    <#if item.itemObject.itemType.name??>
+                                                        <span>${item.itemObject.itemType.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td>
+                                                    <#if item.itemObject.itemName??>
+                                                        <span>${item.itemObject.itemName}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="name-column">
+                                                    <#if item.ecrList?has_content>
+                                                        <#list  item.ecrList as ecr>
+                                                            <#if ecr.crNumber??>
+                                                                <span>${ecr.crNumber}</span>
+                                                            </#if>
+                                                        </#list>
+                                                    </#if>
+                                                </td>
+
+
+                                                <td class="text-center">
+                                                    <#if item.fromRevision??>
+                                                        <span>${item.fromRevision}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="text-center">
+                                                    <#if item.fromLifeCycle??>
+                                                        <span>${item.fromLifeCycle.phase}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="text-center">
+                                                    <#if item.toRevision??>
+                                                        <span>${item.toRevision}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="text-center">
+                                                    <#if item.toLifeCycle??>
+                                                        <span>${item.toLifeCycle.phase}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="text-center">
+                                                    <#if item.effectiveDate??>
+                                                        <span>${item.effectiveDate}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.changesAffectedItems?has_content>
+                                    <p class="no-content"> ${msg("print_no_items_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Change Requests'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_change_requests_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="ChangeRequests">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th style="!important;text-align: left;">
+                                            ${msg("print_number_title")}
+                                        </th>
+                                        <th class=""> ${msg("print_type_title")}</th>
+                                        <th class="name-column"> ${msg("print_title")}</th>
+                                        <th class="name-column"> ${msg("print_reason_for_change_title")}</th>
+
+                                        <th class="" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_urgency_title")}
+                                        </th>
+                                        <th class="" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_originator_title")}
+                                        </th>
+                                        <th class="" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_status_title")}
+                                        </th>
+                                        <th class="" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_change_analyst_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.ecoChangeReqs?has_content>
+                                        <#list  itemData.ecoChangeReqs as req>
+                                            <tr>
+                                                <td style="width:1px !important;">
+                                        <span>
+                                         ${req.crNumber}
+                                        </span>
+                                                </td>
+
+                                                <td class="">
+                                                    <#if req.type??>
+                                                        <span>${req.type}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="name-column">
+                                                    <#if req.title??>
+                                                        <span>${req.title}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="name-column">
+                                                    <#if req.reasonForChange??>
+                                                        <span>${req.reasonForChange}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                                <td class="text-center">
+                                                    <#if req.urgencyPrint??>
+                                                        <span>${req.urgencyPrint}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="">
+                                                    <#if req.originator??>
+                                                        <span>${req.originator}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="">
+                                                    <#if req.status??>
+                                                        <span>${req.status}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="">
+                                                    <#if req.changeAnalyst??>
+                                                        <span>${req.changeAnalyst}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.ecoChangeReqs?has_content>
+                                    <p class="no-content"> ${msg("print_no_items_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <!--
+       Files
+       -->
+            <#if option == 'Files'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_files_title")}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="files">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="name-column"> ${msg("print_name_title")}</th>
+                                        <th class="name-column"> ${msg("print_description_title")}</th>
+                                        <th class="text-center" style="z-index: auto !important;">
+                                            ${msg("print_version_title")}
+                                        </th>
+                                        <th class="name-column" class=""> ${msg("print_person_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.changeFiles?has_content>
+                                        <#list  itemData.changeFiles as file>
+                                            <tr>
+                                                <td class="name-column">
+                                                    <#if file.name??>
+                                                        <span>${file.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="name-column">
+                                                    <#if file.description??>
+                                                        <span>${file.description}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="text-center">
+                                                    <#if file.version??>
+                                                        <span>${file.version}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="name-column">
+                                                    <#if file.createdPerson??>
+                                                        <span>${file.createdPerson}</span>
+                                                    </#if>
+                                                </td>
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.changeFiles?has_content>
+                                    <p class="no-content"> ${msg("print_no_files_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+
+    <#if itemData.objectType == 'ECR'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_ecr_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.crNumber??>
+                                    <span class="longText">
+                                        ${itemData.ecr.crNumber}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_type_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.type??>
+                                        <span class="longText">${itemData.ecr.type}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">QCR </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.qcrPrint??>
+                                        <span class="longText">${itemData.ecr.qcrPrint}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.title??>
+                                        <span class="longText">${itemData.ecr.title}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_description_of_change_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.descriptionOfChange??>
+                                        <span class="longText">${itemData.ecr.descriptionOfChange}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_reason_for_change_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.reasonForChange??>
+                                        <span class="longText">${itemData.ecr.reasonForChange}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_change_reason_type_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.changeReasonType??>
+                                        <span class="longText">${itemData.ecr.changeReasonType}</span>
+                                    </#if>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_proposed_changes_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.proposedChanges??>
+                                        <span class="longText">${itemData.ecr.proposedChanges}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_status_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.status??>
+                                        <span class="longText">${itemData.ecr.status}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_urgency_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.urgencyPrint??>
+                                        <span class="longText">${itemData.ecr.urgencyPrint}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_change_analyst_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.printAnalyst??>
+                                        <span class="longText">${itemData.ecr.printAnalyst}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">  ${msg("print_originator_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.originatorPrint??>
+                                        <span class="longText">${itemData.ecr.originatorPrint}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_requested_by_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.requestedByPrint??>
+                                        <span class="longText">${itemData.ecr.requestedByPrint}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_requested_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.requestedDate??>
+                                        <span class="longText">${itemData.ecr.requestedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_created_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.createdDate??>
+                                        <span class="longText">${itemData.ecr.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_modified_by_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.modifiedPerson??>
+                                        <span class="longText">${itemData.ecr.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_modified_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.ecr.modifiedDate??>
+                                        <span class="longText">${itemData.ecr.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Attributes'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_attributes_title")}
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <#if itemData.changeTypeCustomAttributes?has_content>
+
+
+                                <#list itemData.changeTypeCustomAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+
+                            <#if itemData.changeTypeAttributes?has_content>
+
+
+                                <#list itemData.changeTypeAttributes as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list itemData.groupChangeAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+
+                                <#list itemData.groupChangeAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+                            <#if !itemData.changeTypeCustomAttributes?has_content && !itemData.changeTypeAttributes?has_content && !itemData.groupChangeAttributes?has_content>
+                                <p class="no-attribute-content"> ${msg("print_no_attributes_title")} </p>
+                            </#if>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </#if>
+            <#if option == 'Problem Reports'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_problem_reports_title")}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="Problem Reports">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-200" style="text-align: left !important;">
+                                            ${msg("print_problem_report_number_title")}
+                                        </th>
+                                        <th class="col-width-250"> ${msg("print_type_title")}</th>
+                                        <th class="col-width-200"> ${msg("print_product_title")}</th>
+                                        <th class="col-revision" style="z-index: auto !important;">
+                                            ${msg("print_revision_title")}
+                                        </th>
+                                        <th class="col-width-300"> ${msg("print_problem_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.ecrProblemReports?has_content>
+                                        <#list  itemData.ecrProblemReports as item>
+                                            <tr>
+                                                <td>
+                                        <span>
+                                         ${item.prNumber}
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-200">
+                                                    <#if item.prType??>
+                                                        <span>${item.prType}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-200">
+                                                    <#if item.product??>
+                                                        <span>${item.product}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                                <td class="col-revision">
+                                                    <#if item.revision??>
+                                                        <span>${item.revision}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-300">
+                                                    <#if item.problem??>
+                                                        <span>${item.problem}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.ecrProblemReports?has_content>
+                                    <p class="no-content"> ${msg("print_no_problem_reports_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Affected Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("affecteditems")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="Affected Items">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150">
+                                            ${msg("print_item_number_title")}
+                                        </th>
+                                        <th class="col-width-250"> ${msg("print_item_type_title")}</th>
+                                        <th class="col-width-250"> ${msg("print_item_name_title")}</th>
+
+                                        <th class="col-width-200">
+                                            ${msg("problemReport")}
+                                        </th>
+                                        <th class="col-width-200">
+                                            ${msg("print_lifecycle_title")}
+                                        </th>
+                                        <th class="col-revision" style="z-index: auto !important;">
+                                            ${msg("print_revision_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.ecrAffectedItems?has_content>
+                                        <#list  itemData.ecrAffectedItems as item>
+                                            <tr>
+                                                <td class="col-width-150">
+                                        <span>
+                                         ${item.itemNumber}
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-250">
+                                                    <#if item.itemType??>
+                                                        <span>${item.itemType}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-250">
+                                                    <#if item.itemName??>
+                                                        <span>${item.itemName}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-200">
+                                                    <#if item.problemReportList?has_content>
+                                                        <#list  item.problemReportList as pr>
+                                                            <#if pr.prNumber??>
+                                                                <span>${pr.prNumber}</span>
+                                                            </#if>
+                                                        </#list>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-200">
+                                                    <#if item.phase??>
+                                                        <span>${item.phase}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                                <td class="col-revision">
+                                                    <#if item.revision??>
+                                                        <span>${item.revision}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.ecrAffectedItems?has_content>
+                                    <p class="no-content"> ${msg("print_no_items_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Related Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("related_items")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="Related Items">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150">
+                                            ${msg("print_item_number_title")}
+                                        </th>
+                                        <th class="col-width-200"> ${msg("print_item_type_title")}</th>
+                                        <th class="col-width-200"> ${msg("print_item_name_title")}</th>
+
+                                        <th class="col-width-200" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_lifecycle_phase_title")}
+                                        </th>
+                                        <th class="col-revision" style="z-index: auto !important;">
+                                            ${msg("print_revision_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.relatedItems?has_content>
+                                        <#list  itemData.relatedItems as rel>
+                                            <tr>
+                                                <td class="col-width-150">
+                                        <span>
+                                         ${rel.itemNumber}
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-200">
+                                                    <#if rel.itemType??>
+                                                        <span>${rel.itemType}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-200">
+                                                    <#if rel.itemName??>
+                                                        <span>${rel.itemName}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-200">
+                                                    <#if rel.phase??>
+                                                        <span>${rel.phase}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                                <td class="col-revision">
+                                                    <#if rel.revision??>
+                                                        <span>${rel.revision}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.relatedItems?has_content>
+                                    <p class="no-content"> ${msg("print_no_items_title")} </p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <!--
+      Files
+      -->
+            <#if option == 'Files'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_files_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="files">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-200"> ${msg("print_name_title")}</th>
+                                        <th class="col-width-200"> ${msg("print_description_title")}</th>
+                                        <th class="col-width-200" style="z-index: auto !important;">
+                                            ${msg("print_version_title")}
+                                        </th>
+                                        <th class="col-width-200"> ${msg("print_person_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.changeFiles?has_content>
+                                        <#list  itemData.changeFiles as file>
+                                            <tr>
+                                                <td class="col-width-200">
+                                                    <#if file.name??>
+                                                        <span>${file.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-200">
+                                                    <#if file.description??>
+                                                        <span>${file.description}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-200">
+                                                    <#if file.version??>
+                                                        <span>${file.version}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-200">
+                                                    <#if file.createdPerson??>
+                                                        <span>${file.createdPerson}</span>
+                                                    </#if>
+                                                </td>
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.changeFiles?has_content>
+                                    <p class="no-content"> ${msg("print_no_files_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+
+    <#if itemData.objectType == 'DCR'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${itemData.dcr.crNumber}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_dcr_type_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dcr.type??>
+                                        <span class="longText">${itemData.dcr.type}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_description_of_change_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dcr.descriptionOfChange??>
+                                        <span class="longText">${itemData.dcr.descriptionOfChange}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_reason_for_change_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dcr.reasonForChange??>
+                                        <span class="longText">${itemData.dcr.reasonForChange}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dcr.title??>
+                                        <span class="longText">${itemData.dcr.title}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_status_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dcr.status??>
+                                        <span class="longText">${itemData.dcr.status}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_urgency_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dcr.urgencyPrint??>
+                                        <span class="longText">${itemData.dcr.urgencyPrint}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_change_analyst_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dcr.printAnalyst??>
+                                        <span class="longText">${itemData.dcr.printAnalyst}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_originator_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dcr.originatorPrint??>
+                                        <span class="longText">${itemData.dcr.originatorPrint}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_requested_by_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dcr.requestedByPrint??>
+                                        <span class="longText">${itemData.dcr.requestedByPrint}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_created_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dcr.createdDate??>
+                                        <span class="longText">${itemData.dcr.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Attributes'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_attributes_title")}
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <#if itemData.changeTypeCustomAttributes?has_content>
+
+
+                                <#list itemData.changeTypeCustomAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+
+                            <#list itemData.groupChangeAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+
+                                <#list itemData.groupChangeAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+                            <#if !itemData.changeTypeCustomAttributes?has_content && !itemData.changeTypeAttributes?has_content && !itemData.groupChangeAttributes?has_content>
+                                <p class="no-attribute-content"> ${msg("print_no_attributes_title")} </p>
+                            </#if>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </#if>
+
+            <#if option == 'Affected Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("affecteditems")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="DCR Affected Items">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="text-align: left !important;">
+                                            ${msg("print_item_number_title")}
+                                        </th>
+                                        <th class="col-width-150">${msg("print_item_type_title")}</th>
+                                        <th class="col-width-150">${msg("print_item_name_title")}</th>
+
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_lifecycle_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_revision_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.dcrAffectedItems?has_content>
+                                        <#list  itemData.dcrAffectedItems as item>
+                                            <tr>
+                                                <td class="col-width-150">
+                                        <span>
+                                         ${item.itemNumber}
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if item.itemType??>
+                                                        <span>${item.itemType}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if item.itemName??>
+                                                        <span>${item.itemName}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                                <td class="col-width-150">
+                                                    <#if item.phase??>
+                                                        <span>${item.phase}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if item.revision??>
+                                                        <span>${item.revision}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.dcrAffectedItems?has_content>
+                                    <p class="no-content"> ${msg("print_no_items_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Related Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("related_items")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="!important;text-align: left;">
+                                            ${msg("print_item_number_title")}
+                                        </th>
+                                        <th class="col-width-150" > ${msg("print_item_type_title")}</th>
+                                        <th class="col-width-150"> ${msg("print_item_name_title")}</th>
+
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_lifecycle_phase_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_revision_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.relatedItems?has_content>
+                                        <#list  itemData.relatedItems as rel>
+                                            <tr>
+                                                <td class="col-width-150" style="width:1px !important;">
+                                        <span>
+                                         ${rel.itemNumber}
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if rel.itemType??>
+                                                        <span>${rel.itemType}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if rel.itemName??>
+                                                        <span>${rel.itemName}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if rel.phase??>
+                                                        <span>${rel.phase}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                                <td class="col-width-150">
+                                                    <#if rel.revision??>
+                                                        <span>${rel.revision}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.relatedItems?has_content>
+                                    <p class="no-content"> ${msg("print_no_items_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <!--
+      Files
+      -->
+            <#if option == 'Files'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_files_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="files">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150">${msg("print_name_title")}</th>
+                                        <th class="col-width-150"> ${msg("print_description_title")}</th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_version_title")}
+                                        </th>
+                                        <th class="col-width-150" class=""> ${msg("print_person_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.changeFiles?has_content>
+                                        <#list  itemData.changeFiles as file>
+                                            <tr>
+                                                <td class="col-width-150">
+                                                    <#if file.name??>
+                                                        <span>${file.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if file.description??>
+                                                        <span>${file.description}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if file.version??>
+                                                        <span>${file.version}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if file.createdPerson??>
+                                                        <span>${file.createdPerson}</span>
+                                                    </#if>
+                                                </td>
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.changeFiles?has_content>
+                                    <p class="no-content"> ${msg("print_no_files_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+
+    <#if itemData.objectType == 'DCO'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${itemData.dco.dcoNumber}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_dco_type_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dco.type??>
+                                        <span class="longText">${itemData.dco.type}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_status_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dco.status??>
+                                        <span class="longText">${itemData.dco.status}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dco.title??>
+                                        <span class="longText">${itemData.dco.title}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dco.description??>
+                                        <span class="longText">${itemData.dco.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_reason_for_change_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dco.reasonForChange??>
+                                        <span class="longText">${itemData.dco.reasonForChange}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_revision_creation_rule_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dco.rule =='WORKFLOW_START'>
+                                        <span class="longText">
+                                             ${msg("print_workflow_start_title")}
+                                        </span>
+                                    </#if>
+                                    <#if itemData.dco.rule =='ACTIVITY_COMPLETION'>
+                                        <span class="longText">
+                                            ${msg("print_workflow_activity_completiom_title")}
+                                        </span>
+                                    </#if>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_change_analyst_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dco.printAnalyst??>
+                                        <span class="longText">${itemData.dco.printAnalyst}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_created_date_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dco.createdDate??>
+                                        <span class="longText">${itemData.dco.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_created_by_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dco.createdPerson??>
+                                        <span class="longText">${itemData.dco.createdPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_modified_date_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dco.modifiedDate??>
+                                        <span class="longText">${itemData.dco.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_modified_by_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.dco.modifiedPersonPrint??>
+                                        <span class="longText">${itemData.dco.modifiedPersonPrint}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Attributes'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_attributes_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <#if itemData.changeTypeCustomAttributes?has_content>
+
+
+                                <#list itemData.changeTypeCustomAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+
+                            <#if itemData.changeTypeAttributes?has_content>
+
+
+                                <#list itemData.changeTypeAttributes as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list itemData.groupChangeAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+
+                                <#list itemData.groupChangeAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+                            <#if !itemData.changeTypeCustomAttributes?has_content && !itemData.changeTypeAttributes?has_content && !itemData.groupChangeAttributes?has_content>
+                                <p class="no-attribute-content"> ${msg("print_no_attributes_title")}</p>
+                            </#if>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </#if>
+
+            <#if option == 'Change Requests'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_change_requests_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="ChangeRequests For DCO">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="!important;text-align: left;">
+                                            ${msg("print_number_title")}
+                                        </th>
+                                        <th class="col-width-150">${msg("print_type_title")}</th>
+                                        <th class="col-width-150"> ${msg("print_title")}le</th>
+                                        <th class="col-width-150"> ${msg("print_reason_for_change_title")}</th>
+
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_urgency_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_originator_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_status_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_change_analyst_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.dcoChangeReqs?has_content>
+                                        <#list  itemData.dcoChangeReqs as req>
+                                            <tr>
+                                                <td class="col-width-150" style="width:1px !important;">
+                                        <span>
+                                         ${req.crNumber}
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if req.type??>
+                                                        <span>${req.type}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if req.title??>
+                                                        <span>${req.title}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if req.reasonForChange??>
+                                                        <span>${req.reasonForChange}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                                <td class="col-width-150">
+                                                    <#if req.urgency??>
+                                                        <span>${req.urgency}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if req.originator??>
+                                                        <span>${req.originator}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if req.status??>
+                                                        <span>${req.status}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if req.changeAnalyst??>
+                                                        <span>${req.changeAnalyst}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.dcoChangeReqs?has_content>
+                                    <p class="no-content"> ${msg("print_no_items_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+            <#if option == 'Affected Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("affecteditems")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="DCO Affected Items">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="text-align: left !important;">
+                                            ${msg("print_item_number_title")}
+                                        </th>
+                                        <th class="col-width-150"> ${msg("print_item_type_title")}</th>
+                                        <th class="col-width-150"> ${msg("print_item_name_title")}</th>
+
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_change_from_revision_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_from_lifecycle_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_change_to_revision_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_to_lifecycle_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.dcoAffectedItems?has_content>
+                                        <#list  itemData.dcoAffectedItems as item>
+                                            <tr>
+                                                <td class="col-width-150">
+                                        <span>
+                                         ${item.itemNumber}
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if item.itemType??>
+                                                        <span>${item.itemType}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if item.itemName??>
+                                                        <span>${item.itemName}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                                <td class="col-width-150">
+                                                    <#if item.fromRevision??>
+                                                        <span>${item.fromRevision}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if item.fromPhase??>
+                                                        <span>${item.fromPhase}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if item.toRevision??>
+                                                        <span>${item.toRevision}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if item.toPhase??>
+                                                        <span>${item.toPhase}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.dcoAffectedItems?has_content>
+                                    <p class="no-content"> ${msg("print_no_items_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Related Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("related_items")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="Related Items1">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="!important;text-align: left;">
+                                            ${msg("print_item_number_title")}
+                                        </th>
+                                        <th class="col-width-150"> ${msg("print_item_type_title")}</th>
+                                        <th class="col-width-150"> ${msg("print_item_name_title")}</th>
+
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_lifecycle_phase_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_revision_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.relatedItems?has_content>
+                                        <#list  itemData.relatedItems as rel>
+                                            <tr>
+                                                <td class="col-width-150" style="width:1px !important;">
+                                        <span>
+                                         ${rel.itemNumber}
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if rel.itemType??>
+                                                        <span>${rel.itemType}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if rel.itemName??>
+                                                        <span>${rel.itemName}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if rel.phase??>
+                                                        <span>${rel.phase}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                                <td class="col-width-150">
+                                                    <#if rel.revision??>
+                                                        <span>${rel.revision}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.relatedItems?has_content>
+                                    <p class="no-content"> ${msg("print_no_items_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <!--
+      Files
+      -->
+            <#if option == 'Files'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_files_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="files">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150">${msg("print_name_title")}</th>
+                                        <th class="col-width-150"> ${msg("print_description_title")}</th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_version_title")}
+                                        </th>
+                                        <th class="col-width-150"> ${msg("print_person_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.changeFiles?has_content>
+                                        <#list  itemData.changeFiles as file>
+                                            <tr>
+                                                <td class="col-width-150">
+                                                    <#if file.name??>
+                                                        <span>${file.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if file.description??>
+                                                        <span>${file.description}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if file.version??>
+                                                        <span>${file.version}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if file.createdPerson??>
+                                                        <span>${file.createdPerson}</span>
+                                                    </#if>
+                                                </td>
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.changeFiles?has_content>
+                                    <p class="no-content"> ${msg("print_no_files_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+
+
+    <#if itemData.objectType == 'MCO'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_mco_number_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <span class="longText">${itemData.mco.mcoNumber}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_mco_type_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.mco.type??>
+                                        <span class="longText">${itemData.mco.type}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">QCR</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.mco.qcrPrint??>
+                                        <span class="longText">${itemData.mco.qcrPrint}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.mco.title??>
+                                        <span class="longText">${itemData.mco.title}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_description_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.mco.description??>
+                                        <span class="longText">${itemData.mco.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_reason_for_change_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.mco.reasonForChange??>
+                                        <span class="longText">${itemData.mco.reasonForChange}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_status_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.mco.status??>
+                                        <span class="longText">${itemData.mco.status}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_change_analyst_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.mco.printAnalyst??>
+                                        <span class="longText">${itemData.mco.printAnalyst}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_created_by_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.mco.createdPerson??>
+                                        <span class="longText">${itemData.mco.createdPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_created_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.mco.createdDate??>
+                                        <span class="longText">${itemData.mco.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_modified_by_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.mco.modifiedPersonPrint??>
+                                        <span class="longText">${itemData.mco.modifiedPersonPrint}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_modified_date_title")}</span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.mco.modifiedDate??>
+                                        <span class="longText">${itemData.mco.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Attributes'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_attributes_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <#if itemData.changeTypeCustomAttributes?has_content>
+
+
+                                <#list itemData.changeTypeCustomAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+
+                            <#if itemData.changeTypeAttributes?has_content>
+
+
+                                <#list itemData.changeTypeAttributes as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+
+                            <#list itemData.groupChangeAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+
+                                <#list itemData.groupChangeAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+                            <#if !itemData.changeTypeCustomAttributes?has_content && !itemData.changeTypeAttributes?has_content && !itemData.groupChangeAttributes?has_content>
+                                <p class="no-attribute-content"> ${msg("print_no_attributes_title")}</p>
+                            </#if>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </#if>
+            <#if option == 'Affected Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("affecteditems")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="MCO Affected Mboms">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="text-align: left !important;">
+                                            ${msg("print_part_number_title")}
+                                        </th>
+                                        <th class="col-width-200"> ${msg("print_part_name_title")}</th>
+                                        <th class="col-width-200" style="text-align: left">
+                                            ${msg("print_manufacturer_part_type_title")}
+                                        </th>
+
+                                        <th class="col-width-200" style="text-align: left">
+                                            ${msg("print_change_type_title")}
+                                        </th>
+                                        <th class="col-width-200" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_replacement_part_number_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_replacement_part_name_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.mcoAffectedItems?has_content>
+                                        <#list  itemData.mcoAffectedItems as item>
+                                            <tr>
+                                                <td class="col-width-150">
+                                        <span>
+                                         ${item.materialNumber}
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-200">
+                                                    <#if item.materialName??>
+                                                        <span>${item.materialName}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-200">
+                                                    <#if item.materialType??>
+                                                        <span>${item.materialType}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                                <td class="col-width-200">
+                                                    <#if item.type??>
+                                                        <span>${item.type}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-200">
+                                                    <#if item.replacementNumber??>
+                                                        <span>${item.replacementNumber}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if item.replacementName??>
+                                                        <span>${item.replacementName}</span>
+                                                    </#if>
+                                                </td>
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.mcoAffectedItems?has_content>
+                                    <p class="no-content">${msg("print_no_items_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+                </#if>
+                <#if option == 'Affected Mbom'>
+                    <div class="row">
+                        <div class="col-md-12 opt-head">
+                            <p class="opt">
+                                ${msg("affectedmboms")}</p>
+                        </div>
+                    </div>
+    
+                    <div class="row row-eq-height printingDiv">
+                        <div class="col-sm-12 visible-print">
+                            <div class="row">
+                                <div class="responsive-table">
+                                    <table class="table table-striped" style="width: 100% !important;"
+                                           id="MCO Affected Items">
+    
+                                        <thead>
+                                        <tr class="noBorder">
+                                            <th class="col-width-150" style="text-align: left !important;">
+                                                ${msg("print_mbom_number_title")}
+                                            </th>
+                                            <th class="col-width-100"> ${msg("print_mbom_type_title")}</th>
+                                            <th class="col-width-100" style="text-align: left">
+                                                ${msg("print_mbom_name_title")}
+                                            </th>
+                                            <th class="col-width-150"> ${msg("print_description_title")}</th>
+    
+                                            <th class="col-width-100" style="text-align: left">
+                                                ${msg("item")}
+                                            </th>
+                                            <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                                ${msg("print_change_from_revision_title")}
+                                            </th>
+                                            <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                                ${msg("print_change_to_revision_title")}
+                                            </th>
+                                            <th class="text-center" style="z-index: auto !important;">
+                                                ${msg("print_effective_date_title")}
+                                            </th>
+    
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <#if itemData.mcoAffectedMbom?has_content>
+                                            <#list  itemData.mcoAffectedMbom as item>
+                                                <tr>
+                                                    <td class="col-width-150">
+                                            <span>
+                                             ${item.number}
+                                            </span>
+                                                    </td>
+    
+                                                    <td class="col-width-100">
+                                                        <#if item.type??>
+                                                            <span>${item.type}</span>
+                                                        </#if>
+                                                    </td>
+                                                    <td class="col-width-100">
+                                                        <#if item.name??>
+                                                            <span>${item.name}</span>
+                                                        </#if>
+                                                    </td>
+    
+    
+                                                    <td class="col-width-150">
+                                                        <#if item.description??>
+                                                            <span>${item.description}</span>
+                                                        </#if>
+                                                    </td>
+    
+                                                    <td class="col-width-100">
+                                                        <#if item.itemName??>
+                                                            <span>${item.itemName}</span>
+                                                        </#if>
+                                                    </td>
+    
+                                                    <td class="col-width-150">
+                                                        <#if item.fromRevision??>
+                                                            <span>${item.fromRevision}</span>
+                                                        </#if>
+                                                    </td>
+
+                                                    <td class="col-width-150">
+                                                        <#if item.toRevision??>
+                                                            <span>${item.toRevision}</span>
+                                                        </#if>
+                                                    </td>
+
+                                                    <td class="text-center">
+                                                        <#if item.effectiveDate??>
+                                                            <span>${item.effectiveDate}</span>
+                                                        </#if>
+                                                    </td>  
+                                                    
+                                                    
+                                                </tr>
+                                            </#list>
+                                        </#if>
+                                        </tbody>
+                                    </table>
+                                    <#if !itemData.mcoAffectedMbom?has_content>
+                                        <p class="no-content">${msg("print_no_items_title")}</p>
+                                    </#if>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+            </#if>
+            <#if option == 'Related Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("related_items")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="!important;text-align: left;">
+                                            ${msg("print_part_number_title")}
+                                        </th>
+                                        <th class="col-width-150">${msg("print_part_name_title")}</th>
+                                        <th class="col-width-150">${msg("print_manufacturer_part_type_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.mcoRelatedItems?has_content>
+                                        <#list  itemData.mcoRelatedItems as rel>
+                                            <tr>
+                                                <td class="col-width-150" style="width:1px !important;">
+                                        <span>
+                                         ${rel.partNumberPrint}
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if rel.partNamePrint??>
+                                                        <span>${rel.partNamePrint}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if rel.partTypePrint??>
+                                                        <span>${rel.partTypePrint}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.mcoRelatedItems?has_content>
+                                    <p class="no-content"> ${msg("print_no_items_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <!--
+      Files
+      -->
+            <#if option == 'Files'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_files_title")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="files">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150">${msg("print_name_title")}</th>
+                                        <th class="col-width-150"> ${msg("print_description_title")}</th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_version_title")}
+                                        </th>
+                                        <th class="col-width-150"> ${msg("print_person_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.changeFiles?has_content>
+                                        <#list  itemData.changeFiles as file>
+                                            <tr>
+                                                <td class="col-width-150">
+                                                    <#if file.name??>
+                                                        <span>${file.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if file.description??>
+                                                        <span>${file.description}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if file.version??>
+                                                        <span>${file.version}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if file.createdPerson??>
+                                                        <span>${file.createdPerson}</span>
+                                                    </#if>
+                                                </td>
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.changeFiles?has_content>
+                                    <p class="no-content"> ${msg("print_no_files_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+
+
+    <#if itemData.objectType == 'DEVIATION' || itemData.objectType == 'WAIVER'>
+
+        <#list selectedOptions as option>
+            <#if option == 'Basic'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_basic_title")}
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.variance.title??>
+                                        <span class="longText">${itemData.variance.title}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <#if itemData.objectType == 'DEVIATION'>
+                                <div class="row">
+                                    <div class="label col-xs-4 col-sm-3 text-right">
+                                        <span class="longText">${msg("print_deviation_for_title")} </span> :
+                                    </div>
+                                    <div class="value col-xs-8 col-sm-9">
+                                        <#if itemData.variance.waiverAndDeviationFor??>
+                                            <span class="longText">${itemData.variance.waiverAndDeviationFor}</span>
+                                        </#if>
+                                    </div>
+                                </div>
+
+                            </#if>
+
+                            <#if itemData.objectType == 'WAIVER'>
+                                <div class="row">
+                                    <div class="label col-xs-4 col-sm-3 text-right">
+                                        <span class="longText">${msg("print_waiver_for_title")} </span> :
+                                    </div>
+                                    <div class="value col-xs-8 col-sm-9">
+                                        <#if itemData.variance.waiverAndDeviationFor??>
+                                            <span class="longText">${itemData.variance.waiverAndDeviationFor}</span>
+                                        </#if>
+                                    </div>
+                                </div>
+
+                            </#if>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_description_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.variance.description??>
+                                        <span class="longText">${itemData.variance.description}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_reason_for_change_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.variance.reasonForVariance??>
+                                        <span class="longText">${itemData.variance.reasonForVariance}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_current_requirement_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.variance.currentRequirement??>
+                                        <span class="longText">${itemData.variance.currentRequirement}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_requirement_deviation_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.variance.requirementDeviation??>
+                                        <span class="longText">${itemData.variance.requirementDeviation}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_effective_from_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.variance.effectiveFrom??>
+                                        <span class="longText">${itemData.variance.effectiveFrom}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_effective_to_title")} </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.variance.editEffectiveTo??>
+                                        <span class="longText">${itemData.variance.editEffectiveTo}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_status_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.variance.status??>
+                                        <span class="longText">${itemData.variance.status}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText">${msg("print_originator_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.variance.printOriginator??>
+                                        <span class="longText">${itemData.variance.printOriginator}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_created_date_title")}  </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.variance.createdDate??>
+                                        <span class="longText">${itemData.variance.createdDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_created_by_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.variance.createdPerson??>
+                                        <span class="longText">${itemData.variance.createdPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_modified_date_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.variance.modifiedDate??>
+                                        <span class="longText">${itemData.variance.modifiedDate}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label col-xs-4 col-sm-3 text-right">
+                                    <span class="longText"> ${msg("print_modified_by_title")}   </span> :
+                                </div>
+                                <div class="value col-xs-8 col-sm-9">
+                                    <#if itemData.variance.modifiedPerson??>
+                                        <span class="longText">${itemData.variance.modifiedPerson}</span>
+                                    </#if>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </#if>
+            <#if option == 'Attributes'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_attributes_title")}</p>
+                    </div>
+                </div>
+
+
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="item-details">
+
+                            <#if itemData.changeTypeCustomAttributes?has_content>
+
+
+                                <#list itemData.changeTypeCustomAttributes as custom>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if custom.name??>
+                                                <span class="longText">${custom.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if custom.value??>
+                                                <span class="longText">${custom.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+
+                            <#if itemData.changeTypeAttributes?has_content>
+
+
+                                <#list itemData.changeTypeAttributes as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                            <#list itemData.groupChangeAttributes?keys as key>
+                                <p class="attribute-head">
+
+                                    <#if key??>
+                                        <span class="longText"> ${key}</span>
+                                    </#if>
+                                </p>
+
+                                <#list itemData.groupChangeAttributes[key] as master>
+                                    <div class="row">
+                                        <div class="label col-xs-4 col-sm-3 text-right">
+                                            <#if master.name??>
+                                                <span class="longText">${master.name}</span> :
+                                            </#if>
+                                        </div>
+                                        <div class="value col-xs-8 col-sm-9">
+                                            <#if master.value??>
+                                                <span class="longText">${master.value}</span>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#list>
+
+                            <#if !itemData.changeTypeCustomAttributes?has_content && !itemData.changeTypeAttributes?has_content && !itemData.groupChangeAttributes?has_content>
+                                <p class="no-attribute-content"> ${msg("print_no_attributes_title")}</p>
+                            </#if>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </#if>
+
+            <#if option == 'Affected Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("affecteditems")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <#if itemData.variance.waiverAndDeviationFor =='ITEMS'>
+                                    <table class="table table-striped" style="width: 100% !important;"
+                                            >
+
+                                        <thead>
+                                        <tr class="noBorder">
+                                            <th class="col-width-150" style="text-align: left !important;">
+                                                ${msg("print_item_number_title")}
+                                            </th>
+                                            <th class="col-width-150"> ${msg("print_item_type_title")}</th>
+                                            <th class="col-width-150"> ${msg("print_item_name_title")}</th>
+
+                                            <th class="col-width-150" style="z-index: auto !important;">
+                                                ${msg("print_qty_title")}
+                                            </th>
+                                            <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                                ${msg("print_serials_or_lots_title")}
+                                            </th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <#if itemData.varianceAffectedItems?has_content>
+                                            <#list  itemData.varianceAffectedItems as item>
+                                                <tr>
+                                                    <td class="col-width-150">
+                                        <span>
+                                         ${item.itemNumber}
+                                        </span>
+                                                    </td>
+
+                                                    <td class="col-width-150">
+                                                        <#if item.itemType??>
+                                                            <span>${item.itemType}</span>
+                                                        </#if>
+                                                    </td>
+                                                    <td class="col-width-150">
+                                                        <#if item.itemName??>
+                                                            <span>${item.itemName}</span>
+                                                        </#if>
+                                                    </td>
+
+
+                                                    <td class="col-width-150">
+                                                        <#if item.quantity??>
+                                                            <span>${item.quantity}</span>
+                                                        </#if>
+                                                    </td>
+
+                                                    <td class="col-width-150">
+                                                        <#if item.serialsOrLots??>
+                                                            <span>${item.serialsOrLots}</span>
+                                                        </#if>
+                                                    </td>
+
+
+                                                </tr>
+                                            </#list>
+                                        </#if>
+                                        </tbody>
+                                    </table>
+                                    <#if !itemData.varianceAffectedItems?has_content>
+                                        <p class="no-content"> ${msg("print_no_items_title")}</p>
+                                    </#if>
+                                </#if>
+                                <#if itemData.variance.waiverAndDeviationFor =='MATERIALS'>
+                                    <table class="table table-striped" style="width: 100% !important;"
+                                            >
+
+                                        <thead>
+                                        <tr class="noBorder">
+                                            <th class="col-width-150" style="text-align: left !important;">
+                                                ${msg("print_part_number_title")}
+                                            </th>
+                                            <th class="col-width-150">${msg("print_part_type_title")}</th>
+                                            <th class="col-width-150">${msg("print_part_name_title")}</th>
+
+                                            <th class="col-width-150" style="z-index: auto !important;">
+                                                ${msg("print_qty_title")}
+                                            </th>
+                                            <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                                ${msg("print_serials_or_lots_title")}
+                                            </th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <#if itemData.varianceAffectedItems?has_content>
+                                            <#list  itemData.varianceAffectedItems as item>
+                                                <tr>
+                                                    <td class="col-width-150">
+                                        <span>
+                                         ${item.itemNumber}
+                                        </span>
+                                                    </td>
+
+                                                    <td class="col-width-150">
+                                                        <#if item.itemType??>
+                                                            <span>${item.itemType}</span>
+                                                        </#if>
+                                                    </td>
+                                                    <td class="col-width-150">
+                                                        <#if item.itemName??>
+                                                            <span>${item.itemName}</span>
+                                                        </#if>
+                                                    </td>
+
+
+                                                    <td class="col-width-150">
+                                                        <#if item.quantity??>
+                                                            <span>${item.quantity}</span>
+                                                        </#if>
+                                                    </td>
+
+                                                    <td class="col-width-150">
+                                                        <#if item.serialsOrLots??>
+                                                            <span>${item.serialsOrLots}</span>
+                                                        </#if>
+                                                    </td>
+
+
+                                                </tr>
+                                            </#list>
+                                        </#if>
+                                        </tbody>
+                                    </table>
+                                    <#if !itemData.varianceAffectedItems?has_content>
+                                        <p class="no-content"> ${msg("print_no_items_title")}</p>
+                                    </#if>
+                                </#if>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <#if option == 'Related Items'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("related_items")}</p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150" style="!important;text-align: left;">
+                                            ${msg("print_item_number_title")}
+                                        </th>
+                                        <th class="col-width-150"> ${msg("print_item_type_title")}</th>
+                                        <th class="col-width-150"> ${msg("print_item_name_title")}</th>
+
+                                        <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                            ${msg("print_lifecycle_phase_title")}
+                                        </th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_revision_title")}
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.relatedItems?has_content>
+                                        <#list  itemData.relatedItems as rel>
+                                            <tr>
+                                                <td class="col-width-150" style="width:1px !important;">
+                                        <span>
+                                         ${rel.itemNumber}
+                                        </span>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if rel.itemType??>
+                                                        <span>${rel.itemType}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if rel.itemName??>
+                                                        <span>${rel.itemName}</span>
+                                                    </#if>
+                                                </td>
+
+                                                <td class="col-width-150">
+                                                    <#if rel.phase??>
+                                                        <span>${rel.phase}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                                <td class="col-width-150">
+                                                    <#if rel.revision??>
+                                                        <span>${rel.revision}</span>
+                                                    </#if>
+                                                </td>
+
+
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.relatedItems?has_content>
+                                    <p class="no-content"> ${msg("print_no_items_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+            <!--
+      Files
+      -->
+            <#if option == 'Files'>
+                <div class="row">
+                    <div class="col-md-12 opt-head">
+                        <p class="opt">
+                            ${msg("print_files_title")}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row row-eq-height printingDiv">
+                    <div class="col-sm-12 visible-print">
+                        <div class="row">
+                            <div class="responsive-table">
+                                <table class="table table-striped" style="width: 100% !important;"
+                                       id="files">
+
+                                    <thead>
+                                    <tr class="noBorder">
+                                        <th class="col-width-150">${msg("print_name_title")}</th>
+                                        <th class="col-width-150"> ${msg("print_description_title")}</th>
+                                        <th class="col-width-150" style="z-index: auto !important;">
+                                            ${msg("print_version_title")}
+                                        </th>
+                                        <th class="col-width-150"> ${msg("print_person_title")}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if itemData.changeFiles?has_content>
+                                        <#list  itemData.changeFiles as file>
+                                            <tr>
+                                                <td class="col-width-150">
+                                                    <#if file.name??>
+                                                        <span>${file.name}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if file.description??>
+                                                        <span>${file.description}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if file.version??>
+                                                        <span>${file.version}</span>
+                                                    </#if>
+                                                </td>
+                                                <td class="col-width-150">
+                                                    <#if file.createdPerson??>
+                                                        <span>${file.createdPerson}</span>
+                                                    </#if>
+                                                </td>
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+                                </table>
+                                <#if !itemData.changeFiles?has_content>
+                                    <p class="no-content"> ${msg("print_no_files_title")}</p>
+                                </#if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#if>
+
+        </#list>
+    </#if>
+
+</div>
+</body>
+</html>

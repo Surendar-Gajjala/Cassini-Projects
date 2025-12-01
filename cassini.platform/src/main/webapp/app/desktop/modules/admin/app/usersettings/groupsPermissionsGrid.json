@@ -1,0 +1,188 @@
+[
+
+  {
+    "group": "ADMIN",
+    "permissions": [
+      {
+        "id": "permission.admin.all",
+        "name": "All Admin",
+        "show": true
+      },
+      {
+        "id": "permission.admin.user",
+        "name": "Add/Edit User",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.group",
+        "name": "Add/Edit Group",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+
+  {
+    "group": "HOME",
+    "permissions": [
+      {
+        "id": "permission.home.all",
+        "name": "All HOME",
+        "show": true
+      },
+      {
+        "id": "permission.home.view",
+        "name": "View",
+        "show": true
+      }
+
+    ]
+  },
+
+
+  {
+    "group": "INVENTORY",
+    "permissions": [
+      {
+        "id": "permission.inventory.all",
+        "name": "All Inventory",
+        "show": true
+      },
+      {
+        "id": "permission.inventory.view",
+        "name": "View Reports",
+        "show": true
+      }
+    ]
+  },
+
+
+  {
+    "group": "CLASSIFICATION",
+    "permissions": [
+      {
+        "id": "permission.classification.all",
+        "name": "All Classification",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "BOM",
+    "permissions": [
+      {
+        "id": "permission.bom.all",
+        "name": "All Bom",
+        "show": true
+      },
+      {
+        "id": "permission.bom.view",
+        "name": "View",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.bom.add",
+        "name": "Add Item",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.bom.create",
+        "name": "Create New Item",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.bom.edit",
+        "name": "Edit",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.bom.delete",
+        "name": "Delete",
+        "show": true,
+        "collapsed": true
+      }
+
+    ]
+  },
+  {
+    "group": "INWARD",
+    "permissions": [
+      {
+        "id": "permission.inward.all",
+        "name": "All Inward",
+        "show": true
+      },
+      {
+        "id": "permission.inward.view",
+        "name": "View",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.inward.new",
+        "name": "New Inward",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.inward.edit",
+        "name": "Edit Inward",
+        "show": true,
+        "collapsed": true
+      }
+
+    ]
+  },
+  {
+    "group": "ISSUED",
+    "permissions": [
+      {
+        "id": "permission.issued.all",
+        "name": "All Issued",
+        "show": true
+      },
+      {
+        "id": "permission.issued.view",
+        "name": "View",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.issued.new",
+        "name": "New Issue",
+        "show": true,
+        "collapsed": true
+      }
+
+    ]
+  },
+  {
+    "group": "REQUESTS",
+    "permissions": [
+      {
+        "id": "permission.requests.all",
+        "name": "All Requests",
+        "show": true
+      },
+      {
+        "id": "permission.requests.view",
+        "name": "View",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.requests.new",
+        "name": "New Request",
+        "show": true,
+        "collapsed": true
+      }
+
+    ]
+  }
+
+]

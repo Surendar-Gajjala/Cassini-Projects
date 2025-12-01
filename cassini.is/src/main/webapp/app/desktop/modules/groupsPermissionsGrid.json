@@ -1,0 +1,1362 @@
+[
+  {
+    "group": "ADMIN",
+    "permissions": [
+      {
+        "id": "permission.admin.all",
+        "name": "All Admin",
+        "show": true
+      },
+      {
+        "id": "permission.admin.view",
+        "name": "View Admin",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.user",
+        "name": "Add/Edit User",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.group",
+        "name": "Add/Edit Group",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.permissions",
+        "name": "Add/Edit permissions",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "SETTINGS",
+    "permissions": [
+      {
+        "id": "permission.settings.all",
+        "name": "All Settings",
+        "show": true
+      },
+      {
+        "id": "permission.settings.view",
+        "name": "View Settings",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.settings.autoNumbers",
+        "name": "View AutoNumbers",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.settings.addAutoNumbers",
+        "name": "Add AutoNumbers",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.settings.editAutoNumbers",
+        "name": "Edit AutoNumbers",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.settings.deleteAutoNumbers",
+        "name": "Delete AutoNumbers",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.settings.lovs",
+        "name": "View List of Values",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.settings.addLovs",
+        "name": "Add List of Values",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.settings.editLovs",
+        "name": "Edit List of Values",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.settings.deleteLovs",
+        "name": "Delete List of Values",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.settings.customProperties",
+        "name": "View CustomProperties",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.settings.addCustomProperties",
+        "name": "Add CustomProperties",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.settings.editCustomProperties",
+        "name": "Edit CustomProperties",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.settings.deleteCustomProperties",
+        "name": "Delete CustomProperties",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "DASHBOARD",
+    "permissions": [
+      {
+        "id": "permission.dashboard.all",
+        "name": "All Projects",
+        "show": true
+      },
+      {
+        "id": "permission.dashboard.newPortfolio",
+        "name": "New Portfolio",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dashboard.newProject",
+        "name": "New Project",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dashboard.lockProject",
+        "name": "Lock Project",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dashboard.unLockProject",
+        "name": "UnLock Project",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.dashboard.addAttributes",
+        "name": "Add Attributes",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "MASTER DATA",
+    "permissions": [
+      {
+        "id": "permission.masterdata.all",
+        "name": "All MasterData",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.masterdata.view",
+        "name": "View MasterData",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.masterdata.classification",
+        "name": "View Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.masterdata.editClassification",
+        "name": "Edit Classification",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.masterdata.addType",
+        "name": "Add Type",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.masterdata.deleteType",
+        "name": "Delete Type",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "MATERIAL",
+    "permissions": [
+      {
+        "id": "permission.materials.all",
+        "name": "All Materials",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.materials.view",
+        "name": " View Materials",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.materials.newMaterial",
+        "name": "New Material",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.materials.edit",
+        "name": "Edit Material",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.materials.delete",
+        "name": "Delete Material",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.materials.addAttributes",
+        "name": "Add Attributes",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "MACHINE",
+    "permissions": [
+      {
+        "id": "permission.machines.all",
+        "name": "All Machines",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.machines.view",
+        "name": "View Machines",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.machines.newMachine",
+        "name": "New Machine",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.machines.edit",
+        "name": "Edit Machine",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.machines.delete",
+        "name": "Delete Machine",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "MANPOWER",
+    "permissions": [
+      {
+        "id": "permission.manpower.all",
+        "name": "All Manpower",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.manpower.view",
+        "name": "View Manpower",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.manpower.newManpower",
+        "name": "New Manpower",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.manpower.edit",
+        "name": "Edit Manpower",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.manpower.delete",
+        "name": "Delete Manpower",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "TOP DOCUMENTS",
+    "permissions": [
+      {
+        "id": "permission.topDocuments.all",
+        "name": "All Documents",
+        "show": true
+      },
+      {
+        "id": "permission.topDocuments.view",
+        "name": "View Documents",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.topDocuments.addFolder",
+        "name": "Add Folder",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.topDocuments.deleteFolder",
+        "name": "Delete Folder",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.topDocuments.addPermissions",
+        "name": "Add Permissions",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "STORES",
+    "permissions": [
+      {
+        "id": "permission.topStores.all",
+        "name": "All Stores",
+        "show": true
+      },
+      {
+        "id": "permission.topStores.view",
+        "name": "View Stores",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.topStores.new",
+        "name": "New Store",
+        "show": true
+      },
+      {
+        "id": "permission.topStores.edit",
+        "name": "Edit Store",
+        "show": true
+      },
+      {
+        "id": "permission.topStores.deleteStore",
+        "name": "Delete Store",
+        "show": true
+      },
+      {
+        "id": "permission.topStores.scrapRequest",
+        "name": "View Scrap Requests",
+        "show": true
+      },
+      {
+        "id": "permission.topStores.addScrapRequest",
+        "name": "Add Scrap Request",
+        "show": true
+      },
+      {
+        "id": "permission.topStores.editScrapRequest",
+        "name": "Edit Scrap Request",
+        "show": true
+      },
+      {
+        "id": "permission.topStores.viewScrapRequestItems",
+        "name": "View Scrap Items",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "RECEIVES",
+    "permissions": [
+      {
+        "id": "permission.receives.all",
+        "name": "All Receives",
+        "show": true
+      },
+      {
+        "id": "permission.receives.viewReceive",
+        "name": "View Receives",
+        "show": true
+      },
+      {
+        "id": "permission.receives.receive",
+        "name": "Add Receive",
+        "show": true
+      },
+      {
+        "id": "permission.receives.editReceive",
+        "name": "Edit Receive",
+        "show": true
+      },
+      {
+        "id": "permission.receives.viewReceiveItems",
+        "name": "View Stock Receive Items",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "ISSUES",
+    "permissions": [
+      {
+        "id": "permission.stockIssues.all",
+        "name": "All Issues",
+        "show": true
+      },
+      {
+        "id": "permission.stockIssues.viewIssue",
+        "name": "View Issues",
+        "show": true
+      },
+      {
+        "id": "permission.stockIssues.issue",
+        "name": "Add Issue",
+        "show": true
+      },
+      {
+        "id": "permission.stockIssues.edit",
+        "name": "Edit Issue",
+        "show": true
+      },
+      {
+        "id": "permission.stockIssues.viewIssueItems",
+        "name": "View Stock Issue Items",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "STORE INVENTORY",
+    "permissions": [
+      {
+        "id": "permission.storeInventory.inventory",
+        "name": "View Store Inventory",
+        "show": true
+      },
+      {
+        "id": "permission.storeInventory.addItemsToProject",
+        "name": "Allocate Items to Project",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "REQUISITIONS",
+    "permissions": [
+      {
+        "id": "permission.requisitions.all",
+        "name": "All Requests",
+        "show": true
+      },
+      {
+        "id": "permission.requisitions.newRequest",
+        "name": "New Request",
+        "show": true
+      },
+      {
+        "id": "permission.requisitions.editRequest",
+        "name": "Edit Request",
+        "show": true
+      },
+      {
+        "id": "permission.requisitions.viewRequestItems",
+        "name": "View Request Items",
+        "show": true
+      },
+      {
+        "id": "permission.requisitions.addRequestItems",
+        "name": "Add Items to Request",
+        "show": true
+      },
+      {
+        "id": "permission.requisitions.approveRequest",
+        "name": "Approve Request",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "INDENTS",
+    "permissions": [
+      {
+        "id": "permission.indents.all",
+        "name": "All Indents",
+        "show": true
+      },
+      {
+        "id": "permission.indents.viewIndents",
+        "name": "View Indents",
+        "show": true
+      },
+      {
+        "id": "permission.indents.newIndent",
+        "name": "New Indent",
+        "show": true
+      },
+      {
+        "id": "permission.indents.editIndent",
+        "name": "Edit Indent",
+        "show": true
+      },
+      {
+        "id": "permission.indents.approveIndent",
+        "name": "Approve Indent",
+        "show": true
+      },
+      {
+        "id": "permission.indents.viewIndentItems",
+        "name": "View Indent Items",
+        "show": true
+      },
+      {
+        "id": "permission.indents.addIndentItems",
+        "name": "Add Items to Indent",
+        "show": true
+      },
+      {
+        "id": "permission.indents.removeIndentItems",
+        "name": "Remove Items From Indent",
+        "show": true
+      },
+      {
+        "id": "permission.indents.editIndentItems",
+        "name": "Edit Indent Items",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "PURCHASE ORDERS",
+    "permissions": [
+      {
+        "id": "permission.purchaseOrders.all",
+        "name": "All Purchase Orders",
+        "show": true
+      },
+      {
+        "id": "permission.purchaseOrders.newPurchaseOrder",
+        "name": "New Purchase Order",
+        "show": true
+      },
+      {
+        "id": "permission.purchaseOrders.editPurchaseOrder",
+        "name": "Edit Purchase Order",
+        "show": true
+      },
+      {
+        "id": "permission.purchaseOrders.viewPurchaseOrder",
+        "name": "View Purchase Orders",
+        "show": true
+      },
+      {
+        "id": "permission.purchaseOrders.viewPurchaseOrderItems",
+        "name": "View Purchase Order Items",
+        "show": true
+      },
+      {
+        "id": "permission.purchaseOrders.addPurchaseOrderItems",
+        "name": "Add Items to Purchase Order",
+        "show": true
+      },
+      {
+        "id": "permission.purchaseOrders.removePurchaseOrderItems",
+        "name": "Remove Items to Purchase Order",
+        "show": true
+      },
+      {
+        "id": "permission.purchaseOrders.editPurchaseOrderItem",
+        "name": "Edit Purchase Order Item",
+        "show": true
+      },
+      {
+        "id": "permission.purchaseOrders.approvePurchaseOrder",
+        "name": "Approve Purchase Order",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "ROAD CHALLAN",
+    "permissions": [
+      {
+        "id": "permission.roadChallans.all",
+        "name": "All Road Challans",
+        "show": true
+      },
+      {
+        "id": "permission.roadChallans.createRoadChalan",
+        "name": "Create Road Challan",
+        "show": true
+      },
+      {
+        "id": "permission.roadChallans.viewRoadChalan",
+        "name": "View Road Challans",
+        "show": true
+      },
+      {
+        "id": "permission.roadChallans.viewRoadChalanItems",
+        "name": "View Items in Road Challan",
+        "show": true
+      },
+      {
+        "id": "permission.roadChallans.addRoadChalanItems",
+        "name": "Add Items to Road Challan",
+        "show": true
+      },
+      {
+        "id": "permission.roadChallans.edit",
+        "name": "Edit Road Challan Attributes",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "LOAN ISSUED",
+    "permissions": [
+      {
+        "id": "permission.loanIssued.all",
+        "name": "All Loan Issued",
+        "show": true
+      },
+      {
+        "id": "permission.loanIssued.loan",
+        "name": "View Loan Issued",
+        "show": true
+      },
+      {
+        "id": "permission.loanIssued.addLoan",
+        "name": "Add Loan",
+        "show": true
+      },
+      {
+        "id": "permission.loanIssued.issueLoanItems",
+        "name": "Issue Loan Items",
+        "show": true
+      },
+      {
+        "id": "permission.loanIssued.viewLoanIssueItems",
+        "name": "View Loan Issued Items",
+        "show": true
+      },
+      {
+        "id": "permission.loanIssued.edit",
+        "name": "Edit Loan Attributes",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "LOAN RECEIVED",
+    "permissions": [
+      {
+        "id": "permission.loanReceived.all",
+        "name": "All Loan Receives",
+        "show": true
+      },
+      {
+        "id": "permission.loanReceived.viewLoanReceive",
+        "name": "View Loan Receive",
+        "show": true
+      },
+      {
+        "id": "permission.loanReceived.viewReceiveLoanItems",
+        "name": "View Receive Loan Items",
+        "show": true
+      },
+      {
+        "id": "permission.loanReceived.returnLoanItems",
+        "name": "Return Loan Items",
+        "show": true
+      },
+      {
+        "id": "permission.loanReceived.edit",
+        "name": "Edit Loan Attributes",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "STOCK RETURNS",
+    "permissions": [
+      {
+        "id": "permission.stockReturn.all",
+        "name": "All Stock Returns",
+        "show": true
+      },
+      {
+        "id": "permission.stockReturn.view",
+        "name": "View Stock Returns",
+        "show": true
+      },
+      {
+        "id": "permission.stockReturn.create",
+        "name": "Create New Stock Return",
+        "show": true
+      },
+      {
+        "id": "permission.stockReturn.edit",
+        "name": "Edit Stock Return",
+        "show": true
+      },
+      {
+        "id": "permission.stockReturn.approve",
+        "name": "Approve Stock Return",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "INVENTORY",
+    "permissions": [
+      {
+        "id": "permission.inventory.all",
+        "name": "View Inventory",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "SUPPLIERS",
+    "permissions": [
+      {
+        "id": "permission.suppliers.all",
+        "name": "All Suppliers",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.suppliers.view",
+        "name": "View Suppliers",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.suppliers.new",
+        "name": "New Supplier",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.suppliers.edit",
+        "name": "Edit Suppliers",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "CONTRACTORS",
+    "permissions": [
+      {
+        "id": "permission.contractors.all",
+        "name": "All Contractors",
+        "show": true
+      },
+      {
+        "id": "permission.contractors.view",
+        "name": "View Contractors",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.contractors.new",
+        "name": "Create Contractor",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.contractors.editBasic",
+        "name": "Edit Details",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.contractors.delete",
+        "name": "Delete Contractor",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "WORK ORDERS",
+    "permissions": [
+      {
+        "id": "permission.workOrders.all",
+        "name": "All Work Orders",
+        "show": true
+      },
+      {
+        "id": "permission.workOrders.view",
+        "name": "View Work Orders",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.workOrders.new",
+        "name": "Create Work Order",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.workOrders.editBasic",
+        "name": "Edit Details",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.workOrders.delete",
+        "name": "Delete Work Order",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.workOrders.items",
+        "name": "View Work Order Items",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "REPORTS",
+    "permissions": [
+      {
+        "id": "permission.projectMaterialReport",
+        "name": "ProjectMaterialReport",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.workStatusReport",
+        "name": "WorkStatusReport",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.storePositionReport",
+        "name": "StorePositionReport",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.monthlyStockReport",
+        "name": "MonthlyStockReport",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission. stockReceiveReport",
+        "name": "StockReceiveReport",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.stockIssueReport",
+        "name": "StockIssueReport",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "WORKFLOW",
+    "permissions": [
+      {
+        "id": "permission.workflow.all",
+        "name": "All Workflow",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.workflow.view",
+        "name": "View Workflow",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.workflow.new",
+        "name": "New workflow",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.workflow.edit",
+        "name": "Edit workflow",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "HOME",
+    "permissions": [
+      {
+        "id": "permission.home.all",
+        "name": "All HOME",
+        "show": true
+      },
+      {
+        "id": "permission.home.view",
+        "name": "View",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.home.editBasic",
+        "name": "Edit Basic",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "Team",
+    "permissions": [
+      {
+        "id": "permission.team.all",
+        "name": "All Team",
+        "show": true
+      },
+      {
+        "id": "permission.team.view",
+        "name": "View Team",
+        "show": true
+      },
+      {
+        "id": "permission.team.addPerson",
+        "name": "Add Person",
+        "show": true
+      },
+      {
+        "id": "permission.team.editTeam",
+        "name": "Edit Team",
+        "show": true
+      },
+      {
+        "id": "permission.team.roles",
+        "name": " View Roles",
+        "show": true
+      },
+      {
+        "id": "permission.team.newRole",
+        "name": "New Role",
+        "show": true
+      },
+      {
+        "id": "permission.team.deleteRole",
+        "name": "Delete Role",
+        "show": true
+      },
+      {
+        "id": "permission.team.editRole",
+        "name": "Edit Role",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "WBS",
+    "permissions": [
+      {
+        "id": "permission.wbs.all",
+        "name": "All Wbs",
+        "show": true
+      },
+      {
+        "id": "permission.wbs.view",
+        "name": "View Wbs",
+        "show": true
+      },
+      {
+        "id": "permission.wbs.create",
+        "name": "Create Wbs",
+        "show": true
+      },
+      {
+        "id": "permission.wbs.edit",
+        "name": "Edit Wbs",
+        "show": true
+      },
+      {
+        "id": "permission.wbs.delete",
+        "name": "Delete Wbs",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "BOQ",
+    "permissions": [
+      {
+        "id": "permission.bom.all",
+        "name": "All Boq",
+        "show": true
+      },
+      {
+        "id": "permission.bom.view",
+        "name": "View Boq",
+        "show": true
+      },
+      {
+        "id": "permission.bom.create",
+        "name": "Create Boq",
+        "show": true
+      },
+      {
+        "id": "permission.bom.edit",
+        "name": "Edit Boq",
+        "show": true
+      },
+      {
+        "id": "permission.bom.import",
+        "name": "Import Boq",
+        "show": true
+      },
+      {
+        "id": "permission.bom.export",
+        "name": "Export Boq",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "TASKS",
+    "permissions": [
+      {
+        "id": "permission.tasks.all",
+        "name": "All Tasks",
+        "show": true
+      },
+      {
+        "id": "permission.tasks.view",
+        "name": "View Tasks",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.tasks.add",
+        "name": "Add Tasks",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.tasks.edit",
+        "name": "Edit Tasks",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.tasks.delete",
+        "name": "Delete Tasks",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.tasks.addManpower",
+        "name": "Add Manpower",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.tasks.addMaterial",
+        "name": "Add Material",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.tasks.addMachine",
+        "name": "Add Machine",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.tasks.addFiles",
+        "name": "Add Files",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.tasks.deleteItem",
+        "name": "Delete Items",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.tasks.uploadMedia",
+        "name": "Upload Media",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.tasks.addProblem",
+        "name": "Add Problem",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "FILES",
+    "permissions": [
+      {
+        "id": "permission.files.all",
+        "name": "All Files",
+        "show": true
+      },
+      {
+        "id": "permission.files.view",
+        "name": "View Files",
+        "show": true
+      },
+      {
+        "id": "permission.files.addFolder",
+        "name": "Add Folder",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.files.deleteFolder",
+        "name": "Delete Folder",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "MEDIA",
+    "permissions": [
+      {
+        "id": "permission.media.all",
+        "name": "All Media",
+        "show": true
+      },
+      {
+        "id": "permission.media.view",
+        "name": "View Media",
+        "show": true
+      },
+      {
+        "id": "permission.media.upload",
+        "name": "Upload Media",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "PROBLEMS",
+    "permissions": [
+      {
+        "id": "permission.issues.all",
+        "name": "All Problems",
+        "show": true
+      },
+      {
+        "id": "permission.issues.view",
+        "name": "View Problems",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.issues.add",
+        "name": "Add Problem",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.issues.edit",
+        "name": "Edit Problem",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.issues.delete",
+        "name": "Delete Problem",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.issues.assign",
+        "name": "Assign Task To Problem",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.issues.uploadMedia",
+        "name": "Upload Media",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "SITES",
+    "permissions": [
+      {
+        "id": "permission.sites.all",
+        "name": "All Sites",
+        "show": true
+      },
+      {
+        "id": "permission.sites.view",
+        "name": "View Sites",
+        "show": true
+      },
+      {
+        "id": "permission.sites.new",
+        "name": "New Site",
+        "show": true
+      },
+      {
+        "id": "permission.sites.edit",
+        "name": "Edit Site",
+        "show": true
+      },
+      {
+        "id": "permission.sites.basic",
+        "name": "Basic",
+        "show": true
+      },
+      {
+        "id": "permission.sites.tasks",
+        "name": "Tasks",
+        "show": true
+      },
+      {
+        "id": "permission.sites.resources",
+        "name": "Resources",
+        "show": true
+      },
+      {
+        "id": "permission.sites.delete",
+        "name": "Delete Site",
+        "show": true
+      }
+    ]
+  },
+  {
+    "group": "REPORTING",
+    "permissions": [
+      {
+        "id": "permission.reporting.all",
+        "name": "All Reporting",
+        "show": true
+      },
+      {
+        "id": "permission.reporting.view",
+        "name": "View Reporting",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "COMMUNICATION",
+    "permissions": [
+      {
+        "id": "permission.communication.all",
+        "name": "All Communication",
+        "show": true
+      },
+      {
+        "id": "permission.communication.viewEmail",
+        "name": "View Emails",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.communication.viewMessages",
+        "name": "View Messaging",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.communication.newGroup",
+        "name": "Create Group",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.communication.editGroup",
+        "name": "Edit Group",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.communication.writeMessage",
+        "name": "Write Message",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "group": "MEETINGS",
+    "permissions": [
+      {
+        "id": "permission.meetings.all",
+        "name": "All Meetings",
+        "show": true
+      },
+      {
+        "id": "permission.meetings.view",
+        "name": "View Meetings",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.meetings.new",
+        "name": "New Meeting",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.meetings.edit",
+        "name": "Edit Meeting",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.meetings.delete",
+        "name": "Delete Meeting",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  }
+]
