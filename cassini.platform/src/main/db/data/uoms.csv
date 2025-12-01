@@ -1,0 +1,314 @@
+100,femtograms,fg,999999999999999000.0,FALSE
+100,picograms,pg,999999999999999.0,FALSE
+100,nanograms,ng,1000000000000.0,FALSE
+100,micrograms,μg,1000000000.0,FALSE
+100,milligrams,mg,1000000.0,FALSE
+100,grains,gr,15432.358353,FALSE
+100,grams,g,1000.0,FALSE
+100,decagrams,dag,100.0,FALSE
+100,ounces (US & UK),oz,35.273962,FALSE
+100,hectograms,hg,10.0,FALSE
+100,pounds (US & UK),lbs,2.204623,FALSE
+100,kilogram,kg,1.0,TRUE
+100,hundredweights,cwt,0.019684,FALSE
+100,tonnes (metric),t,0.001,FALSE
+100,kilotonnes,kt,0.000001,FALSE
+100,megatonnes,Mt,0.000000001,FALSE
+200,light years,ly,0.0000000000000001057,FALSE
+200,miles (nautical),nm,0.00054,FALSE
+200,miles (US & UK),mi,0.000621,FALSE
+200,kilometers,km,0.001,FALSE
+200,furlongs,fur,0.004971,FALSE
+200,hectometers,hm,0.01,FALSE
+200,fathoms,ftm,0.546807,FALSE
+200,meters,m,1.0,TRUE
+200,yards,yd,1.093613,FALSE
+200,ells,ell,1.142857,FALSE
+200,feet (US & UK),ft,3.28084,FALSE
+200,hands,h,9.84252,FALSE
+200,decimeters,dm,10.0,FALSE
+200,inches,in,39.370079,FALSE
+200,centimeters,cm,100.0,FALSE
+200,EMS (pica),ems,236.222332,FALSE
+200,millimeters ,mm,1000.0,FALSE
+200,micrometers,μm,1000000.0,FALSE
+200,nanometers,nm,1000000000.0,FALSE
+200,picometers,pm,1000000000000.0,FALSE
+300,femtoseconds,fs,999999999999999.0,FALSE
+300,picoseconds,ps,1000000000000.0,FALSE
+300,nanoseconds,ns,1000000000.0,FALSE
+300,microseconds,μs,1000000.0,FALSE
+300,milliseconds,ms,1000.0,FALSE
+300,seconds,s,1.0,TRUE
+300,minutes,min,0.016667,FALSE
+300,hours,h,0.000278,FALSE
+300,days,d,0.000012,FALSE
+300,weeks,w,0.00000165344,FALSE
+300,fornights,fn,0.000001,FALSE
+300,months,M,0.000000380517,FALSE
+300,years,y,0.0000000317098,FALSE
+300,quarters,Qtr,0.0000000126839167935058,FALSE
+300,decades,dec,0.00000000317098,FALSE
+300,centuries,cen,0.000000000317098,FALSE
+300,millinea,mil,0.0000000000317098,FALSE
+400,picoampere,pA,1000000000000.0,FALSE
+400,ESU of current,esu,2997924536.84314,FALSE
+400,franklin/second,fr/s,2997924536.84314,FALSE
+400,gaussin electric current,Gs,2997924536.84314,FALSE
+400,statampere,stA,2997924536.84314,FALSE
+400,nanoampere,nA,1000000000.0,FALSE
+400,microampere,μA,1000000.0,FALSE
+400,milliampere,mA,1000.0,FALSE
+400,centiampere,cA,100.0,FALSE
+400,gilbert,Gi,1.256637,FALSE
+400,ampere,A,1.0,TRUE
+400,coulomb/second,C/s,1.0,FALSE
+400,seimens volt,SV,1.0,FALSE
+400,abampere,abA,0.1,FALSE
+400,biot,Bi,0.1,FALSE
+400,EMU of current,emu,0.1,FALSE
+400,kiloampere,kA,0.001,FALSE
+400,megaampere,MA,0.000001,FALSE
+400,gigaampere,gA,0.000000001,FALSE
+400,teraampere,TA,0.000000000001,FALSE
+500,picoliters,pl,1000000000000.0,FALSE
+500,nanoliters,nl,1000000000.0,FALSE
+500,cubic millimeters,mm3,1000000.0,FALSE
+500,microliters,μl,1000000.0,FALSE
+500,cubic centimeters,cm3,1000.0,FALSE
+500,milliliters,ml,1000.0,FALSE
+500,dram (imperial),dr (imp),281.560638,FALSE
+500,dram (US),dr,270.512182,FALSE
+500,tea spoons,tsp,202.884136,FALSE
+500,centiliters,cl,100.0,FALSE
+500,table spoons,tbsp,67.628045,FALSE
+500,cubic inches,in3,61.023744,FALSE
+500,fluid ounces (imperial),fl oz,35.19508,FALSE
+500,fluid ounces (US),fl oz,33.814023,FALSE
+500,decileters,dc,10.0,FALSE
+500,gill (US),gi,8.453506,FALSE
+500,gill (imperial),gi,7.039016,FALSE
+500,cups,cup,4.226753,FALSE
+500,"pints, liquid (us)",pt (lqd),2.113376,FALSE
+500,"pints, dry (US)",pt (dry),1.816166,FALSE
+500,pints (imperial),pt,1.759754,FALSE
+500,"quarts, liquid (US)",qt (lqd),1.056688,FALSE
+500,Liters,l,1.0,TRUE
+500,cubic decimeters,dm3,1.0,FALSE
+500,"quarts, dry (US)",qt (dry),0.908083,FALSE
+500,quarts (imperial),qt,0.879877,FALSE
+500,"gallons, liquid (US)",gal (lqd),0.264172,FALSE
+500,"Gallons, dry (US)",gal (dry),0.227021,FALSE
+500,gallons (imperial),gal,0.219969,FALSE
+500,cubic feet,ft3,0.035315,FALSE
+500,bushels (US),bu (imp),0.028378,FALSE
+500,bushels (UK),bu,0.027496,FALSE
+500,barrels (oil),bbl,0.00629,FALSE
+500,cubic yards,yd3,0.001308,FALSE
+500,cubic meters,m3,0.001,FALSE
+500,kiloliters,kl,0.001,FALSE
+500,acre foot,ac⋅ft,0.000001,FALSE
+500,cubic decameters,dam3,0.000001,FALSE
+500,cubic kilometers,km3,0.000000000001,FALSE
+500,cubic mile,mi3,0.000000000000239913,FALSE
+600,Rankine,oR,493.47,FALSE
+600,Kelvin,K,274.15,FALSE
+600,Faherenheit,oF,33.8,FALSE
+600,Celsius ,oC,1.0,TRUE
+600,Réaumure,oRé,0.8,FALSE
+700,square millimeters,mm2,1000000.0,FALSE
+700,square centimeter,cm2,10000.0,FALSE
+700,circular inches,circ in,1973.525242,FALSE
+700,square inches,in2,1550.0031,FALSE
+700,square feet (US survey),f2,10.76391,FALSE
+700,square yards,sq yd,1.19599,FALSE
+700,square meter,m2,1.0,TRUE
+700,squares (of timber),sq,0.107639,FALSE
+700,square rods (of poles),rd2,0.039537,FALSE
+700,ares,a,0.01,FALSE
+700,roods,ru,0.000988,FALSE
+700,acres,ac,0.000247,FALSE
+700,hectares,ha,0.0001,FALSE
+700,hides,hide,0.000002,FALSE
+700,square kilometers,km2,0.000001,FALSE
+700,square miles,mi2,0.000000386102,FALSE
+700,townships,twp,0.000000010725,FALSE
+800,bytes,B,1048576.0,FALSE
+800,kilobytes,KB,1024.0,FALSE
+800,megabytes,MB,1.0,TRUE
+800,gigabytes,GB,0.000977,FALSE
+800,terabytes,TB,0.000001,FALSE
+800,petabytes,PB,0.000000001,FALSE
+800,exabytes,EB,0.000000000001,FALSE
+900,milligrams/liter,mg/l,1000000.0,FALSE
+900,grains/gallon (UK),gr/gal,70156.0,FALSE
+900,grains/gallon (US),gr/gal,58418.0,FALSE
+900,grams/liter,g/l,1000.0,FALSE
+900,kilograms/cubic meters,kg/m3,1000.0,FALSE
+900,milligrams/milliliter,mg/ml,1000.0,FALSE
+900,ounce/gallon (UK),oz/gal,160.358613,FALSE
+900,ounce/gallon (US),oz/gal,133.526466,FALSE
+900,pounds/cubic foot,lb/ft3,62.427962,FALSE
+900,pounds/gallon (UK),lb/gal,10.022413,FALSE
+900,pounds/gallon (US),lb/gal,8.345404,FALSE
+900,kilograms/liter,kg/l,1.0,TRUE
+900,gram/cubic centimeters,g/cm3,1.0,FALSE
+900,grams/millileter,g/ml,1.0,FALSE
+900,megagrams/cubic meter,Mg/m3,1.0,FALSE
+900,tonnes/cubic meter,tn/m3,1.0,FALSE
+900,tones (US) cubic yard,tn yd3,1.0,FALSE
+900,tones (UK) cubic yard,tn yd3,0.842777,FALSE
+900,ounces/cubic inch,oz/in3,0.75248,FALSE
+900,pounds/cubic inch,lb/in3,0.578037,FALSE
+1000,gram-force,gf,101.971621298,FALSE
+1000,atomic unit of force,au,12137804.78,FALSE
+1000,dynes,dyn,100000.0,FALSE
+1000,poundal,pdl,7.233011,FALSE
+1000,ounce-force,ozf,3.5969431019354,FALSE
+1000,newtons,N,1.0,TRUE
+1000,pounds force,lbf,0.224809,FALSE
+1000,kilograms force,kgf,0.101972,FALSE
+1000,kilonewtons,kN,0.001,FALSE
+1000,sthene,sn,0.001,FALSE
+1000,kips,kip,0.000225,FALSE
+1000,tonnes force,tnf,0.000102,FALSE
+1000,meganewtons,MN,0.000001,FALSE
+1100,inches/hour,in/hr,141732.0,FALSE
+1100,foot/hour,ft/hr,11811.0,FALSE
+1100,centimeters/minute,cm/min,6000.0,FALSE
+1100,yard/hour,yd/hr,3937.0,FALSE
+1100,meters/hour,m/h,3600.0,FALSE
+1100,inches/minute,in/min,2362.2,FALSE
+1100,foot/minute,ft/min,196.850394,FALSE
+1100,centimeters/second,cm/s,100.0,FALSE
+1100,yard/minute,yd/min,65.616798,FALSE
+1100,meter/minute,m/min,60.0,FALSE
+1100,nautical miles/24hr,NM/24h,46.652268,FALSE
+1100,inch/second,in/s,39.370079,FALSE
+1100,furlong/hour,fur/h,17.8955,FALSE
+1100,kilometers/hour,km/h,3.6,FALSE
+1100,foot/second,ft/s,3.28084,FALSE
+1100,mile/hour,mp/h,2.236936,FALSE
+1100,knot,kn,1.943844,FALSE
+1100,nautical miles/hour,NM/h,1.943844,FALSE
+1100,yard/second,yd/s,1.093613,FALSE
+1100,meter/second,m/s,1.0,TRUE
+1100,furlong/minute,fur/min,0.298258,FALSE
+1100,centimeters/millisecond,cm/ms,0.1,FALSE
+1100,mile/minute,mi/m,0.037282,FALSE
+1100,furlong/second,fur/s,0.00497096,FALSE
+1100,mach (ISA / Sea level),M,0.002939,FALSE
+1100,kilometers/second,km/s,0.001,FALSE
+1100,meters/millisecond,m/ms,0.001,FALSE
+1100,mile/second,mi/s,0.000621,FALSE
+1100,kilometers/millisecond,km/ms,0.000001,FALSE
+1200,gram/square meter ,g/m2,101.97162129779,FALSE
+1200,gram/square foot ,g/ft2,9.4734736122937,FALSE
+1200,poundal/sq. meter ,pdl/m2,7.23301,FALSE
+1200,pascal ,Pa,1.0,TRUE
+1200,newtons/sq.meters,N/m2,1.0,FALSE
+1200,poundal/sq. foot ,pdl/ft2,0.690531,FALSE
+1200,pound-force/sq. meter ,pf/m2,0.224809,FALSE
+1200,kilogram-forces/sq.meter,kgf/m2,0.101972,FALSE
+1200,millimeters of water,mmH2O,0.101972,FALSE
+1200,pound-force/sq. foot ,pdf/ft2,0.020886,FALSE
+1200,centimeters water,cmH2O,0.010197,FALSE
+1200,hectopascals,hPa,0.01,FALSE
+1200,millibars,mbar,0.01,FALSE
+1200,millimeters of mercury,mmHg,0.007501,FALSE
+1200,torr ,mm Hg 00C,0.007501,FALSE
+1200,meter of mercury ,mHg,0.0075006156130264,FALSE
+1200,poundal/sq. inch ,pdl/in2,0.00466645,FALSE
+1200,inch of water,inH2O,0.004015,FALSE
+1200,kilonewtones/sq.meter,kn/m2,0.001,FALSE
+1200,kilopascals,kPa,0.001,FALSE
+1200,pièze ,pz,0.001,FALSE
+1200,centimeters mercury,cmHg,0.00075,FALSE
+1200,feet of water,ftH2O,0.00033455256555148,FALSE
+1200,inch of mercury ,inHg,0.000295,FALSE
+1200,pound-force/sq. inch ,lbf/in2,0.000145,FALSE
+1200,meters of water,mH2O,0.000102,FALSE
+1200,tonnes-force/sq.meter,tf/m2,0.000102,FALSE
+1200,newtons/sq.centimeters,N/cm2,0.0001,FALSE
+1200,foot of mercury ,ftHg,0.000024608321648,FALSE
+1200,kips/square foot ,kf/ft2,0.000020885434273039,FALSE
+1200,atmospheres,atm,0.00001,FALSE
+1200,bar,b,0.00001,FALSE
+1200,kilogram-forces/sq.centimeter,kgf/cm2,0.00001,FALSE
+1200,tonne/square foot ,t/f2,0.000009,FALSE
+1200,meganewtons/sq.meters,mN/m2,0.000001,FALSE
+1200,megapascals,MPa,0.000001,FALSE
+1200,newtons/sq.millimeters,N/mm2,0.000001,FALSE
+1200,kips/square meter ,kip/m2,0.000000145037738007218,FALSE
+1200,kips/square inch ,kip/in2,0.00000014503768079,FALSE
+1200,tonne/square inch , t/in2,0.00000007251894557,FALSE
+1200,tonnes-force/sq.cm,tf/cm2,0.00000001019716213,FALSE
+1200,kilonewtones/sq.millimeter,kN/mm2,0.000000001,FALSE
+1200,meganewtons/sq.millimeters,mN/mm2,0.000000000001,FALSE
+1300,electron volts,eV,6241457005723410000.0,FALSE
+1300,Rydberg ,Ry,458742531671580000.0,FALSE
+1300,hartree ,Eh,229400000000000000.0,FALSE
+1300,ergs,erg (CGS),10000000.0,FALSE
+1300,millijoule,mJ,1000.0,FALSE
+1300,foot-poundal ,ft pdl,23.730422,FALSE
+1300,cubic centimeter of atmosphere,cm3 atm,9.86923266716012,FALSE
+1300,inch-pound force ,in lbf,8.850746,FALSE
+1300,joule ,J,1.0,TRUE
+1300,newton meters,Nm,1.0,FALSE
+1300,watt seconds,Ws,1.0,FALSE
+1300,foot-pound force ,ft lbf,0.737562,FALSE
+1300,calorie (20C),cal 20C,0.239126,FALSE
+1300,calorie (thermochemical),cal th,0.239006,FALSE
+1300,giga calorie ,Gcal,0.239006,FALSE
+1300,calorie (15C),cal 15C,0.238903,FALSE
+1300,calorie (IT),cal IT,0.238846,FALSE
+1300,calorie (mean),cal μ,0.238662,FALSE
+1300,kilogram-force meters,kfm,0.101972,FALSE
+1300,liter atmosphere ,l atm,0.00986923266716012,FALSE
+1300,gallon atmosphere ,gal atm,0.00260717544888377,FALSE
+1300,kilojoule,kJ,0.001,FALSE
+1300,BTU (thermochemical),th,0.000948,FALSE
+1300,BTU (mean),mean,0.000947,FALSE
+1300,celsius heat unit ,CHU (thermochemical),0.00052656506684073,FALSE
+1300,centigrade heat unit,°C,0.000526,FALSE
+1300,cubic foot of atmosphere,ft3 atm,0.000348528662437588,FALSE
+1300,watt hour ,Wh,0.000278,FALSE
+1300,calorie (food),cal food,0.000239,FALSE
+1300,kilocalories (IT),kcal IT,0.000239,FALSE
+1300,kilocalories (thermochemical),kcal th,0.000239,FALSE
+1300,cubic yard of atmosphere,yd3 atm,0.00001290846897917,FALSE
+1300,megajoule,MJ,0.000001,FALSE
+1300,cubic foot of natural gas,ft3 N.G.,0.00000095,FALSE
+1300,horsepower hours,hp h,0.00000037250607185,FALSE
+1300,kilowatt hours,kWh,0.00000028,FALSE
+1300,Dutch natural gas,"m3, LHV",0.00000003159557662,FALSE
+1300,gasonline,L,0.00000002923976608,FALSE
+1300,gigajoules,GJ,0.000000001,FALSE
+1300,exajoules,EJ,0.00000000028,FALSE
+1300,megawatt hours,MWh,0.00000000028,FALSE
+1300,barrel of oil,bbl,0.000000000163398693,FALSE
+1300,terajoules,TJ,0.000000000001,FALSE
+1300,gigawatt hours,GWh,0.00000000000028,FALSE
+1300,petajoules,PJ,0.000000000000001,FALSE
+1300,terawatt hours,TWh,0.00000000000000028,FALSE
+1400,Yen,¥,107.538518,FALSE
+1400,Indian Rupee,₹,75.86803,FALSE
+1400,Yuan,CN¥,7.134721,FALSE
+1400,Canadian dollars,CA$,1.400679,FALSE
+1400,US dollars,$,1.0,TRUE
+1400,Euros,€,0.917095,FALSE
+1500,miles/gallon (UK),mpg,282.480936,FALSE
+1500,miles/gallon (US),mpg,235.214583,FALSE
+1500,watt hours/mile,Wh/mi,143.273429,FALSE
+1500,kilometer/liter,km/l,100.0,FALSE
+1500,watt hours/kilometer,Wh/km,89.025982,FALSE
+1500,miles/liter,mi/l,62.137119,FALSE
+1500,kilowatt hours/100 miles,kWh/100mi,14.327343,FALSE
+1500,kilometer/kWh,km/kWh,11.232676,FALSE
+1500,kilowatt hours/100 kilometer,kWh/100km,8.902598,FALSE
+1500,miles/kWh,mi/kWh,6.979661,FALSE
+1500,liters/100 kilometers,l/100km,1.0,TRUE
+1500,gallons (US)/100 miles,gal/100mi,0.425144,FALSE
+1500,gallons (UK)/100 miles,gal/100mi,0.354006,FALSE
+1500,kilowatt hours/kilometer,kWh/km,0.089026,FALSE
+1500,liters/meter,l/m,0.00001,FALSE

@@ -1,0 +1,95 @@
+permission.all,All Permissions,All Permissions
+permission.admin.all,All Admin,All Admin
+permission.admin.user,Add/Edit User,Add/Edit User
+permission.admin.group,Add/Edit Group,Add/Edit Group
+permission.home.all,Home,Home
+permission.home.view,View Home,View Home
+permission.inventory.all,All Inventory,All Inventory
+permission.inventory.view,View Inventory,View Inventory
+permission.inventory.reports,View Inventory Reports,View Inventory Reports
+permission.classification.all,All Classification,All Classification
+permission.classification.view,View Classification,View Classification
+permission.classification.new,New Classification,New Classification
+permission.classification.edit,Edit Classification,New Classification
+permission.classification.delete,Delete Classification,New Classification
+permission.bom.all,All Bom,All Bom
+permission.bom.view,View Bom,View Bom
+permission.bom.add,Add Bom,Add Bom
+permission.bom.edit,Edit Bom,Edit Bom
+permission.bom.delete,Delete Bom,Delete Bom
+permission.items.all,All Items,All Items
+permission.items.new,New Items,New Items
+permission.items.view,View Items,View Items
+permission.items.edit,Edit Items,Edit Items
+permission.items.delete,Delete Items,Delete Items
+permission.gatePass.all,All Gate Pass,All Gate Pass
+permission.gatePass.view,View Gate Pass,View Gate Pass
+permission.gatePass.new,New Gate Pass,New Gate Pass
+permission.gatePass.delete,Delete Gate Pass,Delete Gate Pass
+permission.inward.all,All Inward,All Inward
+permission.inward.view,View Inwards,View Inwards
+permission.inward.new,New Inward,New Inward
+permission.inward.storeApprove,Store Approve,Store Approve
+permission.inward.SSQAGApprove,SSQAG Approve,SSQAG Approve
+permission.inward.edit,Edit Inward,Edit Inward
+permission.issued.all,All Issued,All Issued
+permission.issued.invApprove,Inventory Approve,Inventory Approve
+permission.issued.casManager,CAS Approve,CAS Approve
+permission.issued.view,View Issued,View Issued
+permission.issued.new,New Issued,New Issued
+permission.issued.print,Issue Print,Issue Print
+permission.issued.BDLQCApprove, BDL-QC Approve, BDL-QC Approve
+permission.issued.versityQCApprove, Versity-QC Approve, Versity-QC Approve
+permission.versityPpc.receive, Versity-Ppc Receive, Versity-Ppc Receive
+permission.bdlPpc.receive, BDL-Ppc Receive, BDL-Ppc Receive
+permission.failures.all,All failures,All failures
+permission.requests.all,All Requests,All Requests
+permission.requests.view,View Requests,View Requests
+permission.requests.new,New Requests,New Request
+permission.requests.delete,Delete Requests,Delete Request
+permission.requests.newIssue, New Issue,New Issue
+permission.requests.bdlApprove,BDL Approve,BDL Approve
+permission.requests.versityApprove,Versity Approve,Versity Approve
+permission.requests.casApprove,CAS Approve,CAS Approve
+permission.requests.casManager,CAS Manager,CAS Manager
+permission.planning.all,All Planning,All Planning
+permission.planning.view,View Planning,View Planning
+permission.planning.do,Auto Planning,Auto Planning
+permission.suppliers.all,All Suppliers,All Suppliers
+permission.suppliers.view,View Suppliers,View Suppliers
+permission.suppliers.new,Create Supplier,Create Supplier
+permission.bdl.failure,BDL Failure,BDL Failure
+permission.ssqag.failure,SSQAG Failure,SSQAG Failure
+permission.cas.failure,CAS Failure,CAS Failure
+permission.store.failure,STORE Failure,STORE Failure
+permission.return.all,All Return,All Return
+permission.return.view,View Return,View Return
+permission.return.new,Create Return,Create Return
+permission.failure.view,View Failures,View Failures
+permission.settings.all,All Settings,All Settings
+permission.settings.view,View Settings,View Settings
+permission.settings.new,New Settings,New Settings
+permission.settings.edit,Edit Settings,Edit Settings
+permission.settings.delete,Delete Settings,Delete Settings
+permission.dispatch.all,All Dispatch,All Dispatch
+permission.dispatch.view,View Dispatch,View Dispatch
+permission.dispatch.new,New Dispatch,New Dispatch
+permission.dispatch.edit,Edit Dispatch,Edit Dispatch
+permission.dispatch.delete,Delete Dispatch,Delete Dispatch
+permission.storage.all,All Storage,All Storage
+permission.storage.view,View Storage,View Storage
+permission.storage.new,Create Storage,Create Storage
+permission.storage.edit,Edit Storage,Edit Storage
+permission.storage.delete,Delete Storage,Delete Storage
+permission.summary.view,View summary,View summary
+permission.cas.check,Cas Check,Cas Check
+permission.ssqag.check,SSQAG Check,SSQAG Check
+permission.bdl.check,BDL Check,BDL Check
+permission.manufacturers.all,All Manufacturers,All Manufacturers
+permission.manufacturers.view,View Manufacturers,View Manufacturers
+permission.manufacturers.new,Create Manufacturer,Create Manufacturer
+permission.bdlPcc.receive,BDL Receive,BDL Receive
+permission.versity.receive,Versity Receive,Versity Receive
+permission.top.search,Top Search,Top Search
+permission.versity.group,Versity Group, Versity Group
+permission.reports.view,View Reports,View Reports

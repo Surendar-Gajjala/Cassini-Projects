@@ -1,0 +1,22 @@
+package com.cassinisys.plm.model.pdm;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+@Data
+@EqualsAndHashCode(callSuper=false)
+@Entity
+@Table(name = "PDM_CONFIGURATION")
+@PrimaryKeyJoinColumn(name = "ID")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class PDMConfiguration extends PDMObject {
+
+    public PDMConfiguration() {
+        super(PDMObjectType.PDM_CONFIGURATION);
+    }
+}

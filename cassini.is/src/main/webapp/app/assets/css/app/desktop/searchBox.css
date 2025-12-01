@@ -1,0 +1,146 @@
+.inner-addon {
+    position: relative;
+}
+
+.inner-addon .fa {
+    position: absolute;
+    padding: 10px;
+    top: 2px;
+    pointer-events: none;
+}
+
+.left-addon .fa {
+    left: 0px;
+}
+
+.right-addon .fa {
+    right: 0px;
+}
+
+.left-addon input {
+    padding-left: 30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+.search-element {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    right: 10%;
+    margin: auto;
+    max-width: 250px;
+    width: 25%;
+}
+
+.search-element1 {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 55%;
+    margin: auto;
+    max-width: 250px;
+    width: 25%;
+}
+
+.search-date2 {
+    position: absolute;
+    top: 5px;
+    left: 65%;
+    right: 0;
+    /*margin: auto;*/
+    max-width: 200px;
+    width: 25%;
+}
+
+.search-date1 {
+    position: absolute;
+    top: 5px;
+    left: 35%;
+    right: 0;
+    /*margin: auto;*/
+    max-width: 200px;
+    width: 25%;
+}
+
+.search-input-container {
+    height: 40px;
+    white-space: nowrap;
+}
+
+.search-form {
+    border-radius: 30px;
+    border-width: 0;
+    padding-left: 15px;
+    display: inline-block !important;
+}
+
+.search-results-container {
+    max-height: 70%;
+    /*height: 440px;*/
+    top: 42px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    z-index: 100;
+    display: none;
+    border-top: 0;
+    border-radius: 15px;
+}
+
+/*.search-results-container1 {
+    max-height: 70%;
+    /!*height: 440px;*!/
+    top: 74px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    z-index: 100;
+    right:50%;
+    display: none;
+    border-top: 0;
+    border-radius: 15px;
+}*/
+
+.search-results-container .label {
+    color: #fff !important;
+}
+
+.search-results-container1 .label {
+    color: #fff !important;
+}
+
+.result-item {
+    cursor: pointer;
+}
+
+.result-item-col span {
+    font-size: 10px;
+    color: grey;
+}
+
+.selected {
+    color: #fff !important;
+    background: #375ee5; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #375ee5, #3da6e5); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #375ee5, #3da6e5);
+}
+
+.result-item:hover {
+    color: #fff !important;
+    background: #183168; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #375ee5, #3da6e5); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #375ee5, #3da6e5);
+}
+
+.result-item:hover .result-item-col span {
+    color: #fff;
+}
+
+.titleData {
+    display: run-in;
+    word-wrap: break-word;
+    max-width: 400px !important;
+    white-space: normal !important;
+    text-align: left;
+}

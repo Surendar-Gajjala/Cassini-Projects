@@ -1,0 +1,356 @@
+.actionbtn {
+
+    padding: 4px 6px 2px 6px;
+    background: #ffffff;
+
+}
+
+.cassinifc {
+    direction: ltr;
+    text-align: left;
+    background: #ffffff;
+    padding: 20px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
+    -webkit-box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
+    box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
+}
+
+.cassinifc table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html .cassinifc,
+.cassinifc table {
+    font-size: 1em;
+}
+
+.cassinifc td,
+.cassinifc th {
+    padding: 0;
+    vertical-align: top;
+}
+/* Header */
+
+.cassinifc-header td {
+    white-space: nowrap;
+}
+
+.cassinifc-header-left {
+    width: 25%;
+    text-align: left;
+}
+
+.cassinifc-header-center {
+    text-align: center;
+}
+
+.cassinifc-header-right {
+    width: 25%;
+    text-align: right;
+}
+
+.cassinifc-header-title {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.cassinifc-header-title h2 {
+    margin-top: 7px;
+    white-space: nowrap;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #333;
+    font-family: 'LatoBold';
+}
+
+.cassinifc .cassinifc-header-space {
+    padding-left: 10px;
+}
+
+.cassinifc-header .cassinifc-button {
+    margin-bottom: 1em;
+    vertical-align: top;
+}
+/* buttons edges butting together */
+
+.cassinifc-header .cassinifc-button {
+    margin-right: -1px;
+}
+
+.cassinifc-header .cassinifc-corner-right,
+    /* non-theme */
+
+.cassinifc-header .ui-corner-right {
+    /* theme */
+    margin-right: 0;
+    /* back to normal */
+}
+/* button layering (for border precedence) */
+
+.cassinifc-header .cassinifc-state-hover,
+.cassinifc-header .ui-state-hover {
+    z-index: 2;
+}
+
+.cassinifc-header .cassinifc-state-down {
+    z-index: 3;
+}
+
+.cassinifc-header .cassinifc-state-active,
+.cassinifc-header .ui-state-active {
+    z-index: 4;
+}
+/* Content */
+
+.cassinifc-content {
+    clear: both;
+    zoom: 1;
+    margin-top: 15px;
+}
+
+.cassinifc-view {
+    width: 100%;
+    overflow: hidden;
+}
+/* Cell Styles */
+
+.cassinifc-widget-header {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-family: 'LatoBold';
+    font-size: 13px;
+    height: 40px;
+}
+
+.cassinifc-widget-content {
+    border: 1px solid #fff;
+}
+
+.cassinifc-widget-content > div {
+    margin: 2px;
+    padding: 3px;
+}
+
+.cassinifc-state-highlight {
+    background: #f7f7f7;
+}
+
+.cassinifc-cell-overlay {
+    /* semi-transparent rectangle while dragging */
+    background: #bce8f1;
+    opacity: .3;
+    filter: alpha(opacity=30);
+    /* for IE */
+}
+/* Buttons
+------------------------------------------------------------------------*/
+
+.cassinifc-button {
+    position: relative;
+    display: inline-block;
+    padding: 6px 10px;
+    overflow: hidden;
+    line-height: 1.9em;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.cassinifc-state-default.cassinifc-corner-left {
+    /* non-theme */
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.cassinifc-state-default.cassinifc-corner-right {
+    /* non-theme */
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+/*
+    Our default prev/next buttons use HTML entities like &lsaquo; &rsaquo; &laquo; &raquo;
+    and we'll try to make them look good cross-browser.
+*/
+
+.cassinifc-text-arrow {
+    margin: 0 .1em;
+    font-size: 2em;
+    font-family: "Courier New", Courier, monospace;
+    vertical-align: baseline;
+    /* for IE7 */
+}
+
+.cassinifc-button-prev .cassinifc-text-arrow,
+.cassinifc-button-next .cassinifc-text-arrow {
+    /* for &lsaquo; &rsaquo; */
+    font-weight: bold;
+}
+/* icon (for jquery ui) */
+
+.cassinifc-button .cassinifc-icon-wrap {
+    position: relative;
+    float: left;
+    top: 50%;
+}
+
+.cassinifc-button .ui-icon {
+    position: relative;
+    float: left;
+    margin-top: -50%;
+    *margin-top: 0;
+    *top: -50%;
+}
+
+.cassinifc-state-default {
+    border: 1px solid #ddd;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.cassinifc-state-hover,
+.cassinifc-state-down,
+.cassinifc-state-active,
+.cassinifc-state-disabled {
+    color: #333333;
+    background-color: #e6e6e6;
+}
+
+.cassinifc-state-hover {
+    color: #333333;
+    text-decoration: none;
+    background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear;
+}
+
+.cassinifc-state-down,
+.cassinifc-state-active {
+    background-color: #eee;
+    background-image: none;
+    outline: 0;
+}
+
+.cassinifc-state-disabled {
+    cursor: default;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    box-shadow: none;
+    background: none;
+    color: #ccc;
+}
+
+.cassinifc-button-next,
+.cassinifc-button-prev {
+    line-height: 20px;
+}
+
+table.cassinifc-border-separate {
+    border-collapse: separate;
+}
+
+.cassinifc-border-separate th,
+.cassinifc-border-separate td {
+    border-width: 1px 0 0 1px;
+}
+
+.cassinifc-border-separate th.cassinifc-last,
+.cassinifc-border-separate td.cassinifc-last {
+    border-right-width: 1px;
+}
+
+.cassinifc-border-separate tr.cassinifc-last th,
+.cassinifc-border-separate tr.cassinifc-last td {
+    border-bottom-width: 1px;
+}
+
+.cassinifc-border-separate tbody tr.cassinifc-first td,
+.cassinifc-border-separate tbody tr.cassinifc-first th {
+    border-top-width: 0;
+}
+
+.cassinifc-row td:first-child {
+    border-left: 0;
+}
+
+.cassinifc-row td:last-child {
+    border-right: 0;
+}
+
+.cassinifc-row:last-child td {
+    border-bottom: 0;
+}
+
+.cassinifc-grid th {
+    text-align: center;
+}
+
+.cassinifc .cassinifc-row-number {
+    width: 22px;
+    text-align: center;
+}
+
+.cassinifc .cassinifc-row-number div {
+    padding: 0 2px;
+}
+
+.cassinifc-grid .cassinifc-txt-ct {
+    background: #ececec;
+    border-radius: 3px;
+    color: #333;
+    padding: 5px 15px;
+    border: 1px solid #E8E8E8;
+    font-weight: bold;
+}
+
+.cassinifc-grid .cassinifc-other-year .cassinifc-txt-ct {
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+
+.cassinifc-grid .cassinifc-box-content {
+    clear: both;
+    padding: 15px 2px 1px;
+    line-height: 56px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: #B3B1B1;
+    background-color: #FDFDFD;
+    border-radius: 3px;
+    margin-top: 2px;
+    border: 1px solid #e8e8e8;
+}
+
+.cassinifc-grid .cassinifc-daybox-content {
+    clear: both;
+    padding: 5px 2px 1px;
+    line-height: 56px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: #B3B1B1;
+    background-color: #FDFDFD;
+    border-radius: 3px;
+    margin-top: 2px;
+    border: 1px solid #e8e8e8;
+    min-height: 64px;
+}
+
+.cassinifc-width33 {
+    width: 33%;
+}
+.cassinifc-width14 {
+    width: 14%;
+}
+
+.cassinifc-widget-header th{
+
+
+    text-transform: uppercase;
+    padding-bottom: 5px;
+}

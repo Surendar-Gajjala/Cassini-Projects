@@ -1,0 +1,103 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
+
+    <title>ADN Viewer Directive Demo</title>
+
+    <link type="text/css"
+          rel="stylesheet"
+          href="https://developer.api.autodesk.com/viewingservice/v1/viewers/style.css"/>
+</head>
+<body>
+
+<div ng-app="Autodesk.ADN.Demo.App">
+    <div ng-controller="Autodesk.ADN.Demo.Controller">
+        <adn-viewer-div style="width: 100%; height: 100%;"
+                        id="viewer"
+                        url="{{tokenUrl}}"
+                        urn="{{docUrn}}"
+                        viewer-initialized="onViewerInitialized(viewer)">
+        </adn-viewer-div>
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+<script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/6.1.2/viewer3D.min.js"></script>
+<script src="https://rawgit.com/Developer-Autodesk/library-javascript-view.and.data.api/master/js/Autodesk.ADN.Toolkit.Viewer.js"></script>
+
+<script>
+
+    var app = angular.module('Autodesk.ADN.Demo.App', []);
+
+    app.controller('Autodesk.ADN.Demo.Controller',
+            ['$scope', function ($scope) {
+
+                var params = location.href.split('?')[1].split('&');
+                data = {};
+                for (x in params) {
+                    data[params[x].split('=')[0]] = params[x].split('=')[1];
+                }
+
+                $scope.tokenUrl = data['url'];
+                $scope.docUrn = data['urn'];
+                $scope.onViewerInitialized = function (viewer) {
+
+                    viewer.addEventListener(
+                            Autodesk.Viewing.GEOMETRY_LOADED_EVENT,
+                            function (event) {
+                                console.log('Geometry Loaded...');
+                            });
+                }
+
+            }]);
+
+    app.directive('adnViewerDiv', function () {
+
+        function link($scope, $element, $attributes) {
+
+            $scope.adnViewerMng =
+                    new Autodesk.ADN.Toolkit.Viewer.AdnViewerManager(
+                            $attributes.url,
+                            $element[0],
+                            ($attributes.hasOwnProperty('environment') ?
+                                    $attributes.environment :
+                                    'AutodeskProduction'));
+
+            $attributes.$observe('urn', function (urn) {
+
+                if (urn.length) {
+
+                    // loads document from urn
+                    $scope.adnViewerMng.loadDocument(
+                            urn,
+                            function (viewer) {
+                                $scope.viewerInitialized({
+                                    viewer: viewer
+                                })
+                            });
+                }
+                else {
+                    $scope.adnViewerMng.closeDocument();
+                }
+            });
+        }
+
+        return {
+            scope: {
+                url: '@',
+                urn: '@',
+                viewerInitialized: '&'
+            },
+            restrict: 'E',
+            replace: true,
+            template: '<div style="overflow: hidden;' +
+            ' position: relative; {{style}}"><div/>',
+            link: link
+        };
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,670 @@
+CREATE SEQUENCE PQM_OBJECT_ID_SEQ START 1 INCREMENT 1;
+
+CREATE TYPE REPORTER_TYPE AS ENUM (
+    'INTERNAL',
+    'CUSTOMER',
+    'SUPPLIER'
+);
+
+CREATE TYPE CHECKLIST_STATUS AS ENUM (
+    'PENDING',
+    'FINISHED',
+    'HOLD',
+    'CANCEL'
+);
+
+CREATE TYPE CHECKLIST_RESULT AS ENUM (
+    'NONE',
+    'PASS',
+    'FAIL'
+);
+
+CREATE TYPE AUDIT_RESULT AS ENUM (
+    'NONE',
+    'PASS',
+    'FAIL'
+);
+
+CREATE TYPE QCR_FOR AS ENUM (
+    'PR',
+    'NCR'
+);
+
+CREATE TYPE QUALITY_TYPE AS ENUM(
+    'INSPECTIONPLANTYPE',
+    'PRODUCTINSPECTIONPLANTYPE',
+    'MATERIALINSPECTIONPLANTYPE',
+    'PRTYPE',
+    'NCRTYPE',
+    'QCRTYPE',
+    'PPAPTYPE',
+    'SUPPLIERAUDITTYPE'
+);
+
+CREATE TYPE AUDITPLAN_STATUS AS ENUM (
+    'NONE',
+    'PLANNED',
+    'COMPLETED',
+    'APPROVED'
+);
+
+CREATE TABLE PQM_CUSTOMER (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    NAME                        TEXT                    NOT NULL,
+    PHONE                       TEXT                    ,
+    ADDRESS                     TEXT                    ,
+    EMAIL                       TEXT                    ,
+    CONTACT_PERSON              INTEGER                 NOT NULL REFERENCES PERSON(PERSON_ID) ON DELETE CASCADE,
+    NOTES                       TEXT                    ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_SUPPLIER (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    NAME                        TEXT                    NOT NULL,
+    PHONE                       TEXT                    ,
+    ADDRESS                     TEXT                    ,
+    EMAIL                       TEXT                    ,
+    CONTACT_PERSON              INTEGER                 NOT NULL REFERENCES PERSON(PERSON_ID) ON DELETE CASCADE,
+    NOTES                       TEXT                    ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_QUALITY_TYPE (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    NAME                        TEXT                    NOT NULL,
+    DESCRIPTION                 TEXT                    ,
+    PARENT_TYPE                 INTEGER                 REFERENCES PQM_QUALITY_TYPE (ID) ON DELETE CASCADE,
+    NUMBER_SOURCE               INTEGER                 REFERENCES AUTONUMBER (AUTONUMBER_ID) ON DELETE CASCADE,
+    QUALITY_TYPE                QUALITY_TYPE            ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_QUALITY_TYPE_ATTRIBUTE (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    TYPE                        INTEGER                 NOT NULL REFERENCES PQM_QUALITY_TYPE (ID) ON DELETE CASCADE,
+    SEQ                         INTEGER                 ,
+    REVISION_SPECIFIC           BOOLEAN                 NOT NULL DEFAULT FALSE,
+    FOREIGN KEY (ID)            REFERENCES              OBJECTTYPEATTRIBUTE (ATTRIBUTE_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_INSPECTION_PLAN_TYPE (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY,
+    INSPECTION_NUMBER_SOURCE    INTEGER                 REFERENCES AUTONUMBER (AUTONUMBER_ID) ON DELETE CASCADE,
+    REVISION_SEQUENCE           INTEGER                 REFERENCES LOV (LOV_ID) ON DELETE CASCADE,
+    LIFECYCLE                   INTEGER                 REFERENCES PLM_LIFECYCLE (ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              PQM_QUALITY_TYPE (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_PRODUCT_INSPECTION_PLAN_TYPE (
+    ID           INTEGER NOT NULL PRIMARY KEY,
+    PRODUCT_TYPE INTEGER REFERENCES PLM_ITEMTYPE (TYPE_ID) ON DELETE SET NULL,
+    FOREIGN KEY (ID) REFERENCES PQM_INSPECTION_PLAN_TYPE (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_MATERIAL_INSPECTION_PLAN_TYPE (
+    ID        INTEGER NOT NULL PRIMARY KEY,
+    PART_TYPE INTEGER REFERENCES PLM_MANUFACTURERPARTTYPE (TYPE_ID) ON DELETE SET NULL,
+    FOREIGN KEY (ID) REFERENCES PQM_INSPECTION_PLAN_TYPE (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_INSPECTION_PLAN (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    NUMBER                      TEXT                    NOT NULL,
+    NAME                        TEXT                    NOT NULL,
+    DESCRIPTION                 TEXT                    ,
+    NOTES                       TEXT                    ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_PRODUCT_INSPECTION_PLAN (
+    ID        INTEGER NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    PLAN_TYPE INTEGER NOT NULL REFERENCES PQM_PRODUCT_INSPECTION_PLAN_TYPE (ID) ON DELETE CASCADE,
+    PRODUCT   INTEGER NOT NULL REFERENCES PLM_ITEMREVISION (ITEM_ID) ON DELETE CASCADE,
+  FOREIGN KEY (ID) REFERENCES PQM_INSPECTION_PLAN (ID) ON DELETE CASCADE
+);
+CREATE TABLE PQM_MATERIAL_INSPECTION_PLAN (
+    ID        INTEGER NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    PLAN_TYPE INTEGER NOT NULL REFERENCES PQM_MATERIAL_INSPECTION_PLAN_TYPE (ID) ON DELETE CASCADE,
+    MATERIAL  INTEGER NOT NULL REFERENCES PLM_MANUFACTURERPART (MFRPART_ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID) REFERENCES PQM_INSPECTION_PLAN (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_INSPECTION_PLAN_REVISION (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    PLAN                        INTEGER                 NOT NULL REFERENCES PQM_INSPECTION_PLAN (ID) ON DELETE CASCADE,
+    REVISION                    TEXT                    NOT NULL,
+    LIFECYCLE_PHASE             INTEGER                 NOT NULL REFERENCES PLM_LIFECYCLEPHASE (ID),
+    WORKFLOW                    INTEGER                 REFERENCES PLM_WORKFLOW (ID) ON DELETE SET NULL,
+    STATUS_TYPE                 WORKFLOW_STATUS_TYPE    ,
+    STATUS                      TEXT                    ,
+    IS_RELEASED                 BOOLEAN                 DEFAULT FALSE,
+    IS_REJECTED BOOLEAN DEFAULT FALSE,
+    RELEASED_DATE               TIMESTAMP               ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+ALTER TABLE PQM_INSPECTION_PLAN ADD COLUMN LATEST_REVISION             INTEGER                 REFERENCES PQM_INSPECTION_PLAN_REVISION(ID) ON DELETE CASCADE;
+
+CREATE TABLE PQM_INSPECTION_PLAN_ATTRIBUTE (
+    INSPECTION_PLAN             INTEGER             NOT NULL REFERENCES PQM_INSPECTION_PLAN (ID) ON DELETE CASCADE,
+    ATTRIBUTE                   INTEGER             NOT NULL REFERENCES PQM_QUALITY_TYPE_ATTRIBUTE (ID) ON DELETE CASCADE,
+    FOREIGN KEY (INSPECTION_PLAN, ATTRIBUTE)          REFERENCES          OBJECTATTRIBUTE (OBJECT_ID, ATTRIBUTEDEF)  ON DELETE CASCADE,
+    UNIQUE (INSPECTION_PLAN, ATTRIBUTE)
+);
+
+CREATE TABLE PQM_INSPECTION_PLAN_REVISION_ATTRIBUTE (
+    INSPECTION_PLAN_REVISION    INTEGER             NOT NULL REFERENCES PQM_INSPECTION_PLAN_REVISION (ID) ON DELETE CASCADE,
+    ATTRIBUTE                   INTEGER             NOT NULL REFERENCES PQM_QUALITY_TYPE_ATTRIBUTE (ID) ON DELETE CASCADE,
+    FOREIGN KEY (INSPECTION_PLAN_REVISION, ATTRIBUTE)          REFERENCES          OBJECTATTRIBUTE (OBJECT_ID, ATTRIBUTEDEF)  ON DELETE CASCADE,
+    UNIQUE (INSPECTION_PLAN_REVISION, ATTRIBUTE)
+);
+
+CREATE TABLE PQM_INSPECTION_PLAN_HISTORY (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY,
+    INSPECTION_PLAN             INTEGER                 NOT NULL REFERENCES PQM_INSPECTION_PLAN_REVISION (ID) ON DELETE CASCADE,
+    OLD_STATUS                  INTEGER                 REFERENCES PLM_LIFECYCLEPHASE (ID),
+    NEW_STATUS                  INTEGER                 REFERENCES PLM_LIFECYCLEPHASE (ID),
+    TIMESTAMP                   TIMESTAMP               NOT NULL,
+    UPDATED_BY                  INTEGER                 NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_INSPECTION_PLAN_CHECKLIST (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    INSPECTION_PLAN             INTEGER                 NOT NULL REFERENCES PQM_INSPECTION_PLAN_REVISION (ID) ON DELETE CASCADE,
+    TITLE                       TEXT                    NOT NULL,
+    SUMMARY                     TEXT                    ,
+    PROCEDURE                   TEXT                    ,
+    TYPE                        TEXT                    ,
+    SEQ                         INTEGER                 ,
+    PARENT                      INTEGER                 REFERENCES PQM_INSPECTION_PLAN_CHECKLIST(ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_PARAM_VALUE (
+    ID                          INTEGER             NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    TEXT_VALUE                  TEXT                ,
+    INTEGER_VALUE               INTEGER             ,
+    DOUBLE_VALUE                DOUBLE PRECISION    ,
+    DATE_VALUE                  TIMESTAMP           ,
+    TIME_VALUE                  TIME                ,
+    TIMESTAMP_VALUE             TIMESTAMP           ,
+    REF_VALUE                   INTEGER             REFERENCES CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE,
+    BOOLEAN_VALUE               BOOLEAN             ,
+    LIST_VALUE                  TEXT                ,
+    MLIST_VALUE                 TEXT[]              ,
+    IMAGE_VALUE                 BYTEA               ,
+    CURRENCY_VALUE              DOUBLE PRECISION
+);
+
+CREATE TABLE PQM_INSPECTION_PLAN_CHECKLIST_PARAMETER (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    INSPECTION_PLAN             INTEGER                 NOT NULL REFERENCES PQM_INSPECTION_PLAN_REVISION (ID) ON DELETE CASCADE,
+    CHECKLIST                   INTEGER                 NOT NULL REFERENCES PQM_INSPECTION_PLAN_CHECKLIST (ID) ON DELETE CASCADE,
+    NAME                        TEXT                    NOT NULL,
+    DESCRIPTION                 TEXT                    ,
+    EXPECTED_VALUE_TYPE         DATATYPE                NOT NULL,
+    UNITS TEXT,
+    EXPECTED_VALUE              INTEGER                 NOT NULL REFERENCES PQM_PARAM_VALUE (ID) ON DELETE CASCADE,
+    PASS_CRITERIA               TEXT                    NOT NULL
+);
+
+CREATE TABLE PQM_INSPECTION_PLAN_FILE (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    INSPECTION_PLAN             INTEGER                 NOT NULL REFERENCES PQM_INSPECTION_PLAN_REVISION(ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              PLM_FILE (FILE_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_INSPECTION (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    INSPECTION_NUMBER           TEXT                    NOT NULL,
+    INSPECTION_PLAN             INTEGER                 NOT NULL REFERENCES PQM_INSPECTION_PLAN_REVISION (ID) ON DELETE CASCADE,
+    ASSIGNED_TO                 INTEGER                 NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE,
+    WORKFLOW                    INTEGER                 REFERENCES PLM_WORKFLOW (ID) ON DELETE SET NULL,
+    STATUS_TYPE                 WORKFLOW_STATUS_TYPE    NOT NULL,
+    STATUS                      TEXT                    ,
+    DEVIATION_SUMMARY           TEXT                    ,
+    NOTES                       TEXT                    ,
+    IS_RELEASED                 BOOLEAN                 DEFAULT FALSE,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_ITEM_INSPECTION (
+    ID   INTEGER NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    ITEM INTEGER NOT NULL REFERENCES PLM_ITEMREVISION (ITEM_ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID) REFERENCES PQM_INSPECTION (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_MATERIAL_INSPECTION (
+    ID       INTEGER NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    MATERIAL INTEGER NOT NULL REFERENCES PLM_MANUFACTURERPART (MFRPART_ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID) REFERENCES PQM_INSPECTION (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_INSPECTION_ATTRIBUTE (
+    INSPECTION                  INTEGER             NOT NULL REFERENCES PQM_INSPECTION (ID) ON DELETE CASCADE,
+    ATTRIBUTE                   INTEGER             NOT NULL REFERENCES PQM_QUALITY_TYPE_ATTRIBUTE (ID) ON DELETE CASCADE,
+    FOREIGN KEY (INSPECTION, ATTRIBUTE)          REFERENCES          OBJECTATTRIBUTE (OBJECT_ID, ATTRIBUTEDEF)  ON DELETE CASCADE,
+    UNIQUE (INSPECTION, ATTRIBUTE)
+);
+
+CREATE TABLE PQM_INSPECTION_FILE (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    INSPECTION                  INTEGER                 NOT NULL REFERENCES PQM_INSPECTION(ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              PLM_FILE (FILE_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_INSPECTION_CHECKLIST (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    INSPECTION                  INTEGER                 NOT NULL REFERENCES PQM_INSPECTION(ID) ON DELETE CASCADE,
+    PLAN_CHECKLIST              INTEGER                 NOT NULL REFERENCES PQM_INSPECTION_PLAN_CHECKLIST(ID) ON DELETE CASCADE,
+    STATUS                      CHECKLIST_STATUS        NOT NULL DEFAULT 'PENDING',
+    RESULT                      CHECKLIST_RESULT        NOT NULL DEFAULT 'NONE',
+    ASSIGNED_TO                 INTEGER                 REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE,
+    NOTES                       TEXT                    ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_PARAM_ACTUAL_VALUE (
+    ID                          INTEGER             NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    CHECKLIST                   INTEGER             NOT NULL REFERENCES PQM_INSPECTION_CHECKLIST (ID) ON DELETE CASCADE,
+    PARAM                       INTEGER             NOT NULL REFERENCES PQM_INSPECTION_PLAN_CHECKLIST_PARAMETER (ID) ON DELETE CASCADE,
+    RESULT                      CHECKLIST_RESULT        NOT NULL DEFAULT 'NONE',
+    TEXT_VALUE                  TEXT                ,
+    INTEGER_VALUE               INTEGER             ,
+    DOUBLE_VALUE                DOUBLE PRECISION    ,
+    DATE_VALUE                  TIMESTAMP           ,
+    TIME_VALUE                  TIME                ,
+    TIMESTAMP_VALUE             TIMESTAMP           ,
+    REF_VALUE                   INTEGER             REFERENCES CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE,
+    BOOLEAN_VALUE               BOOLEAN             ,
+    LIST_VALUE                  TEXT                ,
+    MLIST_VALUE                 TEXT[]              ,
+    IMAGE_VALUE                 BYTEA               ,
+    CURRENCY_VALUE              DOUBLE PRECISION
+);
+
+CREATE TABLE PQM_INSPECTION_CHECKLIST_HISTORY (
+    ID                       INTEGER                 NOT NULL PRIMARY KEY,
+    CHECKLIST                   INTEGER                 NOT NULL REFERENCES PQM_INSPECTION_CHECKLIST (ID) ON DELETE CASCADE,
+    OLD_STATUS                  TEXT                    NOT NULL,
+    NEW_STATUS                  TEXT                    NOT NULL,
+    TIMESTAMP                   TIMESTAMP               NOT NULL,
+    UPDATED_BY                  INTEGER                 NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_ITEM_INSPECTION_RELATED_ITEM (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    INSPECTION INTEGER NOT NULL REFERENCES PQM_INSPECTION (ID) ON DELETE CASCADE,
+    ITEM                        INTEGER                 NOT NULL REFERENCES PLM_ITEMREVISION (ITEM_ID) ON DELETE CASCADE,
+    NOTES      TEXT,
+    FOREIGN KEY (ID) REFERENCES CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+CREATE TABLE PQM_MATERIAL_INSPECTION_RELATED_ITEM (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    INSPECTION                  INTEGER                 NOT NULL REFERENCES PQM_INSPECTION (ID) ON DELETE CASCADE,
+    MATERIAL INTEGER NOT NULL REFERENCES PLM_MANUFACTURERPART (MFRPART_ID) ON DELETE CASCADE,
+    NOTES                       TEXT                    ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_PROBLEM_REPORT_TYPE (
+  ID                          INTEGER                 NOT NULL PRIMARY KEY,
+  FAILURE_TYPES               INTEGER                 REFERENCES LOV (LOV_ID) ON DELETE CASCADE,
+  SEVERITIES                  INTEGER                 REFERENCES LOV (LOV_ID) ON DELETE CASCADE,
+  DISPOSITIONS                INTEGER                 REFERENCES LOV (LOV_ID) ON DELETE CASCADE,
+  FOREIGN KEY (ID)            REFERENCES              PQM_QUALITY_TYPE (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_PROBLEM_REPORT (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    PR_TYPE                     INTEGER                 NOT NULL REFERENCES PQM_PROBLEM_REPORT_TYPE (ID) ON DELETE CASCADE,
+    PR_NUMBER                   TEXT                    NOT NULL,
+    PRODUCT                     INTEGER                 REFERENCES PLM_ITEMREVISION (ITEM_ID) ON DELETE CASCADE,
+    PROBLEM                     TEXT                    NOT NULL,
+    DESCRIPTION                 TEXT                    NOT NULL,
+    STEPS_TO_REPRODUCE          TEXT                    ,
+    REPORTER_TYPE               REPORTER_TYPE           NOT NULL DEFAULT 'CUSTOMER',
+    REPORTED_BY                 INTEGER                 ,
+    OTHER_REPORTED              TEXT                    ,
+    REPORTED_DATE               DATE                    NOT NULL,
+    QUALITY_ANALYST             INTEGER                 NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE,
+    STATUS                      TEXT                    ,
+    STATUS_TYPE                 WORKFLOW_STATUS_TYPE    NOT NULL,
+    WORKFLOW                    INTEGER                 REFERENCES PLM_WORKFLOW (ID) ON DELETE SET NULL,
+    FAILURE_TYPE                TEXT                    NOT NULL,
+    SEVERITY                    TEXT                    NOT NULL,
+    DISPOSITION                 TEXT                    NOT NULL,
+    NOTES                       TEXT                    ,
+    IS_RELEASED                 BOOLEAN                 DEFAULT FALSE,
+    IS_IMPLEMENTED              BOOLEAN                 DEFAULT FALSE,
+    IMPLEMENTED_DATE            TIMESTAMP               ,
+    INSPECTION INTEGER REFERENCES PQM_ITEM_INSPECTION (ID) ON DELETE SET NULL,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PLM_PROBLEM_REPORT_STATUS_HISTORY (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY,
+    PROBLEM_REPORT              INTEGER                 NOT NULL REFERENCES PQM_PROBLEM_REPORT (ID) ON DELETE CASCADE,
+    OLD_STATUS                  TEXT                    NOT NULL,
+    NEW_STATUS                  TEXT                    NOT NULL,
+    TIMESTAMP                   TIMESTAMP               NOT NULL,
+    UPDATED_BY                  INTEGER                 NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_PROBLEM_REPORT_ATTRIBUTE (
+    PROBLEM_REPORT              INTEGER             NOT NULL REFERENCES PQM_PROBLEM_REPORT (ID) ON DELETE CASCADE,
+    ATTRIBUTE                   INTEGER             NOT NULL REFERENCES PQM_QUALITY_TYPE_ATTRIBUTE (ID) ON DELETE CASCADE,
+    FOREIGN KEY (PROBLEM_REPORT, ATTRIBUTE)          REFERENCES          OBJECTATTRIBUTE (OBJECT_ID, ATTRIBUTEDEF)  ON DELETE CASCADE,
+    UNIQUE (PROBLEM_REPORT, ATTRIBUTE)
+);
+
+CREATE TABLE PQM_PR_PROBLEM_ITEM (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    PROBLEM_REPORT              INTEGER                 NOT NULL REFERENCES PQM_PROBLEM_REPORT (ID) ON DELETE CASCADE,
+    ITEM                        INTEGER                 NOT NULL REFERENCES PLM_ITEMREVISION (ITEM_ID) ON DELETE CASCADE,
+    NOTES                       TEXT                    ,
+    IS_IMPLEMENTED              BOOLEAN                 DEFAULT FALSE,
+    IMPLEMENTED_DATE            TIMESTAMP               ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_PR_RELATED_ITEM (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    PROBLEM_REPORT              INTEGER                 NOT NULL REFERENCES PQM_PROBLEM_REPORT (ID) ON DELETE CASCADE,
+    ITEM                        INTEGER                 NOT NULL REFERENCES PLM_ITEMREVISION (ITEM_ID) ON DELETE CASCADE,
+    NOTES                       TEXT                    ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_PROBLEM_REPORT_FILE (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    PROBLEM_REPORT              INTEGER                 NOT NULL REFERENCES PQM_PROBLEM_REPORT(ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              PLM_FILE (FILE_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_NCR_TYPE (
+  ID                          INTEGER                 NOT NULL PRIMARY KEY,
+  FAILURE_TYPES               INTEGER                 REFERENCES LOV (LOV_ID) ON DELETE CASCADE,
+  SEVERITIES                  INTEGER                 REFERENCES LOV (LOV_ID) ON DELETE CASCADE,
+  DISPOSITIONS                INTEGER                 REFERENCES LOV (LOV_ID) ON DELETE CASCADE,
+  FOREIGN KEY (ID)            REFERENCES              PQM_QUALITY_TYPE (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_NCR (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    NCR_TYPE                    INTEGER                 NOT NULL REFERENCES PQM_NCR_TYPE (ID) ON DELETE CASCADE,
+    NCR_NUMBER                  TEXT                    NOT NULL,
+    TITLE                       TEXT                    NOT NULL,
+    DESCRIPTION                 TEXT                    NOT NULL,
+    REPORTED_BY                 INTEGER                 NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE,
+    REPORTED_DATE               DATE                    NOT NULL,
+    QUALITY_ANALYST             INTEGER                 NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE,
+    STATUS                      TEXT                    ,
+    STATUS_TYPE                 WORKFLOW_STATUS_TYPE    NOT NULL,
+    WORKFLOW                    INTEGER                 REFERENCES PLM_WORKFLOW (ID) ON DELETE SET NULL,
+    FAILURE_TYPE                TEXT                    NOT NULL,
+    SEVERITY                    TEXT                    NOT NULL,
+    DISPOSITION                 TEXT                    NOT NULL,
+    IS_RELEASED                 BOOLEAN                 DEFAULT FALSE,
+    IS_IMPLEMENTED              BOOLEAN                 DEFAULT FALSE,
+    IMPLEMENTED_DATE            TIMESTAMP               ,
+    INSPECTION INTEGER REFERENCES PQM_MATERIAL_INSPECTION (ID) ON DELETE SET NULL,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PLM_NCR_STATUS_HISTORY (
+    ID                       INTEGER                 NOT NULL PRIMARY KEY,
+    NCR                         INTEGER                 NOT NULL REFERENCES PQM_NCR (ID) ON DELETE CASCADE,
+    OLD_STATUS                  TEXT                    NOT NULL,
+    NEW_STATUS                  TEXT                    NOT NULL,
+    TIMESTAMP                   TIMESTAMP               NOT NULL,
+    UPDATED_BY                  INTEGER                 NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_NCR_ATTRIBUTE (
+    NCR                         INTEGER             NOT NULL REFERENCES PQM_NCR (ID) ON DELETE CASCADE,
+    ATTRIBUTE                   INTEGER             NOT NULL REFERENCES PQM_QUALITY_TYPE_ATTRIBUTE (ID) ON DELETE CASCADE,
+    FOREIGN KEY (NCR, ATTRIBUTE)          REFERENCES          OBJECTATTRIBUTE (OBJECT_ID, ATTRIBUTEDEF)  ON DELETE CASCADE,
+    UNIQUE (NCR, ATTRIBUTE)
+);
+
+CREATE TABLE PQM_NCR_PROBLEM_ITEM (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    NCR                         INTEGER                 NOT NULL REFERENCES PQM_NCR(ID) ON DELETE CASCADE,
+    MATERIAL                    INTEGER                 NOT NULL REFERENCES PLM_MANUFACTURERPART (MFRPART_ID) ON DELETE CASCADE,
+    RECEIVED_QTY                INTEGER                 NOT NULL DEFAULT 1,
+    INSPECTED_QTY               INTEGER                 NOT NULL DEFAULT 1,
+    DEFECTIVE_QTY               INTEGER                 NOT NULL DEFAULT 0,
+    NOTES                       TEXT                    ,
+    IS_IMPLEMENTED              BOOLEAN                 DEFAULT FALSE,
+    IMPLEMENTED_DATE            TIMESTAMP               ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_NCR_RELATED_ITEM (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    NCR                         INTEGER                 NOT NULL REFERENCES PQM_NCR (ID) ON DELETE CASCADE,
+    MATERIAL                    INTEGER                 NOT NULL REFERENCES PLM_MANUFACTURERPART (MFRPART_ID) ON DELETE CASCADE,
+    NOTES                       TEXT                    ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_NCR_FILE (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    NCR                         INTEGER                 NOT NULL REFERENCES PQM_NCR(ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              PLM_FILE (FILE_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_QCR_TYPE (
+  ID                          INTEGER                 NOT NULL PRIMARY KEY,
+  FOREIGN KEY (ID)            REFERENCES              PQM_QUALITY_TYPE (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_QCR (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    QCR_NUMBER                  TEXT                    NOT NULL,
+    QCR_TYPE                    INTEGER                 NOT NULL REFERENCES PQM_QCR_TYPE (ID) ON DELETE CASCADE,
+    QCR_FOR                     QCR_FOR                 NOT NULL DEFAULT 'PR',
+    TITLE                       TEXT                    NOT NULL,
+    DESCRIPTION                 TEXT                    NOT NULL,
+    STATUS                      TEXT                    ,
+    STATUS_TYPE                 WORKFLOW_STATUS_TYPE    NOT NULL,
+    WORKFLOW                    INTEGER                 REFERENCES PLM_WORKFLOW (ID) ON DELETE SET NULL,
+    IS_RELEASED                 BOOLEAN                 DEFAULT FALSE,
+    QUALITY_ADMINISTRATOR       INTEGER                 NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE,
+    IS_IMPLEMENTED              BOOLEAN                 DEFAULT FALSE,
+    IMPLEMENTED_DATE            TIMESTAMP               ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_QCR_ATTRIBUTE (
+    QCR                         INTEGER             NOT NULL REFERENCES PQM_QCR (ID) ON DELETE CASCADE,
+    ATTRIBUTE                   INTEGER             NOT NULL REFERENCES PQM_QUALITY_TYPE_ATTRIBUTE (ID) ON DELETE CASCADE,
+    FOREIGN KEY (QCR, ATTRIBUTE)          REFERENCES          OBJECTATTRIBUTE (OBJECT_ID, ATTRIBUTEDEF)  ON DELETE CASCADE,
+    UNIQUE (QCR, ATTRIBUTE)
+);
+
+CREATE TABLE PQM_QCR_CAPA (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    QCR                         INTEGER                 NOT NULL REFERENCES PQM_QCR (ID) ON DELETE CASCADE,
+    ROOT_CAUSE_ANALYSIS         TEXT                    ,
+    CORRECTIVE_ACTION           TEXT                    ,
+    PREVENTIVE_ACTION           TEXT                    ,
+    CAPA_NOTES                  TEXT                    ,
+    LATEST                      BOOLEAN                 DEFAULT FALSE,
+    AUDIT_DATE                  TIMESTAMP               DEFAULT NOW(),
+    AUDITED_BY                  INTEGER                 REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE,
+    AUDIT_RESULT                AUDIT_RESULT            NOT NULL DEFAULT 'NONE',
+    AUDIT_NOTES                 TEXT                    ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PLM_QCR_STATUS_HISTORY (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY,
+    QCR                         INTEGER                 NOT NULL REFERENCES PQM_QCR (ID) ON DELETE CASCADE,
+    OLD_STATUS                  TEXT                    NOT NULL,
+    NEW_STATUS                  TEXT                    NOT NULL,
+    TIMESTAMP                   TIMESTAMP               NOT NULL,
+    UPDATED_BY                  INTEGER                 NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_QCR_AGGREGATE_PR (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY,
+    QCR                         INTEGER                 NOT NULL REFERENCES PQM_QCR (ID) ON DELETE CASCADE,
+    PR                          INTEGER                 NOT NULL REFERENCES PQM_PROBLEM_REPORT (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_QCR_AGGREGATE_NCR (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY,
+    QCR                         INTEGER                 NOT NULL REFERENCES PQM_QCR (ID) ON DELETE CASCADE,
+    NCR                         INTEGER                 NOT NULL REFERENCES PQM_NCR (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_QCR_PROBLEM_ITEM (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    QCR                         INTEGER                 NOT NULL REFERENCES PQM_QCR (ID) ON DELETE CASCADE,
+    ITEM                        INTEGER                 NOT NULL REFERENCES PLM_ITEMREVISION (ITEM_ID) ON DELETE CASCADE,
+    NOTES                       TEXT                    ,
+    PROBLEM_REPORT              INTEGER                 ,
+    IS_IMPLEMENTED              BOOLEAN                 DEFAULT FALSE,
+    IMPLEMENTED_DATE            TIMESTAMP               ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_QCR_PROBLEM_MATERIAL (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    QCR                         INTEGER                 NOT NULL REFERENCES PQM_QCR (ID) ON DELETE CASCADE,
+    MATERIAL                    INTEGER                 NOT NULL REFERENCES PLM_MANUFACTURERPART (MFRPART_ID) ON DELETE CASCADE,
+    NOTES                       TEXT                    ,
+    NCR                         INTEGER                 ,
+    IS_IMPLEMENTED              BOOLEAN                 DEFAULT FALSE,
+    IMPLEMENTED_DATE            TIMESTAMP               ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_QCR_RELATED_ITEM (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    QCR                         INTEGER                 NOT NULL REFERENCES PQM_QCR (ID) ON DELETE CASCADE,
+    ITEM                        INTEGER                 NOT NULL REFERENCES PLM_ITEMREVISION (ITEM_ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_QCR_RELATED_MATERIAL (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    QCR                         INTEGER                 NOT NULL REFERENCES PQM_QCR (ID) ON DELETE CASCADE,
+    MATERIAL                    INTEGER                 NOT NULL REFERENCES PLM_MANUFACTURERPART (MFRPART_ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_QCR_FILE (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    QCR                         INTEGER                 NOT NULL REFERENCES PQM_QCR(ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              PLM_FILE (FILE_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_CUSTOMER_FILE (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY DEFAULT nextval('PQM_OBJECT_ID_SEQ'),
+    CUSTOMER                    INTEGER                 NOT NULL REFERENCES PQM_CUSTOMER(ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              PLM_FILE (FILE_ID) ON DELETE CASCADE
+);
+
+ALTER TABLE PLM_ECR ADD COLUMN QCR INTEGER REFERENCES PQM_QCR (ID) ON DELETE SET NULL;
+ALTER TABLE PLM_MCO ADD COLUMN QCR INTEGER REFERENCES PQM_QCR (ID) ON DELETE SET NULL;
+
+CREATE TABLE PLM_ECR_PR (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY,
+    ECR                         INTEGER                 NOT NULL REFERENCES PLM_ECR(ID) ON DELETE CASCADE,
+    PROBLEM_REPORT              INTEGER                 NOT NULL REFERENCES PQM_PROBLEM_REPORT(ID) ON DELETE CASCADE,
+    UNIQUE (ECR,PROBLEM_REPORT)
+);
+
+ALTER TABLE PLM_ECR_AFFECTEDITEM ADD COLUMN PROBLEM_REPORTS         INTEGER[];
+
+
+
+CREATE TABLE PQM_PPAP_TYPE (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY ,
+    LIFECYCLE                   INTEGER                 REFERENCES PLM_LIFECYCLE (ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              PQM_QUALITY_TYPE (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_PPAP (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY ,
+    NUMBER                      TEXT                    NOT NULL,
+    TYPE                        INTEGER                 REFERENCES PQM_PPAP_TYPE (ID) ON DELETE CASCADE,
+    NAME                        TEXT                    NOT NULL,
+    DESCRIPTION                 TEXT                    ,
+    SUPPLIER                    INTEGER                 NOT NULL REFERENCES PLM_SUPPLIER(ID) ON DELETE CASCADE,
+    SUPPLIER_PART               INTEGER                 NOT NULL REFERENCES PLM_SUPPLIER_PART(ID) ON DELETE CASCADE,
+    STATUS                      INTEGER                 REFERENCES PLM_LIFECYCLEPHASE (ID),     
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT(OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_PPAP_ATTRIBUTE (
+    PPAP                         INTEGER             NOT NULL REFERENCES PQM_PPAP (ID) ON DELETE CASCADE,
+    ATTRIBUTE                   INTEGER             NOT NULL REFERENCES PQM_QUALITY_TYPE_ATTRIBUTE (ID) ON DELETE CASCADE,
+    FOREIGN KEY (PPAP, ATTRIBUTE)          REFERENCES          OBJECTATTRIBUTE (OBJECT_ID, ATTRIBUTEDEF)  ON DELETE CASCADE,
+    UNIQUE (PPAP, ATTRIBUTE)
+);
+
+CREATE TABLE PQM_SUPPLIER_AUDIT_TYPE (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY ,
+    LIFECYCLE                   INTEGER                 REFERENCES PLM_LIFECYCLE (ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES              PQM_QUALITY_TYPE (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_SUPPLIER_AUDIT (
+    ID                          INTEGER                 NOT NULL PRIMARY KEY ,
+    NUMBER                      TEXT                    NOT NULL,
+    TYPE                        INTEGER                 REFERENCES PQM_SUPPLIER_AUDIT_TYPE (ID) ON DELETE CASCADE,
+    NAME                        TEXT                    NOT NULL,
+    DESCRIPTION                 TEXT                    ,
+	  ASSIGNED_TO					        INTEGER					        NOT NULL REFERENCES PERSON(PERSON_ID) ON DELETE CASCADE,
+	  WORKFLOW					          INTEGER					        ,
+    STATUS                      INTEGER                 REFERENCES PLM_LIFECYCLEPHASE (ID),
+    PLANNED_YEAR                TEXT                    ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT(OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_SUPPLIER_AUDIT_ATTRIBUTE (
+    PQM_SUPPLIER_AUDIT                         INTEGER             NOT NULL REFERENCES PQM_SUPPLIER_AUDIT (ID) ON DELETE CASCADE,
+    ATTRIBUTE                   			   INTEGER             NOT NULL REFERENCES PQM_QUALITY_TYPE_ATTRIBUTE (ID) ON DELETE CASCADE,
+    FOREIGN KEY (PQM_SUPPLIER_AUDIT, ATTRIBUTE)          REFERENCES          OBJECTATTRIBUTE (OBJECT_ID, ATTRIBUTEDEF)  ON DELETE CASCADE,
+    UNIQUE (PQM_SUPPLIER_AUDIT, ATTRIBUTE)
+);
+
+CREATE TABLE PQM_SUPPLIER_AUDIT_PLAN(
+	  ID                          INTEGER                 NOT NULL PRIMARY KEY ,
+    SUPPLIER                    INTEGER                 NOT NULL REFERENCES PLM_SUPPLIER(ID) ON DELETE CASCADE,
+    SUPPLIER_AUDIT              INTEGER                 NOT NULL REFERENCES PQM_SUPPLIER_AUDIT(ID) ON DELETE CASCADE,
+    STATUS                      AUDITPLAN_STATUS        ,
+    PLANNED_START_DATE          DATE                    ,
+    ACTUAL_START_DATE           DATE                    ,
+    FINISHED_DATE               DATE                    ,
+    FOREIGN KEY (ID)            REFERENCES              CASSINI_OBJECT(OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_SUPPLIER_AUDIT_REVIEWER(
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    PLAN                        INTEGER             NOT NULL REFERENCES PQM_SUPPLIER_AUDIT_PLAN(ID) ON DELETE CASCADE,
+    REVIEWER                    INTEGER             NOT NULL REFERENCES PERSON(PERSON_ID) ON DELETE CASCADE,
+    APPROVER                    BOOLEAN             NOT NULL DEFAULT FALSE,
+    VOTE                        DOCUMENT_APPROVAL_STATUS NOT NULL DEFAULT 'NONE',
+    VOTE_TIMESTAMP              TIMESTAMP           ,
+    NOTES                       TEXT
+);
+
+CREATE TABLE PQM_SUPPLIER_AUDIT_FILE (
+	  ID                  INTEGER                     NOT NULL PRIMARY KEY,
+	  SUPPLIERAUDIT       INTEGER                     NOT NULL REFERENCES PQM_SUPPLIER_AUDIT(ID) ON DELETE CASCADE,
+	  FOREIGN KEY (ID)    REFERENCES PLM_FILE (FILE_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE PQM_PPAP_CHECKLIST (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    PPAP                        INTEGER             NOT NULL REFERENCES PQM_PPAP(ID) ON DELETE CASCADE,
+    REVISION                    TEXT                NOT NULL,
+    LIFECYCLE_PHASE             INTEGER             NOT NULL REFERENCES PLM_LIFECYCLEPHASE (ID),
+    FOREIGN KEY (ID)            REFERENCES          PLM_FILE (FILE_ID) ON DELETE CASCADE
+);

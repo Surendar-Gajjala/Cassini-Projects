@@ -1,0 +1,373 @@
+{
+  "title": "Cassini.PLM User Manual",
+  "toc": [
+    {
+      "label": "OVERVIEW",
+      "id": null,
+      "children": [
+        {
+          "label": "OVERVIEW",
+          "id": "2",
+          "file": "Overview/Overview.html",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "LOGIN",
+      "id": null,
+      "children": [
+        {
+          "label": "LOGIN",
+          "id": "1",
+          "file": "Login/Login.html",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "HOME",
+      "id": null,
+      "children": [
+        {
+          "label": "HOME",
+          "id": "3",
+          "file": "Home/Home.html",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "FOLDERS",
+      "id": null,
+      "children": [
+        {
+          "label": "FOLDERS",
+          "id": "5",
+          "file": "Folders/Folders.html",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "PROJECTS",
+      "id": null,
+      "children": [
+        {
+          "label": "PROJECTS",
+          "id": null,
+          "children": [
+            {
+              "label": "NEW PROJECT",
+              "id": "6",
+              "file": "Projects/Projects/Projects.html",
+              "children": []
+            },
+            {
+              "label": "PROJECT DETAILS VIEW",
+              "id": "6",
+              "file": "Projects/Projects/Project_details_view.html",
+              "children": []
+            },
+            {
+              "label": "TEAM",
+              "id": "6",
+              "file": "Projects/Projects/Team.html",
+              "children": []
+            },
+            {
+              "label": "PLAN",
+              "id": "6",
+              "file": "Projects/Projects/Plan(WBS).html",
+              "children": []
+            },
+            {
+              "label": "ACTIVITY",
+              "id": "6",
+              "file": "Projects/Projects/Activity.html",
+              "children": []
+            },
+            {
+              "label": "MILESTONE",
+              "id": "6",
+              "file": "Projects/Projects/Milestone.html",
+              "children": []
+            },
+            {
+              "label": "TASKS",
+              "id": "6",
+              "file": "Projects/Projects/Tasks.html",
+              "children": []
+            },
+            {
+              "label": "DELIVERABLES",
+              "id": "6",
+              "file": "Projects/Projects/Deliverables.html",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "TEMPLATES",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE TEMPLATE",
+              "id": "6",
+              "file": "Projects/Templates/Templates.html",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "CLASSIFICATION",
+      "id": null,
+      "children": [
+        {
+          "label": "ITEM TYPE",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE NEW ITEM TYPE",
+              "id": "7",
+              "file": "Classification/Classification.html",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "CHANGE TYPE",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE CHANGE TYPE",
+              "id": "11",
+              "file": "Classification/Change.html",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "MANUFACTURER TYPE",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE MFR TYPE",
+              "id": "15",
+              "file": "Classification/Manufacturer_types.html",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "MANUFACTURER PART TYPE",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE MFR PART TYPE",
+              "id": "18",
+              "file": "Classification/Manufacturer_part_types.html",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "WORKFLOW TYPE",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE WORKFLOW TYPE",
+              "id": "21",
+              "file": "Classification/Workflow.html",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "ATTRIBUTES",
+          "id": null,
+          "children": [
+            {
+              "label": "ATTRIBUTES",
+              "id": "18",
+              "file": "Classification/Attributes.html",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "ITEMS",
+      "id": null,
+      "children": [
+        {
+          "label": "CREATE NEW ITEM",
+          "id": "28",
+          "file": "Item/New_item.html",
+          "children": []
+        },
+        {
+          "label": "SHARE ITEMS",
+          "id": "29",
+          "file": "Item/Share_Item.html",
+          "children": []
+        },
+        {
+          "label": "ADD ITEMS TO FOLDER",
+          "id": "30",
+          "file": "Item/Add_Items_to_Folders.html",
+          "children": []
+        },
+        {
+          "label": "EXPORT ITEMS",
+          "id": "30",
+          "file": "Item/Exporting_Items.html",
+          "children": []
+        },
+        {
+          "label": "LOCK ITEM",
+          "id": "30",
+          "file": "Item/Lock_Item.html",
+          "children": []
+        },
+        {
+          "label": "SAVED SEARCHES",
+          "id": "31",
+          "file": "Item/Saved_Search.html",
+          "children": []
+        },
+        {
+          "label": "ITEM DETAILS VIEW",
+          "id": "31",
+          "children": [
+            {
+              "label": "BASIC DETAILS VIEW",
+              "id": "31",
+              "file": "Item/ItemDetailsView/Item_Details_View.html",
+              "children": []
+            },
+            {
+              "label": "ATTRIBUTES",
+              "id": "31",
+              "file": "Item/ItemDetailsView/Attributes.html",
+              "children": []
+            },
+            {
+              "label": "BOM",
+              "id": "31",
+              "file": "Item/ItemDetailsView/BOM.html",
+              "children": []
+            },
+            {
+              "label": "WHERE USED",
+              "id": "32",
+              "file": "Item/ItemDetailsView/Where_Used.html",
+              "children": []
+            },
+            {
+              "label": "FILES",
+              "id": "33",
+              "file": "Item/ItemDetailsView/Files.html",
+              "children": []
+            },
+            {
+              "label": "CREATE ECO",
+              "id": "34",
+              "file": "Item/ItemDetailsView/Changes.html",
+              "children": []
+            },
+            {
+              "label": "ADD MANUFACTURER PART",
+              "id": "35",
+              "file": "Item/ItemDetailsView/Manufacturer_Parts.html",
+              "children": []
+            },
+            {
+              "label": "ADD RELATED ITEMS",
+              "id": "37",
+              "file": "Item/ItemDetailsView/Related_Items.html",
+              "children": []
+            },
+            {
+              "label": "PROJECTS",
+              "id": "38",
+              "file": "Item/ItemDetailsView/Projects.html",
+              "children": []
+            },
+            {
+              "label": "REQUIREMENTS",
+              "id": "39",
+              "file": "Item/ItemDetailsView/Requirements.html",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "WORKFLOWS",
+      "id": null,
+      "children": [
+        {
+          "label": "CREATE WORKFLOW",
+          "id": "64",
+          "file": "Workflow/Workflow.html",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "CHANGES",
+      "id": null,
+      "children": [
+        {
+          "label": "CHANGES",
+          "id": "52",
+          "file": "Changes/Changes.html",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "MANUFACTURERS",
+      "id": null,
+      "children": [
+        {
+          "label": "MANUFACTURERS",
+          "id": "69",
+          "file": "Manufacturer/Manufacturers.html",
+          "children": []
+        }
+
+      ]
+    },
+    {
+      "label": "SHARING",
+      "id": null,
+      "children": [
+        {
+          "label": "SHARING",
+          "id": "81",
+          "file": "Sharing/Sharing.html",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "ADMIN",
+      "id": null,
+      "children": [
+        {
+          "label": "ADMIN",
+          "id": "81",
+          "file": "Admin/Admin.html",
+          "children": []
+        }
+
+      ]
+    }
+  ]
+}

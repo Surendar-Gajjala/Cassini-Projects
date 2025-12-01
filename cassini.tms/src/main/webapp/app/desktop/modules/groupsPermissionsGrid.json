@@ -1,0 +1,66 @@
+[
+
+  {
+    "group": "ADMIN",
+    "permissions": [
+      {
+        "id": "permission.admin.all",
+        "name": "All Admin",
+        "show": true
+      },
+      {
+        "id": "permission.admin.user",
+        "name": "Add/Edit User",
+        "show": true,
+        "collapsed": true
+      },
+      {
+        "id": "permission.admin.group",
+        "name": "Add/Edit Group",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  },
+
+  {
+    "group": "HOME",
+    "permissions": [
+      {
+        "id": "permission.home.all",
+        "name": "All HOME",
+        "show": true
+      },
+      {
+        "id": "permission.home.view",
+        "name": "View",
+        "show": true
+      }
+
+    ]
+  },
+
+
+  {
+    "group": "TRIPS",
+    "permissions": [
+      {
+        "id": "permission.trips.all",
+        "name": "All Trips",
+        "show": true
+      },
+      {
+        "id": "permission.projects.view",
+        "name": "View Trips",
+        "show": true
+      },
+      {
+        "id": "permission.projects.add",
+        "name": "Add Trips",
+        "show": true,
+        "collapsed": true
+      }
+    ]
+  }
+
+]

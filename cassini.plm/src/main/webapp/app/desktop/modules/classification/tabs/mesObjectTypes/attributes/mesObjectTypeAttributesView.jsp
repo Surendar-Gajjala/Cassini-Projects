@@ -1,0 +1,1 @@
+<classification-attribute-view has-permission="checkMESPermission('edit')"></classification-attribute-view>

@@ -1,0 +1,188 @@
+/* Begin HRM tables */
+CREATE TABLE ERP_BUSINESSUNIT (
+    BUSINESSUNIT_ID             INTEGER             NOT NULL PRIMARY KEY,
+    NAME                        TEXT                NOT NULL UNIQUE,
+    DESCRIPTION                 TEXT                ,
+    FOREIGN KEY (BUSINESSUNIT_ID)   REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_DEPARTMENT (
+    DEPARTMENT_ID               INTEGER             NOT NULL PRIMARY KEY,
+    NAME                        TEXT                NOT NULL UNIQUE,
+    DESCRIPTION                 TEXT
+);
+
+CREATE TABLE ERP_EMPLOYEETYPE (
+    TYPE_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    NAME                        TEXT                NOT NULL UNIQUE,
+    DESCRIPTION                 TEXT
+);
+
+CREATE TABLE ERP_EMPLOYEE (
+    EMPLOYEE_ID                 INTEGER             NOT NULL PRIMARY KEY,
+    EMPLOYEE_NUMBER             TEXT                ,
+    BUSINESS_UNIT               INTEGER             REFERENCES ERP_BUSINESSUNIT(BUSINESSUNIT_ID) ON DELETE SET NULL,
+    EMPLOYEE_TYPE               INTEGER             REFERENCES ERP_EMPLOYEETYPE (TYPE_ID) ON DELETE SET NULL,
+    DEPARTMENT                  INTEGER             REFERENCES ERP_DEPARTMENT (DEPARTMENT_ID) ON DELETE SET NULL,
+    JOB_TITLE                   VARCHAR(100)        ,
+    DATE_OF_BRITH               TIMESTAMP           ,
+    DATE_OF_HIRE                TIMESTAMP           ,
+    STATUS                      EMPLOYEE_STATUS     NOT NULL,
+    MANAGER                     INTEGER             REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE set NULL,
+    PICTURE                     BYTEA               ,
+    UNIQUE (EMPLOYEE_NUMBER)                        ,
+    FOREIGN KEY (EMPLOYEE_ID)   REFERENCES          ERP_PERSON (PERSON_ID) ON DELETE CASCADE
+);
+
+
+CREATE TABLE ERP_EMPLOYEEATTENDANCE (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    EMPLOYEE_NUMBER             TEXT                NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_NUMBER) ON DELETE CASCADE,
+    DATE                        TIMESTAMP           ,
+    IN_TIME                     TIMESTAMP           ,
+    OUT_TIME                    TIMESTAMP           ,
+    STATUS                      ATTENDANCE_STATUS   ,
+    UNIQUE (EMPLOYEE_NUMBER,IN_TIME)
+
+);
+
+CREATE TABLE ERP_TIMEOFFTYPE (
+    TYPE_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    TYPE_CODE                   VARCHAR(10)         NOT NULL,
+    NAME                        TEXT                NOT NULL UNIQUE,
+    DESCRIPTION                 TEXT
+);
+
+CREATE TABLE ERP_EMPLOYEETIMEOFF (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    EMPLOYEE_ID                 INTEGER             REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE SET NULL,
+    TIMEOFF_TYPE                INTEGER             REFERENCES ERP_TIMEOFFTYPE (TYPE_ID) ON DELETE SET NULL,
+    START_DATE                  TIMESTAMP           NOT NULL,
+    END_DATE                    TIMESTAMP           NOT NULL,
+    NUM_OF_DAYS                 INTEGER             NOT NULL,
+    STATUS						TIMEOFF_STATUS,
+    REASON                      TEXT
+);
+
+CREATE TABLE ERP_PAYROLL (
+    PAYROLL_ID                  INTEGER             NOT NULL PRIMARY KEY,
+    MONTH                       INTEGER             NOT NULL,
+    YEAR                        INTEGER             NOT NULL,
+    TOTAL_AMOUNT                DOUBLE PRECISION             NOT NULL,
+    FOREIGN KEY (PAYROLL_ID)    REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_PAYROLL_HISTORY (
+  	PAYROLL_ID                  INTEGER             NOT NULL REFERENCES ERP_PAYROLL (PAYROLL_ID) ON DELETE CASCADE,
+    EMPLOYEE_ID                 INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    SAL_NET_PAY                 DOUBLE PRECISION    NOT NULL,
+    UNIQUE (PAYROLL_ID, EMPLOYEE_ID)
+);
+
+
+CREATE TABLE ERP_EMPLOYEESALARY (
+    EMPLOYEE_ID                 INTEGER             NOT NULL PRIMARY KEY REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    SALARY                      DOUBLE PRECISION    NOT NULL,
+    BONUS                       DOUBLE PRECISION
+);
+
+CREATE TABLE ERP_SALARYHISTORY (
+    PAYROLL_ID                  INTEGER             NOT NULL REFERENCES ERP_PAYROLL (PAYROLL_ID) ON DELETE CASCADE,
+    EMPLOYEE_ID                 INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    SALARY                      DOUBLE PRECISION    NOT NULL,
+    BONUS                       DOUBLE PRECISION    ,
+    UNIQUE (PAYROLL_ID, EMPLOYEE_ID)
+);
+
+CREATE TABLE ERP_ALLOWANCETYPE (
+    TYPE_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    TYPE_CODE                   VARCHAR(10)         NOT NULL,
+    NAME                        TEXT                NOT NULL UNIQUE,
+    DESCRIPTION                 TEXT
+);
+
+CREATE TABLE ERP_EMPLOYEEALLOWANCE (
+    EMPLOYEE_ID                 INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    ALLOWANCE_TYPE              INTEGER             NOT NULL REFERENCES ERP_ALLOWANCETYPE (TYPE_ID) ON DELETE CASCADE,
+    ALLOWANCE_VALUE             DOUBLE PRECISION    NOT NULL,
+    UNIQUE (EMPLOYEE_ID, ALLOWANCE_TYPE)
+);
+
+CREATE TABLE ERP_ALLOWANCEHISTORY (
+    PAYROLL_ID                  INTEGER             NOT NULL REFERENCES ERP_PAYROLL (PAYROLL_ID) ON DELETE CASCADE,
+    EMPLOYEE_ID                 INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    ALLOWANCE_TYPE              INTEGER             NOT NULL REFERENCES ERP_ALLOWANCETYPE (TYPE_ID) ON DELETE CASCADE,
+    ALLOWANCE_PAID              DOUBLE PRECISION    NOT NULL,
+    UNIQUE (PAYROLL_ID, EMPLOYEE_ID, ALLOWANCE_TYPE)
+);
+
+CREATE TABLE ERP_DEDUCTIONTYPE (
+    TYPE_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    TYPE_CODE                   VARCHAR(10)         NOT NULL,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT
+);
+
+CREATE TABLE ERP_EMPLOYEEDEDUCTION (
+    EMPLOYEE_ID                 INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    DEDUCTION_TYPE              INTEGER             NOT NULL REFERENCES ERP_DEDUCTIONTYPE (TYPE_ID) ON DELETE CASCADE,
+    DEDUCTION_VALUE             DOUBLE PRECISION    NOT NULL,
+    UNIQUE (EMPLOYEE_ID, DEDUCTION_TYPE)
+);
+
+CREATE TABLE ERP_DEDUCTIONHISTORY (
+    PAYROLL_ID                  INTEGER             NOT NULL REFERENCES ERP_PAYROLL (PAYROLL_ID) ON DELETE CASCADE,
+    EMPLOYEE_ID                 INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID),
+    DEDUCTION_TYPE              INTEGER             NOT NULL REFERENCES ERP_DEDUCTIONTYPE (TYPE_ID) ON DELETE CASCADE,
+    DEDUCTION_AMOUNT            DOUBLE PRECISION    NOT NULL,
+    UNIQUE (PAYROLL_ID, EMPLOYEE_ID, DEDUCTION_TYPE)
+);
+
+CREATE TABLE ERP_LOANTYPE (
+    TYPE_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    TYPE_CODE                   VARCHAR(10)         NOT NULL,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT
+);
+
+CREATE TABLE ERP_EMPLOYEELOAN (
+    LOAN_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    LOAN_TYPE                   INTEGER             NOT NULL REFERENCES ERP_LOANTYPE(TYPE_ID) ON DELETE CASCADE,
+    EMPLOYEE_ID                 INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    AMOUNT                      DOUBLE PRECISION    NOT NULL,
+    REQUESTED_DATE              TIMESTAMP           NOT NULL,
+    APPROVED_BY                 INTEGER             REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    APPROVED_DATE               TIMESTAMP           ,
+    PAIDOFF_DATE                TIMESTAMP           ,
+    REASON                      TEXT                ,
+    TERM                        INTEGER             ,
+    STATUS                      LOAN_STATUS         NOT NULL,
+    BALANCE                     DOUBLE PRECISION    ,
+    FOREIGN KEY (LOAN_ID)       REFERENCES          ERP_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE ERP_LOANPAYMENTHISTORY (
+	PAYROLL_ID                  INTEGER             NOT NULL REFERENCES ERP_PAYROLL (PAYROLL_ID) ON DELETE CASCADE,
+    EMPLOYEE_ID                 INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    LOAN_ID                     INTEGER             NOT NULL REFERENCES ERP_EMPLOYEELOAN (LOAN_ID) ON DELETE CASCADE,
+    AMOUNT_PAID                 DOUBLE PRECISION    NOT NULL,
+    PAYMENT_DATE                TIMESTAMP           NOT NULL,
+    UNIQUE (PAYROLL_ID, EMPLOYEE_ID, LOAN_ID)
+);
+
+CREATE TABLE ERP_HOLIDAY (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    NAME                        TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                ,
+    DATE                        TIMESTAMP           NOT NULL
+);
+
+CREATE TABLE ERP_GEOTRACKER (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    EMPLOYEE_ID                 INTEGER             NOT NULL REFERENCES ERP_EMPLOYEE (EMPLOYEE_ID) ON DELETE CASCADE,
+    LATITUDE                    DOUBLE PRECISION    NOT NULL,
+    LONGITUDE                   DOUBLE PRECISION    NOT NULL,
+    TIMESTAMP                   TIMESTAMP           NOT NULL
+);
+
+/* End HRM tables */

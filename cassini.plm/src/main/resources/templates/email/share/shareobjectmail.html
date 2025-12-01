@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CassiniPLM Shared Object</title>
+
+    <!--<link rel="stylesheet" type="text/css" href="http://localhost:8080/app/assets/css/desktop.imports.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+
+</head>
+
+<style>
+    body {
+        background-color: #ebf8fc;
+    }
+
+    .email-title {
+        color: #39b9ff;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-size: 20px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        line-height: 30px;
+    }
+
+    th,
+    td {
+        padding-right: 20px;
+        padding-left: 5px;
+    }
+</style>
+
+<body>
+<#if !isFolder>
+    <div class="email-title">CassiniPLM Object(s) shared with you</div>
+</#if>
+
+<#if companyLogo??>
+    <img naturalheight="0" naturalwidth="0" src="${companyLogo}" width="120" height="50"
+         style="margin: 15px 0px 0px 10px;" data-downloadimage="" data-thumbnailimage=""
+         crossorigin="use-credentials"/>
+</#if>
+<#if !isFolder>
+    <table border="2">
+        <#if isItem>
+            <thead>
+            <tr>
+                <th>Item Type</th>
+                <th>Item Number</th>
+                <th>Item Name</th>
+                <th>Description</th>
+                <th>Permission</th>
+            </tr>
+            </thead>
+            <tbody>
+            <#list items as item>
+                <tr>
+                    <td>${item.itemType.name}</td>
+                    <td>${item.itemNumber}</td>
+                    <td>${item.itemName}</td>
+                    <td>
+                        ${(item.description)!}
+                    </td>
+                    <td>${permission}</td>
+                </tr>
+            </#list>
+            </tbody>
+        </#if>
+        <#if isMfr>
+            <thead>
+            <tr>
+                <th>Manufacturer</th>
+                <th>Description</th>
+                <th>Permission</th>
+            </tr>
+            </thead>
+            <tbody>
+            <#list items as mfr>
+                <tr>
+                    <td>${mfr.name}</td>
+                    <td>
+                        ${(mfr.description)!}
+                    </td>
+                    <td>${permission}</td>
+                </tr>
+            </#list>
+            </tbody>
+
+            <p>Kindly update Inspection Reports</p>
+        </#if>
+        <#if isPart>
+            <thead>
+            <tr>
+                <th>Part Number</th>
+                <th>Part Name</th>
+                <th>Description</th>
+                <th>Permission</th>
+            </tr>
+            </thead>
+            <tbody>
+            <#list items as part>
+                <tr>
+                    <td>${part.partNumber}</td>
+                    <td>${part.partName}</td>
+                    <td>
+                        ${(part.description)!}
+                    </td>
+                    <td>${permission}</td>
+                </tr>
+            </#list>
+            </tbody>
+        </#if>
+
+        <#if isSupplier>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Permission</th>
+            </tr>
+            </thead>
+            <tbody>
+            <#list items as supplier>
+                <tr>
+                    <td>${supplier.name}</td>
+                    <td>
+                        ${(supplier.description)!}
+                    </td>
+                    <td>${permission}</td>
+                </tr>
+            </#list>
+            </tbody>
+
+            <p>Kindly update Inspection Reports</p>
+        </#if>
+
+
+        <#if isCustomObject>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Permission</th>
+            </tr>
+            </thead>
+            <tbody>
+            <#list items as cs>
+                <tr>
+                    <td>${cs.name}</td>
+                    <td>
+                        ${(cs.description)!}
+                    </td>
+                    <td>${permission}</td>
+                </tr>
+            </#list>
+            </tbody>
+        </#if>
+
+        <#if isProject>
+            <thead>
+            <tr>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Planned Start Date</th>
+                <th>Planned Finish Date</th>
+                <th>Shared By</th>
+                <th>Permission</th>
+            </tr>
+            </thead>
+            <tbody>
+            <#list items as item>
+                <tr>
+                    <td>${item.objectType}</td>
+                    <td>${item.name}</td>
+                    <td>${(item.description)!}</td>
+                    <td>${(item.plannedStartDate)!}</td>
+                    <td>${(item.plannedFinishDate)!}</td>
+                    <td>${sharedBy}</td>
+                    <td>${permission}</td>
+                </tr>
+            </#list>
+            </tbody>
+        </#if>
+        <#if isProgram>
+        <thead>
+        <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Shared By</th>
+            <th>Permission</th>
+        </tr>
+        </thead>
+        <tbody>
+        <#list items as item>
+            <tr>
+                <td>${item.objectType}</td>
+                <td>${item.name}</td>
+                <td>${(item.description)!}</td>
+                <td>${sharedBy}</td>
+                <td>${permission}</td>
+            </tr>
+        </#list>
+        </tbody>
+    </#if>
+    </table>
+</#if>
+
+<#if isFolder>
+    <p>Dear ${sharedToPerson},</p>
+
+    <p>${sharedPerson} shared <span style="color: blue">${documentName}</span> document files <span style="color: blue">${fileNames}</span>
+        with you</p>
+
+    <p>Please go through.</p>
+</#if>
+
+<#if !isFolder>
+    <p>Thank You</p>
+
+    <p class="text-center">CassiniPLM 2022</p>
+</#if>
+</body>
+
+</html>

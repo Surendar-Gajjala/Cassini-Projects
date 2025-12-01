@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 11" />
+<title>STORE STATE</title>
+<link rel="StyleSheet" href="../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../whmsg.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript" src="../../whver.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whutils.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whproxy.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whlang.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="../../whtopic.js" charset="utf-8"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("TRANSACTIONS\nINWARDS\nSTORE STATE");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../index.htm", "", ">", "Home", "../../ADMINISTRATOR/OVERVIEW.htm");
+document.write("<a href=\"../GATEPASSES/GATEPASSES.htm\">TRANSACTIONS<\/a> > <a href=\"SSQAG_STATE.htm\">INWARDS<\/a> > STORE STATE<\/p>");
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+onLoadHandler = function()
+{
+  if (window.setRelStartPage)
+	{
+	setTimeout("setRelStartPage('../../index.htm');", 1)
+
+    setTimeout("UpdateBreadCrumbsMarker();", 1);
+	}
+}
+
+if (window.addEventListener){  
+	window.addEventListener('load', onLoadHandler, false);   
+} else if (window.attachEvent){  
+	window.attachEvent('onload', onLoadHandler);  
+}
+
+function onSetStartPage()
+{
+  autoSync(1);
+  sendSyncInfo();
+  sendAveInfoOut();
+}
+//-->
+//]]></script>
+<script type="text/javascript" src="../../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>STORE STATE</h1>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><span style="line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><b style="mso-bidi-font-weight: normal;"><span 
+	 style="font-family: 'Segoe UI', sans-serif; color: #000000; mso-bidi-language: TE;"><font color="black" >STORE 
+ STATE:</font></span></b></span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;">&#160;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><span style="font-family: 'Segoe UI', sans-serif; 
+	 color: #000000; mso-bidi-language: TE;"><font color="black" >Inventory Manager/Store Manager 
+ will login to the CAS MS application and Inward the material by following 
+ below steps:</font></span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;">&#160;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><b style="mso-bidi-font-weight: normal;"><span 
+	 style="font-family: 'Segoe UI', sans-serif; color: #000000; mso-bidi-language: TE;"><font color="black" >Steps 
+ to create Inward:</font></span></b></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;">&#160;</p>
+<p class="MsoListParagraph" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px;"><span 
+	 style="mso-list: Ignore;">1.</span><span style="font: 7.0pt 'Times New Roman';"><font size="1" style="font-size:7pt;">&#160;&#160;&#160;&#160;&#160;</font></span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Go 
+ to Transactions -&gt;Inwards tab in the Navigation bar</span></p>
+<p class="MsoListParagraph" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px;">&#160;</p>
+<p class="MsoListParagraph" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw1.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraph" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE; margin-left: 36px;">&#160;</p>
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="mso-add-space: auto; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none;">2.&#160;&#160;&#160;&#160;&#160;&#160;Inwards 
+ page will be displayed</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="mso-list: Ignore; font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 mso-bidi-language: TE;">3</span><span style="font-family: 'Segoe UI', sans-serif; 
+											 mso-fareast-font-family: 'Segoe UI'; 
+											 mso-bidi-language: TE; mso-list: Ignore;">.&#160;&#160;&#160;&#160;&#160;</span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Click 
+ on New Inward button</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="mso-list: Ignore; font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 mso-bidi-language: TE;">4</span><span style="font-family: 'Segoe UI', sans-serif; 
+											 mso-fareast-font-family: 'Segoe UI'; 
+											 mso-bidi-language: TE; mso-list: Ignore;">.&#160;&#160;&#160;&#160;&#160;</span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">New 
+ Inward page opens</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="mso-list: Ignore; font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 mso-bidi-language: TE;">5</span><span style="font-family: 'Segoe UI', sans-serif; 
+											 mso-fareast-font-family: 'Segoe UI'; 
+											 mso-bidi-language: TE; mso-list: Ignore;">.&#160;&#160;&#160;&#160;&#160;</span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Search 
+ the Gatepass</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="mso-list: Ignore; font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 mso-bidi-language: TE;">6</span><span style="font-family: 'Segoe UI', sans-serif; 
+											 mso-fareast-font-family: 'Segoe UI'; 
+											 mso-bidi-language: TE; mso-list: Ignore;">.&#160;&#160;&#160;&#160;&#160;</span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Click 
+ on Add Gatepass button</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw2.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE; margin-left: 36px;">&#160;</p>
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="mso-add-space: auto; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none;">7.&#160;&#160;&#160;&#160;&#160;&#160;Fill 
+ in all the mandatory fields</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="mso-list: Ignore; font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 mso-bidi-language: TE;">8</span><span style="font-family: 'Segoe UI', sans-serif; 
+											 mso-fareast-font-family: 'Segoe UI'; 
+											 mso-bidi-language: TE; mso-list: Ignore;">.&#160;&#160;&#160;&#160;&#160;</span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Click 
+ on Create button</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw3.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">New Inward 
+ will be created successfully.</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw4.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><span 
+	 style="mso-list: Ignore;">1.</span><span style="font: 7.0pt 'Times New Roman';"><font size="1" style="font-size:7pt;">&#160;&#160;&#160;&#160;&#160;</font></span>&#160;Click 
+ on Inward Number hyperlink</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw5.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="mso-add-space: auto; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none;">2.&#160;&#160;&#160;&#160;&#160;&#160;Inward 
+ details page will be displayed</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="mso-list: Ignore; font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 mso-bidi-language: TE;">3</span><span style="font-family: 'Segoe UI', sans-serif; 
+											 mso-fareast-font-family: 'Segoe UI'; 
+											 mso-bidi-language: TE; mso-list: Ignore;">.&#160;&#160;&#160;&#160;&#160;</span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">As 
+ we are in Store state-&gt; Progress bar will display the Store state</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="mso-list: Ignore; font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 mso-bidi-language: TE;">4</span><span style="font-family: 'Segoe UI', sans-serif; 
+											 mso-fareast-font-family: 'Segoe UI'; 
+											 mso-bidi-language: TE; mso-list: Ignore;">.&#160;&#160;&#160;&#160;&#160;</span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Search 
+ for the Part to be Inwarded</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="mso-list: Ignore; font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 mso-bidi-language: TE;">5</span><span style="font-family: 'Segoe UI', sans-serif; 
+											 mso-fareast-font-family: 'Segoe UI'; 
+											 mso-bidi-language: TE; mso-list: Ignore;">.&#160;&#160;&#160;&#160;&#160;</span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Click 
+ on Add Item(+) button</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw6.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px;"><span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 mso-bidi-language: TE;">6</span><span>.&#160;&#160;&#160;&#160;&#160;&#160;Enter 
+ the Inward Qty</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px;"><span 
+	 style="mso-list: Ignore; font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 mso-bidi-language: TE;">7</span><span style="font-family: 'Segoe UI', sans-serif; 
+											 mso-fareast-font-family: 'Segoe UI'; 
+											 mso-bidi-language: TE; mso-list: Ignore;">.&#160;&#160;&#160;&#160;&#160;</span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Click 
+ on Create</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw7.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Inward 
+ item will be saved successfully</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw8.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><span 
+	 style="mso-list: Ignore;">8.</span><span style="font: 7.0pt 'Times New Roman';"><font size="1" style="font-size:7pt;">&#160;&#160;&#160;&#160;&#160;</font></span>&#160;Enter 
+ the each and every part details by clicking on Edit button</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw9.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE; margin-left: 36px;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE; margin-left: 36px;">&#160;</p>
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="mso-add-space: auto; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none;"><span style="font-family: 'Segoe UI', sans-serif; 
+	 mso-fareast-font-family: 'Segoe UI'; color: #000000; mso-bidi-language: TE;"><font color="black" ><span 
+	 style="mso-list: Ignore;">1.<span style="font: 7.0pt 'Times New Roman';"><font size="1" style="font-size:7pt;">&#160;&#160;&#160;&#160;&#160;</font></span></span></font></span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; color: #000000; mso-bidi-language: TE;"><font color="black" >Select 
+ Manufacturer</font></span></span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 color: #000000; mso-bidi-language: TE;"><font color="black" ><span style="mso-list: Ignore;">2.<span 
+	 style="font: 7.0pt 'Times New Roman';"><font size="1" style="font-size:7pt;">&#160;&#160;&#160;&#160;&#160;</font></span></span></font></span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; color: #000000; mso-bidi-language: TE;"><font color="black" >Enter 
+ Serial No/Spec</font></span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 color: #000000; mso-bidi-language: TE;"><font color="black" ><span style="mso-list: Ignore;">3.<span 
+	 style="font: 7.0pt 'Times New Roman';"><font size="1" style="font-size:7pt;">&#160;&#160;&#160;&#160;&#160;</font></span></span></font></span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; color: #000000; mso-bidi-language: TE;"><font color="black" >Upload 
+ Certificate</font></span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 color: #000000; mso-bidi-language: TE;"><font color="black" ><span style="mso-list: Ignore;">4.<span 
+	 style="font: 7.0pt 'Times New Roman';"><font size="1" style="font-size:7pt;">&#160;&#160;&#160;&#160;&#160;</font></span></span></font></span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; color: #000000; mso-bidi-language: TE;"><font color="black" >Enter 
+ Certificate Number</font></span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 color: #000000; mso-bidi-language: TE;"><font color="black" ><span style="mso-list: Ignore;">5.<span 
+	 style="font: 7.0pt 'Times New Roman';"><font size="1" style="font-size:7pt;">&#160;&#160;&#160;&#160;&#160;</font></span></span></font></span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; color: #000000; mso-bidi-language: TE;"><font color="black" >Select 
+ Manufacture Date</font></span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;"><span 
+	 style="mso-list: Ignore;">6.</span><span style="font: 7.0pt 'Times New Roman';"><font size="1" style="font-size:7pt;">&#160;&#160;&#160;&#160;&#160;</font></span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Click 
+ on Save</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw10.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 36px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><span style="line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><span style="font-family: 'Segoe UI', sans-serif; 
+	 color: #000000; mso-bidi-language: TE;"><font color="black" >Part will be saved.</font></span></span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;">&#160;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; mso-layout-grid-align: none; 
+	 text-autospace: none; line-height: normal; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE;">Similarly we can enter data for remaining 
+ parts and save.</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;">&#160;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE;">We can also copy the data from one part to 
+ another part by doing as below:</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 60px;">&#160;</p>
+<p class="MsoListParagraph" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 60px;"><span 
+	 style="mso-list: Ignore;">1.</span><span style="font: 7.0pt 'Times New Roman';"><font size="1" style="font-size:7pt;">&#160;&#160;&#160;&#160;&#160;</font></span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Select 
+ the Part from where the data to be copied</span></p>
+<p class="MsoListParagraph" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 60px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw11.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraph" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 60px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px;"><span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 mso-bidi-language: TE;">2</span><span>.&#160;&#160;Select the Parts 
+ to be copied</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px;"><span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 mso-bidi-language: TE; mso-list: Ignore;">3.&#160;&#160;</span>&#160;<span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Data 
+ will be copied</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw12.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none;"><span style="mso-add-space: auto; 
+	 line-height: normal; mso-list: l0 level1 lfo1; mso-layout-grid-align: none; 
+	 text-autospace: none;">1.&#160;&#160;&#160;&#160;&#160;4. &#160;Update 
+ the Serial No’s</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none;"><span style="font-family: 'Segoe UI', sans-serif; 
+	 mso-fareast-font-family: 'Segoe UI'; mso-bidi-language: TE; mso-list: Ignore;">2.&#160;&#160;&#160;&#160;&#160;</span>&#160;5. 
+ <span style="font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Click 
+ on Click to Apply button</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE;"><img src="../../Inw13.JPG" alt="" style="border: none;" 
+									 border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE; margin-left: 48px;">All the Parts details will 
+ be saved successfully.</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE; margin-left: 48px;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE; margin-left: 48px;"><img src="../../Inw14.JPG" 
+													 alt="" style="border: none;" 
+													 border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE; margin-left: 48px;">&#160;</p>
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px;"><span 
+	 style="font-family: 'Segoe UI', sans-serif; mso-fareast-font-family: 'Segoe UI'; 
+	 mso-bidi-language: TE;">6</span><span>.&#160;&#160;Click on Submit 
+ button</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif;"><span style="mso-list: Ignore; 
+												 mso-fareast-font-family: 'Segoe UI'; 
+												 mso-bidi-language: TE;">7</span><span 
+	 style="mso-fareast-font-family: 'Segoe UI'; mso-bidi-language: TE; 
+	 mso-list: Ignore;">.&#160;&#160;</span><span style="mso-bidi-language: TE;">Click 
+ on OK in the confirm submit dialog</span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw15.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">Inward 
+ will be submitted to SSQAG.</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; margin-left: 48px; 
+	 font-family: 'Segoe UI', sans-serif; mso-bidi-language: TE;"><img 
+	 src="../../Inw16.JPG" alt="" style="border: none;" border="0" /></p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none;">&#160;</p>
+<p class="MsoListParagraphCxSpLast" style="margin-bottom: .0001pt; mso-add-space: auto; 
+	 text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: 'Segoe UI', sans-serif; 
+	 mso-bidi-language: TE;">&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

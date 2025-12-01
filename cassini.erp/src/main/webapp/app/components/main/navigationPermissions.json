@@ -1,0 +1,162 @@
+[
+  {
+    "navigation": "home",
+    "permissions": []
+  },
+  {
+    "navigation": "crm",
+    "permissions": [
+      "permission.crm.all"
+    ]
+  },
+  {
+    "navigation": "crm.dashboard",
+    "permissions": [
+      "permission.crm.all"
+    ]
+  },
+  {
+    "navigation": "crm.customers",
+    "permissions": [
+      "permission.crm.customer.all"
+    ]
+  },
+  {
+    "navigation": "crm.salesreps",
+    "permissions": [
+      "permission.crm.salesrep.all"
+    ]
+  },
+  {
+    "navigation": "crm.salesregions",
+    "permissions": [
+      "permission.crm.salesregion.all"
+    ]
+  },
+  {
+    "navigation": "crm.orders",
+    "permissions": [
+      "permission.crm.order.all"
+    ]
+  },
+  {
+    "navigation": "crm.returns",
+    "permissions": [
+      "permission.crm.return.all"
+    ]
+  },
+  {
+    "navigation": "crm.consignments",
+    "permissions": [
+      "permission.crm.order.all"
+    ]
+  },
+  {
+    "navigation": "crm.settings",
+    "permissions": [
+      "permission.crm.return.all"
+    ]
+  },
+  {
+    "navigation": "production",
+    "permissions": [
+      "permission.production.all"
+    ]
+  },
+  {
+    "navigation": "production.dashboard",
+    "permissions": [
+      "permission.production.all"
+    ]
+  },
+  {
+    "navigation": "production.products",
+    "permissions": [
+      "permission.production.product.all"
+    ]
+  },
+  {
+    "navigation": "production.material",
+    "permissions": [
+      "permission.production.material.all"
+    ]
+  },
+  {
+    "navigation": "production.inventory",
+    "permissions": [
+      "permission.production.inventory.all"
+    ]
+  },
+  {
+    "navigation": "production.dashboard",
+    "permissions": [
+      "permission.production.all"
+    ]
+  },
+  {
+    "navigation": "production.settings",
+    "permissions": [
+      "permission.production.all"
+    ]
+  },
+  {
+    "navigation": "hrm",
+    "permissions": [
+      "permission.hrm.all"
+    ]
+  },
+  {
+    "navigation": "hrm.dashboard",
+    "permissions": [
+      "permission.hrm.all"
+    ]
+  },
+  {
+    "navigation": "hrm.employees",
+    "permissions": [
+      "permission.hrm.employee.all"
+    ]
+  },
+  {
+    "navigation": "hrm.payroll",
+    "permissions": [
+      "permission.hrm.payroll.all"
+    ]
+  },
+  {
+    "navigation": "hrm.attendance",
+    "permissions": [
+      "permission.hrm.all"
+    ]
+  },
+  {
+    "navigation": "hrm.settings",
+    "permissions": [
+      "permission.hrm.all"
+    ]
+  },
+  {
+    "navigation": "admin",
+    "permissions": [
+      "permission.all"
+    ]
+  },
+  {
+    "navigation": "admin.dashboard",
+    "permissions": [
+      "permission.all"
+    ]
+  },
+  {
+    "navigation": "admin.security",
+    "permissions": [
+      "permission.all"
+    ]
+  },
+  {
+    "navigation": "admin.settings",
+    "permissions": [
+      "permission.all"
+    ]
+  }
+]

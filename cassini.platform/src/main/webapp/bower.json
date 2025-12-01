@@ -1,0 +1,21 @@
+{
+  "name": "cassini-platform",
+  "description": "Cassini Platform Libraries",
+  "version": "1.0.0",
+  "keywords": [
+    "cassini"
+  ],
+  "homepage": "http://www.cassinisys.com",
+  "main": [
+    "app/*",
+    "template/*",
+    "css/*",
+    "images/*",
+    "js/*"
+  ],
+
+  "ignore": [
+  ],
+  "dependencies": {
+  }
+}

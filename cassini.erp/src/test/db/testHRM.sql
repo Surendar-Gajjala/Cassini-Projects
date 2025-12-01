@@ -1,0 +1,8 @@
+INSERT INTO ERP_BUSINESSUNIT (BUSINESSUNIT_ID, NAME, DESCRIPTION)
+    VALUES (nextval('OBJECT_ID_SEQ'), 'Apple Book Company', 'Apple Book Company');
+INSERT INTO ERP_BUSINESSUNIT (BUSINESSUNIT_ID, NAME, DESCRIPTION)
+    VALUES (nextval('OBJECT_ID_SEQ'), 'School Book Company', 'School Book Company');
+INSERT INTO ERP_BUSINESSUNIT (BUSINESSUNIT_ID, NAME, DESCRIPTION)
+    VALUES (nextval('OBJECT_ID_SEQ'), 'Orange Leaf Publishers', 'Orange Leaf Publishers');
+
+

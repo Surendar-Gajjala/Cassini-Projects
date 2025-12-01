@@ -1,0 +1,1 @@
+<classification-attribute-view has-permission="hasPermission('manufacturertype','all') || hasPermission('manufacturertype','edit')"></classification-attribute-view>

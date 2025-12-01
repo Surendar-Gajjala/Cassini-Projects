@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="/app/assets/css/app/desktop/print.css">
+
+</head>
+<body>
+
+<div class="print-template">
+
+    <#list selectedOptions as option>
+        <!--
+        Basic Details
+        -->
+        <#if option == 'Basic'>
+            <div class="row">
+                <div class="col-md-12 opt-head">
+                    <p class="opt">
+                        ${msg("print_basic_title")}</p>
+                </div>
+            </div>
+
+
+            <div class="row row-eq-height">
+                <div class="col-sm-12">
+                    <div class="item-details">
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_name_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if programData.program.name??>
+                                    <span class="longText">${programData.program.name}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_description_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if programData.program.description??>
+                                    <span class="longText">${programData.program.description}</span>
+                                </#if>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_project_manager_title")}</span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if programData.program.programManagerName??>
+                                    <span class="longText">${programData.program.programManagerName}</span>
+                                </#if>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label col-xs-4 col-sm-3 text-right">
+                                <span class="longText">${msg("print_created_by_title")} </span> :
+                            </div>
+                            <div class="value col-xs-8 col-sm-9">
+                                <#if programData.program.createdByName??>
+                                    <span class="longText">${programData.program.createdByName}</span>
+                                </#if>
+                            </div>
+                        </div>
+
+                        <#if programData.itemCustomAttributes?has_content>
+
+
+                            <#list programData.itemCustomAttributes as custom>
+                                <div class="row">
+                                    <div class="label col-xs-4 col-sm-3 text-right">
+                                        <#if custom.name??>
+                                            <span class="longText">${custom.name}</span> :
+                                        </#if>
+                                    </div>
+                                    <div class="value col-xs-8 col-sm-9">
+                                        <#if custom.value??>
+                                            <span class="longText">${custom.value}</span>
+                                        </#if>
+                                    </div>
+                                </div>
+                            </#list>
+                        </#if>
+
+
+                    </div>
+                </div>
+            </div>
+        </#if>
+
+
+        <#if option == 'Resources'>
+            <div class="row">
+                <div class="col-md-12 opt-head">
+                    <p class="opt">
+                        ${msg("print_resource_title")}</p>
+                </div>
+            </div>
+
+            <div class="row row-eq-height printingDiv">
+                <div class="col-sm-12 visible-print">
+                    <div class="row">
+                        <div class="responsive-table">
+
+                            <table class="table table-striped" style="width: 100% !important;"
+                                   id="changes">
+
+                                <thead>
+                                <tr class="noBorder">
+                                    <th class="col-width-150">
+                                        ${msg("print_name_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;">
+                                        ${msg("print_phone_number_title")}
+                                    </th>
+                                    <th class="col-width-150" style="text-align: left !important;">
+                                        ${msg("print_email_title")}
+                                    </th>
+                                    <th class="col-width-150" style="text-align: left !important;">
+                                        ${msg("print_role_title")}
+                                    </th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <#if programData.resources?has_content>
+                                    <#list programData.resources as person>
+                                        <tr>
+                                            <td class="col-width-150">
+                                                    <span>${person.personName}</span>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if person.phoneMobile??>
+                                                    <span>${person.phoneMobile}</span>
+                                                    </#if>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if person.email??>
+                                                    <span>${person.email}</span>
+                                                    </#if>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if person.role??>
+                                                    <span>${person.role}</span>
+                                                </#if>
+                                            </td>
+                                        </tr> 
+                                    </#list>
+
+                                </#if>
+                                </tbody>
+
+                            </table>
+
+                            <#if !programData.resources?has_content>
+                                <p class="no-content">${msg("print_no_resources_title")}</p>
+                            </#if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </#if>
+
+        <!--
+       Project Plan
+       -->
+        <#if option == 'Projects'>
+            <div class="row">
+                <div class="col-md-12 opt-head">
+                    <p class="opt">
+                        ${msg("print_Projects_title")}</p>
+                </div>
+            </div>
+
+            <div class="row row-eq-height printingDiv">
+                <div class="col-sm-12 visible-print">
+                    <div class="row">
+                        <div class="responsive-table">
+                            <table class="table table-striped" style="width: 100% !important;"
+                                   id="specifications1">
+
+                                <thead>
+                                <tr class="noBorder">
+                                    <th class="col-width-150">
+                                        ${msg("print_name_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_description_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_program_manager_title")}
+                                    </th>
+                                    <th class="col-width-100" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_status_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_planned_start_date_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_planned_finished_date_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_actual_start_date_title")}
+                                    </th>
+                                    <th class="col-width-150" style="z-index: auto !important;text-align: left">
+                                        ${msg("print_actual_finished_date_title")}
+                                    </th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <#if programData.programProjects?has_content>
+                                    <#list  programData.programProjects as programProject>
+                                        <tr>
+                                            <td class="col-width-150">
+                                        <span class="level${programProject.level}">
+                                             <#if programProject.name??>
+                                                 ${programProject.name}
+                                             </#if>
+                                        </span>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if programProject.description??>
+                                                    <span>${programProject.description}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if programProject.managerFullName??>
+                                                    <span>${programProject.managerFullName}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if programProject.type == 'PROJECT'>
+                                                    <span>${programProject.percent}</span>
+                                                </#if>
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if programProject.pStartDate??>
+                                                    <span>${programProject.pStartDate}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if programProject.pFinishDate??>
+                                                    <span>${programProject.pFinishDate}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if programProject.aStartDate??>
+                                                    <span>${programProject.aStartDate}</span>
+                                                </#if>
+
+                                            </td>
+                                            <td class="col-width-150">
+                                                <#if programProject.aFinishDate??>
+                                                    <span>${programProject.aFinishDate}</span>
+                                                </#if>
+
+                                            </td>
+
+                                        </tr>
+                                    </#list>
+                                </#if>
+                                </tbody>
+                            </table>
+                            <#if !programData.programProjects?has_content>
+                                <p class="no-content">${msg("print_no_projects_title")}</p>
+                            </#if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </#if>
+
+        <#if option == 'Files'>
+            <div class="row">
+                <div class="col-md-12 opt-head">
+                    <p class="opt">
+                        ${msg("print_files_title")}</p>
+                </div>
+            </div>
+
+            <div class="row row-eq-height printingDiv">
+                <div class="col-sm-12 visible-print">
+                    <div class="row">
+                        <div class="responsive-table">
+                            <table class="table table-striped" style="width: 100% !important;"
+                                   id="files">
+
+                                <thead>
+                                <tr class="noBorder">
+                                    <th class="col-width-250"> ${msg("print_name_title")}</th>
+                                    <th class="col-width-200"> ${msg("print_description_title")}</th>
+                                    <th class="text-center" style="z-index: auto !important;">
+                                        ${msg("print_version_title")}
+                                    </th>
+                                    <th class="col-width-300" class=""> ${msg("print_person_title")}</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <#if programData.fileDto.objectFiles?has_content>
+                                    <#list  programData.fileDto.objectFiles as file>
+                                        <tr>
+                                            <td class="col-width-200">
+                                                <#if file.name??>
+                                                    <span>${file.name}</span>
+                                                </#if>
+                                            </td>
+                                            <td class="col-width-200">
+                                                <#if file.description??>
+                                                    <span>${file.description}</span>
+                                                </#if>
+                                            </td>
+                                            <td class="text-center">
+                                                <#if file.version??>
+                                                    <span>${file.version}</span>
+                                                </#if>
+                                            </td>
+                                            <td class="col-width-300">
+                                                <#if file.createdByName??>
+                                                    <span>${file.createdByName}</span>
+                                                </#if>
+                                            </td>
+                                        </tr>
+                                    </#list>
+                                </#if>
+                                </tbody>
+                            </table>
+                            <#if !programData.fileDto.objectFiles?has_content>
+                                <p class="no-content"> ${msg("print_no_files_title")}</p>
+                            </#if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </#if>
+
+    </#list>
+</div>
+</body>
+</html>

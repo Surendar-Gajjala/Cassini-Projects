@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CassiniPLM</title>
+
+    <!--<link rel="stylesheet" type="text/css" href="http://localhost:8080/app/assets/css/desktop.imports.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+</head>
+<body>
+<style>
+    body {
+        background-color: #D0DDE1;
+        font-size: 17px;
+        font-family: 'Open Sans' !important;
+        font-weight: 300 !important;
+    }
+
+    .email-content {
+        background-color: #FFF;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.22);
+        border: 1px solid #D0DDE1;
+        padding: 50px;
+        height: 420px;
+        width: 50%;
+        min-width: 30%;
+        margin-top: 100px;
+        margin-bottom: 20px;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+    p {
+        line-height: 30px;
+    }
+</style>
+
+<div class="email-content">
+    <h4>Dear ${name},</h4>
+
+    <p>
+        Your account has been created successfully in CassiniPLM. Your account details are as follows:
+    </p>
+
+    <div>
+        <span style="display: inline-block;font-size: 15px;">Username : </span>${username}
+        <br>
+        <span style="display: inline-block;font-size: 15px;">Password : </span>${password}
+    </div>
+
+    <p>
+        Do not share this credentials with anyone, as this may compromise your security.
+    </p>
+
+    Thank You!
+</div>
+<p class="text-center">CassiniPLM 2022</p>
+
+</body>
+</html>

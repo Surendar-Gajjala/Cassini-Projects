@@ -1,0 +1,15 @@
+<div class="modal-header"
+     style="background: #E4E7EA none repeat scroll 0% 0%; border-bottom: 1px solid #CCC;">
+    <h3 style="margin-top:0px; margin-bottom:0px;">{{modalOptions.headerText}}</h3>
+</div>
+<div class="modal-body">
+    <br>
+    <h4>{{modalOptions.bodyText}}</h4>
+    <br>
+</div>
+<div class="modal-footer" style="background-color: #F9F9F9;">
+    <button ng-hide="modalOptions.hideCloseButton" type="button" class="btn btn-primary" style="min-width: 80px"
+            data-ng-click="modalOptions.close()">{{modalOptions.closeButtonText}}</button>
+    <button ng-hide="modalOptions.hideActionButton" class="btn btn-danger" style="min-width: 80px"
+            data-ng-click="modalOptions.ok();">{{modalOptions.actionButtonText}}</button>
+</div>

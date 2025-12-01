@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" type="text/css" href="http://localhost:8080/app/assets/css/desktop.imports.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+</head>
+<body>
+
+
+<style>
+    body {
+    / / background-color : whitesmoke;
+        font-size: 17px;
+        font-family: 'Open Sans' !important;
+        font-weight: 300 !important;
+    }
+
+    .email-content {
+    / / background-color : whitesmoke;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.22);
+        border: 1px solid #D0DDE1;
+        padding: 50px;
+        height: 420px;
+        width: 50%;
+        min-width: 30%;
+        margin-top: 100px;
+        margin-bottom: 20px;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+    .email-title {
+        color: #0390fd;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-size: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .email-content td {
+        padding: 3px;
+    }
+</style>
+
+<div class="email-content">
+    <#if customObjectType == 'CPI Form'>
+        <p>Dear Supplier,</p>
+
+        <p>A CPI <span style="color: blue">${number}</span> is raised by <span
+                style="color: blue">${createdByName}</span></p>
+
+        <p>Rule 1 (Correction) need to complete within 24hrs.</p>
+
+        <table border="1" style="border-collapse: collapse;">
+
+            <!--<thead>
+            <tr>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Created By</th>
+                <#if supplierName??>
+                    <th>Supplier Name</th>
+                </#if>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>${message}</td>
+                <td>
+                    ${(number)!}
+                </td>
+                <td>
+                    ${customObjectType}
+                </td>
+                <td>
+                    ${description}
+                </td>
+                <td>
+                    ${createdByName}
+                </td>
+                <td>
+                    ${(supplierName)!}
+                </td>
+            </tr>
+            </tbody>-->
+
+            <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td>${message}</td>
+            </tr>
+            <tr>
+                <td><strong>Number</strong></td>
+                <td>${number}</td>
+            </tr>
+            <tr>
+                <td><strong>Type</strong></td>
+                <td>${customObjectType}</td>
+            </tr>
+            <tr>
+                <td><strong>Description</strong></td>
+                <td>${description}</td>
+            </tr>
+            <tr>
+                <td><strong>Created By</strong></td>
+                <td>${createdByName}</td>
+            </tr>
+            <tr>
+                <td><strong>Created Date</strong></td>
+                <td>${currentDateStr}</td>
+            </tr>
+            <#if supplierName??>
+                <tr>
+                    <td><strong>Supplier</strong></td>
+                    <td>${supplierName}</td>
+                </tr>
+            </#if>
+            <#if attributes?has_content>
+                <#list attributes as attribute>
+                    <tr>
+                        <td><strong>${attribute.attributeName}</strong></td>
+                        <td>
+                            <#if attribute.dataType == 'TEXT' && attribute.stringValue??>
+                                ${attribute.stringValue}
+                            </#if>
+                            <#if attribute.dataType == 'INTEGER' && attribute.integerValue??>
+                                ${attribute.integerValue}
+                            </#if>
+                            <#if attribute.dataType == 'DOUBLE' && attribute.doubleValue??>
+                                ${attribute.doubleValue}
+                            </#if>
+                            <#if attribute.dataType == 'DATE' && attribute.dateValue??>
+                                ${attribute.dateValue}
+                            </#if>
+                            <#if attribute.dataType == 'TIME' && attribute.timeValue??>
+                                ${attribute.timeValue}
+                            </#if>
+                            <#if attribute.dataType == 'TIMESTAMP' && attribute.timestampValue??>
+                                ${attribute.timestampValue}
+                            </#if>
+                            <#if attribute.dataType == 'BOOLEAN' && attribute.booleanValue??>
+                                ${attribute.booleanValue}
+                            </#if>
+                            <#if attribute.dataType == 'CURRENCY' && attribute.currencyValue??>
+                                ${attribute.currencyValue}
+                            </#if>
+                            <#if attribute.dataType == 'IMAGE'>
+
+                            </#if>
+                            <#if attribute.dataType == 'LIST' && attribute.listValue?? && !attribute.listMultiple>
+                                ${attribute.listValue}
+                            </#if>
+                            <#if attribute.dataType == 'LIST' && attribute.listMultiple>
+                                <#if attribute.multiValues?has_content>
+                                    <#list attribute.multiValues as value>
+                                        ${value}<br>
+                                    </#list>
+                                </#if>
+                            </#if>
+                            <#if attribute.dataType == 'ATTACHMENT'>
+                                <#if attribute.attachments?has_content>
+                                    <#list attribute.attachments as attachment>
+                                        ${attachment}<br>
+                                    </#list>
+                                </#if>
+                            </#if>
+                            <#if attribute.dataType == 'LONGTEXT' && attribute.longTextValue??>
+                                ${attribute.longTextValue}
+                            </#if>
+                            <#if attribute.dataType == 'HYPERLINK' && attribute.hyperLinkValue??>
+                                ${attribute.hyperLinkValue}
+                            </#if>
+                            <#if attribute.dataType == 'FORMULA' && attribute.formulaValue??>
+                                ${attribute.formulaValue}
+                            </#if>
+                            <#if attribute.dataType == 'MULTILISTCHECKBOX'>
+                                <#if attribute.multiValues?has_content>
+                                    <#list attribute.multiValues as value>
+                                        ${value}<br>
+                                    </#list>
+                                </#if>
+                            </#if>
+                        </td>
+                    </tr>
+                </#list>
+            </#if>
+            </tbody>
+        </table>
+    </#if>
+
+    <#if customObjectType != 'CPI Form'>
+        <p>Dear ${personName},</p>
+
+        <p style="margin-left: 40px;">${message} has been created by ${createdByName}</p>
+
+    </#if>
+
+    <p>Kindly take necessary action.</p>
+
+    <p>Thank You.</p>
+</div>
+</body>
+</html>

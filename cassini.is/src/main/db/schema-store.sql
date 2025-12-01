@@ -1,0 +1,328 @@
+CREATE TABLE IS_TOPSTORE (
+    STORE_ID                    INTEGER             NOT NULL PRIMARY KEY,
+    STORE_NAME                  TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                ,
+    LOCATION_NAME               TEXT                ,
+    FOREIGN KEY (STORE_ID)      REFERENCES          CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE,
+    UNIQUE(STORE_NAME)
+);
+
+CREATE TABLE IS_TOPSITE (
+    SITE_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    SITE_NAME                   TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                NOT NULL,
+    STORE                       INTEGER             REFERENCES IS_TOPSTORE (STORE_ID) ON DELETE CASCADE,
+    FOREIGN KEY (SITE_ID) REFERENCES LOCATIONAWAREOBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_ITEM (
+    ITEM_ID                     INTEGER             NOT NULL PRIMARY KEY,
+    ITEMNAME                    TEXT                NOT NULL,
+    ITEM_NUMBER                 TEXT                NOT NULL,
+    DESCRIPTION                 TEXT                NOT NULL,
+    UNITS                       TEXT                NOT NULL,
+    UNIT_PRICE                  DOUBLE PRECISION    NOT NULL DEFAULT 0,
+    UNIT_COST                   DOUBLE PRECISION    NOT NULL DEFAULT 0,
+    ACTUALCOST                  DOUBLE PRECISION    NOT NULL DEFAULT 0,
+    QUANTITY                    DOUBLE PRECISION    NOT NULL DEFAULT 0,
+    RESTYPE                     RESOURCE_TYPE       ,
+    ISSAVEDITEM                 BOOLEAN             DEFAULT FALSE,
+    FOREIGN KEY (ITEM_ID)       REFERENCES          CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_INVENTORY (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    ITEM                        INTEGER             NOT NULL REFERENCES IS_MATERIALITEM (ITEM_ID) ON DELETE CASCADE,
+    STORE                       INTEGER             NOT NULL REFERENCES IS_TOPSTORE (STORE_ID) ON DELETE CASCADE,
+    STOCK_ON_HAND               DOUBLE PRECISION    NOT NULL DEFAULT 0,
+    STOCK_ON_ORDER              DOUBLE PRECISION    NOT NULL DEFAULT 0,
+    PROJECT                     INTEGER             REFERENCES IS_PROJECT(PROJECT_ID)  ON DELETE CASCADE
+);
+
+CREATE TABLE IS_STOCKMOVEMENT (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    ITEM                        INTEGER             NOT NULL REFERENCES IS_MATERIALITEM (ITEM_ID) ON DELETE CASCADE,
+    STORE                       INTEGER             NOT NULL REFERENCES IS_TOPSTORE (STORE_ID) ON DELETE CASCADE,
+    MOVEMENT                    MOVEMENT_TYPE       NOT NULL,
+    QUANTITY                    DOUBLE PRECISION    NOT NULL DEFAULT 0,
+    TIMESTAMP                   TIMESTAMP           NOT NULL,
+    RECORDED_BY                 INTEGER             NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE,
+    NOTES                       TEXT                ,
+    PROJECT                     INTEGER             REFERENCES IS_PROJECT(PROJECT_ID)  ON DELETE CASCADE,
+    OPENING_BALANCE             DOUBLE PRECISION    NOT NULL DEFAULT 0,
+    CLOSING_BALANCE             DOUBLE PRECISION    NOT NULL DEFAULT 0,
+    FOREIGN KEY (ROWID)         REFERENCES            CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_STOCKISSUE (
+    ID                          INTEGER             NOT NULL PRIMARY KEY ,
+    NAME                        TEXT                ,
+    NOTES                       TEXT                ,
+    STORE                       INTEGER             NOT NULL REFERENCES IS_TOPSTORE (STORE_ID) ON DELETE CASCADE ,
+    ISSUENUMBER_SOURCE          TEXT                ,
+    TASK                        INTEGER             REFERENCES IS_TASK(TASK_ID) ON DELETE CASCADE ,
+    PROJECT                     INTEGER             NOT NULL REFERENCES IS_PROJECT(PROJECT_ID)  ON DELETE CASCADE,
+    ISSUED_TO                   INTEGER             REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE,
+    ISSUE_DATE                  TIMESTAMP           ,
+    ISSUE_TYPE                  INTEGER             NOT NULL REFERENCES IS_MATERIALISSUETYPE(TYPE_ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES          CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_STOCKISSUEITEM (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY ,
+    ISSUE                       INTEGER             REFERENCES IS_STOCKISSUE (ID) ON DELETE CASCADE ,
+    FOREIGN KEY (ROWID)         REFERENCES          IS_STOCKMOVEMENT (ROWID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_LOAN (
+    ID                          INTEGER             NOT NULL PRIMARY KEY ,
+    LOAN_NO                     TEXT                ,
+    FROM_PROJECT                INTEGER             NOT NULL REFERENCES IS_PROJECT(PROJECT_ID)  ON DELETE CASCADE,
+    TO_PROJECT                  INTEGER             NOT NULL REFERENCES IS_PROJECT(PROJECT_ID)  ON DELETE CASCADE,
+    FROM_STORE                  INTEGER             NOT NULL REFERENCES IS_TOPSTORE (STORE_ID) ON DELETE CASCADE ,
+    TO_STORE                    INTEGER             NOT NULL REFERENCES IS_TOPSTORE (STORE_ID) ON DELETE CASCADE ,
+    STATUS                      LOAN_STATUS         NOT NULL,
+    FOREIGN KEY (ID)            REFERENCES          CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_LOANISSUEITEM (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY ,
+    LOAN                        INTEGER             NOT NULL REFERENCES IS_LOAN(ID) ON DELETE CASCADE ,
+    FOREIGN KEY (ROWID)         REFERENCES          IS_STOCKMOVEMENT (ROWID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_LOANRECEIVEITEM (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY ,
+    LOAN                        INTEGER             NOT NULL REFERENCES IS_LOAN(ID) ON DELETE CASCADE ,
+    FOREIGN KEY (ROWID)         REFERENCES          IS_STOCKMOVEMENT (ROWID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_LOANRETURNITEMISSUED (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY ,
+    LOAN                        INTEGER             NOT NULL REFERENCES IS_LOAN(ID) ON DELETE CASCADE ,
+    QUANTITY                    DOUBLE PRECISION    NOT NULL DEFAULT 0,
+    DATE                        TIMESTAMP           ,
+    FOREIGN KEY (ROWID)         REFERENCES          IS_STOCKMOVEMENT (ROWID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_STOCKRETURN (
+    ID                          INTEGER             NOT NULL PRIMARY KEY ,
+    STORE                       INTEGER             NOT NULL REFERENCES IS_TOPSTORE (STORE_ID) ON DELETE CASCADE ,
+    STOCKRETURN_NUMBERSOURCE    TEXT                ,
+    PROJECT                     INTEGER             REFERENCES IS_PROJECT(PROJECT_ID)  ON DELETE CASCADE,
+    RETURNED_TO                 INTEGER             NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE,
+    RETURNED_DATE               TIMESTAMP           ,
+    STATUS                      STOCKRETURN_STATUS  NOT NULL DEFAULT 'NEW',
+    APPROVED_BY                 TEXT                ,
+    NOTES                       TEXT                ,
+    FOREIGN KEY (ID)            REFERENCES          CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_STOCKRETURNITEM (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY ,
+    STOCKRETURN                 INTEGER             REFERENCES IS_STOCKRETURN (ID) ON DELETE CASCADE ,
+    FOREIGN KEY (ROWID)         REFERENCES          IS_STOCKMOVEMENT (ROWID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_SCRAPREQUEST   (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY ,
+    SCRAP_NUMBER                TEXT                ,
+    REQUESTED_BY                INTEGER             NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE,
+    PROJECT                     INTEGER             REFERENCES IS_PROJECT(PROJECT_ID)  ON DELETE CASCADE,
+    STORE                       INTEGER             NOT NULL REFERENCES IS_TOPSTORE(STORE_ID) ON DELETE CASCADE,
+    NOTES                       TEXT                ,
+    FOREIGN KEY (ROWID)         REFERENCES       CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_SCRAPREQUESTITEM  (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY ,
+    IS_SCRAPREQUEST             INTEGER             NOT NULL REFERENCES IS_SCRAPREQUEST (ROWID) ON DELETE CASCADE,
+    QUANTITY                    DOUBLE PRECISION    NOT NULL DEFAULT 0,
+    ITEM                        INTEGER             NOT NULL ,
+    PROJECT                     INTEGER             REFERENCES IS_PROJECT(PROJECT_ID)  ON DELETE CASCADE,
+    FOREIGN KEY (ROWID)         REFERENCES          CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_LOANRETURNITEMRECEIVED (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY ,
+    LOAN                        INTEGER             NOT NULL REFERENCES IS_LOAN(ID) ON DELETE CASCADE ,
+    QUANTITY                    DOUBLE PRECISION    NOT NULL DEFAULT 0,
+    DATE                        TIMESTAMP           ,
+    FOREIGN KEY (ROWID)         REFERENCES          IS_STOCKMOVEMENT (ROWID) ON DELETE CASCADE
+);
+
+/* Custom tables */
+
+CREATE TABLE CUSTOM_REQUISITION (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    REQUISITION_NUMBER          TEXT                NOT NULL,
+    PROJECT                     INTEGER             NOT NULL REFERENCES IS_PROJECT(PROJECT_ID) ON DELETE CASCADE,
+    STORE                       INTEGER             NOT NULL REFERENCES IS_TOPSTORE(STORE_ID) ON DELETE CASCADE,
+    REQUESTED_DATE              DATE                NOT NULL DEFAULT CURRENT_DATE,
+    REQUESTED_BY                TEXT                NOT NULL,
+    STATUS                      REQUISITION_STATUS  NOT NULL DEFAULT 'NEW',
+    APPROVED_BY                 TEXT                ,
+    NOTES                       TEXT                ,
+    FOREIGN KEY (ID)            REFERENCES          CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE CUSTOM_REQUISITIONITEM (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    REQUISITION                 INTEGER             NOT NULL REFERENCES CUSTOM_REQUISITION (ID) ON DELETE CASCADE,
+    MATERIAL                    INTEGER             NOT NULL REFERENCES IS_MATERIALITEM (ITEM_ID) ON DELETE CASCADE,
+    QUANTITY                    DOUBLE PRECISION    NOT NULL DEFAULT 1,
+    NOTES                       TEXT                ,
+    UNIQUE (REQUISITION, MATERIAL)
+);
+
+CREATE TABLE CUSTOM_RECEIVECHALAN (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    CHALAN_NO                  TEXT                 NOT NULL,
+    PROJECT                     INTEGER             NOT NULL REFERENCES IS_PROJECT(PROJECT_ID) ON DELETE CASCADE,
+    STORE                       INTEGER             NOT NULL REFERENCES IS_TOPSTORE(STORE_ID) ON DELETE CASCADE,
+    RECEIVED_DATE               DATE                NOT NULL DEFAULT CURRENT_DATE,
+    RECEIVED_FROM               TEXT                NOT NULL,
+    CONSIGNEE                   TEXT                ,
+    FOREIGN KEY (ID)            REFERENCES          CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE CUSTOM_RECIEVEITEM (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    RECEIVE_CHALAN              INTEGER             NOT NULL REFERENCES CUSTOM_RECEIVECHALAN (ID) ON DELETE CASCADE,
+    MATERIAL                    INTEGER             NOT NULL REFERENCES IS_MATERIALITEM (ITEM_ID) ON DELETE CASCADE,
+    QUANTITY                    DOUBLE PRECISION    NOT NULL DEFAULT 1,
+    NOTES                       TEXT                ,
+    UNIQUE (RECEIVE_CHALAN, MATERIAL)
+);
+
+
+CREATE TABLE CUSTOM_ISSUECHALAN (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    CHALAN_NO                  TEXT                 NOT NULL,
+    PROJECT                     INTEGER             NOT NULL REFERENCES IS_PROJECT(PROJECT_ID) ON DELETE CASCADE,
+    STORE                       INTEGER             NOT NULL REFERENCES IS_TOPSTORE(STORE_ID) ON DELETE CASCADE,
+    ISSUED_DATE                 DATE                NOT NULL DEFAULT CURRENT_DATE,
+    ISSUED_TO                   TEXT                NOT NULL,
+    RELEASE_ORDER_NO            TEXT                ,
+    RELEASING_AUTHORITY         TEXT                ,
+    APPROVED_BY                 TEXT                ,
+    FOREIGN KEY (ID)            REFERENCES          CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+
+CREATE TABLE CUSTOM_ISSUEITEM (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    ISSUE_CHALAN                INTEGER             NOT NULL REFERENCES CUSTOM_ISSUECHALAN (ID) ON DELETE CASCADE,
+    MATERIAL                    INTEGER             NOT NULL REFERENCES IS_MATERIALITEM (ITEM_ID) ON DELETE CASCADE,
+    QUANTITY                    DOUBLE PRECISION    NOT NULL DEFAULT 1,
+    NOTES                       TEXT                ,
+    UNIQUE (ISSUE_CHALAN, MATERIAL)
+);
+
+CREATE TABLE CUSTOM_ROADCHALAN (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    CHALAN_NO                  TEXT                NOT NULL,
+    CHALAN_DATE                DATE                NOT NULL DEFAULT CURRENT_DATE,
+    STORE                       INTEGER             NOT NULL REFERENCES IS_TOPSTORE(STORE_ID) ON DELETE CASCADE,
+    GOING_FROM                  TEXT                NOT NULL ,
+    GOING_TO                    TEXT                NOT NULL ,
+    MEANS_OF_TRANS              TEXT                ,
+    VEHICLE_DETAILS             TEXT                ,
+    ISSUING_AUTHORITY           TEXT                ,
+    FOREIGN KEY (ID)            REFERENCES          CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE CUSTOM_ROADCHALANITEM (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    ROAD_CHALAN                 INTEGER              NOT NULL REFERENCES CUSTOM_ROADCHALAN (ID) ON DELETE CASCADE,
+    MATERIAL                    INTEGER             NOT NULL REFERENCES IS_MATERIALITEM (ITEM_ID) ON DELETE CASCADE,
+    QUANTITY                    DOUBLE PRECISION    NOT NULL DEFAULT 1,
+    NOTES                       TEXT                ,
+    FOREIGN KEY (ID)            REFERENCES               CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE,
+    UNIQUE (ROAD_CHALAN, MATERIAL)
+);
+
+CREATE TABLE CUSTOM_INDENT (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    INDENT_NUMBER               TEXT                NOT NULL,
+    PROJECT                     INTEGER             NOT NULL REFERENCES IS_PROJECT(PROJECT_ID) ON DELETE CASCADE,
+    STORE                       INTEGER             NOT NULL REFERENCES IS_TOPSTORE(STORE_ID) ON DELETE CASCADE,
+    RAISED_DATE                 DATE                NOT NULL DEFAULT CURRENT_DATE,
+    RAISED_BY                   TEXT                NOT NULL,
+    STATUS                      INDENT_STATUS       NOT NULL DEFAULT 'NEW',
+    APPROVED_BY                 TEXT                ,
+    NOTES                       TEXT                ,
+    FOREIGN KEY (ID)            REFERENCES          CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE CUSTOM_INDENTITEM (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    INDENT                      INTEGER             NOT NULL REFERENCES CUSTOM_INDENT (ID) ON DELETE CASCADE,
+    REQUISITION                 INTEGER             NOT NULL REFERENCES CUSTOM_REQUISITION (ID) ON DELETE CASCADE,
+    MATERIAL                    INTEGER             NOT NULL REFERENCES IS_MATERIALITEM (ITEM_ID) ON DELETE CASCADE,
+    QUANTITY                    DOUBLE PRECISION    NOT NULL DEFAULT 1,
+    NOTES                       TEXT                ,
+    UNIQUE (INDENT, MATERIAL,REQUISITION)
+);
+
+CREATE TABLE CUSTOM_PURCHASEORDER (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    PO_NUMBER                   TEXT                NOT NULL,
+    PO_DATE                     DATE                NOT NULL DEFAULT CURRENT_DATE,
+    SUPPLIER                    TEXT                ,
+    STORE                       INTEGER             NOT NULL REFERENCES IS_TOPSTORE (STORE_ID) ON DELETE CASCADE,
+    STATUS                      PURCHASEORDER_STATUS NOT NULL DEFAULT 'NEW',
+    APPROVED_BY                 TEXT                ,
+    NOTES                       TEXT                ,
+    FOREIGN KEY (ID)            REFERENCES          CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE CUSTOM_PURCHASEORDERITEM (
+    ID                          INTEGER             NOT NULL PRIMARY KEY,
+    PURCHASE_ORDER              INTEGER             NOT NULL REFERENCES CUSTOM_PURCHASEORDER (ID) ON DELETE CASCADE,
+    REQUISITION                 INTEGER             NOT NULL REFERENCES CUSTOM_REQUISITION (ID) ON DELETE CASCADE,
+    MATERIAL                    INTEGER             NOT NULL REFERENCES IS_MATERIALITEM (ITEM_ID) ON DELETE CASCADE,
+    QUANTITY                    DOUBLE PRECISION    NOT NULL DEFAULT 1,
+    NOTES                       TEXT                ,
+    UNIQUE (PURCHASE_ORDER, MATERIAL,REQUISITION)
+);
+
+CREATE TABLE IS_STOCKRECEIVE (
+    ID                          INTEGER             NOT NULL PRIMARY KEY ,
+    NAME                        TEXT                ,
+    NOTES                       TEXT                ,
+    STORE                       INTEGER             NOT NULL REFERENCES IS_TOPSTORE (STORE_ID) ON DELETE CASCADE ,
+    RECEIVENUMBER_SOURCE        TEXT                ,
+    PROJECT                     INTEGER             REFERENCES IS_PROJECT(PROJECT_ID)  ON DELETE CASCADE,
+    SUPPLIER                    INTEGER             REFERENCES IS_SUPPLIER (SUPPLIER_ID) ,
+    RECEIVE_TYPE                INTEGER             NOT NULL REFERENCES IS_MATERIALRECEIVETYPE(TYPE_ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID)            REFERENCES          CASSINI_OBJECT (OBJECT_ID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_STOCKRECEIVEITEM (
+    ROWID                       INTEGER             NOT NULL PRIMARY KEY,
+    RECEIVE                     INTEGER             NOT NULL REFERENCES IS_STOCKRECEIVE (ID) ON DELETE CASCADE ,
+    RECEIVED_BY                 INTEGER             NOT NULL REFERENCES PERSON (PERSON_ID) ON DELETE CASCADE,
+    FOREIGN KEY (ROWID)         REFERENCES          IS_STOCKMOVEMENT (ROWID) ON DELETE CASCADE
+);
+
+CREATE TABLE IS_RECEIVETYPEITEMATTRIBUTE (
+    ITEM                        INTEGER             NOT NULL REFERENCES IS_STOCKRECEIVE (ID) ON DELETE CASCADE,
+    ATTRIBUTE                   INTEGER             NOT NULL REFERENCES IS_MATERIALRECEIVETYPEATTRIBUTE (ATTRIBUTE_ID) ON DELETE CASCADE,
+    FOREIGN KEY (ITEM, ATTRIBUTE) REFERENCES          OBJECTATTRIBUTE (OBJECT_ID, ATTRIBUTEDEF) ON DELETE CASCADE,
+    UNIQUE (ITEM, ATTRIBUTE)
+);
+
+CREATE TABLE IS_ISSUETYPEITEMATTRIBUTE (
+    ITEM                        INTEGER             NOT NULL REFERENCES IS_STOCKISSUE (ID) ON DELETE CASCADE,
+    ATTRIBUTE                   INTEGER             NOT NULL REFERENCES IS_MATERIALISSUETYPEATTRIBUTE (ATTRIBUTE_ID) ON DELETE CASCADE,
+    FOREIGN KEY (ITEM, ATTRIBUTE) REFERENCES          OBJECTATTRIBUTE (OBJECT_ID, ATTRIBUTEDEF) ON DELETE CASCADE,
+    UNIQUE (ITEM, ATTRIBUTE)
+);
+
+
+/* End Custom tables */
+
+
+
+

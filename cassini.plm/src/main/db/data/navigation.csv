@@ -1,0 +1,101 @@
+dashboard.menu, Dashboard Menu
+dashboard.items, Dashboard Items
+dashboard.changes, Dashboard Changes
+dashboard.quality, Dashboard Quality
+dashboard.project, Dashboard Project
+dashboard.workflow, Dashboard Workflow
+dashboard.sourcing, Dashboard Sourcing
+designData.menu, Design Data Menu
+designData.vault, Design Data Vault
+designData.assemblies, Design Data Assemblies
+designData.parts, Design Data Parts
+designData.drawings, Design Data Drawings
+item.menu, Item Menu
+item.items, Item Items
+item.products, Item Products 
+item.assemblies, Item Assemblies
+item.parts, Item Parts
+item.documents, Item Documents
+item.newPartRequests, Item New Part Requests
+change.menu, Change Menu
+change.ecrs, Change ECRs
+change.ecos, Change ECOs
+change.dcrs, Change DCRs
+change.dcos, Change DCOs
+change.mcos, Change MCOs
+change.variances-deviations, Change Variance Deviations
+change.variances-waivers, Change Variance Waivers
+quality.menu, Quality Menu
+quality.inspectionPlan, Quality Inspection Plan
+quality.inspections, Quality Inspections
+quality.prs, Quality PRs
+quality.ncrs, Quality NCRs
+quality.qcrs, Quality QCRs
+project-management.menu, Project Management Menu
+project-management.requirements, Project Management Requirements
+project-management.projects, Project Management Projects
+project-management.projects-temp, Project Management Projects Templates
+manufacturing.menu, Manufacturing Menu
+manufacturing.plants, Manufacturing Plants
+manufacturing.assemblyLines, Manufacturing Assembly Lines
+manufacturing.work-centers, Manufacturing Work Centers
+manufacturing.machines, Manufacturing Machines
+manufacturing.equipments, Manufacturing Equipments
+manufacturing.instruments, Manufacturing Instruments
+manufacturing.tools, Manufacturing Tools
+manufacturing.jigs-fixtures, Manufacturing Jigs and Fixtures
+manufacturing.materials, Manufacturing Materials
+manufacturing.manpower, Manufacturing Manpower
+manufacturing.shifts, Manufacturing Shifts
+manufacturing.operations, Manufacturing Operations
+manufacturing.mboms, Manufacturing MBOMs
+manufacturing.production-orders, Manufacturing Production Orders
+maintenance-repairs.menu, Maintenance and Repairs Menu
+maintenance-repairs.assets, Maintenance and Repairs Assets
+maintenance-repairs.meters, Maintenance and Repairs Meters
+maintenance-repairs.spare-parts, Maintenance and Repairs Spare Parts
+maintenance-repairs.maintenance-plans, Maintenance and Repairs Maintenance Plans
+maintenance-repairs.work-requests, Maintenance and Repairs Work Requests
+maintenance-repairs.work-orders, Maintenance and Repairs Work Orders
+sourcing.menu, Sourcing Menu
+sourcing.manufacturers, Sourcing Manufacturers
+sourcing.manufacturers-parts, Sourcing Manufacturers Parts
+sourcing.suppliers, Sourcing Suppliers
+compliance.menu, Compliance Menu
+compliance.substances, Compliance Substances
+compliance.specifications, Compliance Specifications
+compliance.declarations, Compliance Declarations
+workflows.menu, Workflows Menu
+workflows.templates, Workflows Templates
+workflows.instances, Workflows Instances
+customers.menu, Customers Menu
+import-export.menu, Import and Export Menu
+import-export.import, Import and Export Import
+import-export.import-bom, Import and Export Import BOM Items
+import-export.export, Import and Export Export
+classification.menu, Classification Menu
+classification.itemType, Classification ItemType
+classification.customType, Classification CustomType
+classification.changeType, Classification ChangeType
+classification.qualityType, Classification QualityType
+classification.project-managementType, Classification ProjectManagementType
+classification.manufacturingType, Classification ManufacturingType
+classification.maintenance-repair, Classification Maintenance and Repair
+classification.sourcing, Classification Sourcing
+classification.compliance, Classification Compliance
+classification.workflow, Classification Workflow
+admin.menu, Admin Menu
+settings.menu, Settings Menu
+settings.number-sources, Settings Number sources
+settings.lifecycles, Settings Lifecycles
+settings.lovs, Settings List of Values
+settings.custom-attrs, Settings Custom Attributes
+settings.relationships, Settings Relationships
+settings.preferences, Settings Preferences
+settings.email-temp, Settings Email Templates
+settings.qties-measurement, Settings Qtys of Measurement
+settings.git-hub, Settings GitHub
+settings.profiles, Settings Profiles
+settings.plugins, Settings Plugins
+sharing.menu, Sharing Menu
+folders.menu, Folders Menu

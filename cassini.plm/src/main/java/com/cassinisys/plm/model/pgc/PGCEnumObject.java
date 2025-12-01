@@ -1,0 +1,18 @@
+package com.cassinisys.plm.model.pgc;
+
+/**
+ * Created by CassiniSystems on 24-11-2020.
+ */
+public enum PGCEnumObject {
+    PGCOBJECTTYPE,
+    PGCOBJECT,
+    PGCSUBSTANCETYPE,
+    PGCSUBSTANCEGROUPTYPE,
+    PGCDECLARATIONTYPE,
+    PGCSPECIFICATIONTYPE,
+    PGCMATERIAL,
+    PGCSUBSTANCE,
+    PGCSUBSTANCEGROUP,
+    PGCSPECIFICATION,
+    PGCDECLARATION
+}

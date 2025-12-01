@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites disabled="0" errors="0" failures="2" tests="3" time="102.272">
+ <testsuite name="Url Testing" timestamp="2021-04-22T10:39:39" hostname="localhost" time="15.423" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Url Testing" name="Url validation" time="15.414" />
+ </testsuite>
+ <testsuite name="Login Testing" timestamp="2021-04-22T10:39:55" hostname="localhost" time="19.354" errors="0" tests="1" skipped="0" disabled="0" failures="1">
+  <testcase classname="Login Testing" name="Valid login credentials" time="19.348">
+   <failure type="toEqual" message="Expected &apos;http://localhost:8085/#/app/changes/eco/all&apos; to equal &apos;http://localhost:8085/#/app/home&apos;."><![CDATA[Error: Failed expectation
+    at loginPage.verifyUrl (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\pages\loginPage.js:30:41)
+    at UserContext.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\loginTests.js:54:19)
+    at c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2974:25]]>
+   </failure>
+  </testcase>
+ </testsuite>
+ <testsuite name="Eco Testing" timestamp="2021-04-22T10:40:14" hostname="localhost" time="67.495" errors="0" tests="1" skipped="0" disabled="0" failures="1">
+  <testcase classname="Eco Testing" name="New Button Click" time="67.489">
+   <failure type="exception" message="Failed: Cannot read property &apos;bind&apos; of undefined"><![CDATA[TypeError: Cannot read property 'bind' of undefined
+    at ProtractorExpectedConditions.presenceOf (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\expectedConditions.js:341:40)
+    at F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\ecoTests.js:96:25
+    at ManagedPromise.invokeCallback_ (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+From: Task: Run it("New Button Click") in control flow
+    at UserContext.<anonymous> (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
+    at attempt (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+    at c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
+    at c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
+    at c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:64:48
+    at ControlFlow.emit (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\events.js:62:21)
+    at ControlFlow.shutdown_ (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2674:10)
+    at c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2599:53
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\ecoTests.js:44:5)
+    at addSpecsToSuite (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (c:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (F:\MyHome\Dev\github\cassinisys.apps\cassini.plm\src\main\webapp\appTests\tests\ecoTests.js:13:1)
+    at Module._compile (internal/modules/cjs/loader.js:1137:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)
+    at Module.load (internal/modules/cjs/loader.js:985:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:878:14)]]>
+   </failure>
+  </testcase>
+ </testsuite>
+</testsuites>

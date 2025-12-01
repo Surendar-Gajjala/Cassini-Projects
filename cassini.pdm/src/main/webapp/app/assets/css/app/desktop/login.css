@@ -1,0 +1,73 @@
+html, body {
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover; /* Mozilla*/
+    -o-background-size: cover; /* Opera*/
+    background-size: cover; /* Generic*/
+}
+
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
+.login-logo {
+    background: url(../../../images/logo.png) no-repeat center center;
+    width: 100%;
+    height: 60px;
+}
+
+.error {
+    color: red;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
+
+.signin-wrapper {
+    position: relative;
+    margin: 120px auto 5px;
+    padding: 20px;
+    width: 450px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.signin-wrapper .signin-brand {
+    margin: 20px 0 30px;
+    text-align: center;
+    font-size: 34px
+}
+
+.signin-alt {
+    margin-bottom: 20px
+}
+
+.signin-cr {
+    margin: 0 0 20px;
+    text-align: center;
+    color: #ecf0f1
+}
+
+@media (max-width: 480px) {
+    .signin-wrapper {
+        width: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 80px;
+        padding: 10px;
+    }
+}

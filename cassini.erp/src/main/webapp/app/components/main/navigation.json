@@ -1,0 +1,247 @@
+[
+  {
+    "id": "crm",
+    "text": "CRM",
+    "icon": "fa-bank",
+    "state": null,
+    "active": false,
+    "children": [
+      {
+        "id": "crm.dashboard",
+        "text": "Dashboard",
+        "icon": "fa-tachometer nav-icon-font",
+        "state": "app.crm.dashboard",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "crm.customers",
+        "text": "Manage Customers",
+        "icon": "flaticon-office nav-icon-font",
+        "state": "app.crm.customers",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "crm.orders",
+        "text": "Manage Orders",
+        "icon": "flaticon-chart44 nav-icon-font",
+        "state": "app.crm.orders.all",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "crm.returns",
+        "text": "Manage Returns",
+        "icon": "flaticon-refresh2 nav-icon-font",
+        "state": "app.crm.returns.all",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "crm.consignments",
+        "text": "Manage Shipping",
+        "icon": "fa-truck nav-icon-font",
+        "state": "app.crm.shipping",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "crm.salesreps",
+        "text": "Manage Sales Reps",
+        "icon": "flaticon-businessman277 nav-icon-font",
+        "state": "app.crm.salesreps",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "crm.salesregions",
+        "text": "Manage Sales Regions",
+        "icon": "flaticon-global42 nav-icon-font",
+        "state": "app.crm.salesregions",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "crm.settings",
+        "text": "Settings",
+        "icon": "fa-wrench nav-icon-font",
+        "state": "app.crm.settings.basic",
+        "active": false,
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "production",
+    "text": "Production",
+    "icon": "fa-gears",
+    "state": null,
+    "active": false,
+    "children": [
+      {
+        "id": "production.dashboard",
+        "text": "Dashboard",
+        "icon": "fa-tachometer nav-icon-font",
+        "state": "app.prod.dashboard",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "production.products",
+        "text": "Manage Products",
+        "icon": "flaticon-debit-card nav-icon-font",
+        "state": "app.prod.products",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "production.material",
+        "text": "Manage Materials",
+        "icon": "flaticon-plan2 nav-icon-font",
+        "state": "app.prod.materials",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "production.materialspo",
+        "text": "Manage Material PO",
+        "icon": "flaticon-plan2 nav-icon-font",
+        "state": "app.prod.materialspo",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "production.supplier",
+        "text": "Manage Suppliers",
+        "icon": "flaticon-plan2 nav-icon-font",
+        "state": "app.prod.suppliers",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "production.production",
+        "text": "Manage Production",
+        "icon": "flaticon-office42 nav-icon-font",
+        "state": "app.prod.production",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "production.settings",
+        "text": "Settings",
+        "icon": "fa-wrench nav-icon-font",
+        "state": "app.prod.settings",
+        "active": false,
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "store",
+    "text": "Inventory",
+    "icon": "fa-shopping-cart",
+    "state": null,
+    "active": false,
+    "children": [
+      {
+        "id": "store.inventory",
+        "text": "Manage Inventory",
+        "icon": "flaticon-done2 nav-icon-font",
+        "state": "app.store.inventory",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "store.issue",
+        "text": "Issue Report",
+        "icon": "fa-shopping-cart",
+        "state": "app.store.issue",
+        "active": false,
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "hrm",
+    "text": "HRM",
+    "icon": "fa-users",
+    "state": null,
+    "active": false,
+    "children": [
+      {
+        "id": "hrm.dashboard",
+        "text": "Dashboard",
+        "icon": "fa-tachometer nav-icon-font",
+        "state": "app.hrm.dashboard",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "hrm.employees",
+        "text": "Manage Employees",
+        "icon": "flaticon-businessman276 nav-icon-font",
+        "state": "app.hrm.employees",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "hrm.payroll",
+        "text": "Manage Payroll",
+        "icon": "flaticon-finance-and-business4 nav-icon-font",
+        "state": "app.hrm.payroll",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "hrm.attendance",
+        "text": "Manage Attendance",
+        "icon": "fa-building nav-icon-font",
+        "state": "app.hrm.attendance.import",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "hrm.settings",
+        "text": "Settings",
+        "icon": "fa-wrench nav-icon-font",
+        "state": "app.hrm.settings",
+        "active": false,
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "admin",
+    "text": "Admin",
+    "icon": "fa-database",
+    "active": false,
+    "state": null,
+    "children": [
+      {
+        "id": "admin.dashboard",
+        "text": "Dashboard",
+        "icon": "fa-tachometer nav-icon-font",
+        "state": "app.admin.dashboard",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "admin.security",
+        "text": "Manage Security",
+        "icon": "flaticon-searching1 nav-icon-font",
+        "state": "app.admin.security.logins",
+        "active": false,
+        "children": []
+      },
+      {
+        "id": "admin.settings",
+        "text": "Settings",
+        "icon": "fa-wrench nav-icon-font",
+        "state": "app.admin.settings",
+        "active": false,
+        "children": []
+      }
+    ]
+  }
+]

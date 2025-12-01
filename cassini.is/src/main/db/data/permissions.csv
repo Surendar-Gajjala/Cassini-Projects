@@ -1,0 +1,235 @@
+permission.all,All Permissions,All Permissions
+permission.admin.all,All Admin,All Admin
+permission.admin.view,View Admin,View Admin
+permission.admin.user,Add/Edit User,Add/Edit User
+permission.admin.group,Add/Edit Group,Add/Edit Group
+permission.admin.permissions,Add/Edit permissions,Add/Edit permissions
+permission.dashboard.all,All Dashboard,All Dashboard
+permission.dashboard.create,Create Dashboard,Create Dashboard
+permission.dashboard.lockProject,Lock Project,Lock Project
+permission.dashboard.unLockProject,UnLock Project,UnLock Project
+permission.dashboard.newPortfolio,New Portfolio,New Portfolio
+permission.dashboard.newProject,New Project,New Project
+permission.dashboard.addAttributes,Add Attributes,Add Attributes
+permission.procurement.all,All Procurement,All Procurement
+permission.procurement.view,View Procurement,View Procurement
+permission.procurement.create,Create Procurement,Create Procurement
+permission.masterdata.all,All MasterData,All MasterData
+permission.masterdata.view,View MasterData,View MasterData
+permission.masterdata.classification,View Classification,View Classification
+permission.masterdata.editClassification,Edit Classification,Edit Classification
+permission.masterdata.addType,Add Type,Add Type
+permission.masterdata.deleteType,Delete Type,Delete Type
+permission.materials.view,View Materials,View Materials
+permission.machines.view,View Machines,View Machines
+permission.manpower.view,View Manpower,View Manpower
+permission.materials.newMaterial,New Material,New Material
+permission.materials.edit,Edit Material,Edit Material
+permission.materials.delete,Delete Material,Delete Material
+permission.materials.addAttributes,Add Attributes,Add Attributes
+permission.machines.newMachine,New Machine,New Machine
+permission.machines.edit,Edit Machine,Edit Machine
+permission.machines.delete,Delete Machine,Delete Machine
+permission.manpower.newManpower,New Manpower,New Manpower
+permission.manpower.edit,Edit Manpower,Edit Manpower
+permission.manpower.delete,Delete Manpower,Delete Manpower
+permission.topDocuments.all,All Documents,All Documents
+permission.topDocuments.view,View Documents,View Documents
+permission.topDocuments.addFolder,Add Folder,Add Folder
+permission.topDocuments.deleteFolder,Delete Folder,Delete Folder
+permission.files.addFolder,Add Folder,Add Folder
+permission.files.deleteFolder,Delete Folder,Delete Folder
+permission.topDocuments.addDocuments,Add Documents,Add Documents
+permission.topDocuments.addPermissions,Add Permissions,Add Permissions
+permission.topStores.all,All Stores,All Stores
+permission.topStores.view,View Stores,View Stores
+permission.topStores.new,New Store,New Store
+permission.topStores.edit,Edit Stores,Edit Stores
+permission.topStores.deleteStore,Delete Store,Delete Store
+permission.receives.all,All Receives,All Receives
+permission.receives.viewReceive,View Receives,View Receives
+permission.receives.receive,Add Receive,Add Receive
+permission.receives.editReceive,Edit Receive,Edit Receive
+permission.receives.viewReceiveItems,View Stock Receive Items,View Stock Receive Items
+permission.stockIssues.all,All Issues,All Issues
+permission.stockIssues.viewIssue,View Issues,View Issues
+permission.stockIssues.issue,Add Issue,Add Issue
+permission.stockIssues.viewIssueItems,View Stock Issue Items,View Stock Issue Items
+permission.stockIssues.edit,Edit Issue,Edit Issue
+permission.storeInventory.addItemsToProject,Allocate Items to Project,Allocate Items to Project
+permission.storeInventory.inventory,View Store Inventory,View Store Inventory
+permission.loanIssued.all,All Loan Issued,All Loan Issued
+permission.loanIssued.loan,View Loan Issued,View Loan Issued
+permission.loanIssued.addLoan,Add Loan,Add Loan
+permission.loanIssued.issueLoanItems,Issue Loan Items,Issue Loan Items
+permission.loanIssued.viewLoanIssueItems,View Loan Issued Items,View Loan Issued Items
+permission.loanIssued.edit,Edit Loan Attributes,Edit Loan Attributes
+permission.loanReceived.all,All Loan Receives,All Loan Receives
+permission.loanReceived.returnLoanItems,Return Loan Items,Return Loan Items
+permission.loanReceived.viewLoanReceive,View Loan Receive,View Loan Receive
+permission.loanReceived.viewReceiveLoanItems,View Receive Loan Items,View Receive Loan Items
+permission.loanReceived.edit,Edit Loan Attributes,Edit Loan Attributes
+permission.requisitions.all,All Requests,All Requests
+permission.requisitions.newRequest,New Request,New Request
+permission.requisitions.viewRequestItems,View Request Items,View Request Items
+permission.requisitions.addRequestItems,Add Items to Request,Add Items to Request
+permission.requisitions.approveRequest,Approve Request,Approve Request
+permission.requisitions.editRequest,Edit Request,Edit Request
+permission.topStores.scrapRequest,View Scrap Requests,View Scrap Requests
+permission.topStores.addScrapRequest,Add Scrap Request,Add Scrap Request
+permission.topStores.viewScrapRequestItems,View Scrap Items,View Scrap Items
+permission.topStores.editScrapRequest,Edit Scrap Request,Edit Scrap Request
+permission.indents.all,All Indents,All Indents
+permission.indents.newIndent,New Indent,New Indent
+permission.indents.viewIndents,View Indents,View Indents
+permission.indents.viewIndentItems,View Indent Items,View Indent Items
+permission.indents.addIndentItems,Add Items to Indent,Add Items to Indent
+permission.indents.removeIndentItems,Remove Items From Indent,Remove Items From Indent
+permission.indents.editIndent,Edit Indent Items,Edit Indent Items
+permission.indents.approveIndent,Approve Indent,Approve Indent
+permission.indents.editIndentItems,Edit Indent Items,Edit Indent Items
+permission.purchaseOrders.all,All Purchase Orders,All Purchase Orders
+permission.purchaseOrders.newPurchaseOrder,New Purchase Order,New Purchase Order
+permission.purchaseOrders.editPurchaseOrder,Edit Purchase Order,Edit Purchase Order
+permission.purchaseOrders.viewPurchaseOrder,View Purchase Orders,View Purchase Orders
+permission.purchaseOrders.viewPurchaseOrderItems,View Purchase Order Items,View Purchase Order Items
+permission.purchaseOrders.addPurchaseOrderItems,Add Items to Purchase Order,Add Items to Purchase Order
+permission.purchaseOrders.removePurchaseOrderItems,Remove Items to Purchase Order,Remove Items to Purchase Order
+permission.purchaseOrders.editPurchaseOrderItem,Edit Purchase Order Item,Edit Purchase Order Item
+permission.purchaseOrders.approvePurchaseOrder,Approve Purchase Order,Approve Purchase Order
+permission.roadChallans.all,All Road Challans,All Road Challans
+permission.roadChallans.createRoadChalan,Create Road Challan,Create Road Challan
+permission.roadChallans.viewRoadChalan,View Road Challans,View Road Challans
+permission.roadChallans.addRoadChalanItems,Add Items to Road Challan,Add Items to Road Challan
+permission.roadChallans.edit,Edit Road Challan Attributes,Edit Road Challan Attributes
+permission.roadChallans.viewRoadChalanItems,View Items in Road Challan,View Items in Road Challan
+permission.home.all,All Home,All Home
+permission.home.view,View Home,View Home
+permission.home.create,Create Home,Create Home
+permission.home.editBasic,Edit Basic,Edit Basic
+permission.home.Tasks,Tasks,Tasks
+permission.team.all,All Team,All Team
+permission.team.view,View Team,View Team
+permission.team.create,Create Team,Create Team
+permission.team.deleteRole,Delete Role,Delete Role
+permission.team.editRole,Edit Role,Edit Role
+permission.team.addPerson,Add Person,Add Person
+permission.team.editTeam,Edit Team,Edit Team
+permission.team.roles,Roles,Roles
+permission.team.newRole,New Role,New Role
+permission.wbs.all,All Wbs,All Wbs
+permission.wbs.view,View Wbs,View Wbs
+permission.wbs.create,Create Wbs,Create Wbs
+permission.wbs.edit,Edit Wbs,Edit Wbs
+permission.bom.all,All Boq,All Boq
+permission.bom.view,View Boq,View Boq
+permission.bom.create,Create Boq,Create Boq
+permission.bom.edit,Edit Boq,Edit Boq
+permission.bom.import,Import Boq,Import Boq
+permission.bom.export,Export Boq,Export Boq
+permission.tasks.all,All Task,All Task
+permission.tasks.view,View Task,View Task
+permission.tasks.create,Create Task,Create Task
+permission.tasks.edit,Edit Task,Edit Task
+permission.tasks.delete,Delete Task,Delete Task
+permission.tasks.add,Add Tasks,Add Tasks
+permission.tasks.uploadMedia,Upload Media,Upload Media
+permission.tasks.addProblem,Add Problem,Add Problem
+permission.tasks.inspect,Inspect Task,Inspect Task
+permission.files.all,All Files,All Files
+permission.files.view,View Files,View Files
+permission.files.create,Create Files,Create Files
+permission.files.download,Download Files,Download Files
+permission.files.delete,Delete Files,Delete Files
+permission.files.addDocuments,Add Files,Add Files
+permission.files.addPermissions,Add Permissions,Add Permissions
+permission.issues.all,All Problems,All Problems
+permission.issues.view,View Problems,View Problems
+permission.issues.create,Create Problem,Create Problem
+permission.issues.edit,Edit Problem,Edit Problem
+permission.issues.delete,Delete Problem,Delete Problem
+permission.issues.add,Add Problem,Add Problem
+permission.issues.assign,Assign Task To Problem,Assign Task To Problem
+permission.issues.uploadMedia,Upload Media,Upload Media
+permission.inventory.all,View Inventory,View Inventory
+permission.sites.all,All Sites,All Sites
+permission.sites.view,View Sites,View Sites
+permission.sites.create,Create Sites,Create Sites
+permission.sites.new,New Site,New Site
+permission.sites.edit,Edit Site,Edit Site
+permission.sites.basic,Basic,Basic
+permission.sites.tasks,Tasks,Tasks
+permission.sites.delete,Delete Site,Delete Site
+permission.sites.resources,Resources,Resources
+permission.reporting.all,All Reporting,All Reporting
+permission.reporting.view,View Reporting,View Reporting
+permission.reporting.create,Create Reporting,Create Reporting
+permission.communication.all,All Communication,All Communication
+permission.communication.viewEmail,View Emails,View Emails
+permission.communication.viewMessages,View Messaging,View Messaging
+permission.communication.newGroup,Create Group,Create Group
+permission.communication.editGroup,Edit Group,Edit Group
+permission.communication.writeMessage,Write Message,Write Message
+permission.meetings.all,All Meetings,All Meetings
+permission.meetings.view,View Meetings,View Meetings
+permission.meetings.create,Create Meetings,Create Meetings
+permission.meetings.new,New Meeting,New Meeting
+permission.meetings.save,Save Meeting,Save Meeting
+permission.meetings.edit,Edit Meeting,Edit Meeting
+permission.meetings.delete,Delete Meeting,Delete Meeting
+permission.tasks.addManpower,Add Manpower,Add Manpower
+permission.materials.all,All Materials,All Materials
+permission.tasks.addMaterial,Add Material,Add Material
+permission.tasks.addMachine,Add Machine,Add Machine
+permission.machines.all,All Machines,All Machines
+permission.manpower.all,All Manpower,All Manpower
+permission.tasks.addFiles,Add Files,Add Files
+permission.tasks.deleteItem,Delete Items,Delete Items
+permission.wbs.delete,Delete Wbs,Delete Wbs
+permission.settings.all,All Settings,All Settings
+permission.settings.view,View Settings,View Settings
+permission.settings.autoNumbers,View AutoNumbers,View AutoNumbers
+permission.settings.addAutoNumbers,Add AutoNumbers,Add AutoNumbers
+permission.settings.editAutoNumbers,Edit AutoNumbers,Edit AutoNumbers
+permission.settings.deleteAutoNumbers,Delete AutoNumbers,Delete AutoNumbers
+permission.settings.lovs,View List of Values,View List of Values
+permission.settings.addLovs,Add List of Values,Add List of Values
+permission.settings.editLovs,Edit List of Values,Edit List of Values
+permission.settings.deleteLovs,Delete List of Values,Delete List of Values
+permission.settings.customProperties,View CustomProperties,View CustomProperties
+permission.settings.addCustomProperties,Add CustomProperties,Add CustomProperties
+permission.settings.editCustomProperties,Edit CustomProperties,Edit CustomProperties
+permission.settings.deleteCustomProperties,Delete CustomProperties,Delete CustomProperties
+permission.suppliers.all,All Suppliers,All Suppliers
+permission.suppliers.view,View Suppliers,View Suppliers
+permission.suppliers.new,New Supplier,New Supplier
+permission.suppliers.edit,Edit Suppliers,Edit Suppliers
+permission.media.all,All Media,All Media
+permission.media.view,View Media,View Media
+permission.media.upload,Upload Media,Upload Media
+permission.stockReturn.all,All Stock Returns,All Stock Returns
+permission.stockReturn.view,View Stock Returns,View Stock Returns
+permission.stockReturn.create,Create New Stock Return,Create New Stock Return
+permission.stockReturn.edit,Edit Stock Return,Edit Stock Return
+permission.stockReturn.approve,Approve Stock Return,Approve Stock Return
+permission.contractors.all, All Contractors, All Contractors
+permission.contractors.view, View Contractors, View Contractors
+permission.contractors.new, Create Contractor, Create Contractor
+permission.contractors.editBasic, Edit Details, Edit Details
+permission.contractors.delete, Delete Contractor, Delete Contractor
+permission.workOrders.all, All Work Orders, All Work Orders
+permission.workOrders.view, View Work Orders, View Work Orders
+permission.workOrders.new, Create Work Order, Create Work Order
+permission.workOrders.editBasic, Edit Details, Edit Details
+permission.workOrders.delete, Delete Work Order, Delete Work Order
+permission.workOrders.items, View Work Order Items,View Work Order Items
+permission.workflow.all,All Workflow,All Workflow
+permission.workflow.view,View Workflow,View Workflow
+permission.workflow.new,Create Workflow,Create Workflow
+permission.workflow.edit,Edit Workflow,Edit Workflow
+permission.projectMaterialReport,ProjectMaterialReport,ProjectMaterialReport
+permission.workStatusReport,WorkStatusReport,WorkStatusReport
+permission.storePositionReport,StorePositionReport,StorePositionReport
+permission.monthlyStockReport,MonthlyStockReport,MonthlyStockReport
+permission.stockReceiveReport,StockReceiveReport,StockReceiveReport
+permission.stockIssueReport,StockIssueReport,StockIssueReport

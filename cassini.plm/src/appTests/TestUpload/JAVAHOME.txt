@@ -1,0 +1,94 @@
+ejr3xym
+git  username:s alman-madala
+git  password: Cassini@123
+
+email:salman.madala@cassinisys.com
+
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0_80
+set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_231
+
+
+when struck happpend : git reset --hard origin
+
+
+commands for to do :
+
+1)F:\Dev\WorkSpace\cassinisys.apps\cassini.is>mvn clean generate-sources install -DskipTests
+
+2)F:\Dev\WorkSpace\cassinisys.apps\cassini.is>mvn generate-sources install -DskipTests
+
+3)F:\Dev\WorkSpace\cassinisys.apps\cassini.is\src\main\webapp>cd src/main/db
+
+4)F:\Dev\WorkSpace\cassinisys.apps\cassini.is\src\main\db>groovy generateSchema.groovy psql localhost cassini_plm
+
+5)F:\Dev\WorkSpace\cassinisys.apps\cassini.is\src\main\webapp>set JAVA_HOME=C:\Program Files\Java\jdk1.7.0_80
+
+6)F:\Dev\WorkSpace\cassinisys.apps\cassini.is\src\main\webapp>groovy -cp ./lib/* generateSchema.groovy psql localhost cassini_plm
+
+7)F:\Dev\WorkSpace\cassinisys.apps\cassini.is\src\main\webapp>bower install
+
+8)F:\Dev\WorkSpace\cassinisys.apps\cassini.is\src\main\webapp>bower update
+
+9)F:\Dev\WorkSpace\cassinisys.apps\cassini.is\src\main\webapp>bower uninstall cassini-platform
+
+10)F:\Dev\WorkSpace\cassinisys.apps\cassini.is\src\main\webapp>bower update cassini-platform
+
+Testing:
+11)cd src/main/webapp/appTests/config       protractor conf.js
+
+
+https://www.udemy.com/course/build-an-angular-and-spring-mvc-web-application/learn/lecture/11960362#questions
+
+
+when we changes the file pathe after commit  we will do this commands
+
+git status
+git add .
+git status
+git commit -m "changes in tool type"
+git branch
+git branch -vv
+git push
+
+
+
+twilio recovery code: 1HP9T-ns14CNHhGavUdLDPhtn5w1EJ8WAXCKQLW_
+
+
+Lakshmi Epi: OQH257779757  = ABI2247518
+Gopi:             OWP010821728
+samba:           OIR176938583 = ABI2247476
+
+
+anilkumar : tey9md7u
+ashok : btetkeky
+suresh : 4nwrwmz7
+manipal : pz1ukm8j
+pavan : cvz86t3g
+subramanyam : qrf16ar9
+surendra : th4g0ogv
+phani : sprwx8eq
+kondal : q32znz9v
+venkatesh : 7ch09n6h
+visesh : p00mxdif
+vijay : bgxh5jy0
+prasad : 40g2tp05
+salman : xiojhsmf
+kiran : 925jz5f7
+gopi : kf1un42x
+
+
+6301731458
+08632325548
+
+venkateswara manasika vadyasala
+
+yalamanchili sanjay M.D
+
+
+java 13
+db12
+spring boot latest
+
+
+

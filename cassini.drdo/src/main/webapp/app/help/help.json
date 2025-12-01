@@ -1,0 +1,699 @@
+{
+  "title": "Cassini.DRDO User Manual",
+  "toc": [
+    {
+      "label": "OVERVIEW",
+      "id": null,
+      "children": [
+        {
+          "label": "OVERVIEW",
+          "id": "1",
+          "file": "OVERVIEW/OVERVIEW.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "LOGIN",
+      "id": null,
+      "children": [
+        {
+          "label": "LOGIN",
+          "id": "2",
+          "file": "LOGIN/LOGIN.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "HOME",
+      "id": null,
+      "children": [
+        {
+          "label": "HOME",
+          "id": "3",
+          "file": "HOME/HOME.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "ADMIN",
+      "id": null,
+      "children": [
+        {
+          "label": "OVERVIEW",
+          "id": "4",
+          "file": "ADMIN/OVERVIEW.htm",
+          "children": []
+        },
+        {
+          "label": "USERS",
+          "id": "5",
+          "file": "ADMIN/USERS.htm",
+          "children": []
+        },
+        {
+          "label": "GROUPS",
+          "id": "6",
+          "file": "ADMIN/GROUPS.htm",
+          "children": []
+        },
+        {
+          "label": "PERMISSIONS",
+          "id": "7",
+          "file": "ADMIN/PERMISSIONS.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "CLASSIFICATION",
+      "id": null,
+      "children": [
+        {
+          "label": "PART TYPE",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE PART TYPE",
+              "id": "8",
+              "file": "CLASSIFICATION/CREATE_PART_TYPE.htm",
+              "children": []
+            },
+            {
+              "label": "UPDATE PART TYPE",
+              "id": "9",
+              "file": "CLASSIFICATION/UPDATE_PART_TYPE.htm",
+              "children": []
+            },
+            {
+              "label": "DELETE PART TYPE",
+              "id": "10",
+              "file": "CLASSIFICATION/DELETE_PART_TYPE.htm",
+              "children": []
+            },
+            {
+              "label": "SEARCH PART TYPE",
+              "id": "11",
+              "file": "CLASSIFICATION/SEARCH_PART_TYPE.htm",
+              "children": []
+            },
+            {
+              "label": "ATTRIBUTES",
+              "id": "12",
+              "file": "CLASSIFICATION/CREATE_ATTRIBUTE.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "SYSTEM TYPE",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE SYSTEM TYPE",
+              "id": "13",
+              "file": "CLASSIFICATION/CREATE_SYSTEM_TYPE.htm",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "SETTINGS",
+      "id": null,
+      "children": [
+        {
+          "label": "AUTO NUMBERS",
+          "id": "14",
+          "file": "SETTINGS/AUTO_NUMBERS.htm",
+          "children": []
+        },
+        {
+          "label": "LIST OF VALUES",
+          "id": "15",
+          "file": "SETTINGS/LIST_OF_VALUES.htm",
+          "children": []
+        },
+        {
+          "label": "SYSTEM ATTRIBUTES",
+          "id": "16",
+          "file": "SETTINGS/SYSTEM_ATTRIBUTES.htm",
+          "children": []
+        },
+        {
+          "label": "BOM GROUP",
+          "id": "17",
+          "file": "SETTINGS/BOM_GROUP.htm",
+          "children": []
+        },
+        {
+          "label": "PART TRACKING",
+          "id": "18",
+          "file": "SETTINGS/PART_TRACKING.htm",
+          "children": []
+        },
+        {
+          "label": "FAILURE LIST",
+          "id": "19",
+          "file": "SETTINGS/FAILURE_LIST.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "ITEMS",
+      "id": null,
+      "children": [
+        {
+          "label": "ITEMS",
+          "id": "20",
+          "file": "ITEMS/ITEMS.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "BOM",
+      "id": null,
+      "children": [
+        {
+          "label": "OVERVIEW",
+          "id": "21",
+          "file": "BOM/OVERVIEW.htm",
+          "children": []
+        },
+        {
+          "label": "CREATE BOM",
+          "id": "22",
+          "file": "BOM/CREATE_BOM.htm",
+          "children": []
+        },
+        {
+          "label": "UPDATE BOM",
+          "id": "23",
+          "file": "BOM/UPDATE_BOM.htm",
+          "children": []
+        },
+        {
+          "label": "REMOVE BOM PART",
+          "id": "24",
+          "file": "BOM/REMOVE_BOM_PART.htm",
+          "children": []
+        },
+        {
+          "label": "PART DETAILS VIEW",
+          "id": "25",
+          "file": "BOM/BOM_PART_DETAILS_VIEW.htm",
+          "children": []
+        },
+        {
+          "label": "PRINT BOM",
+          "id": "26",
+          "file": "BOM/PRINT_BOM.htm",
+          "children": []
+        },
+        {
+          "label": "SEARCH BOM",
+          "id": "27",
+          "file": "BOM/SEARCH_BOM.htm",
+          "children": []
+        },
+        {
+          "label": "CREATE MBOM",
+          "id": "28",
+          "file": "BOM/CREATE_MBOM.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "STORAGE",
+      "id": null,
+      "children": [
+        {
+          "label": "CREATE STORAGE",
+          "id": "29",
+          "file": "STORAGE/CREATE_STORAGE.htm",
+          "children": []
+        },
+        {
+          "label": "ADD PART TO STORAGE",
+          "id": "30",
+          "file": "STORAGE/ADDING_PARTS_TO_STORAGE_LOCATION.htm",
+          "children": []
+        },
+        {
+          "label": "DELETE STORAGE",
+          "id": "31",
+          "file": "STORAGE/DELETE_STORAGE_TYPE.htm",
+          "children": []
+        },
+        {
+          "label": "PARTS AVAILABLE IN STORAGE LOCATION",
+          "id": "32",
+          "file": "STORAGE/VIEW_THE_LIST_OF_PARTS_AVAILABLE_IN_STORAGE_LOCATION.htm",
+          "children": []
+        },
+        {
+          "label": "SEARCH STORAGE",
+          "id": "33",
+          "file": "STORAGE/STORAGE_SEARCH.htm",
+          "children": []
+        },
+        {
+          "label": "EXPAND/COLLAPSE",
+          "id": "34",
+          "file": "STORAGE/EXPAND_OR_COLLAPSE_STORAGE_TREE_DATA.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "PROCUREMENT",
+      "id": null,
+      "children": [
+        {
+          "label": "SUPPLIERS",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE SUPPLIER",
+              "id": "35",
+              "file": "PROCUREMENT/SUPPLIERS/SUPPLIERS.htm",
+              "children": []
+            },
+            {
+              "label": "UPDATE SUPPLIER",
+              "id": "36",
+              "file": "PROCUREMENT/SUPPLIERS/UPDATE_SUPPLIER.htm",
+              "children": []
+            },
+            {
+              "label": "SEARCH SUPPLIER",
+              "id": "37",
+              "file": "PROCUREMENT/SUPPLIERS/SEARCH_SUPPLIER.htm",
+              "children": []
+            },
+            {
+              "label": "DELETE SUPPLIER",
+              "id": "38",
+              "file": "PROCUREMENT/SUPPLIERS/DELETE_SUPPLIER.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "MANUFACTURERS",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE MANUFACTURER",
+              "id": "39",
+              "file": "PROCUREMENT/MANUFACTURERS/CREATE_MANUFACTURER.htm",
+              "children": []
+            },
+            {
+              "label": "UPDATE MANUFACTURER",
+              "id": "40",
+              "file": "PROCUREMENT/MANUFACTURERS/UPDATE_MFR.htm",
+              "children": []
+            },
+            {
+              "label": "SEARCH MANUFACTURER",
+              "id": "41",
+              "file": "PROCUREMENT/MANUFACTURERS/SEARCH_MFR.htm",
+              "children": []
+            },
+            {
+              "label": "DELETE MANUFACTURER",
+              "id": "42",
+              "file": "PROCUREMENT/MANUFACTURERS/DELETE_MFR.htm",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "TRANSACTIONS",
+      "id": null,
+      "children": [
+        {
+          "label": "GATE PASSES",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE GATEPASS",
+              "id": "43",
+              "file": "TRANSACTIONS/GATEPASSES/GATEPASSES.htm",
+              "children": []
+            },
+            {
+              "label": "SEARCH GATEPASS",
+              "id": "44",
+              "file": "TRANSACTIONS/GATEPASSES/SEARCH_GATEPASS.htm",
+              "children": []
+            },
+            {
+              "label": "DELETE GATEPASS",
+              "id": "45",
+              "file": "TRANSACTIONS/GATEPASSES/DELETE_GATEPASS.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "INWARDS",
+          "id": null,
+          "children": [
+            {
+              "label": "OVERVIEW",
+              "id": "46",
+              "file": "TRANSACTIONS/INWARDS/INWARDS.htm",
+              "children": []
+            },
+            {
+              "label": "CREATE INWARD&STORE STATES",
+              "id": "47",
+              "file": "TRANSACTIONS/INWARDS/STORE_STATE.htm",
+              "children": []
+            },
+            {
+              "label": "SSQAG/INVENTORY/FINISH STATES",
+              "id": "48",
+              "file": "TRANSACTIONS/INWARDS/SSQAG_STATE.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "REQUESTS",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE REQUEST",
+              "id": "49",
+              "file": "TRANSACTIONS/REQUESTS/CREATE_REQUEST.htm",
+              "children": []
+            },
+            {
+              "label": "BDL MANAGER APPROVE/REJECT",
+              "id": "50",
+              "file": "TRANSACTIONS/REQUESTS/BDL_MANAGER_APPROVE.htm",
+              "children": []
+            },
+            {
+              "label": "CAS MANAGER APPROVE/REJECT",
+              "id": "51",
+              "file": "TRANSACTIONS/REQUESTS/CAS_MANAGER_APPROVAL.htm",
+              "children": []
+            },
+            {
+              "label": "SEARCH REQUEST",
+              "id": "52",
+              "file": "TRANSACTIONS/REQUESTS/SEARCH_REQUEST.htm",
+              "children": []
+            },
+            {
+              "label": "PRINT REQUEST",
+              "id": "53",
+              "file": "TRANSACTIONS/REQUESTS/REQUEST_PRINT.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "ISSUES",
+          "id": null,
+          "children": [
+            {
+              "label": "CREATE ISSUE",
+              "id": "54",
+              "file": "TRANSACTIONS/ISSUES/CREATE_ISSUE.htm",
+              "children": []
+            },
+            {
+              "label": "PRINT ISSUE",
+              "id": "55",
+              "file": "TRANSACTIONS/ISSUES/PRINT_ISSUE.htm",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "DISPATCHES",
+          "id": null,
+          "children": [
+            {
+              "label": "DISPATCH",
+              "id": "56",
+              "file": "TRANSACTIONS/DISPATCHES/CREATE_DISPATCH.htm",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "PLANNING",
+      "id": null,
+      "children": [
+        {
+          "label": "OVERVIEW",
+          "id": "57",
+          "file": "PLANNING/PLANNING.htm",
+          "children": []
+        },
+        {
+          "label": "ALLOCATION",
+          "id": "58",
+          "file": "PLANNING/QTY._ALLOCATE_ON_MISSILE.htm",
+          "children": []
+        },
+        {
+          "label": "RE-ALLOCATION",
+          "id": "59",
+          "file": "PLANNING/QTY._REALLOCATION.htm",
+          "children": []
+        },
+        {
+          "label": "RESET PLAN",
+          "id": "60",
+          "file": "PLANNING/RESET_PLAN.htm",
+          "children": []
+        },
+        {
+          "label": "AUTO PLAN",
+          "id": "61",
+          "file": "PLANNING/AUTOPLAN.htm",
+          "children": []
+        },
+        {
+          "label": "SHORTAGE REPORT",
+          "id": "62",
+          "file": "PLANNING/SHORTAGE_REPORT.htm",
+          "children": []
+        },
+        {
+          "label": "EXPORT",
+          "id": "63",
+          "file": "PLANNING/EXPORT.htm",
+          "children": []
+        },
+        {
+          "label": "SEARCH",
+          "id": "63",
+          "file": "PLANNING/SEARCH.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "INVENTORY",
+      "id": null,
+      "children": [
+        {
+          "label": "INVENTORY VIEW & INWARD REPORT",
+          "id": "64",
+          "file": "INVENTORY/INVENTORY.htm",
+          "children": []
+        },
+        {
+          "label": "REQUEST REPORT",
+          "id": "65",
+          "file": "INVENTORY/REQUEST_REPORT.htm",
+          "children": []
+        },
+        {
+          "label": "ISSUE REPORT",
+          "id": "66",
+          "file": "INVENTORY/ISSUE_REPORT.htm",
+          "children": []
+        },
+        {
+          "label": "BOM INVENTORY REPORT",
+          "id": "67",
+          "file": "INVENTORY/BOM_INVENTORY_REPORT.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "PART TRACKING PROCESS",
+      "id": null,
+      "children": [
+        {
+          "label": "PART TRACKING PROCESS",
+          "id": "68",
+          "file": "PART_TRACKING/PART_TRACKING.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "FAILURE REPORT PROCESS",
+      "id": null,
+      "children": [
+        {
+          "label": "FAILURE REPORT PROCESS",
+          "id": "69",
+          "file": "FAILURE_REPORT/FAILURE_REPORT.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "TARB DOCUMENT",
+      "id": null,
+      "children": [
+        {
+          "label": "TARB DOCUMENT MISSILE LEVEL",
+          "id": "64",
+          "file": "TARB_DOCUMENT/TARB_DOCUMENT_AT_MISSILE_LEVEL.htm",
+          "children": []
+        },
+        {
+          "label": "TARB DOCUMENT SECTION LEVEL",
+          "id": "65",
+          "file": "TARB_DOCUMENT/TARB_DOCUMENT_AT_SECTION_LEVEL.htm",
+          "children": []
+        }
+      ]
+    },
+
+    {
+      "label": "EXECUTIVE SUMMARY",
+      "id": null,
+      "children": [
+        {
+          "label": "OVERVIEW",
+          "id": "70",
+          "file": "EXECUTIVE_SUMMARY/OVERVIEW.htm",
+          "children": []
+        },
+        {
+          "label": "SECTION",
+          "id": "71",
+          "file": "EXECUTIVE_SUMMARY/SECTION.htm",
+          "children": []
+        },
+        {
+          "label": "MISSILES",
+          "id": "72",
+          "file": "EXECUTIVE_SUMMARY/MISSILES.htm",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "ADMINISTRATOR/PROFILE",
+      "id": null,
+      "children": [
+        {
+          "label": "OVERVIEW",
+          "id": "73",
+          "file": "ADMINISTRATOR/OVERVIEW.htm",
+          "children": []
+        },
+        {
+          "label": "MY PROFILE",
+          "id": "74",
+          "file": "ADMINISTRATOR/MYPROFILE.htm",
+          "children": []
+        },
+        {
+          "label": "FEEDBACK",
+          "id": "75",
+          "file": "ADMINISTRATOR/FEEDBACK.htm",
+          "children": []
+        },
+        {
+          "label": "HELP",
+          "id": "76",
+          "file": "ADMINISTRATOR/HELP.htm",
+          "children": []
+        },
+        {
+          "label": "LOGOUT",
+          "id": "77",
+          "file": "ADMINISTRATOR/LOGOUT.htm",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+@import url('../../bootstrap/dist/css/bootstrap.min.css');
+@import url('../../weather-icons/css/weather-icons.min.css');
+@import url('../../font-awesome/css/font-awesome.min.css');
+@import url('../../animate.css/animate.min.css');
+@import url('../../jquery-toggles/css/toggles.css');
+@import url('../../select2/dist/css/select2.min.css');
+@import url('../../roboto-fontface/css/roboto/roboto-fontface.css');
+@import url('../../jquery.easyui/themes/bootstrap/easyui.css');
+@import url('../../jquery.easyui/themes/icon.css');
+@import url('../../bootstrap-daterangepicker/daterangepicker.css');
+@import url('../../angular-xeditable/dist/css/xeditable.css');
+@import url('../../bootstrap3-wysihtml5/dist/bootstrap-wysihtml5-0.0.2.css');
+@import url('../../fullcalendar/dist/fullcalendar.css');
+
+
+@import url('icon-fonts/icon-fonts.css');
+
+@import url('../template/css/lato.css');
+@import url('../template/css/bootstrap-override.css');
+@import url('../template/css/jquery-ui-1.10.3.css');
+@import url('../template/css/animate.delay.css');
+@import url('../template/css/style.default.css');
+@import url('../template/css/style.katniss.css');
+@import url('../css/icon-fonts/icon-fonts.css');
+@import url('ubuntu.css');
+@import url('open-sans.css');

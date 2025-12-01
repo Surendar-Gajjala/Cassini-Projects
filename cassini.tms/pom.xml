@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>com.cassinisys</groupId>
+        <artifactId>cassini.root</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../cassini.root</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cassinisys</groupId>
+    <artifactId>cassini.tms</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>Cassini.TMS</name>
+    <url>http://www.cassinisys.com</url>
+    <dependencies>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.uadetector</groupId>
+            <artifactId>uadetector-resources</artifactId>
+            <version>2014.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cassinisys</groupId>
+            <artifactId>cassini.platform</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+    </dependencies>
+    <build>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jsondoc</groupId>
+                <artifactId>jsondoc-maven-plugin</artifactId>
+                <version>${jsondoc.version}</version>
+                <configuration>
+                    <version>1.0</version>
+                    <basePath>http://localhost:8080/api/</basePath>
+                    <packages>
+                        <package>com.cassinisys.tms.api</package>
+                    </packages>
+                    <outputFile>${user.home}/jsondoc</outputFile>
+                    <scanner>org.jsondoc.springmvc.scanner.Spring4JSONDocScanner</scanner>
+                    <playgroundEnabled>true</playgroundEnabled>
+                    <displayMethodAs>URI</displayMethodAs>
+                </configuration>
+            </plugin>
+
+        </plugins>
+        <finalName>cassini.tms</finalName>
+    </build>
+</project>

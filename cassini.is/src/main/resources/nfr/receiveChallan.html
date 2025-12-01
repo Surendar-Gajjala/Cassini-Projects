@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" type="text/css" href="http://localhost:8080/app/assets/css/desktop.imports.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+</head>
+<body>
+
+<style>
+    body {
+        background-color: white;
+        font-size: 17px;
+        font-family: 'Open Sans' !important;
+        font-weight: 300 !important;
+    }
+
+    .email-content {
+        background-color: #FFF;
+        padding: 30px;
+        height: auto;
+        width: 95%;
+        min-width: 30%;
+        margin-bottom: 20px;
+
+    }
+
+    .email-title {
+        color: #0390fd;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-size: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .titleContent {
+        display: inline-flex;
+        font-size: 16px;
+        width: 100%;
+        padding: 10px 0px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+</style>
+
+<div class="email-content">
+    <h3 style="text-align: center;">${title}</h3>
+    <#if (logo)??>
+        <div style="text-align: center;">
+            <img src="${logo}"/><br>
+        </div>
+    </#if>
+    <h4 style="text-align: center;">RECEIVE CHALLAN</h4>
+
+    <!--<div class="titleContent row" style="margin-bottom: 0;">-->
+        <!--<div style="width: 50%;">-->
+            <!--<span style="font-weight: 600;">Receive Challan Number :</span>${receive.receiveNumberSource}-->
+            <!--<#if (poNumber)??>-->
+                <!--<div style=" padding-right: 8px;">-->
+                    <!--<span style="font-weight: 600;">PO Number : </span>${poNumber}-->
+                <!--</div>-->
+            <!--</#if>-->
+            <!--<#if (supplier)??>-->
+                <!--<div style=" padding-right: 8px;">-->
+                    <!--<span style="font-weight: 600;">From whom received : </span> ${supplier}-->
+                <!--</div>-->
+            <!--</#if>-->
+        <!--</div>-->
+    <div class="titleContent" style="margin-top: 10px; margin-bottom: 10px;">
+        <div class="row" style="width: 100%">
+
+            <div class="row" style="width: 95%;text-align: right;">
+                <span style="font-weight: 600;">Store : </span>${storeName}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="titleContent"  style="margin-top: 10px !important; margin-bottom: 10px !important;">
+        <div class="row" style="width: 100%">
+
+            <div style="width: 60%;">
+                <span style="font-weight: 600;">Challan Number :</span> ${receive.receiveNumberSource}
+            </div>
+            <div style="width: 60%;">  <span style="font-weight: 600;">Date : </span> ${receive.createdDate}</div>
+            <!--<#if (supplier)??>-->
+            <!--<div style="width: 60%;">-->
+            <!--<span style="font-weight: 600;">From whom received : </span> ${supplier}-->
+            <!--</div>-->
+            <!--</#if>-->
+
+            <div>
+                <div style="width: 60%;">
+                    <#list objectAtrributes2 as attribute>
+                        <div class="col-sm-5">
+                            <#if (attribute.objectTypeAttribute.dataType == 'TEXT') && (attribute.objectAttribute.stringValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.stringValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'INTEGER') && (attribute.objectAttribute.integerValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.integerValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'DOUBLE') && (attribute.objectAttribute.doubleValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.doubleValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'DATE') && (attribute.objectAttribute.dateValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.dateValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'BOOLEAN') && (attribute.objectAttribute.name)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.booleanValue?string}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'LIST') && (attribute.objectAttribute.listValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.listValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'TIME') && (attribute.objectAttribute.timeValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.timeValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'TIMESTAMP') && (attribute.objectAttribute.timestampValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.timestampValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'CURRENCY') && (attribute.objectAttribute.currencyValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.currencyValue}</span>
+                                </tr>
+                            </#if>
+                        </div>
+                    </#list>
+                </div>
+                <div style="width: 50%;">
+                    <#list objectAtrributes1 as attribute>
+                        <div class="col-sm-5">
+                            <#if (attribute.objectTypeAttribute.dataType == 'TEXT') && (attribute.objectAttribute.stringValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.stringValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'INTEGER') && (attribute.objectAttribute.integerValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.integerValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'DOUBLE') && (attribute.objectAttribute.doubleValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.doubleValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'DATE') && (attribute.objectAttribute.dateValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.dateValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'BOOLEAN') && (attribute.objectAttribute.booleanValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.booleanValue?string}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'LIST') && (attribute.objectAttribute.listValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.listValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'TIME') && (attribute.objectAttribute.timeValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.timeValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'TIMESTAMP') && (attribute.objectAttribute.timestampValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.timestampValue}</span>
+                                </tr>
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'CURRENCY') && (attribute.objectAttribute.currencyValue)??>
+                                <tr>
+                                    <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span><span style = "font-size: 14px;"> ${attribute.objectAttribute.currencyValue}</span>
+                                </tr>
+                            </#if>
+                        </div>
+                    </#list>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+    <div style="text-align: left;margin-top: 10px;">
+        <table class="table table-striped" style="width: 100% !important;">
+            <thead>
+            <tr>
+                <th style="border-bottom: 1px solid black;text-align: left;">S/No</th>
+                <th style="min-width:100px; max-width: 150px !important; border-bottom: 1px solid black;text-align: left;">Name</th>
+                <th style="min-width:100px; max-width: 200px !important;border-bottom: 1px solid black;text-align: left;">Description</th>
+                <th style="border-bottom: 1px solid black; text-align: center;">Quantity</th>
+                <th style="border-bottom: 1px solid black; text-align: center;">Units</th>
+                <#list itemAttributesList as requiredAttribute>
+                    <th style="border-bottom: 1px solid black;">
+                        ${requiredAttribute.objectTypeAttribute.name}
+                    </th>
+                </#list>
+
+            </tr>
+            </thead>
+            <tbody>
+            <#list receiveItems as item>
+                <tr>
+                    <td style="padding: 5px 5px;font-size: 14px;text-align: left">${item.itemDTO.itemNumber}</td>
+
+                    <td style="min-width:100px; max-width: 150px !important;word-wrap: break-word; padding: 5px 5px;font-size: 14px;text-align: left;">${(item.itemDTO.itemName)!}</td>
+
+                    <td style="min-width:100px; max-width: 200px !important;word-wrap: break-word; padding: 5px 5px;font-size: 14px;text-align: left;">${(item.itemDTO.description)!}</td>
+
+                    <td style="padding: 5px 0px;text-align: center;font-size: 14px;">${item.quantity}</td>
+
+                    <td style="padding: 5px 5px;text-align: center;font-size: 14px;">${(item.itemDTO.units)!}</td>
+
+                    <#list item.itemAttributesList as attribute>
+                        <td style="font-size: 14px;">
+                            <#if (attribute.objectTypeAttribute.dataType == 'TEXT') && (attribute.objectAttribute.stringValue)??>
+                                ${attribute.objectAttribute.stringValue}
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'INTEGER') && (attribute.objectAttribute.integerValue)??>
+                                ${attribute.objectAttribute.integerValue}
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'DOUBLE') && (attribute.objectAttribute.doubleValue)??>
+                                ${attribute.objectAttribute.doubleValue}
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'DATE') && (attribute.objectAttribute.dateValue)??>
+                                ${attribute.objectAttribute.dateValue}
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'BOOLEAN') && (attribute.objectAttribute.booleanValue)??>
+                                ${attribute.objectAttribute.booleanValue?string}
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'LIST') && (attribute.objectAttribute.listValue)??>
+                                ${attribute.objectAttribute.listValue}
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'TIME') && (attribute.objectAttribute.timeValue)??>
+                                ${attribute.objectAttribute.timeValue}
+                            </#if>
+
+                            <#if (attribute.objectTypeAttribute.dataType == 'TIMESTAMP') && (attribute.objectAttribute.timestampValue)??>
+                                ${attribute.objectAttribute.timestampValue}
+                            </#if>
+                            <#if (attribute.objectTypeAttribute.dataType == 'CURRENCY') && (attribute.objectAttribute.currencyValue)??>
+                                ${attribute.objectAttribute.currencyValue}
+                            </#if>
+                        </td>
+                    </#list>
+                </tr>
+            </#list>
+            </tbody>
+        </table>
+    </div>
+    <div style="padding-top: 90px;text-align: right;margin-top: 0">
+        <div>
+            <span style="font-weight: 600;">Signature of the Receiver</span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

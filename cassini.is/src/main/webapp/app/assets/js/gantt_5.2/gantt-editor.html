@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Gantt Editor</title>
+
+	<script src="/app/assets/js/gantt/dhtmlxgantt.js?v=5.2.0"></script>
+	<script src="/app/assets/js/gantt/ext/dhtmlxgantt_undo.js?v=5.2.0"></script>
+	<script src="/app/assets/js/gantt/ext/dhtmlxgantt_auto_scheduling.js?v=5.2.0"></script>
+	<script src="/app/assets/js/gantt/ext/dhtmlxgantt_keyboard_navigation.js?v=5.2.0"></script>
+	<script src="/app/assets/js/gantt/ext/dhtmlxgantt_tooltip.js?v=5.2.0"></script>
+
+	<link rel="stylesheet" href="/app/assets/js/gantt/dhtmlxgantt.css?v=5.2.0">
+	<link rel="stylesheet" href="/app/assets/js/gantt/skins/dhtmlxgantt_material.css?v=5.2.0">
+
+	<style>
+		html, body {
+			height: 100%;
+			padding: 0px;
+			margin: 0px;
+			overflow: hidden;
+		}
+		.gantt_row_project{
+			font-weight: bold;
+		}
+
+		.gantt-info ul{
+			line-height: 150%;
+		}
+
+		.gantt_row_placeholder i.action-btn {
+			display: none;
+			cursor: pointer !important;
+		}
+
+        .gantt_row_project{
+            font-weight: bold;
+        }
+
+        .gantt-info ul{
+            line-height: 150%;
+        }
+
+        .gantt_row_placeholder i.action-btn {
+            display: none;
+            cursor: pointer !important;
+        }
+        .gantt_row_project .gantt_cell {
+            font-weight: bolder !important;
+        }
+        .gant-editor-frame {
+            width: 100%;
+            height: 100%;
+        }
+
+        .action-btn {
+            color: #a1a4a5;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .gantt_task_progress {
+            text-align: left !important;
+            padding-left: 10px !important;
+        }
+
+        .gantt_tooltip {
+            display: none;
+            background-color: rgb(248, 228, 147);
+            border-radius: 5px;
+        }
+
+        .gantt_task_progress_drag{
+            display:none !important;
+        }
+	</style>
+</head>
+<body>
+
+<div id="gantt_here" style='width: 100%; height: 100%'></div>
+<script>
+    gantt.config.keyboard_navigation_cells = true;
+    gantt.config.auto_scheduling = true;
+    gantt.config.auto_scheduling_strict = true;
+    gantt.config.row_height = 25;
+    gantt.config.fit_tasks = true;
+    gantt.config.show_unscheduled = true;
+    gantt.config.placeholder_task = true;
+    gantt.config.auto_types = true;
+
+    var editors = {
+        text: {type: "text", map_to: "text"},
+        start_date: {type: "date", map_to: "start_date", min: new Date(2018, 0, 1), max: new Date(2019, 0, 1)},
+        end_date: {type: "date", map_to: "end_date", min: new Date(2018, 0, 1), max: new Date(2019, 0, 1)},
+        duration: {type: "number", map_to: "duration", min:0, max: 100},
+        predecessors: {type: "predecessor", map_to: "auto"}
+    };
+
+
+    gantt.config.columns = [
+        {name:"add", width:30, align: 'center'},
+        {name: "wbs", label: "#", width: 60, align: "center", template: gantt.getWBSCode},
+        {name: "text", label: "Name", tree: true, width: 200, editor: editors.text, resize: true},
+        {name: "duration", label: "Duration",width:80, align: "center", editor: editors.duration, resize: true},
+        {name: "start_date", label: "Start", width:80, align: "center", editor: editors.start_date, resize: true},
+        {name: "end_date", label: "Finish", width:80, align: "center", editor: editors.end_date, resize: true},
+        {name: "predecessors", label: "Predecessors",width:120, align: "left", editor: editors.predecessors, resize: true, template: function(task){
+                var links = task.$target;
+                var labels = [];
+                for(var i = 0; i < links.length; i++){
+                    var link = gantt.getLink(links[i]);
+                    var pred = gantt.getTask(link.source);
+                    labels.push(gantt.getWBSCode(pred));
+                }
+                return labels.join(", ")
+            }
+        },
+        {name: "actions", label: "Actions", width: 100, align: "center", template: function(obj) {
+                return `
+					<i class='action-btn fa fa-home' onclick='buttonClicked("${obj.id}");'></i>
+					`;
+            }
+        }
+    ];
+
+    function buttonClicked(id) {
+        alert("Task " + id + " clicked");
+    }
+
+    gantt.attachEvent("onTaskCreated", function(task){
+        if(task.type == gantt.config.types.placeholder){
+            task.text = "Create a new task";
+        }
+        return true;
+    });
+
+
+    gantt.ext.inlineEditors.attachEvent("onSave", function(state){
+        var col = state.columnName;
+        if(gantt.autoSchedule && (col == "start_date" || col == "end_date" || col == "duration")){
+            gantt.autoSchedule();
+
+            console.log("Saved!");
+        }
+    });
+
+    gantt.showLightbox = function(id) {
+
+	};
+
+    gantt.init("gantt_here");
+    gantt.parse({data:[], links:[]});
+</script>
+</body>

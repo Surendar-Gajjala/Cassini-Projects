@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+</head>
+<body>
+
+<style>
+    body {
+        background-color: white;
+        font-size: 17px;
+        font-family: 'Open Sans' !important;
+        font-weight: 300 !important;
+    }
+
+    .email-content {
+        background-color: #FFF;
+        padding: 30px;
+        height: auto;
+        width: 95%;
+        min-width: 30%;
+        margin-bottom: 20px;
+
+    }
+
+    .email-title {
+        color: #0390fd;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-size: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .titleContent {
+        display: inline-flex;
+        font-size: 16px;
+        width: 100%;
+        padding: 10px 0px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+</style>
+
+<div class="email-content">
+    <h3 style="text-align: center;">${title}</h3>
+    <#if (logo)??>
+        <div style="text-align: center">
+            <img src="${logo}"/><br>
+        </div>
+    </#if>
+    <h4 style="text-align: center;">STOCK RETURNED TO STORES</h4>
+
+
+    <div class="titleContent" style="margin-bottom: 0 !important;">
+        <div style="width: 50%;">
+            <span style="font-weight: 600;">Store : </span><span> ${storeName}</span>
+            <br>
+            <span style="font-weight: 600;">Project :</span><span> ${projectName}</span>
+        </div>
+        <div style="width: 50%;text-align: right;">
+            <span style="font-weight: 600;">Scrap Number :</span><span> ${stockReturn.returnNumberSource}</span>
+            <br>
+            <span style="font-weight: 600;">Date :</span><span> ${stockReturn.createdDate}</span>
+        </div>
+    </div>
+
+
+    <!--Attributes-->
+
+    <div class="titleContent" style="margin-top: 20px !important;">
+        <div style="display: inherit">
+            <#list objectAtrributes as attribute>
+                <div style="padding: 5px; min-width: 200px;">
+                    <#if (attribute.objectTypeAttribute.dataType == 'TEXT') && (attribute.objectAttribute.stringValue)??>
+                        <tr>
+                            <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span>
+                            <hr>
+                            <span> ${attribute.objectAttribute.stringValue}</span>
+                        </tr>
+                    </#if>
+                    <#if (attribute.objectTypeAttribute.dataType == 'INTEGER') && (attribute.objectAttribute.integerValue)??>
+                        <tr>
+                            <div style="font-weight: 600;text-align: center;">${attribute.objectTypeAttribute.name} :
+                            </div>
+                            <hr>
+                            <div style="text-align: center;"> ${attribute.objectAttribute.integerValue?c}</div>
+                        </tr>
+                    </#if>
+                    <#if (attribute.objectTypeAttribute.dataType == 'DOUBLE') && (attribute.objectAttribute.doubleValue)??>
+                        <tr>
+                            <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span>
+                            <hr>
+                            <span> ${attribute.objectAttribute.doubleValue}</span>
+                        </tr>
+                    </#if>
+                    <#if (attribute.objectTypeAttribute.dataType == 'DATE') && (attribute.objectAttribute.dateValue)??>
+                        <tr>
+                            <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span>
+                            <br>
+                            <span> ${attribute.objectAttribute.dateValue}</span>
+                        </tr>
+                    </#if>
+                    <#if (attribute.objectTypeAttribute.dataType == 'BOOLEAN') && (attribute.objectAttribute.booleanValue)??>
+                        <tr>
+                            <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span>
+                            <hr>
+                            <span> ${attribute.objectAttribute.booleanValue?string}</span>
+                        </tr>
+                    </#if>
+                    <#if (attribute.objectTypeAttribute.dataType == 'LIST') && (attribute.objectAttribute.listValue)??>
+                        <tr>
+                            <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span>
+                            <hr>
+                            <span> ${attribute.objectAttribute.listValue}</span>
+                        </tr>
+                    </#if>
+                    <#if (attribute.objectTypeAttribute.dataType == 'TIME') && (attribute.objectAttribute.timeValue)??>
+                        <tr>
+                            <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span>
+                            <hr>
+                            <span> ${attribute.objectAttribute.timeValue}</span>
+                        </tr>
+                    </#if>
+                    <#if (attribute.objectTypeAttribute.dataType == 'TIMESTAMP') && (attribute.objectAttribute.timestampValue)??>
+                        <tr>
+                            <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span>
+                            <hr>
+                            <span> ${attribute.objectAttribute.timestampValue}</span>
+                        </tr>
+                    </#if>
+                    <#if (attribute.objectTypeAttribute.dataType == 'CURRENCY') && (attribute.objectAttribute.currencyValue)??>
+                        <tr>
+                            <span style="font-weight: 600;">${attribute.objectTypeAttribute.name} :</span>
+                            <hr>
+                            <span> ${attribute.objectAttribute.currencyValue}</span>
+                        </tr>
+                    </#if>
+                </div>
+            </#list>
+        </div>
+    </div>
+
+    <div style="text-align: left;">
+        <table class="table table-striped" style="width: 100% !important;">
+            <thead>
+            <tr>
+                <th style="border-bottom: 1px solid black;text-align: left;">Sl.No</th>
+                <th style="min-width:100px; max-width: 150px !important;border-bottom: 1px solid black;text-align: left;">
+                    Name
+                </th>
+                <th style="min-width:100px; max-width: 200px !important;border-bottom: 1px solid black;text-align: left;">
+                    Description
+                </th>
+                <th style="border-bottom: 1px solid black;text-align: center;">Quantity</th>
+                <th style="border-bottom: 1px solid black;text-align: center;">Units</th>
+            </tr>
+            </thead>
+            <tbody>
+            <#list stockReturnItemList as item>
+                <tr>
+
+                    <td style="padding: 5px 0px;text-align: left">${item.itemNumber}</td>
+
+                    <td style="min-width:100px; max-width: 150px !important;padding: 5px 5px;text-align: left">${(item.itemName)!}</td>
+
+                    <td style="min-width:100px; max-width: 200px !important;padding: 5px 5px;text-align: left">${(item.description)!}</td>
+
+                    <td style="padding: 5px 0px;text-align: center;">${item.itemReturnQuantity}</td>
+
+                    <td style="padding: 5px 0px;text-align: center;">${(item.units)!}</td>
+
+                </tr>
+            </#list>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="titleContent" style="margin-bottom: 0 !important; margin-top: 70px;">
+        <div style="width: 33%;">
+            <span style="font-weight: 600;">Returning Official</span>
+        </div>
+        <div style="width: 33%;">
+            <span style="font-weight: 600;">Controlling Officer</span>
+        </div>
+        <div style="width: 33%;">
+            <span style="font-weight: 600;">Receiving Official</span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "tasks",
+    "name": "tasks",
+    "description": "tasks related reports",
+    "reports": [
+      {
+        "id": "reports.tasks.unfinishedTasks",
+        "name": "unfinishedTasks",
+        "description": "Tasks that are not finished in planned time",
+        "reportFile": "classpath:reports/unfinishedTasks.groovy",
+        "viewType": "none",
+        "properties": {
+          "barColors": ["#5BC0DE"],
+          "labels": ["Tasks"]
+        }
+      }
+    ]
+  }
+]

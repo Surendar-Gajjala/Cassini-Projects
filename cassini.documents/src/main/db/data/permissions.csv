@@ -1,0 +1,10 @@
+permission.all,All Permissions,All Permissions
+permission.admin.all,All Admin,All Admin
+permission.admin.user,Add/Edit User,Add/Edit User
+permission.admin.group,Add/Edit Group,Add/Edit Group
+permission.documents.all,All Documents,All Documents
+permission.documents.view,View Documents,View Documents
+permission.documents.addFolder,Add Folder,Add Folder
+permission.documents.deleteFolder,Delete Folder,Delete Folder
+permission.documents.addDocuments,Add Documents,Add Documents
+permission.documents.addPermissions,Add Permissions,Add Permissions

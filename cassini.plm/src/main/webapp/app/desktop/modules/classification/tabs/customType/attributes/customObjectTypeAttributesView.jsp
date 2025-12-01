@@ -1,0 +1,1 @@
+<classification-attribute-view has-permission="hasPermission('admin','all')"></classification-attribute-view>

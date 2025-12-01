@@ -1,0 +1,53 @@
+{
+  "cassini_plm": {
+    "customerId": "PLM",
+    "customerName": "PLM Test",
+    "productId": "PLM",
+    "productName": "Cassini.PLM",
+    "assignedToId": "aWkuQCMyOr5zqcdmr6CpXy",
+    "notification_list": "",
+    "open_tickets": "u4556529",
+    "close_tickets": "u4556531"
+  },
+  "cassini_im": {
+    "customerId": "IM",
+    "customerName": "IM Test",
+    "productId": "IM",
+    "productName": "Cassini.IM",
+    "assignedToId": "aWkuQCMyOr5zqcdmr6CpXy",
+    "notification_list": "",
+    "open_tickets": "",
+    "close_tickets": ""
+  },
+  "cassini_is": {
+    "customerId": "IS",
+    "customerName": "IS Test",
+    "productId": "IS",
+    "productName": "Cassini.IS",
+    "assignedToId": "aWkuQCMyOr5zqcdmr6CpXy",
+    "notification_list": "",
+    "open_tickets": "",
+    "close_tickets": ""
+  },
+  "emm": {
+    "customerId": "Emm",
+    "customerName": "Emm",
+    "productId": "PLM",
+    "productName": "Cassini.PLM",
+    "assignedToId": "aWkuQCMyOr5zqcdmr6CpXy",
+    "notification_list": "",
+    "open_tickets": "u4556529",
+    "close_tickets": "u4556531"
+
+  },
+  "cassini_drdo": {
+    "customerId": "DRDO",
+    "customerName": "DRDO Test",
+    "productId": "DRDO",
+    "productName": "Cassini.DRDO",
+    "assignedToId": "aWkuQCMyOr5zqcdmr6CpXy",
+    "notification_list": "",
+    "open_tickets": "",
+    "close_tickets": ""
+  }
+}

@@ -1,0 +1,374 @@
+<div class="col-sm-12">
+    <#if approver>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <#if pending>
+                <h3 class="panel-title text-center">CassiniPLM SupplierAudit Workflow Notification - Pending
+                    Approval</h3>
+                <#elseif approved>
+                    <h3 class="panel-title text-center">CassiniPLM SupplierAudit Workflow Notification - Approved
+                        Confirmation</h3>
+                    <#elseif rejected>
+                        <h3 class="panel-title text-center">CassiniPLM SupplierAudit Workflow Notification -
+                            Reject Confirmation
+                        </h3>
+            </#if>
+        </div>
+
+        <#if companyLogo??>
+            <img naturalheight="0" naturalwidth="0" src="${companyLogo}" width="120" height="50"
+                 style="margin: 15px 0px 0px 10px;" data-downloadimage="" data-thumbnailimage=""
+                 crossorigin="use-credentials"/>
+        </#if>
+
+        <div class="notification-msg">
+            <#if demoted>
+                <span>Workflow has been re-assigned to you as it has been demoted. Please review and take action.</span>
+                <#elseif pending>
+                    <span>This Workflow status requires your approval. Please review and take action.</span>
+                    <#elseif approved>
+                        <span>This is to notify that the below workflow status has been approved.</span>
+                        <#elseif rejected>
+                            <span>This is to notify that the below workflow status has been rejected.</span>
+            </#if>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-8">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td class="text-right">Number :</td>
+                            <td class="field-value">
+                                    <span>
+                                        ${attachedObject.number}
+                                    </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">Title :</td>
+                            <td class="field-value">
+                                    <span>
+                                        ${(attachedObject.name)!}
+                                    </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">Description:</td>
+                            <td class="field-value">
+                                    <span>
+                                        ${(attachedObject.description)!}
+                                    </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">Current Status :</td>
+                            <td class="field-value">
+                                <span>${(workflowStatus.name)!}</span>
+                            </td>
+                        </tr>
+                        <#if statusPerson??>
+                            <tr>
+                                <td class="text-right">Approved By :</td>
+                                <td class="field-value">
+                                    <span>${(statusPerson)!}</span>
+                                </td>
+                            </tr>
+                        </#if>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-sm-4">
+                    <div>
+                        <h5 style="margin: 0">Workflow History</h5>
+
+                        <div>
+                            <ul class="timeline ng-scope" style="margin-left: 100px;">
+                                <#list histories as history>
+                                    <li class="ng-scope">
+                                        <div class="direction-r">
+                                            <div class="flag-wrapper">
+                                                <#if history.demoted>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name} - DEMOTED</span>
+                                                    <#elseif history.hold>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name} - HOLD</span>
+                                                        <#elseif history.unhold>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name} - REMOVED HOLD</span>
+                                                            <#else>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name}</span>
+                                                </#if>
+                                                    <span class="time-wrapper">
+                                                    <span class="time ng-binding">${history.timestamp?string["dd/MM/yyyy, HH:mm:ss"]}</span>
+                                                </span>
+                                            </div>
+                                            <div class="desc"></div>
+                                        </div>
+                                    </li>
+                                </#list>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer text-right">
+            <a href="${host}" class='btn btn-sm btn-primary'>Go to CassiniPLM</a>
+        </div>
+    </div>
+    </#if>
+
+    <#if acknowledger>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <#if pending>
+                    <h3 class="panel-title text-center">CassiniPLM SupplierAudit Workflow Notification - Pending
+                        Acknowledger</h3>
+                    <#elseif approved>
+                        <h3 class="panel-title text-center">CassiniPLM SupplierAudit Workflow Notification - Acknowledger
+                            Confirmation</h3>
+                        <#elseif rejected>
+                            <h3 class="panel-title text-center">CassiniPLM SupplierAudit Workflow Notification -
+                                Reject Confirmation
+                            </h3>
+                </#if>
+            </div>
+
+            <#if companyLogo??>
+                <img naturalheight="0" naturalwidth="0" src="${companyLogo}" width="120" height="50"
+                     style="margin: 15px 0px 0px 10px;" data-downloadimage="" data-thumbnailimage=""
+                     crossorigin="use-credentials"/>
+            </#if>
+
+            <div class="notification-msg">
+                <#if demoted>
+                    <span>Workflow has been re-assigned to you as it has been demoted. Please review and take action.</span>
+                    <#elseif pending>
+                        <span>This Workflow status requires your acknowledgement. Please review and take action.</span>
+                        <#elseif approved>
+                            <span>This is to notify that the below workflow status has been acknowledge.</span>
+                            <#elseif rejected>
+                                <span>This is to notify that the below workflow status has been rejected.</span>
+                </#if>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td class="text-right">Number :</td>
+                                <td class="field-value">
+                                    <span>
+                                        ${attachedObject.number}
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">Title :</td>
+                                <td class="field-value">
+                                    <span>
+                                        ${(attachedObject.name)!}
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">Description:</td>
+                                <td class="field-value">
+                                    <span>
+                                        ${(attachedObject.description)!}
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">Current Status :</td>
+                                <td class="field-value">
+                                    <span>${(workflowStatus.name)!}</span>
+                                </td>
+                            </tr>
+                            <#if statusPerson??>
+                                <tr>
+                                    <td class="text-right">Acknowledge By :</td>
+                                    <td class="field-value">
+                                        <span>${(statusPerson)!}</span>
+                                    </td>
+                                </tr>
+                            </#if>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div>
+                            <h5 style="margin: 0">Workflow History</h5>
+
+                            <div>
+                                <ul class="timeline ng-scope" style="margin-left: 100px;">
+                                    <#list histories as history>
+                                        <li class="ng-scope">
+                                            <div class="direction-r">
+                                                <div class="flag-wrapper">
+                                                    <#if history.demoted>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name} - DEMOTED</span>
+                                                        <#elseif history.hold>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name} - HOLD</span>
+                                                            <#elseif history.unhold>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name} - REMOVED HOLD</span>
+                                                                <#else>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name}</span>
+                                                    </#if>
+                                                    <span class="time-wrapper">
+                                                    <span class="time ng-binding">${history.timestamp?string["dd/MM/yyyy, HH:mm:ss"]}</span>
+                                                </span>
+                                                </div>
+                                                <div class="desc"></div>
+                                            </div>
+                                        </li>
+                                    </#list>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer text-right">
+                <a href="${host}" class='btn btn-sm btn-primary'>Go to CassiniPLM</a>
+            </div>
+        </div>
+    </#if>
+
+    <#if observer>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <#if pending>
+                    <h3 class="panel-title text-center">CassiniPLM SupplierAudit Workflow Notification - Pending
+                        Observer</h3>
+                    <#elseif approved>
+                        <h3 class="panel-title text-center">CassiniPLM SupplierAudit Workflow Notification - Observer
+                            Confirmation</h3>
+                        <#elseif rejected>
+                            <h3 class="panel-title text-center">CassiniPLM SupplierAudit Workflow Notification -
+                                Reject Confirmation
+                            </h3>
+                </#if>
+            </div>
+
+            <#if companyLogo??>
+                <img naturalheight="0" naturalwidth="0" src="${companyLogo}" width="120" height="50"
+                     style="margin: 15px 0px 0px 10px;" data-downloadimage="" data-thumbnailimage=""
+                     crossorigin="use-credentials"/>
+            </#if>
+
+            <div class="notification-msg">
+                <#if demoted>
+                    <span>Workflow has been re-assigned to you as it has been demoted. Please review and take action.</span>
+                    <#elseif pending>
+                        <span>This Workflow status requires your observation. Please review and take action.</span>
+                        <#elseif approved>
+                            <span>This is to notify that the below workflow status has been observed.</span>
+                            <#elseif rejected>
+                                <span>This is to notify that the below workflow status has been rejected.</span>
+                </#if>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td class="text-right">Number :</td>
+                                <td class="field-value">
+                                    <span>
+                                        ${attachedObject.number}
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">Title :</td>
+                                <td class="field-value">
+                                    <span>
+                                        ${(attachedObject.name)!}
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">Description:</td>
+                                <td class="field-value">
+                                    <span>
+                                        ${(attachedObject.description)!}
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">Current Status :</td>
+                                <td class="field-value">
+                                    <span>${(workflowStatus.name)!}</span>
+                                </td>
+                            </tr>
+                            <#if statusPerson??>
+                                <tr>
+                                    <td class="text-right">Observer By :</td>
+                                    <td class="field-value">
+                                        <span>${(statusPerson)!}</span>
+                                    </td>
+                                </tr>
+                            </#if>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div>
+                            <h5 style="margin: 0">Workflow History</h5>
+
+                            <div>
+                                <ul class="timeline ng-scope" style="margin-left: 100px;">
+                                    <#list histories as history>
+                                        <li class="ng-scope">
+                                            <div class="direction-r">
+                                                <div class="flag-wrapper">
+                                                    <#if history.demoted>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name} - DEMOTED</span>
+                                                        <#elseif history.hold>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name} - HOLD</span>
+                                                            <#elseif history.unhold>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name} - REMOVED HOLD</span>
+                                                                <#else>
+                                                        <span class="flag ng-binding"
+                                                              style="">${history.statusObject.name}</span>
+                                                    </#if>
+                                                    <span class="time-wrapper">
+                                                    <span class="time ng-binding">${history.timestamp?string["dd/MM/yyyy, HH:mm:ss"]}</span>
+                                                </span>
+                                                </div>
+                                                <div class="desc"></div>
+                                            </div>
+                                        </li>
+                                    </#list>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer text-right">
+                <a href="${host}" class='btn btn-sm btn-primary'>Go to CassiniPLM</a>
+            </div>
+        </div>
+    </#if>
+
+    <div style="margin-bottom: 100px;padding: 10px; text-align: center">
+        &copy; 2022 CassiniPLM
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+    "printTemplates": {
+        "printOrder": "print/crm/printOrder.jsp",
+        "printInvoice": "print/crm/printInvoice.jsp"
+    },
+
+    "shipperTemplates": [
+        {
+            "name": "VRL Logistics Ltd",
+            "template": "print/crm/vrl.jsp"
+        },
+        {
+            "name": "Navata Road Transport",
+            "template": "print/crm/navata.jsp"
+        },
+        {
+            "name": "Self",
+            "template": "print/crm/self.jsp"
+        },
+        {
+            "name": "Default",
+            "template": "print/crm/default.jsp"
+        }
+    ]
+}

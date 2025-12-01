@@ -1,0 +1,28 @@
+{
+  "LOGIN_MESSAGE": "Ingrese a su cuenta",
+  "LANGUAGE": "Español",
+  "LANGUAGES": {
+    "English": "Inglés",
+    "Hindi": "hindi",
+    "German": "alemán",
+    "Spanish": "Español"
+  },
+  "USERNAME": "Nombre de usuario",
+  "PASSWORD": "Contraseña",
+  "LOADING": "Ingresando. Por favor, espere ...",
+  "REMEMBER_ME": "Recuérdame",
+  "LOGIN": "Iniciar sesión",
+  "FORGOT_PASSWORD": "Se te olvidó tu contraseña",
+  "HOME": "CASA",
+  "FOLDERS": "Carpetas",
+  "CLASSIFICATION": "CLASIFICACIÓN",
+  "ITEMS": "ARTÍCULOS",
+  "CHANGES": "CAMBIOS",
+  "WORKFLOWS": "FLUJOS DE TRABAJO",
+  "MANUFACTURERS": "FABRICANTES",
+  "ADMIN": "ADMINISTRACIÓN",
+  "SETTINGS": "AJUSTES",
+  "ADMINISTRATOR": "Administrator"
+}
+
+

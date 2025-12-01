@@ -1,0 +1,170 @@
+/* Begin enums */
+
+DO $$
+DECLARE
+	enumTypes TEXT[];
+BEGIN
+
+enumTypes := ARRAY [
+    'ITEMTYPE',
+    'ITEMMASTER',
+    'ITEMREVISION',
+    'INWARD',
+    'INWARDITEM',
+    'REQUEST',
+    'ISSUE',
+    'RETURN',
+    'DISPATCH',
+    'SUPPLIER',
+    'PURCHASEORDER',
+    'FILE',
+    'TRACKVALUE',
+    'BOM',
+    'BOMITEM',
+    'BOMINSTANCE',
+    'BOMINSTANCEITEM',
+    'ITEMINSTANCE',
+    'INWARDGATEPASS',
+    'BOMGROUP',
+    'MANUFACTURER',
+    'PARTTRACKING',
+    'FAILURELIST',
+    'FAILUREVALUELIST',
+    'UNKNOWN',
+    'BDL_RECEIVE',
+    'REJECTED'
+];
+
+CREATE FUNCTION createEnums(eArray TEXT[]) RETURNS VOID LANGUAGE PLPGSQL VOLATILE
+    AS $f$
+        DECLARE
+            t TEXT;
+        BEGIN
+            FOREACH t IN ARRAY eArray LOOP
+                EXECUTE 'ALTER TYPE OBJECT_TYPE ADD VALUE ' || quote_literal(t);
+            END loop;
+        END;
+    $f$;
+
+
+PERFORM createEnums(enumTypes);
+
+CREATE TYPE STORAGE_TYPE AS ENUM (
+    'WAREHOUSE',
+    'STOCKROOM',
+    'AREA',
+    'RACK',
+    'SHELF',
+    'BIN'
+);
+
+CREATE TYPE MOVEMENT_TYPE AS ENUM (
+    'INWARD',
+    'RECEIVE',
+    'ISSUE',
+    'RETURN'
+);
+
+CREATE TYPE INWARD_STATUS AS ENUM (
+    'SECURITY',
+    'STORE',
+    'SSQAG',
+    'INVENTORY',
+    'FINISH'
+);
+
+CREATE TYPE ITEMINSTANCE_STATUS AS ENUM (
+    'NEW',
+    'STORE_SUBMITTED',
+    'ACCEPT',
+    'P_ACCEPT',
+    'INVENTORY',
+    'VERIFIED',
+    'REVIEW',
+    'REVIEWED',
+    'ISSUE',
+    'TESTED',
+    'RETURN',
+    'FAILURE',
+    'DISPATCH',
+    'FABRICATION',
+    'FAILURE_PROCESS',
+    'P_APPROVED',
+    'APPROVED',
+    'REJECTED',
+    'RESET'
+);
+
+CREATE TYPE REQUEST_STATUS AS ENUM (
+    'BDL_EMPLOYEE',
+    'BDL_MANAGER',
+    'CAS_MANAGER',
+    'PENDING',
+    'APPROVED',
+    'RECEIVED',
+    'REJECTED',
+    'COLLECTED',
+    'FINISHED',
+    'PARTIALLY_ACCEPTED',
+    'PARTIALLY_APPROVED',
+    'VERSITY_MANAGER',
+    'VERSITY_EMPLOYEE',
+    'CORRECTION',
+    'REQUESTED'
+);
+
+CREATE TYPE BOMITEMTYPE AS ENUM (
+    'SECTION',
+    'SUBSYSTEM',
+    'UNIT',
+    'PART',
+    'COMMONPART'
+);
+
+CREATE TYPE DISPATCH_STATUS AS ENUM (
+    'NEW',
+    'DISPATCHED'
+);
+
+CREATE TYPE DISPATCH_TYPE AS ENUM (
+    'RETURN',
+    'FAILURE',
+    'FABRICATION',
+    'REJECTED'
+);
+
+CREATE TYPE ISSUE_STATUS AS ENUM (
+    'NEW',
+    'BDL_QC',
+    'STORE',
+    'ISSUED',
+    'PARTIALLY_RECEIVED',
+    'PARTIALLY_APPROVED',
+    'RECEIVED',
+    'APPROVED',
+    'REJECTED',
+    'BDL_PPC',
+    'VERSITY_QC',
+    'VERSITY_PPC',
+    'ITEM_RESET',
+    'PARTIALLY_REJECTED'
+);
+
+CREATE TYPE ISSUEITEM_STATUS AS ENUM (
+    'APPROVED',
+    'P_APPROVED',
+    'REJECTED',
+    'HOLD',
+    'RECEIVED',
+    'PENDING'
+);
+
+CREATE TYPE REQUESTITEM_STATUS AS ENUM (
+    'APPROVED',
+    'ACCEPTED',
+    'REJECTED',
+    'PENDING'
+);
+
+END $$;
+/* End enums */
